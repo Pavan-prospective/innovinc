@@ -79,33 +79,33 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-center h-full pt-6 pb-12">
-          <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4 max-w-2xl leading-tight">
-            Where scientists <br/>empower society
+          <h1 className="text-4xl md:text-6xl text-white tracking-tight mb-6 max-w-2xl leading-[1.1] drop-shadow-sm">
+            <span className="font-medium text-gray-200">Where</span> <span className="font-extrabold">Researchers</span> <br/><span className="font-extrabold">Empower Society</span>
           </h1>
           
-          <div className="w-full max-w-xl bg-white/10 backdrop-blur-md p-1 rounded-lg flex items-center border border-white/20">
-            <Search className="w-4 h-4 text-white ml-3 shrink-0" />
+          <div className="w-full max-w-md bg-white/10 backdrop-blur-md p-1 rounded-lg flex items-center border border-white/20">
+            <Search className="w-3.5 h-3.5 text-white ml-2.5 shrink-0" />
             <input 
               type="text"
               placeholder="Search articles, authors, DOIs..." 
-              className="flex-grow bg-transparent border-none focus:outline-none text-white px-4 h-10 text-sm placeholder-gray-300"
+              className="flex-grow bg-transparent border-none focus:outline-none text-white px-3 h-8 text-sm placeholder-gray-300"
             />
-            <Button className="h-10 px-6 rounded bg-white text-navy-950 hover:bg-gray-100 font-bold shrink-0 text-sm">Search</Button>
+            <Button className="h-8 px-4 rounded bg-white text-navy-950 hover:bg-gray-100 font-bold shrink-0 text-sm">Search</Button>
           </div>
         </div>
 
         {/* Bottom Right Stats Overlay (Compact) */}
-        <div className="absolute bottom-0 right-0 bg-navy-950/80 backdrop-blur-md px-8 py-4 flex gap-8 border-t border-l border-white/10 rounded-tl-2xl">
+        <div className="absolute bottom-0 right-0 bg-navy-950/80 backdrop-blur-md px-6 py-3 flex gap-6 border-t border-l border-white/10 rounded-tl-2xl">
           <div>
-            <div className="text-xl font-bold text-white mb-0.5">3.9 million</div>
+            <div className="text-lg font-bold text-white mb-0.5">3.9 million</div>
             <div className="text-[10px] text-gray-300 uppercase tracking-wider">researchers</div>
           </div>
           <div>
-            <div className="text-xl font-bold text-white mb-0.5">16 million</div>
+            <div className="text-lg font-bold text-white mb-0.5">16 million</div>
             <div className="text-[10px] text-gray-300 uppercase tracking-wider">citations</div>
           </div>
           <div>
-            <div className="text-xl font-bold text-white mb-0.5">5.3 billion</div>
+            <div className="text-lg font-bold text-white mb-0.5">5.3 billion</div>
             <div className="text-[10px] text-gray-300 uppercase tracking-wider">views & downloads</div>
           </div>
         </div>
@@ -193,7 +193,7 @@ export default function Home() {
               </div>
               
               <div className="text-base font-bold text-[#4b0082] grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer">WorldCat</div>
-              <div className="font-bold text-lg text-orange-600 italic grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer">J-Gate</div>
+              <div className="font-bold text-lg text-primary-600 italic grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer">J-Gate</div>
               
               <div className="flex flex-col items-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer">
                 <div className="w-5 h-2 border-b-2 border-[#0a1f44] rounded-t-full mb-0.5"></div>

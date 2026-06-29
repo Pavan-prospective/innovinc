@@ -49,8 +49,12 @@ export function Navbar() {
               <button className="text-gray-500 hover:text-primary-600 transition-colors">
                 <Search className="w-5 h-5" />
               </button>
-              <Button variant="outline" className="hidden lg:inline-flex">Sign In</Button>
-              <Button>Submit Article</Button>
+              <Link to="/login">
+                <Button variant="outline" className="hidden lg:inline-flex">Sign In</Button>
+              </Link>
+              <Link to="/submit-article">
+                <Button>Submit Article</Button>
+              </Link>
             </div>
           </div>
 
@@ -85,8 +89,12 @@ export function Navbar() {
             ))}
           </div>
           <div className="pt-4 flex flex-col space-y-3 border-t border-gray-100">
-            <Button variant="outline" className="w-full justify-center">Sign In</Button>
-            <Button className="w-full justify-center">Submit Article</Button>
+            <Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>
+              <Button variant="outline" className="w-full justify-center">Sign In</Button>
+            </Link>
+            <Link to="/submit-article" onClick={() => setIsMobileMenuOpen(false)}>
+              <Button className="w-full justify-center">Submit Article</Button>
+            </Link>
           </div>
         </div>
       )}
