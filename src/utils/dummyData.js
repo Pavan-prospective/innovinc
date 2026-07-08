@@ -12,13 +12,19 @@ export const CATEGORIES = [
 export const JOURNALS = [
   {
     id: 'j1',
-    title: 'International Journal of Advanced Medicine',
+    title: 'Journal of Global Cancer Research',
     category: 'Medicine & Health',
     impactFactor: '4.5',
     latestIssue: 'Vol. 12, Issue 4 (2025)',
-    description: 'A peer-reviewed, open access journal that publishes original research articles, review articles, and clinical studies in all areas of medicine.',
-    coverImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=400&h=500',
-    issn: '2456-1111'
+    description: 'A peer-reviewed, open access journal dedicated to publishing clinical research, reviews, and clinical studies in global oncology and cancer treatments.',
+    coverImage: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=400',
+    issn: '2456-1111',
+    editors: 'Sandeep Kumar Singh and Ricardo Maccioni',
+    publishedYear: '2024',
+    imprint: 'Academic Press',
+    language: 'English',
+    isbn: '978-0-443-15540-6',
+    doi: '10.1016/C2022-0-01757-8'
   },
   {
     id: 'j2',
@@ -26,9 +32,15 @@ export const JOURNALS = [
     category: 'Artificial Intelligence',
     impactFactor: '7.2',
     latestIssue: 'Vol. 8, Issue 1 (2025)',
-    description: 'Dedicated to the rapid dissemination of important research results to the global AI community.',
-    coverImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=400&h=500',
-    issn: '2456-2222'
+    description: 'Dedicated to the dissemination of important research results to the global AI community, covering learning systems, neural architectures, and automation.',
+    coverImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=400',
+    issn: '2456-2222',
+    editors: 'Dr. Sarah Chen and Prof. David Kim',
+    publishedYear: '2025',
+    imprint: 'InnovInc Tech Press',
+    language: 'English',
+    isbn: '978-0-123-45678-9',
+    doi: '10.1016/C2025-0-09876-1'
   },
   {
     id: 'j3',
@@ -36,9 +48,15 @@ export const JOURNALS = [
     category: 'Environmental Science',
     impactFactor: '5.8',
     latestIssue: 'Vol. 3, Issue 2 (2025)',
-    description: 'Focuses on the most significant research spanning the entire spectrum of environmental sciences.',
-    coverImage: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=400&h=500',
-    issn: '2456-3333'
+    description: 'Focuses on the most significant research spanning the entire spectrum of environmental sciences, climatology, and sustainable engineering.',
+    coverImage: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=400',
+    issn: '2456-3333',
+    editors: 'Dr. Elena Rodriguez and Prof. Michael Roberts',
+    publishedYear: '2024',
+    imprint: 'EcoScience Publishers',
+    language: 'English',
+    isbn: '978-1-890-12345-6',
+    doi: '10.1016/C2024-1-12480-4'
   },
   {
     id: 'j4',
@@ -46,9 +64,15 @@ export const JOURNALS = [
     category: 'Engineering',
     impactFactor: '3.9',
     latestIssue: 'Vol. 15, Issue 6 (2025)',
-    description: 'Publishing cutting-edge research across all engineering disciplines, from civil to mechanical.',
-    coverImage: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=400&h=500',
-    issn: '2456-4444'
+    description: 'Publishing cutting-edge research across all engineering disciplines, from structural designs to materials science and fluid dynamics.',
+    coverImage: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=400',
+    issn: '2456-4444',
+    editors: 'Dr. James Wilson and Prof. John Smith',
+    publishedYear: '2025',
+    imprint: 'Academic Engineering Press',
+    language: 'English',
+    isbn: '978-0-802-12490-8',
+    doi: '10.1016/C2025-2-04561-2'
   }
 ]
 
@@ -56,18 +80,46 @@ export const ARTICLES = [
   {
     id: 'a1',
     type: 'ORIGINAL RESEARCH',
-    title: 'Cost-Consequence Analysis of a Criterion-Based Screening and Triage Pathway Compared with Full ADHD Assessment',
-    authors: ['Marios Adamou', 'Ellen Wright'],
+    title: 'Sentinel Lymph Node Mapping in Risk-Reducing Salpingo-Oophorectomy for BRCA Mutation Carriers: A Multi-Center Clinical Evaluation',
+    authors: ['Alessandro Buda', 'Michele Bollino', 'Jessica Mauro', 'Jvan Casarin', 'David Viveros-Carreno'],
+    authorAffiliations: [
+      { name: 'Alessandro Buda', indices: ['1'] },
+      { name: 'Michele Bollino', indices: ['2'] },
+      { name: 'Jessica Mauro', indices: ['1'] },
+      { name: 'Jvan Casarin', indices: ['3'] },
+      { name: 'David Viveros-Carreno', indices: ['4', '5'] }
+    ],
+    affiliationsList: [
+      { index: '1', text: 'Michele and Pietro Ferrero Hospital, Verduno, Italy' },
+      { index: '2', text: 'Department of Obstetrics and Gynaecology, Division of Gynaecologic Oncology, Skåne University Hospital Lund, Lund University Faculty of Medicine, Department of Clinical Sciences, Obstetrics and Gynaecology, Lund, Sweden' },
+      { index: '3', text: 'Ospedale del Ponte, University of Varese, Varese, Italy' },
+      { index: '4', text: 'Grupo de Investigación Salud de la Mujer Sanitas, Department of Gynecologic Oncology, Clínica Colsanitas S.A., Clínica Universitaria Colombia, Bogotá, Colombia' },
+      { index: '5', text: 'Unidad Ginecología Oncológica, Grupo de Investigación GIGA, Centro de Tratamiento e Investigación sobre Cáncer Luis Carlos Sarmiento Angulo (CTIC), Bogotá, Colombia' }
+    ],
+    history: {
+      received: '11 March 2026',
+      revised: '18 May 2026',
+      accepted: '23 May 2026',
+      online: '4 June 2026'
+    },
     journalId: 'j1',
-    journalTitle: 'InnovInc Psychiatry',
-    publicationDate: '2026-06-26',
-    abstract: 'A comprehensive study evaluating the cost-effectiveness of new screening pathways...',
+    journalTitle: 'Journal of Global Cancer Research',
+    publicationDate: '2026-06-04',
+    abstract: 'Objective: Evaluating the feasibility, safety, and clinical value of sentinel lymph node (SLN) mapping during risk-reducing salpingo-oophorectomy in BRCA mutation carriers. Methods: We analyzed clinical trial datasets across multi-center oncology research networks. Results: High precision and detection rates were observed, allowing identification of microscopic lymphatic spread.',
+    conclusion: 'Sentinel lymph node mapping represents a highly viable adjuvant diagnostic option during risk-reducing surgeries in BRCA mutation carriers, optimizing systemic regimens and clinical surveillance.',
+    referencesCount: 39,
+    references: [
+      { id: 1, citation: 'Buda A., et al. (2025). Sentinel lymph node mapping in early-stage endometrial cancer. Journal of Global Cancer Research, 12(2), 145-152.', link: '/journals/j1' },
+      { id: 2, citation: 'Casarin J., et al. (2024). Minimally invasive staging techniques in gynecologic oncology. Innovations in Engineering, 15(4), 89-94.', link: '/journals/j4' },
+      { id: 3, citation: 'Viveros-Carreno D., et al. (2025). Global access to oncology therapeutics and clinical trials. Journal of Global Cancer Research, 12(3), 201-210.', link: '/journals/j1' },
+      { id: 4, citation: 'Bollino M., et al. (2024). Genomic profiles and BRCA1/2 mutational carriers therapeutics. Journal of Global Cancer Research, 12(1), 54-61.', link: '/journals/j1' }
+    ],
     views: 434,
     impressions: 1205,
     downloads: 120,
     readTime: '12 min',
-    tags: ['Psychiatry', 'ADHD', 'Clinical Trial'],
-    doi: '10.3389/fpsyt.2026.1345',
+    tags: ['Oncology', 'BRCA Carriers', 'Sentinel Mapping', 'Gynecology'],
+    doi: '10.3389/jgcr.2026.1345',
     provider: 'InnovInc Publishing',
     issn: '1664-0640'
   },
@@ -143,7 +195,7 @@ export const ARTICLES = [
     title: 'M2 macrophage-derived exosomes improves secondary lymphedema through cellular mitochondrial homeostasis regulation',
     authors: ['Jinli Ma', 'Luya Pu', 'Yundong Zhang'],
     journalId: 'j1',
-    journalTitle: 'International Journal of Advanced Medicine',
+    journalTitle: 'Journal of Global Cancer Research',
     publicationDate: '2026-06-23',
     abstract: 'Exploring the therapeutic potential of exosomes in treating lymphedema via mitochondrial pathways.',
     views: 532,
@@ -158,7 +210,7 @@ export const ARTICLES = [
     title: 'Selective Reduction of the Light Peak-to-Dark Trough Ratio in Reticular Macular Disease: An Electrooculography Study',
     authors: ['Lin Liu', 'Lu Cheng', 'Qi Ren', 'Zhe Chu', 'Hao Cheng'],
     journalId: 'j1',
-    journalTitle: 'International Journal of Advanced Medicine',
+    journalTitle: 'Journal of Global Cancer Research',
     publicationDate: '2026-06-23',
     abstract: 'A detailed clinical study on retinal diseases using electrooculography techniques.',
     views: 310,
@@ -173,7 +225,7 @@ export const ARTICLES = [
     title: 'EDITORIAL: Impact of Viral Infections on Childhood Asthma: Susceptibility and Pathomechanisms',
     authors: ['Nicole Maison', 'Ulrich von Both', 'Jimmy Omony'],
     journalId: 'j1',
-    journalTitle: 'International Journal of Advanced Medicine',
+    journalTitle: 'Journal of Global Cancer Research',
     publicationDate: '2026-06-22',
     abstract: 'An editorial discussing recent findings on how early viral infections influence asthma development in children.',
     views: 650,

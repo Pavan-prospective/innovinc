@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { FileText, Download, Share2, Quote, BookOpen, Users } from 'lucide-react'
+import { FileText, Download, Share2, Quote, BookOpen, Users, Eye, BarChart3, Search } from 'lucide-react'
 import { Button } from '../components/ui/Button'
 import { Badge } from '../components/ui/Badge'
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card'
@@ -12,6 +12,7 @@ export default function JournalDetails() {
   const [journal, setJournal] = useState(null)
   const [articles, setArticles] = useState([])
   const [loading, setLoading] = useState(true)
+  const [searchQuery, setSearchQuery] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,6 +33,16 @@ export default function JournalDetails() {
     fetchData()
   }, [journalId])
 
+  const filteredArticles = articles.filter(article => {
+    if (!searchQuery) return true
+    const query = searchQuery.toLowerCase()
+    return (
+      article.title.toLowerCase().includes(query) ||
+      article.authors.some(a => a.toLowerCase().includes(query)) ||
+      (article.tags && article.tags.some(t => t.toLowerCase().includes(query)))
+    )
+  })
+
   if (loading) {
     return (
       <div className="min-h-[70vh] flex items-center justify-center">
@@ -46,33 +57,58 @@ export default function JournalDetails() {
 
   return (
     <div className="flex flex-col bg-gray-50 min-h-screen">
-      {/* Journal Banner */}
-      <section className="bg-navy-950 text-white pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Journal Banner with Laboratory Graphic */}
+      <section className="bg-navy-950 text-white pt-32 pb-16 relative overflow-hidden">
+        {/* Backdrop Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1614935151651-0bea6508abb0?auto=format&fit=crop&q=80&w=2500" 
+            className="w-full h-full object-cover opacity-60" 
+            alt="Scientific Discovery Backdrop" 
+          />
+          <div className="absolute inset-0 bg-navy-950/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-950 to-transparent"></div>
+        </div>
+
+        {/* Glow effect */}
+        <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] bg-primary-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="w-48 h-64 shrink-0 rounded-xl overflow-hidden border border-navy-800 shadow-2xl">
               <img src={journal.coverImage} alt={journal.title} className="w-full h-full object-cover" />
             </div>
             <div className="flex-grow">
-              <Badge variant="secondary" className="bg-primary-900/50 text-primary-100 border-primary-800 mb-4">
-                {journal.category}
-              </Badge>
-              <h1 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight leading-tight">{journal.title}</h1>
-              <div className="flex flex-wrap gap-6 text-sm text-gray-300 mb-8">
+
+              <h1 className="text-3xl md:text-5xl font-black mb-1.5 tracking-tight leading-tight">{journal.title}</h1>
+              <p className="text-primary-400 text-sm font-semibold mb-5 flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-primary-500 inline-block animate-pulse"></span>
+                Edited by: {journal.editors || 'Editorial Office'}
+              </p>
+              
+              <div className="flex flex-wrap gap-6 text-sm text-gray-300 mb-8 font-medium">
                 <div className="flex items-center gap-2">
                   <span className="font-semibold text-white">ISSN:</span> {journal.issn}
                 </div>
+                <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
                 <div className="flex items-center gap-2">
-                  <span className="font-semibold text-white">Impact Factor:</span> {journal.impactFactor}
+                  <span className="font-semibold text-white">Impact Factor:</span> <span className="text-primary-400 font-bold">{journal.impactFactor}</span>
                 </div>
+                <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
                 <div className="flex items-center gap-2">
                   <span className="font-semibold text-white">Latest Issue:</span> {journal.latestIssue}
                 </div>
               </div>
+              
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="px-8 rounded-full">Submit Manuscript</Button>
-                <Button size="lg" variant="outline" className="px-8 rounded-full text-navy-950 border-white hover:bg-white hover:text-navy-950">
-                  Current Issue
+                <Button 
+                  onClick={() => document.getElementById('articles-section')?.scrollIntoView({ behavior: 'smooth' })} 
+                  className="px-6 rounded-xl bg-primary-500 hover:bg-primary-600 text-navy-950 font-bold border-none transition-all shadow-md shadow-primary-500/20"
+                >
+                  Search in Journal
+                </Button>
+                <Button variant="outline" className="px-6 rounded-xl text-white border-white/20 hover:bg-white hover:text-navy-950 transition-colors gap-2">
+                  <Share2 className="w-4 h-4" /> Share
                 </Button>
               </div>
             </div>
@@ -91,47 +127,118 @@ export default function JournalDetails() {
             <h2 className="text-2xl font-bold text-navy-950 mb-4 flex items-center gap-2">
               <BookOpen className="w-6 h-6 text-primary-600" /> Aims & Scope
             </h2>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-gray-700 leading-relaxed">
-              {journal.description} 
-              <br/><br/>
-              The journal welcomes submissions that contribute to the fundamental understanding and practical applications in this domain. All published articles are subject to rigorous peer review to ensure the highest quality of scientific integrity and impact.
+            <div className="bg-white p-6 rounded-2xl shadow-[0_4px_25px_-4px_rgba(0,0,0,0.02)] border border-gray-100 text-gray-700 space-y-4">
+              <p className="leading-relaxed text-sm">
+                {journal.description}
+              </p>
+              <p className="leading-relaxed text-xs text-gray-500">
+                The publication serves as a key international forum, bridging theoretical molecular discoveries and clinical, patient-centered applications. It welcomes high-impact submissions, reviews, and clinical trial studies that contribute to the fundamental understanding of this domain. All materials are published open access, ensuring maximum accessibility to the global scientific community.
+              </p>
+              
+              <div className="border-t border-gray-100 pt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <div className="space-y-2">
+                  <h4 className="font-bold text-navy-950 uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary-600"></span> Author Guidelines
+                  </h4>
+                  <p className="text-gray-500 leading-relaxed text-[11px]">
+                    Authors are expected to submit original research detailing sound methodologies and transparent datasets. All publications must comply with COPE ethics and global licensing policies.
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <h4 className="font-bold text-navy-950 uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary-600"></span> Editorial Mandate
+                  </h4>
+                  <p className="text-gray-500 leading-relaxed text-[11px]">
+                    Our international board coordinates rigorous double-blind evaluations. Editors hold objective screening criteria to ensure reproducibility, clinical safety, and academic integrity.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Latest Articles */}
-          <div>
-            <h2 className="text-2xl font-bold text-navy-950 mb-6 flex items-center gap-2">
-              <FileText className="w-6 h-6 text-primary-600" /> Latest Articles
-            </h2>
+          {/* Latest Articles with Search Filter */}
+          <div id="articles-section">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 border-b border-gray-100 pb-4">
+              <h2 className="text-2xl font-bold text-navy-950 flex items-center gap-2">
+                <FileText className="w-6 h-6 text-primary-600" /> Latest Articles
+              </h2>
+              
+              {/* Clean search bar */}
+              <div className="relative w-full sm:w-72">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-3.5 h-3.5" />
+                <input
+                  type="text"
+                  placeholder="Search articles in this journal..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-9 pr-4 py-2 bg-white border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors shadow-sm"
+                />
+              </div>
+            </div>
+
             <div className="space-y-4">
-              {articles.length > 0 ? articles.map((article, i) => (
-                <motion.div
-                  key={article.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                >
-                  <Card className="hover:border-primary-200 transition-colors">
-                    <CardHeader className="pb-4">
-                      <Link to={`/articles/${article.id}`}>
-                        <CardTitle className="text-xl hover:text-primary-600 transition-colors mb-2">
-                          {article.title}
-                        </CardTitle>
-                      </Link>
-                      <p className="text-sm text-gray-600 mb-2">{article.authors.join(', ')}</p>
-                      <div className="text-xs text-gray-500">Published: {new Date(article.publicationDate).toLocaleDateString()}</div>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex gap-2">
-                        {article.tags.map(tag => (
-                          <Badge key={tag} variant="secondary" className="bg-gray-100 font-normal">{tag}</Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              )) : (
+              {articles.length === 0 ? (
                 <div className="text-gray-500 bg-white p-6 rounded-xl border border-gray-100">No recent articles found for this journal.</div>
+              ) : filteredArticles.length === 0 ? (
+                <div className="text-gray-500 bg-white p-6 rounded-xl border border-gray-100">
+                  No articles match your search criteria "{searchQuery}".
+                </div>
+              ) : (
+                filteredArticles.map((article, i) => (
+                  <motion.div
+                    key={article.id}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                  >
+                    <Card className="hover:border-primary-300/70 transition-all duration-300 bg-white shadow-[0_4px_20px_-4px_rgba(15,23,42,0.03)] border-gray-100 overflow-hidden relative">
+                      <CardHeader className="pb-3 p-6">
+                        <Link to={`/articles/${article.id}`}>
+                          <CardTitle className="text-xl font-bold text-navy-950 hover:text-primary-600 transition-colors mb-2 leading-snug">
+                            {article.title}
+                          </CardTitle>
+                        </Link>
+                        <div className="flex gap-2 text-xs font-semibold mb-3 flex-wrap">
+                          {article.authors.map(author => (
+                             <span key={author} className="bg-primary-50 text-primary-700 px-2 py-0.5 rounded border border-primary-100">{author}</span>
+                          ))}
+                        </div>
+                        <div className="text-xs text-gray-500 mb-4 space-y-2">
+                           <p><strong className="text-navy-900">Abstract:</strong> {article.abstract || 'This article discusses the recent advancements in clinical oncology and novel therapeutics. Detailed abstract content is available in the full text.'}</p>
+                           <p><strong className="text-navy-900">Conclusion:</strong> {article.conclusion || 'The findings present significant clinical implications for future trials and standard of care.'}</p>
+                        </div>
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-400 font-medium">
+                          <div>Published: {new Date(article.publicationDate).toLocaleDateString()}</div>
+                          {article.doi && (
+                            <>
+                              <div className="w-1 h-1 rounded-full bg-gray-300"></div>
+                              <div>DOI: <span className="text-navy-900 font-semibold">{article.doi}</span></div>
+                            </>
+                          )}
+                        </div>
+                      </CardHeader>
+                      <CardContent className="pt-0 p-6 flex flex-wrap justify-between items-center gap-y-3">
+                        <div className="flex flex-wrap gap-2">
+                          {article.tags.map(tag => (
+                            <Badge key={tag} className="bg-gray-50 text-gray-600 border border-gray-100 hover:bg-gray-100 transition-colors font-medium text-xs px-2.5 py-1 shadow-none">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-gray-50 text-[11px] font-bold text-navy-900 border border-gray-100">
+                            <Eye className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                            {article.views?.toLocaleString() || '0'} <span className="text-gray-400 font-normal">views</span>
+                          </span>
+                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-gray-50 text-[11px] font-bold text-navy-900 border border-gray-100">
+                            <BarChart3 className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                            {article.impressions?.toLocaleString() || '0'} <span className="text-gray-400 font-normal">impressions</span>
+                          </span>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))
               )}
             </div>
           </div>
@@ -141,6 +248,37 @@ export default function JournalDetails() {
         {/* Right Column (Sidebar) */}
         <div className="lg:w-1/3 space-y-6">
           
+          <Card className="overflow-hidden border-gray-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.04)] bg-white rounded-2xl">
+            <div className="h-1.5 bg-gradient-to-r from-primary-500 to-amber-400"></div>
+            <CardHeader className="pb-3 p-6">
+              <CardTitle className="text-base font-bold text-navy-950 flex items-center gap-2">
+                About the publication
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-6 pt-0 space-y-4 text-xs">
+              <div className="flex justify-between border-b border-gray-100 pb-2">
+                <span className="text-gray-500 font-medium">Published:</span>
+                <span className="font-semibold text-navy-950">{journal.publishedYear || '2024'}</span>
+              </div>
+              <div className="flex justify-between border-b border-gray-100 pb-2">
+                <span className="text-gray-500 font-medium">Imprint:</span>
+                <span className="font-semibold text-navy-950">{journal.imprint || 'InnovInc Press'}</span>
+              </div>
+              <div className="flex justify-between border-b border-gray-100 pb-2">
+                <span className="text-gray-500 font-medium">Language:</span>
+                <span className="font-semibold text-navy-950">{journal.language || 'English'}</span>
+              </div>
+              <div className="flex justify-between border-b border-gray-100 pb-2">
+                <span className="text-gray-500 font-medium">ISBN / ISSN:</span>
+                <span className="font-semibold text-navy-950">{journal.isbn || journal.issn}</span>
+              </div>
+              <div className="flex justify-between pb-1">
+                <span className="text-gray-500 font-medium">DOI:</span>
+                <span className="font-semibold text-primary-600 truncate max-w-[160px] cursor-pointer" title={journal.doi}>{journal.doi || `10.1016/innovinc.${journal.id}`}</span>
+              </div>
+            </CardContent>
+          </Card>
+
           <Card>
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
@@ -163,7 +301,9 @@ export default function JournalDetails() {
                     <div className="text-xs text-gray-500">Associate Editor</div>
                   </div>
                 </div>
-                <Button variant="link" className="px-0 pt-2 w-full justify-start text-primary-600">View full editorial board &rarr;</Button>
+                <Link to="/editorial-board" className="block w-full">
+                  <Button variant="link" className="px-0 pt-2 w-full justify-start text-primary-600">View full editorial board &rarr;</Button>
+                </Link>
               </div>
             </CardContent>
           </Card>

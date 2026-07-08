@@ -4,56 +4,37 @@ import { BookOpen, Mail } from 'lucide-react'
 
 export function Footer() {
   return (
-    <footer className="bg-navy-950 text-gray-300 py-10 border-t border-navy-800">
+    <footer className="bg-navy-950 text-gray-400 py-6 border-t border-navy-900 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          
-          <div className="md:col-span-2 space-y-4">
-            <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 bg-primary-600 rounded flex items-center justify-center">
-                <BookOpen className="text-white w-5 h-5" />
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          {/* Logo & copyright info on the left */}
+          <div className="flex flex-col md:flex-row items-center gap-3">
+            <Link to="/" className="flex items-center gap-2 group shrink-0">
+              <div className="w-6 h-6 bg-primary-600 rounded flex items-center justify-center">
+                <BookOpen className="text-white w-3.5 h-3.5" />
               </div>
-              <span className="font-bold text-xl tracking-tight text-white">
+              <span className="font-bold text-base tracking-tight text-white">
                 InnovInc<span className="text-primary-500">.</span>
               </span>
             </Link>
-            <p className="text-gray-400 max-w-sm text-sm leading-relaxed">
-              InnovInc is a premier platform dedicated to providing researchers, scientists, and academics with a trusted, open-access environment to publish their groundbreaking research and share it with the world.
+            <span className="text-gray-700 hidden md:inline">|</span>
+            <p className="text-[11px] text-gray-500">
+              &copy; {new Date().getFullYear()} InnovInc Publishing. All rights reserved. <span className="ml-2 text-gray-600">ISSN 2456-XXXX</span>
             </p>
-            <div className="flex space-x-4 text-sm font-medium">
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">Twitter</a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">LinkedIn</a>
-            </div>
           </div>
 
-          <div>
-            <h4 className="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Platform</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/journals" className="hover:text-primary-400 transition-colors">Browse Journals</Link></li>
-              <li><Link to="/about" className="hover:text-primary-400 transition-colors">About Us</Link></li>
-              <li><Link to="/open-access" className="hover:text-primary-400 transition-colors">Open Access Policy</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Contact</h4>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-primary-500" />
-                <a href="mailto:info@innovinc.org" className="hover:text-primary-400 transition-colors">info@innovinc.org</a>
-              </li>
-              <li>New York, NY 10012, USA</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="mt-8 pt-6 border-t border-navy-800 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; {new Date().getFullYear()} InnovInc Publishing. All rights reserved.</p>
-          <div className="mt-2 md:mt-0">
-            <span className="text-gray-600">ISSN 2456-XXXX</span>
+          {/* Quick links & contact on the right */}
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            <Link to="/journals" className="hover:text-primary-400 transition-colors font-medium">Journals</Link>
+            <Link to="/editorial-board" className="hover:text-primary-400 transition-colors font-medium">Editorial Board</Link>
+            <Link to="/about" className="hover:text-primary-400 transition-colors font-medium">About</Link>
+            <a href="mailto:info@innovinc.org" className="hover:text-primary-400 transition-colors flex items-center gap-1 font-medium">
+              <Mail className="w-3.5 h-3.5 text-primary-500 shrink-0" /> info@innovinc.org
+            </a>
           </div>
         </div>
       </div>
     </footer>
   )
 }
+

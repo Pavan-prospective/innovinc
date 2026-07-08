@@ -22,25 +22,35 @@ export default function About() {
     <div className="flex flex-col bg-white">
       
       {/* Header */}
-      <section className="bg-navy-950 text-white pt-24 pb-20 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
+      <section className="bg-navy-950 text-white pt-24 pb-20 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&q=80&w=2500" 
+            className="w-full h-full object-cover opacity-60" 
+            alt="Research Study Background" 
+          />
+          <div className="absolute inset-0 bg-navy-950/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-950 to-transparent"></div>
+        </div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
             About InnovInc Publishing
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto font-medium">
             A leading international publisher dedicated to advancing science through high-quality, open-access, peer-reviewed journals.
           </p>
         </div>
       </section>
 
       {/* Stats Ribbon */}
-      <section className="bg-primary-600 text-white py-8 border-b-4 border-primary-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-primary-500">
+      <section className="bg-navy-950 text-white py-12 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,163,89,0.1),transparent_70%)]"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-white/10">
             {stats.map((stat, i) => (
               <div key={i} className="flex flex-col items-center">
-                <div className="text-3xl font-bold mb-1">{stat.value}</div>
-                <div className="text-sm text-primary-100 uppercase tracking-wider">{stat.label}</div>
+                <div className="text-4xl font-extrabold mb-1 bg-gradient-to-r from-primary-400 to-primary-200 bg-clip-text text-transparent">{stat.value}</div>
+                <div className="text-xs text-gray-400 uppercase tracking-widest font-bold mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
