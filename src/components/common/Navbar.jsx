@@ -10,8 +10,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Journals', path: '/journals' },
-    { name: 'Editorial Board', path: '/editorial-board' },
+    { name: 'All Journals', path: '/journals' },
     { name: 'About', path: '/about' },
   ]
 

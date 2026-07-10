@@ -12,67 +12,282 @@ export const CATEGORIES = [
 export const JOURNALS = [
   {
     id: 'j1',
-    title: 'Journal of Global Cancer Research',
-    category: 'Medicine & Health',
+    title: 'Innovinc in Acoustics',
+    category: 'Engineering',
     impactFactor: '4.5',
     latestIssue: 'Vol. 12, Issue 4 (2025)',
-    description: 'A peer-reviewed, open access journal dedicated to publishing clinical research, reviews, and clinical studies in global oncology and cancer treatments.',
-    coverImage: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=400',
+    description: 'Covering all areas of acoustics, including metamaterials, noise control, and sound perception.',
+    coverImage: 'https://images.unsplash.com/photo-1598520106830-8c45c2035460?auto=format&fit=crop&q=80&w=400',
+    backgroundImage: 'https://images.unsplash.com/photo-1598520106830-8c45c2035460?auto=format&fit=crop&q=80&w=2500',
     issn: '2456-1111',
-    editors: 'Sandeep Kumar Singh and Ricardo Maccioni',
+    editors: 'Massimo Ruzzene',
+    chiefEditor: { name: 'Massimo Ruzzene', affiliation: 'University of Colorado Boulder, Boulder, United States' },
+    stats: { sections: 4, articles: 37, views: 135001 },
     publishedYear: '2024',
-    imprint: 'Academic Press',
+    imprint: 'InnovInc Press',
     language: 'English',
-    isbn: '978-0-443-15540-6',
-    doi: '10.1016/C2022-0-01757-8'
+    sections: [
+      { name: 'Acoustic Materials, Noise Control and Sound Perception', path: '/journals/j1/sections/acoustic-materials' },
+      { name: 'Acoustic Metamaterials', path: '/journals/j1/sections/acoustic-metamaterials' },
+      { name: 'Acoustofluidics', path: '/journals/j1/sections/acoustofluidics' },
+      { name: 'Ultrasound Technologies', path: '/journals/j1/sections/ultrasound-technologies' }
+    ],
+    aboutJournal: [
+      { name: 'Scope', path: '/journals/j1/about/scope' },
+      { name: 'Field Chief Editor', path: '/journals/j1/about/field-chief-editor' },
+      { name: 'Mission and Scope', path: '/journals/j1/about/mission-and-scope' }
+    ],
+    forAuthors: [
+      { name: 'Author Guidelines', path: '/journals/j1/authors/author-guidelines' },
+      { name: 'Publishing Fees', path: '/journals/j1/authors/publishing-fees' }
+    ]
   },
   {
     id: 'j2',
-    title: 'Journal of Artificial Intelligence Research',
-    category: 'Artificial Intelligence',
+    title: 'Innovinc in Cancer Epidemiology',
+    category: 'Medicine & Health',
     impactFactor: '7.2',
     latestIssue: 'Vol. 8, Issue 1 (2025)',
-    description: 'Dedicated to the dissemination of important research results to the global AI community, covering learning systems, neural architectures, and automation.',
-    coverImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=400',
+    description: 'Cancer Epidemiology explores the patterns, causes, and global burden of cancer across diverse populations.',
+    coverImage: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=400',
+    backgroundImage: 'https://images.unsplash.com/photo-1532187863486-abf9db5148d3?auto=format&fit=crop&q=80&w=2500',
     issn: '2456-2222',
-    editors: 'Dr. Sarah Chen and Prof. David Kim',
+    editors: 'Sarah Chen',
+    chiefEditor: { name: 'Dr. Sarah Chen', affiliation: 'Stanford University School of Medicine, United States' },
+    stats: { sections: 6, articles: 124, views: 504200 },
     publishedYear: '2025',
     imprint: 'InnovInc Tech Press',
     language: 'English',
-    isbn: '978-0-123-45678-9',
-    doi: '10.1016/C2025-0-09876-1'
+    sections: [
+      { name: 'Cancer Biomarkers', path: '/journals/j2/sections/biomarkers' },
+      { name: 'Population Genetics', path: '/journals/j2/sections/genetics' },
+      { name: 'Environmental Oncology', path: '/journals/j2/sections/environmental' }
+    ],
+    aboutJournal: [
+      { name: 'Scope', path: '/journals/j2/about/scope' },
+      { name: 'Editorial Board', path: '/journals/j2/about/editorial-board' }
+    ],
+    forAuthors: [
+      { name: 'Author Guidelines', path: '/journals/j2/authors/author-guidelines' }
+    ]
   },
   {
     id: 'j3',
-    title: 'Global Environmental Science Advances',
-    category: 'Environmental Science',
+    title: 'Acta Biochimica Polonica',
+    category: 'Biology',
     impactFactor: '5.8',
     latestIssue: 'Vol. 3, Issue 2 (2025)',
-    description: 'Focuses on the most significant research spanning the entire spectrum of environmental sciences, climatology, and sustainable engineering.',
-    coverImage: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=400',
+    description: 'Acta Biochimica Polonica (ABP) is the Open Access journal publishing research on enzymology, metabolism, membranes and bioenergetics.',
+    coverImage: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=400',
+    backgroundImage: 'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=2500',
     issn: '2456-3333',
-    editors: 'Dr. Elena Rodriguez and Prof. Michael Roberts',
+    editors: 'Michael Roberts',
+    chiefEditor: { name: 'Prof. Michael Roberts', affiliation: 'University of Oxford, United Kingdom' },
+    stats: { sections: 3, articles: 89, views: 250000 },
     publishedYear: '2024',
-    imprint: 'EcoScience Publishers',
+    imprint: 'InnovInc Press',
     language: 'English',
-    isbn: '978-1-890-12345-6',
-    doi: '10.1016/C2024-1-12480-4'
+    sections: [
+      { name: 'Enzymology', path: '/journals/j3/sections/enzymology' },
+      { name: 'Bioenergetics', path: '/journals/j3/sections/bioenergetics' },
+      { name: 'Macromolecules', path: '/journals/j3/sections/macromolecules' }
+    ],
+    aboutJournal: [
+      { name: 'Scope', path: '/journals/j3/about/scope' }
+    ],
+    forAuthors: [
+      { name: 'Submission Checklist', path: '/journals/j3/authors/checklist' }
+    ]
   },
   {
     id: 'j4',
-    title: 'Innovations in Engineering',
-    category: 'Engineering',
+    title: 'Innovinc in Artificial Intelligence',
+    category: 'Computer Science',
+    impactFactor: '8.9',
+    latestIssue: 'Vol. 2, Issue 6 (2025)',
+    description: 'Pioneering research in deep learning, neural networks, natural language processing, and computer vision.',
+    coverImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=400',
+    backgroundImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=2500',
+    issn: '2456-4444',
+    editors: 'Elena Rodriguez',
+    chiefEditor: { name: 'Dr. Elena Rodriguez', affiliation: 'MIT, United States' },
+    stats: { sections: 8, articles: 210, views: 890120 },
+    publishedYear: '2025',
+    imprint: 'InnovInc Press',
+    language: 'English',
+    sections: [
+      { name: 'Machine Learning', path: '/journals/j4/sections/ml' },
+      { name: 'Computer Vision', path: '/journals/j4/sections/cv' },
+      { name: 'Robotics', path: '/journals/j4/sections/robotics' }
+    ],
+    aboutJournal: [
+      { name: 'Scope', path: '/journals/j4/about/scope' }
+    ],
+    forAuthors: [
+      { name: 'Author Guidelines', path: '/journals/j4/authors/author-guidelines' }
+    ]
+  },
+  {
+    id: 'j5',
+    title: 'Molecular Oncology & Cancer Genomics',
+    category: 'Medicine & Health',
+    impactFactor: '7.2',
+    latestIssue: 'Vol. 8, Issue 1 (2025)',
+    description: 'Molecular Oncology and Cancer Genomics explore the genetic and molecular mechanisms that drive cancer development, progression, and treatment response. Advances in genomic sequencing, biomarker discovery, and precision medicine have transformed cancer diagnosis by enabling personalized therapeutic strategies tailored to individual patients.',
+    coverImage: 'https://images.unsplash.com/photo-1532187863486-abf9db5148d3?auto=format&fit=crop&q=80&w=400',
+    backgroundImage: 'https://images.unsplash.com/photo-1532187863486-abf9db5148d3?auto=format&fit=crop&q=80&w=2500',
+    issn: '2456-2222',
+    editors: 'Editorial Board',
+    chiefEditor: { name: 'Dr. John Doe', affiliation: 'Harvard University, United States' },
+    stats: { sections: 3, articles: 56, views: 240500 },
+    publishedYear: '2025',
+    imprint: 'InnovInc Tech Press',
+    language: 'English',
+    sections: [
+      { name: 'Tumor Biology', path: '/journals/j5/sections/tumor-biology' },
+      { name: 'Genetic Mechanisms', path: '/journals/j5/sections/genetic-mechanisms' },
+      { name: 'Biomarkers', path: '/journals/j5/sections/biomarkers' }
+    ],
+    aboutJournal: [ { name: 'Scope', path: '/journals/j5/about/scope' } ],
+    forAuthors: [ { name: 'Author Guidelines', path: '/journals/j5/authors/author-guidelines' } ]
+  },
+  {
+    id: 'j6',
+    title: 'Cancer Prevention & Early Detection',
+    category: 'Medicine & Health',
+    impactFactor: '5.8',
+    latestIssue: 'Vol. 3, Issue 2 (2025)',
+    description: 'Cancer Prevention and Early Detection focus on reducing cancer risk and improving survival through proactive healthcare strategies, lifestyle interventions, and advanced screening technologies. Research in this field explores risk factors, genetic predisposition, environmental influences, and preventive measures.',
+    coverImage: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=400',
+    backgroundImage: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=2500',
+    issn: '2456-3333',
+    editors: 'Editorial Board',
+    chiefEditor: { name: 'Dr. Jane Smith', affiliation: 'Yale University, United States' },
+    stats: { sections: 4, articles: 89, views: 320000 },
+    publishedYear: '2024',
+    imprint: 'InnovInc Press',
+    language: 'English',
+    sections: [
+      { name: 'Screening Programs', path: '/journals/j6/sections/screening-programs' },
+      { name: 'Risk Reduction', path: '/journals/j6/sections/risk-reduction' }
+    ],
+    aboutJournal: [ { name: 'Scope', path: '/journals/j6/about/scope' } ],
+    forAuthors: [ { name: 'Author Guidelines', path: '/journals/j6/authors/author-guidelines' } ]
+  },
+  {
+    id: 'j7',
+    title: 'Surgical Oncology',
+    category: 'Medicine & Health',
     impactFactor: '3.9',
     latestIssue: 'Vol. 15, Issue 6 (2025)',
-    description: 'Publishing cutting-edge research across all engineering disciplines, from structural designs to materials science and fluid dynamics.',
-    coverImage: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=400',
+    description: 'Surgical Oncology is a specialized field dedicated to the diagnosis, staging, and surgical management of cancer. It plays a vital role in the treatment of solid tumors through advanced surgical techniques aimed at achieving complete tumor removal while preserving organ function and improving patient quality of life.',
+    coverImage: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=400',
+    backgroundImage: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=2500',
     issn: '2456-4444',
-    editors: 'Dr. James Wilson and Prof. John Smith',
+    editors: 'Editorial Board',
+    chiefEditor: { name: 'Dr. Alan Grant', affiliation: 'Johns Hopkins, United States' },
+    stats: { sections: 5, articles: 110, views: 450000 },
     publishedYear: '2025',
-    imprint: 'Academic Engineering Press',
+    imprint: 'InnovInc Press',
     language: 'English',
-    isbn: '978-0-802-12490-8',
-    doi: '10.1016/C2025-2-04561-2'
+    sections: [
+      { name: 'Surgical Techniques', path: '/journals/j7/sections/surgical-techniques' },
+      { name: 'Minimally Invasive Approaches', path: '/journals/j7/sections/minimally-invasive' }
+    ],
+    aboutJournal: [ { name: 'Scope', path: '/journals/j7/about/scope' } ],
+    forAuthors: [ { name: 'Author Guidelines', path: '/journals/j7/authors/author-guidelines' } ]
+  },
+  {
+    id: 'j8',
+    title: 'Radiation Oncology',
+    category: 'Medicine & Health',
+    impactFactor: '4.1',
+    latestIssue: 'Vol. 5, Issue 2 (2025)',
+    description: 'Radiation Oncology is a specialized branch of cancer treatment that uses high-energy radiation to destroy cancer cells, shrink tumors, and prevent disease recurrence while minimizing damage to surrounding healthy tissues.',
+    coverImage: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=400',
+    backgroundImage: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=2500',
+    issn: '2456-5555',
+    editors: 'Editorial Board',
+    chiefEditor: { name: 'Dr. Marie Curie', affiliation: 'Institut Curie, France' },
+    stats: { sections: 3, articles: 45, views: 180000 },
+    publishedYear: '2024',
+    imprint: 'InnovInc Press',
+    language: 'English',
+    sections: [
+      { name: 'Radiotherapy Techniques', path: '/journals/j8/sections/radiotherapy-techniques' },
+      { name: 'Treatment Planning', path: '/journals/j8/sections/treatment-planning' }
+    ],
+    aboutJournal: [ { name: 'Scope', path: '/journals/j8/about/scope' } ],
+    forAuthors: [ { name: 'Author Guidelines', path: '/journals/j8/authors/author-guidelines' } ]
+  },
+  {
+    id: 'j9',
+    title: 'Medical Oncology & Chemotherapy',
+    category: 'Medicine & Health',
+    impactFactor: '6.5',
+    latestIssue: 'Vol. 10, Issue 1 (2025)',
+    description: 'Medical Oncology and Chemotherapy focus on the diagnosis, systemic treatment, and comprehensive management of cancer using anticancer drugs, including chemotherapy, targeted therapies, immunotherapies, and hormone therapies.',
+    coverImage: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=400',
+    backgroundImage: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=2500',
+    issn: '2456-6666',
+    editors: 'Editorial Board',
+    chiefEditor: { name: 'Dr. Robert Koch', affiliation: 'Charite, Germany' },
+    stats: { sections: 4, articles: 120, views: 500000 },
+    publishedYear: '2025',
+    imprint: 'InnovInc Press',
+    language: 'English',
+    sections: [
+      { name: 'Systemic Therapies', path: '/journals/j9/sections/systemic-therapies' },
+      { name: 'Drug Resistance', path: '/journals/j9/sections/drug-resistance' }
+    ],
+    aboutJournal: [ { name: 'Scope', path: '/journals/j9/about/scope' } ],
+    forAuthors: [ { name: 'Author Guidelines', path: '/journals/j9/authors/author-guidelines' } ]
+  },
+  {
+    id: 'j10',
+    title: 'Immuno-Oncology & Targeted Therapies',
+    category: 'Medicine & Health',
+    impactFactor: '8.3',
+    latestIssue: 'Vol. 2, Issue 4 (2025)',
+    description: 'Immuno-Oncology and Targeted Therapies represent transformative approaches in modern cancer treatment by harnessing the bodys immune system and targeting specific molecular pathways involved in tumor growth and progression.',
+    coverImage: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80&w=400',
+    backgroundImage: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80&w=2500',
+    issn: '2456-7777',
+    editors: 'Editorial Board',
+    chiefEditor: { name: 'Dr. James Allison', affiliation: 'MD Anderson, United States' },
+    stats: { sections: 5, articles: 150, views: 650000 },
+    publishedYear: '2024',
+    imprint: 'InnovInc Press',
+    language: 'English',
+    sections: [
+      { name: 'Immunotherapy', path: '/journals/j10/sections/immunotherapy' },
+      { name: 'Checkpoint Inhibitors', path: '/journals/j10/sections/checkpoint-inhibitors' }
+    ],
+    aboutJournal: [ { name: 'Scope', path: '/journals/j10/about/scope' } ],
+    forAuthors: [ { name: 'Author Guidelines', path: '/journals/j10/authors/author-guidelines' } ]
+  },
+  {
+    id: 'j11',
+    title: 'Pediatric & Rare Cancers',
+    category: 'Medicine & Health',
+    impactFactor: '5.2',
+    latestIssue: 'Vol. 7, Issue 3 (2025)',
+    description: 'Pediatric and Rare Cancers encompass a diverse group of malignancies that require specialized research, diagnosis, and treatment approaches due to their low incidence and unique biological characteristics.',
+    coverImage: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400',
+    backgroundImage: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=2500',
+    issn: '2456-8888',
+    editors: 'Editorial Board',
+    chiefEditor: { name: 'Dr. Sydney Farber', affiliation: 'Dana-Farber, United States' },
+    stats: { sections: 3, articles: 60, views: 210000 },
+    publishedYear: '2025',
+    imprint: 'InnovInc Press',
+    language: 'English',
+    sections: [
+      { name: 'Childhood Malignancies', path: '/journals/j11/sections/childhood-malignancies' },
+      { name: 'Rare Tumor Types', path: '/journals/j11/sections/rare-tumor-types' }
+    ],
+    aboutJournal: [ { name: 'Scope', path: '/journals/j11/about/scope' } ],
+    forAuthors: [ { name: 'Author Guidelines', path: '/journals/j11/authors/author-guidelines' } ]
   }
 ]
 

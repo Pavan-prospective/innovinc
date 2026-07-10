@@ -1,10 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useParams } from 'react-router-dom'
 import { ShieldCheck, Mail, Globe, Award, BookOpen, Users, GraduationCap, Star } from 'lucide-react'
 import { Card, CardContent } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
 import { Button } from '../components/ui/Button'
 
+// ... editors array is unchanged ...
 const editors = [
   {
     name: 'Dr. Sarah Chen',
@@ -72,49 +74,54 @@ const editors = [
 ]
 
 export default function Editors() {
-  return (
-    <div className="min-h-screen bg-gray-50 pb-20">
-      {/* Premium Hero Header */}
-      <section className="bg-navy-950 text-white relative py-20 overflow-hidden">
-        <div className="absolute inset-0 select-none pointer-events-none">
-          <img 
-            src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=2500" 
-            className="w-full h-full object-cover opacity-30" 
-            alt="Editorial Board Backdrop" 
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 to-navy-900/50"></div>
-        </div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,163,89,0.15),transparent_50%)]"></div>
-        <div className="absolute -bottom-48 -left-48 w-96 h-96 bg-primary-950/40 rounded-full blur-3xl"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex justify-center mb-4"
-          >
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4"
-          >
-            Editorial <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-primary-300 to-amber-200">Board</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed"
-          >
-            Led by globally recognized oncology researchers, clinical practitioners, and academic leaders dedicated to advancing clinical oncology and cancer science.
-          </motion.p>
-        </div>
-      </section>
+  const { journalId } = useParams()
+  const isJournalContext = !!journalId
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-20">
+  return (
+    <div className={`min-h-screen ${isJournalContext ? '' : 'bg-gray-50 pb-20'}`}>
+      
+      {!isJournalContext && (
+        <section className="bg-navy-950 text-white relative py-20 overflow-hidden">
+          <div className="absolute inset-0 select-none pointer-events-none">
+            <img 
+              src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=2500" 
+              className="w-full h-full object-cover opacity-30" 
+              alt="Editorial Board Backdrop" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 to-navy-900/50"></div>
+          </div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,163,89,0.15),transparent_50%)]"></div>
+          <div className="absolute -bottom-48 -left-48 w-96 h-96 bg-primary-950/40 rounded-full blur-3xl"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="flex justify-center mb-4"
+            >
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4"
+            >
+              Editorial <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-primary-300 to-amber-200">Board</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed"
+            >
+              Led by globally recognized oncology researchers, clinical practitioners, and academic leaders dedicated to advancing clinical oncology and cancer science.
+            </motion.p>
+          </div>
+        </section>
+      )}
+
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${isJournalContext ? 'py-12' : 'py-12'} relative z-20`}>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
           {/* Explanation Section */}
