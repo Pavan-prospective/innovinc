@@ -174,56 +174,64 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {journals.map((journal) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {journals.slice(0, 6).map((journal) => (
               <Link key={journal.id} to={`/journals/${journal.id}`} className="group block h-full">
                 <div className="bg-[#f8fafc] rounded-2xl border border-gray-100 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.03)] hover:shadow-xl hover:border-primary-300/70 transition-all duration-300 flex flex-col h-full overflow-hidden relative">
-                  <div className="h-44 overflow-hidden relative shrink-0">
+                  <div className="h-48 overflow-hidden relative shrink-0">
                     <img 
                       src={journal.coverImage} 
                       alt={journal.title} 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/20 to-transparent"></div>
-                    <span className="absolute top-3.5 left-3.5 bg-navy-950/80 text-primary-400 backdrop-blur-md border border-white/10 text-[10px] font-bold uppercase tracking-wider py-0.5 px-2.5 rounded-md">
+                    <span className="absolute top-4 left-4 bg-navy-950/80 text-primary-400 backdrop-blur-md border border-white/10 text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-md">
                       {journal.category}
                     </span>
                   </div>
                   <div className="p-6 flex flex-col justify-between flex-grow">
                     <div>
-                      <h3 className="font-bold text-navy-950 group-hover:text-primary-600 transition-colors text-sm line-clamp-2 leading-snug">
+                      <h3 className="font-bold text-navy-950 group-hover:text-primary-600 transition-colors text-lg line-clamp-2 leading-snug">
                         {journal.title}
                       </h3>
-                      <p className="text-[10px] text-gray-500 font-semibold mt-1">Editors: {journal.editors || 'Editorial Board'}</p>
+                      <p className="text-[11px] text-gray-500 font-semibold mt-1">Editors: {journal.editors || 'Editorial Board'}</p>
                       
-                      <div className="flex gap-3 mt-2 text-[10px] font-semibold">
+                      <div className="flex gap-4 mt-3 text-[11px] font-semibold">
                         <span className="inline-flex items-center gap-1 text-gray-500">
-                          <Eye className="w-3 h-3 text-gray-400" />
+                          <Eye className="w-3.5 h-3.5 text-gray-400" />
                           {(Math.floor(Math.random() * 5000) + 1000).toLocaleString()} <span className="text-gray-400 font-normal">views</span>
                         </span>
                         <span className="inline-flex items-center gap-1 text-gray-500">
-                          <BarChart3 className="w-3 h-3 text-gray-400" />
+                          <BarChart3 className="w-3.5 h-3.5 text-gray-400" />
                           {(Math.floor(Math.random() * 15000) + 5000).toLocaleString()} <span className="text-gray-400 font-normal">impressions</span>
                         </span>
                       </div>
                       
-                      <p className="text-[11px] text-gray-500 mt-2.5 line-clamp-2 leading-relaxed">
+                      <p className="text-xs text-gray-500 mt-3 line-clamp-2 leading-relaxed">
                         {journal.description}
                       </p>
                     </div>
 
-                    <div className="mt-5 pt-4 border-t border-gray-100/60 flex items-center justify-between">
-                      <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">
-                        Impact: <span className="text-primary-700 font-extrabold">{journal.impactFactor}</span>
+                    <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                      <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+                        Impact: <span className="text-primary-700 font-extrabold text-sm">{journal.impactFactor}</span>
                       </span>
                       <span className="text-xs font-bold text-primary-600 flex items-center group-hover:text-primary-700">
-                        View Details <ChevronRight className="w-3.5 h-3.5 ml-0.5 group-hover:translate-x-0.5 transition-transform" />
+                        View Details <ChevronRight className="w-4 h-4 ml-0.5 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </div>
                   </div>
                 </div>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-14 flex justify-center">
+            <Link to="/journals">
+              <Button className="rounded-full px-10 bg-navy-900 hover:bg-navy-950 text-white font-bold h-12 shadow-[0_8px_20px_-4px_rgba(15,23,42,0.3)] hover:shadow-[0_12px_25px_-4px_rgba(15,23,42,0.4)] transition-all flex items-center gap-2">
+                View All Journals <ChevronRight className="w-4 h-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
