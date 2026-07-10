@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Outlet } from 'react-router-dom'
-import { Share2 } from 'lucide-react'
+import { Link, useParams, Outlet, useLocation } from 'react-router-dom'
+import { Share2, ChevronRight, Activity, BarChart3, BookOpen } from 'lucide-react'
 import { Button } from '../components/ui/Button'
 import { JournalNavbar } from '../components/common/JournalNavbar'
 import { api } from '../api/apiClient'
+import { journalPath } from '../utils/journalUtils'
 
 export function JournalLayout() {
   const { journalId } = useParams()
+  const location = useLocation()
   const [journal, setJournal] = useState(null)
   const [loading, setLoading] = useState(true)
+
+  const isOverview = location.pathname === journalPath(journalId)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +20,7 @@ export function JournalLayout() {
         const journalData = await api.journals.getById(journalId)
         setJournal(journalData)
       } catch (error) {
-        console.error("Failed to fetch journal details", error)
+        console.error('Failed to fetch journal details', error)
       } finally {
         setLoading(false)
       }
@@ -27,83 +31,105 @@ export function JournalLayout() {
   if (loading) {
     return (
       <div className="min-h-[70vh] flex items-center justify-center">
-        <div className="w-12 h-12 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin" />
       </div>
     )
   }
 
   if (!journal) {
-    return <div className="text-center py-20 text-2xl font-bold">Journal not found</div>
+    return <div className="text-center py-20 text-2xl font-bold text-navy-950">Journal not found</div>
   }
 
   return (
-    <div className="flex flex-col bg-gray-50 min-h-screen">
+    <div className="flex flex-col bg-[#f8fafc] min-h-screen">
       <JournalNavbar journal={journal} />
-      
-      {/* Journal Banner */}
-      <section className="bg-navy-950 text-white pt-32 pb-16 relative overflow-hidden">
-        {/* Backdrop Image */}
-        <div className="absolute inset-0">
-          <img 
-            src={journal.backgroundImage || 'https://images.unsplash.com/photo-1614935151651-0bea6508abb0?auto=format&fit=crop&q=80&w=2500'} 
-            className="w-full h-full object-cover opacity-20" 
-            alt="Journal Backdrop" 
-          />
-          <div className="absolute inset-0 bg-navy-950/70"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-950 to-transparent"></div>
-        </div>
 
-        {/* Glow effect */}
-        <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] bg-primary-600/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col md:flex-row gap-8 items-start">
-            <div className="w-48 h-64 shrink-0 rounded-xl overflow-hidden border border-navy-800 shadow-2xl relative">
-              <img src={journal.coverImage} alt={journal.title} className="w-full h-full object-cover opacity-80" />
+      {isOverview ? (
+        <section className="relative min-h-[400px] flex flex-col justify-center bg-navy-950 overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src={journal.backgroundImage || "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=2500"}
+              className="w-full h-full object-cover opacity-50 mix-blend-overlay"
+              alt=""
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/80 to-navy-900/40" />
+          </div>
+          
+          <div className="relative z-10 w-full flex flex-col">
+            <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mt-12 mb-10">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 tracking-tight leading-[1.1] drop-shadow-lg">{journal.title}</h1>
+              {journal.society && (
+                <p className="text-gray-300 text-lg md:text-xl font-medium max-w-2xl leading-relaxed drop-shadow">
+                  Published in partnership with <span className="text-white font-bold">{journal.society}</span>.
+                </p>
+              )}
             </div>
-            <div className="flex-grow">
-              <h1 className="text-3xl md:text-5xl font-black mb-2 tracking-tight leading-tight">{journal.title}</h1>
-              
-              <div className="flex flex-col sm:flex-row gap-x-6 gap-y-2 mb-6 text-sm text-gray-300">
-                <p className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-primary-500 inline-block animate-pulse"></span>
-                  <strong className="text-white">Editors:</strong> {journal.editors || 'Editorial Office'}
-                </p>
-                <p className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-accent-500 inline-block"></span>
-                  <strong className="text-white">Lead Authors:</strong> Dr. A. Smith, Dr. B. Johnson
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-6 text-sm text-gray-300 mb-8 font-medium">
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold text-white">ISSN:</span> {journal.issn}
+
+            <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mb-8">
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-5 md:p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+                
+                <div className="flex flex-wrap justify-center md:justify-start items-center gap-8 md:gap-16 pl-2 md:pl-4">
+                  {journal.impactFactor && (
+                    <div className="group flex flex-col items-center md:items-start">
+                      <div className="flex items-baseline gap-1.5">
+                        <Activity className="w-5 h-5 text-primary-400 group-hover:text-primary-300 transition-colors" />
+                        <span className="text-3xl font-black text-white tracking-tight">{journal.impactFactor}</span>
+                      </div>
+                      <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Impact Factor</div>
+                    </div>
+                  )}
+                  
+                  {journal.impactFactor && journal.citeScore && (
+                    <div className="hidden md:block w-px h-12 bg-white/10"></div>
+                  )}
+                  
+                  {journal.citeScore && (
+                    <div className="group flex flex-col items-center md:items-start">
+                      <div className="flex items-baseline gap-1.5">
+                        <BarChart3 className="w-5 h-5 text-primary-400 group-hover:text-primary-300 transition-colors" />
+                        <span className="text-3xl font-black text-white tracking-tight">{journal.citeScore}</span>
+                      </div>
+                      <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">CiteScore</div>
+                    </div>
+                  )}
+
+                  <div className="hidden md:block w-px h-12 bg-white/10"></div>
+                  
+                  <div className="group flex flex-col items-center md:items-start hidden sm:flex">
+                    <div className="flex items-baseline gap-1.5">
+                      <BookOpen className="w-5 h-5 text-primary-400 group-hover:text-primary-300 transition-colors" />
+                      <span className="text-3xl font-black text-white tracking-tight">{journal.stats?.articles?.toLocaleString() || "1,204"}</span>
+                    </div>
+                    <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Articles</div>
+                  </div>
                 </div>
-                <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold text-white">Impact Factor:</span> <span className="text-primary-400 font-bold">{journal.impactFactor}</span>
-                </div>
-                <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold text-white">Latest Issue:</span> {journal.latestIssue}
-                </div>
-              </div>
-              
-              <div className="flex flex-wrap gap-4">
-                <Button 
-                  className="px-6 rounded-xl bg-primary-500 hover:bg-primary-600 text-navy-950 font-bold border-none transition-all shadow-md shadow-primary-500/20"
+
+                <Link 
+                  to={journalPath(journalId, 'submit')} 
+                  className="w-full md:w-auto relative group overflow-hidden rounded-2xl bg-primary-600 hover:bg-primary-500 text-white font-bold px-8 py-4 flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(212,163,89,0.2)] hover:shadow-[0_0_30px_rgba(212,163,89,0.4)]"
                 >
-                  Submit to Journal
-                </Button>
-                <Button variant="outline" className="px-6 rounded-xl text-white border-white/20 hover:bg-white hover:text-navy-950 transition-colors gap-2">
-                  <Share2 className="w-4 h-4" /> Share
-                </Button>
+                  <span className="relative z-10 flex items-center gap-2 text-sm uppercase tracking-wide">
+                    Submit Manuscript <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+                
               </div>
             </div>
           </div>
+        </section>
+      ) : (
+        <div className="bg-white border-b border-gray-200 pt-6 pb-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav className="flex items-center gap-1.5 text-xs text-gray-500 mb-2">
+              <Link to="/journals" className="hover:text-primary-700">Journals</Link>
+              <ChevronRight className="w-3 h-3" />
+              <Link to={journalPath(journalId)} className="hover:text-primary-700 truncate max-w-[200px]">{journal.title}</Link>
+            </nav>
+            <h1 className="text-xl font-bold text-navy-950">{journal.title}</h1>
+          </div>
         </div>
-      </section>
+      )}
 
-      {/* Sub-page content */}
       <Outlet context={{ journal }} />
     </div>
   )

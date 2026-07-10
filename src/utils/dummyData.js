@@ -12,11 +12,13 @@ export const CATEGORIES = [
 export const JOURNALS = [
   {
     id: 'j1',
-    title: 'Innovinc in Acoustics',
-    category: 'Engineering',
+    title: 'Journal of Global Cancer Research',
+    category: 'Medicine & Health',
     impactFactor: '4.5',
+    citeScore: '5.1',
     latestIssue: 'Vol. 12, Issue 4 (2025)',
-    description: 'Covering all areas of acoustics, including metamaterials, noise control, and sound perception.',
+    society: 'InnovInc Oncology Research Network',
+    description: 'Journal of Global Cancer Research publishes cutting-edge discoveries, clinical advancements, and translational research in oncology. Our mission is to connect researchers, clinicians, and healthcare professionals worldwide.',
     coverImage: 'https://images.unsplash.com/photo-1598520106830-8c45c2035460?auto=format&fit=crop&q=80&w=400',
     backgroundImage: 'https://images.unsplash.com/photo-1598520106830-8c45c2035460?auto=format&fit=crop&q=80&w=2500',
     issn: '2456-1111',
@@ -27,27 +29,30 @@ export const JOURNALS = [
     imprint: 'InnovInc Press',
     language: 'English',
     sections: [
-      { name: 'Acoustic Materials, Noise Control and Sound Perception', path: '/journals/j1/sections/acoustic-materials' },
-      { name: 'Acoustic Metamaterials', path: '/journals/j1/sections/acoustic-metamaterials' },
-      { name: 'Acoustofluidics', path: '/journals/j1/sections/acoustofluidics' },
-      { name: 'Ultrasound Technologies', path: '/journals/j1/sections/ultrasound-technologies' }
+      { name: 'Addiction in Adolescents', slug: 'addiction-in-adolescents' },
+      { name: 'Adolescent Endocrinology', slug: 'adolescent-endocrinology' },
+      { name: 'Adolescent and Young Adult Oncology', slug: 'adolescent-and-young-adult-oncology' },
+      { name: 'Obesity and Nutrition in Adolescents', slug: 'obesity-and-nutrition-in-adolescents' }
     ],
-    aboutJournal: [
-      { name: 'Scope', path: '/journals/j1/about/scope' },
-      { name: 'Field Chief Editor', path: '/journals/j1/about/field-chief-editor' },
-      { name: 'Mission and Scope', path: '/journals/j1/about/mission-and-scope' }
+    specialIssues: [
+      { id: 'si1', title: 'Immunotherapy Advances in Solid Tumors', status: 'Submission open', editors: ['Dr. Sarah Chen', 'Prof. Michael Roberts'] },
+      { id: 'si2', title: 'Global Cancer Disparities and Health Equity', status: 'Submission open', editors: ['Dr. Elena Rodriguez'] },
+      { id: 'si3', title: 'AI-Driven Oncology Diagnostics', status: 'Coming soon', editors: ['Dr. James Wilson'] },
     ],
-    forAuthors: [
-      { name: 'Author Guidelines', path: '/journals/j1/authors/author-guidelines' },
-      { name: 'Publishing Fees', path: '/journals/j1/authors/publishing-fees' }
-    ]
+    volumes: [
+      { id: 'v73', label: 'Volume 12 - 2026' },
+      { id: 'v72', label: 'Volume 11 - 2025' },
+      { id: 'v71', label: 'Volume 10 - 2024' },
+    ],
   },
   {
     id: 'j2',
     title: 'Innovinc in Cancer Epidemiology',
     category: 'Medicine & Health',
     impactFactor: '7.2',
+    citeScore: '6.8',
     latestIssue: 'Vol. 8, Issue 1 (2025)',
+    society: 'International Cancer Epidemiology Consortium',
     description: 'Cancer Epidemiology explores the patterns, causes, and global burden of cancer across diverse populations.',
     coverImage: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=400',
     backgroundImage: 'https://images.unsplash.com/photo-1532187863486-abf9db5148d3?auto=format&fit=crop&q=80&w=2500',
@@ -59,52 +64,61 @@ export const JOURNALS = [
     imprint: 'InnovInc Tech Press',
     language: 'English',
     sections: [
-      { name: 'Cancer Biomarkers', path: '/journals/j2/sections/biomarkers' },
-      { name: 'Population Genetics', path: '/journals/j2/sections/genetics' },
-      { name: 'Environmental Oncology', path: '/journals/j2/sections/environmental' }
+      { name: 'Addiction in Adolescents', slug: 'addiction-in-adolescents' },
+      { name: 'Adolescent Endocrinology', slug: 'adolescent-endocrinology' },
+      { name: 'Adolescent and Young Adult Oncology', slug: 'adolescent-and-young-adult-oncology' },
+      { name: 'Obesity and Nutrition in Adolescents', slug: 'obesity-and-nutrition-in-adolescents' }
     ],
-    aboutJournal: [
-      { name: 'Scope', path: '/journals/j2/about/scope' },
-      { name: 'Editorial Board', path: '/journals/j2/about/editorial-board' }
+    specialIssues: [
+      { id: 'si1', title: 'Global Cancer Burden Mapping', status: 'Submission open', editors: ['Dr. Sarah Chen'] },
     ],
-    forAuthors: [
-      { name: 'Author Guidelines', path: '/journals/j2/authors/author-guidelines' }
-    ]
+    volumes: [
+      { id: 'v8', label: 'Volume 8 - 2025' },
+      { id: 'v7', label: 'Volume 7 - 2024' },
+    ],
   },
   {
     id: 'j3',
     title: 'Acta Biochimica Polonica',
     category: 'Biology',
-    impactFactor: '5.8',
-    latestIssue: 'Vol. 3, Issue 2 (2025)',
-    description: 'Acta Biochimica Polonica (ABP) is the Open Access journal publishing research on enzymology, metabolism, membranes and bioenergetics.',
+    impactFactor: '2.2',
+    citeScore: '4.8',
+    latestIssue: 'Vol. 73, Issue 2 (2026)',
+    society: 'Polish Biochemical Society',
+    description: 'Acta Biochimica Polonica (ABP) is the Open Access journal of the Polish Biochemical Society. ABP publishes research on enzymology and metabolism, membranes and bioenergetics, gene structure and expression, and macromolecules structure and metabolism.',
     coverImage: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=400',
     backgroundImage: 'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=2500',
     issn: '2456-3333',
     editors: 'Michael Roberts',
-    chiefEditor: { name: 'Prof. Michael Roberts', affiliation: 'University of Oxford, United Kingdom' },
+    chiefEditor: { name: 'Grzegorz Wegrzyn', affiliation: 'University of Gdansk, Gdansk, Poland' },
     stats: { sections: 3, articles: 89, views: 250000 },
     publishedYear: '2024',
     imprint: 'InnovInc Press',
     language: 'English',
     sections: [
-      { name: 'Enzymology', path: '/journals/j3/sections/enzymology' },
-      { name: 'Bioenergetics', path: '/journals/j3/sections/bioenergetics' },
-      { name: 'Macromolecules', path: '/journals/j3/sections/macromolecules' }
+      { name: 'Addiction in Adolescents', slug: 'addiction-in-adolescents' },
+      { name: 'Adolescent Endocrinology', slug: 'adolescent-endocrinology' },
+      { name: 'Adolescent and Young Adult Oncology', slug: 'adolescent-and-young-adult-oncology' },
+      { name: 'Obesity and Nutrition in Adolescents', slug: 'obesity-and-nutrition-in-adolescents' }
     ],
-    aboutJournal: [
-      { name: 'Scope', path: '/journals/j3/about/scope' }
+    specialIssues: [
+      { id: 'si1', title: 'Long non-coding RNAs: cellular pathways and genomic stability', status: 'Submission open', editors: ['Prof. Michael Roberts'] },
+      { id: 'si2', title: 'Evolutionary Genomics of Antimicrobial Resistance', status: 'Submission open', editors: ['Dr. Elena Rodriguez'] },
     ],
-    forAuthors: [
-      { name: 'Submission Checklist', path: '/journals/j3/authors/checklist' }
-    ]
+    volumes: [
+      { id: 'v73', label: 'Volume 73 - 2026' },
+      { id: 'v72', label: 'Volume 72 - 2025' },
+      { id: 'v71', label: 'Volume 71 - 2024' },
+    ],
   },
   {
     id: 'j4',
     title: 'Innovinc in Artificial Intelligence',
     category: 'Computer Science',
     impactFactor: '8.9',
+    citeScore: '9.2',
     latestIssue: 'Vol. 2, Issue 6 (2025)',
+    society: 'InnovInc AI Research Alliance',
     description: 'Pioneering research in deep learning, neural networks, natural language processing, and computer vision.',
     coverImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=400',
     backgroundImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=2500',
@@ -116,23 +130,22 @@ export const JOURNALS = [
     imprint: 'InnovInc Press',
     language: 'English',
     sections: [
-      { name: 'Machine Learning', path: '/journals/j4/sections/ml' },
-      { name: 'Computer Vision', path: '/journals/j4/sections/cv' },
-      { name: 'Robotics', path: '/journals/j4/sections/robotics' }
+      { name: 'Addiction in Adolescents', slug: 'addiction-in-adolescents' },
+      { name: 'Adolescent Endocrinology', slug: 'adolescent-endocrinology' },
+      { name: 'Adolescent and Young Adult Oncology', slug: 'adolescent-and-young-adult-oncology' },
+      { name: 'Obesity and Nutrition in Adolescents', slug: 'obesity-and-nutrition-in-adolescents' }
     ],
-    aboutJournal: [
-      { name: 'Scope', path: '/journals/j4/about/scope' }
-    ],
-    forAuthors: [
-      { name: 'Author Guidelines', path: '/journals/j4/authors/author-guidelines' }
-    ]
+    specialIssues: [],
+    volumes: [{ id: 'v2', label: 'Volume 2 - 2025' }],
   },
   {
     id: 'j5',
     title: 'Molecular Oncology & Cancer Genomics',
     category: 'Medicine & Health',
     impactFactor: '7.2',
+    citeScore: '6.4',
     latestIssue: 'Vol. 8, Issue 1 (2025)',
+    society: 'Global Molecular Oncology Society',
     description: 'Molecular Oncology and Cancer Genomics explore the genetic and molecular mechanisms that drive cancer development, progression, and treatment response. Advances in genomic sequencing, biomarker discovery, and precision medicine have transformed cancer diagnosis by enabling personalized therapeutic strategies tailored to individual patients.',
     coverImage: 'https://images.unsplash.com/photo-1532187863486-abf9db5148d3?auto=format&fit=crop&q=80&w=400',
     backgroundImage: 'https://images.unsplash.com/photo-1532187863486-abf9db5148d3?auto=format&fit=crop&q=80&w=2500',
@@ -144,19 +157,22 @@ export const JOURNALS = [
     imprint: 'InnovInc Tech Press',
     language: 'English',
     sections: [
-      { name: 'Tumor Biology', path: '/journals/j5/sections/tumor-biology' },
-      { name: 'Genetic Mechanisms', path: '/journals/j5/sections/genetic-mechanisms' },
-      { name: 'Biomarkers', path: '/journals/j5/sections/biomarkers' }
+      { name: 'Addiction in Adolescents', slug: 'addiction-in-adolescents' },
+      { name: 'Adolescent Endocrinology', slug: 'adolescent-endocrinology' },
+      { name: 'Adolescent and Young Adult Oncology', slug: 'adolescent-and-young-adult-oncology' },
+      { name: 'Obesity and Nutrition in Adolescents', slug: 'obesity-and-nutrition-in-adolescents' }
     ],
-    aboutJournal: [ { name: 'Scope', path: '/journals/j5/about/scope' } ],
-    forAuthors: [ { name: 'Author Guidelines', path: '/journals/j5/authors/author-guidelines' } ]
+    specialIssues: [],
+    volumes: [{ id: 'v8', label: 'Volume 8 - 2025' }],
   },
   {
     id: 'j6',
     title: 'Cancer Prevention & Early Detection',
     category: 'Medicine & Health',
     impactFactor: '5.8',
+    citeScore: '5.5',
     latestIssue: 'Vol. 3, Issue 2 (2025)',
+    society: 'International Cancer Prevention Alliance',
     description: 'Cancer Prevention and Early Detection focus on reducing cancer risk and improving survival through proactive healthcare strategies, lifestyle interventions, and advanced screening technologies. Research in this field explores risk factors, genetic predisposition, environmental influences, and preventive measures.',
     coverImage: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=400',
     backgroundImage: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=2500',
@@ -168,18 +184,22 @@ export const JOURNALS = [
     imprint: 'InnovInc Press',
     language: 'English',
     sections: [
-      { name: 'Screening Programs', path: '/journals/j6/sections/screening-programs' },
-      { name: 'Risk Reduction', path: '/journals/j6/sections/risk-reduction' }
+      { name: 'Addiction in Adolescents', slug: 'addiction-in-adolescents' },
+      { name: 'Adolescent Endocrinology', slug: 'adolescent-endocrinology' },
+      { name: 'Adolescent and Young Adult Oncology', slug: 'adolescent-and-young-adult-oncology' },
+      { name: 'Obesity and Nutrition in Adolescents', slug: 'obesity-and-nutrition-in-adolescents' }
     ],
-    aboutJournal: [ { name: 'Scope', path: '/journals/j6/about/scope' } ],
-    forAuthors: [ { name: 'Author Guidelines', path: '/journals/j6/authors/author-guidelines' } ]
+    specialIssues: [],
+    volumes: [{ id: 'v3', label: 'Volume 3 - 2025' }],
   },
   {
     id: 'j7',
     title: 'Surgical Oncology',
     category: 'Medicine & Health',
     impactFactor: '3.9',
+    citeScore: '4.2',
     latestIssue: 'Vol. 15, Issue 6 (2025)',
+    society: 'International Society of Surgical Oncology',
     description: 'Surgical Oncology is a specialized field dedicated to the diagnosis, staging, and surgical management of cancer. It plays a vital role in the treatment of solid tumors through advanced surgical techniques aimed at achieving complete tumor removal while preserving organ function and improving patient quality of life.',
     coverImage: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=400',
     backgroundImage: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=2500',
@@ -191,18 +211,22 @@ export const JOURNALS = [
     imprint: 'InnovInc Press',
     language: 'English',
     sections: [
-      { name: 'Surgical Techniques', path: '/journals/j7/sections/surgical-techniques' },
-      { name: 'Minimally Invasive Approaches', path: '/journals/j7/sections/minimally-invasive' }
+      { name: 'Addiction in Adolescents', slug: 'addiction-in-adolescents' },
+      { name: 'Adolescent Endocrinology', slug: 'adolescent-endocrinology' },
+      { name: 'Adolescent and Young Adult Oncology', slug: 'adolescent-and-young-adult-oncology' },
+      { name: 'Obesity and Nutrition in Adolescents', slug: 'obesity-and-nutrition-in-adolescents' }
     ],
-    aboutJournal: [ { name: 'Scope', path: '/journals/j7/about/scope' } ],
-    forAuthors: [ { name: 'Author Guidelines', path: '/journals/j7/authors/author-guidelines' } ]
+    specialIssues: [],
+    volumes: [{ id: 'v15', label: 'Volume 15 - 2025' }],
   },
   {
     id: 'j8',
     title: 'Radiation Oncology',
     category: 'Medicine & Health',
     impactFactor: '4.1',
+    citeScore: '4.6',
     latestIssue: 'Vol. 5, Issue 2 (2025)',
+    society: 'Global Radiation Oncology Network',
     description: 'Radiation Oncology is a specialized branch of cancer treatment that uses high-energy radiation to destroy cancer cells, shrink tumors, and prevent disease recurrence while minimizing damage to surrounding healthy tissues.',
     coverImage: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=400',
     backgroundImage: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=2500',
@@ -214,18 +238,22 @@ export const JOURNALS = [
     imprint: 'InnovInc Press',
     language: 'English',
     sections: [
-      { name: 'Radiotherapy Techniques', path: '/journals/j8/sections/radiotherapy-techniques' },
-      { name: 'Treatment Planning', path: '/journals/j8/sections/treatment-planning' }
+      { name: 'Addiction in Adolescents', slug: 'addiction-in-adolescents' },
+      { name: 'Adolescent Endocrinology', slug: 'adolescent-endocrinology' },
+      { name: 'Adolescent and Young Adult Oncology', slug: 'adolescent-and-young-adult-oncology' },
+      { name: 'Obesity and Nutrition in Adolescents', slug: 'obesity-and-nutrition-in-adolescents' }
     ],
-    aboutJournal: [ { name: 'Scope', path: '/journals/j8/about/scope' } ],
-    forAuthors: [ { name: 'Author Guidelines', path: '/journals/j8/authors/author-guidelines' } ]
+    specialIssues: [],
+    volumes: [{ id: 'v5', label: 'Volume 5 - 2025' }],
   },
   {
     id: 'j9',
     title: 'Medical Oncology & Chemotherapy',
     category: 'Medicine & Health',
     impactFactor: '6.5',
+    citeScore: '6.1',
     latestIssue: 'Vol. 10, Issue 1 (2025)',
+    society: 'International Medical Oncology Society',
     description: 'Medical Oncology and Chemotherapy focus on the diagnosis, systemic treatment, and comprehensive management of cancer using anticancer drugs, including chemotherapy, targeted therapies, immunotherapies, and hormone therapies.',
     coverImage: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=400',
     backgroundImage: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=2500',
@@ -237,18 +265,22 @@ export const JOURNALS = [
     imprint: 'InnovInc Press',
     language: 'English',
     sections: [
-      { name: 'Systemic Therapies', path: '/journals/j9/sections/systemic-therapies' },
-      { name: 'Drug Resistance', path: '/journals/j9/sections/drug-resistance' }
+      { name: 'Addiction in Adolescents', slug: 'addiction-in-adolescents' },
+      { name: 'Adolescent Endocrinology', slug: 'adolescent-endocrinology' },
+      { name: 'Adolescent and Young Adult Oncology', slug: 'adolescent-and-young-adult-oncology' },
+      { name: 'Obesity and Nutrition in Adolescents', slug: 'obesity-and-nutrition-in-adolescents' }
     ],
-    aboutJournal: [ { name: 'Scope', path: '/journals/j9/about/scope' } ],
-    forAuthors: [ { name: 'Author Guidelines', path: '/journals/j9/authors/author-guidelines' } ]
+    specialIssues: [],
+    volumes: [{ id: 'v10', label: 'Volume 10 - 2025' }],
   },
   {
     id: 'j10',
     title: 'Immuno-Oncology & Targeted Therapies',
     category: 'Medicine & Health',
     impactFactor: '8.3',
+    citeScore: '7.8',
     latestIssue: 'Vol. 2, Issue 4 (2025)',
+    society: 'Global Immuno-Oncology Consortium',
     description: 'Immuno-Oncology and Targeted Therapies represent transformative approaches in modern cancer treatment by harnessing the bodys immune system and targeting specific molecular pathways involved in tumor growth and progression.',
     coverImage: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80&w=400',
     backgroundImage: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80&w=2500',
@@ -260,18 +292,22 @@ export const JOURNALS = [
     imprint: 'InnovInc Press',
     language: 'English',
     sections: [
-      { name: 'Immunotherapy', path: '/journals/j10/sections/immunotherapy' },
-      { name: 'Checkpoint Inhibitors', path: '/journals/j10/sections/checkpoint-inhibitors' }
+      { name: 'Addiction in Adolescents', slug: 'addiction-in-adolescents' },
+      { name: 'Adolescent Endocrinology', slug: 'adolescent-endocrinology' },
+      { name: 'Adolescent and Young Adult Oncology', slug: 'adolescent-and-young-adult-oncology' },
+      { name: 'Obesity and Nutrition in Adolescents', slug: 'obesity-and-nutrition-in-adolescents' }
     ],
-    aboutJournal: [ { name: 'Scope', path: '/journals/j10/about/scope' } ],
-    forAuthors: [ { name: 'Author Guidelines', path: '/journals/j10/authors/author-guidelines' } ]
+    specialIssues: [],
+    volumes: [{ id: 'v2', label: 'Volume 2 - 2025' }],
   },
   {
     id: 'j11',
     title: 'Pediatric & Rare Cancers',
     category: 'Medicine & Health',
     impactFactor: '5.2',
+    citeScore: '5.0',
     latestIssue: 'Vol. 7, Issue 3 (2025)',
+    society: 'Pediatric Oncology Research Foundation',
     description: 'Pediatric and Rare Cancers encompass a diverse group of malignancies that require specialized research, diagnosis, and treatment approaches due to their low incidence and unique biological characteristics.',
     coverImage: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400',
     backgroundImage: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=2500',
@@ -283,15 +319,53 @@ export const JOURNALS = [
     imprint: 'InnovInc Press',
     language: 'English',
     sections: [
-      { name: 'Childhood Malignancies', path: '/journals/j11/sections/childhood-malignancies' },
-      { name: 'Rare Tumor Types', path: '/journals/j11/sections/rare-tumor-types' }
+      { name: 'Addiction in Adolescents', slug: 'addiction-in-adolescents' },
+      { name: 'Adolescent Endocrinology', slug: 'adolescent-endocrinology' },
+      { name: 'Adolescent and Young Adult Oncology', slug: 'adolescent-and-young-adult-oncology' },
+      { name: 'Obesity and Nutrition in Adolescents', slug: 'obesity-and-nutrition-in-adolescents' }
     ],
-    aboutJournal: [ { name: 'Scope', path: '/journals/j11/about/scope' } ],
-    forAuthors: [ { name: 'Author Guidelines', path: '/journals/j11/authors/author-guidelines' } ]
+    specialIssues: [],
+    volumes: [{ id: 'v7', label: 'Volume 7 - 2025' }],
   }
 ]
 
 export const ARTICLES = [
+  {
+    id: 'a101',
+    type: 'ORIGINAL RESEARCH',
+    title: 'Behavioral Patterns and Risk Factors in Adolescent Substance Addiction: A Longitudinal Study',
+    authors: ['Dr. Emily Watson', 'Prof. David Hughes'],
+    authorAffiliations: [{ name: 'Dr. Emily Watson', indices: ['1'] }],
+    affiliationsList: [{ index: '1', text: 'Department of Psychiatry, Oxford University, UK' }],
+    history: { received: '10 Jan 2026', accepted: '05 Mar 2026' },
+    journalId: 'j1',
+    sectionId: 'addiction-in-adolescents',
+    journalTitle: 'Journal of Global Cancer Research',
+    publicationDate: '2026-03-15',
+    abstract: 'This study evaluates the primary behavioral markers and risk factors contributing to substance addiction among adolescents aged 13-18...',
+    views: 1250,
+    downloads: 300,
+    citations: 5,
+    doi: '10.innovinc/j1.2026.03.15'
+  },
+  {
+    id: 'a102',
+    type: 'REVIEW',
+    title: 'Hormonal Imbalances in Youth: Managing Adolescent Endocrinology',
+    authors: ['Dr. Alan Smith'],
+    authorAffiliations: [{ name: 'Dr. Alan Smith', indices: ['1'] }],
+    affiliationsList: [{ index: '1', text: 'Pediatrics Department, Stanford Medicine' }],
+    history: { received: '01 Feb 2026', accepted: '20 Apr 2026' },
+    journalId: 'j1',
+    sectionId: 'adolescent-endocrinology',
+    journalTitle: 'Journal of Global Cancer Research',
+    publicationDate: '2026-05-10',
+    abstract: 'A comprehensive review of the recent advancements in managing endocrine disorders during the critical adolescent growth phase...',
+    views: 890,
+    downloads: 210,
+    citations: 2,
+    doi: '10.innovinc/j1.2026.05.10'
+  },
   {
     id: 'a1',
     type: 'ORIGINAL RESEARCH',

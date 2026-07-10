@@ -1,25 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useOutletContext } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { FileText, Download, Quote, BookOpen, Users, Eye, BarChart3, Search } from 'lucide-react'
+import { FileText, Users, BookOpen, ClipboardList, DollarSign, Layers, ChevronRight, Activity, Eye } from 'lucide-react'
 import { Button } from '../components/ui/Button'
-import { Badge } from '../components/ui/Badge'
-import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card'
 import { api } from '../api/apiClient'
+import { formatArticleDate, journalPath } from '../utils/journalUtils'
+
+const QUICK_LINKS = [
+  { key: 'submit', title: 'Submit your research', desc: 'Start your submission and get more impact for your research by publishing with us.', icon: FileText, path: null, cta: 'Submit' },
+  { key: 'checklist', title: 'Quick submission checklist', desc: 'See our submission checklist for everything you need ahead of submitting your paper.', icon: ClipboardList, segment: 'authors/quick-checklist' },
+  { key: 'formatting', title: 'Manuscript formatting guidelines', desc: 'Check our formatting guidelines for everything you need about preparing your manuscript.', icon: BookOpen, segment: 'authors/manuscript-formatting' },
+  { key: 'special', title: 'Propose a special issue', desc: 'Special Issues are peer-reviewed collections around cutting-edge research themes.', icon: Layers, segment: 'community/propose-special-issue' },
+  { key: 'fees', title: 'Publishing fees', desc: 'Open Access articles accepted after rigorous peer review incur a publishing fee.', icon: DollarSign, segment: 'authors/publishing-fees' },
+]
 
 export default function JournalDetails() {
   const { journal } = useOutletContext()
   const [articles, setArticles] = useState([])
   const [loading, setLoading] = useState(true)
-  const [searchQuery, setSearchQuery] = useState('')
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const allArticles = await api.articles.getAll()
-        setArticles(allArticles.filter(a => a.journalId === journal.id))
+        const data = await api.articles.getByJournal(journal.id)
+        setArticles(data)
       } catch (error) {
-        console.error("Failed to fetch articles", error)
+        console.error('Failed to fetch articles', error)
       } finally {
         setLoading(false)
       }
@@ -27,228 +32,248 @@ export default function JournalDetails() {
     fetchArticles()
   }, [journal.id])
 
-  const filteredArticles = articles.filter(article => {
-    if (!searchQuery) return true
-    const query = searchQuery.toLowerCase()
-    return (
-      article.title.toLowerCase().includes(query) ||
-      article.authors.some(a => a.toLowerCase().includes(query)) ||
-      (article.tags && article.tags.some(t => t.toLowerCase().includes(query)))
-    )
-  })
+  const specialIssues = journal.specialIssues || []
+  const volumes = journal.volumes || []
+  const previewArticles = articles.slice(0, 4)
+  const previewEditors = journal.chiefEditor ? [journal.chiefEditor] : []
 
   return (
-    <div className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row gap-8">
-      
-      {/* Left Column (Content) */}
-      <div className="lg:w-2/3 space-y-12">
+    <div className="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full space-y-14">
+      {/* Welcome Card & Trending Articles Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        {/* Aims & Scope */}
-        <div>
-          <h2 className="text-2xl font-bold text-navy-950 mb-4 flex items-center gap-2">
-            <BookOpen className="w-6 h-6 text-primary-600" /> Aims & Scope
-          </h2>
-          <div className="bg-white p-6 rounded-2xl shadow-[0_4px_25px_-4px_rgba(0,0,0,0.02)] border border-gray-100 text-gray-700 space-y-4">
-            <p className="leading-relaxed text-sm">
-              {journal.description}
-            </p>
-            <p className="leading-relaxed text-xs text-gray-500">
-              The publication serves as a key international forum, bridging theoretical molecular discoveries and clinical, patient-centered applications. It welcomes high-impact submissions, reviews, and clinical trial studies that contribute to the fundamental understanding of this domain. All materials are published open access, ensuring maximum accessibility to the global scientific community.
-            </p>
-            
-            <div className="border-t border-gray-100 pt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-              <div className="space-y-2">
-                <h4 className="font-bold text-navy-950 uppercase tracking-wider text-[11px] flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary-600"></span> Author Guidelines
-                </h4>
-                <p className="text-gray-500 leading-relaxed text-[11px]">
-                  Authors are expected to submit original research detailing sound methodologies and transparent datasets. All publications must comply with COPE ethics and global licensing policies.
-                </p>
+        <div className="lg:col-span-2 flex flex-col gap-8 h-full">
+          {/* About the Journal Section */}
+          <div className="bg-white py-8 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="md:w-1/2 space-y-6">
+              <h2 className="text-3xl font-normal text-gray-900 tracking-tight">About the Journal</h2>
+              <p className="text-gray-500 text-sm leading-relaxed font-light">
+                {journal.description}
+              </p>
+              <div className="pt-2">
+                <Link to={journalPath(journal.id, 'about', 'mission-and-scope')}>
+                  <Button variant="outline" className="rounded-full px-6 border-gray-400 text-gray-700 hover:bg-gray-50 text-sm font-medium h-10">
+                    About the Journal
+                  </Button>
+                </Link>
               </div>
-              <div className="space-y-2">
-                <h4 className="font-bold text-navy-950 uppercase tracking-wider text-[11px] flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary-600"></span> Editorial Mandate
-                </h4>
-                <p className="text-gray-500 leading-relaxed text-[11px]">
-                  Our international board coordinates rigorous double-blind evaluations. Editors hold objective screening criteria to ensure reproducibility, clinical safety, and academic integrity.
-                </p>
+            </div>
+            <div className="md:w-1/2 flex justify-center md:justify-end">
+              <div className="max-w-xs">
+                {/* Fallback to text if coverImage isn't a logo, but we'll try to show it */}
+                {journal.coverImage ? (
+                  <img 
+                    src={journal.coverImage} 
+                    alt={`${journal.title} Logo`}
+                    className="w-full h-auto object-contain max-h-48"
+                  />
+                ) : (
+                  <div className="flex items-center gap-4">
+                     <Activity className="w-16 h-16 text-navy-900" />
+                     <h2 className="text-2xl font-bold text-navy-900 leading-tight">{journal.title}</h2>
+                  </div>
+                )}
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Latest Articles with Search Filter */}
-        <div id="articles-section">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 border-b border-gray-100 pb-4">
-            <h2 className="text-2xl font-bold text-navy-950 flex items-center gap-2">
-              <FileText className="w-6 h-6 text-primary-600" /> Latest Articles
-            </h2>
-            
-            {/* Clean search bar */}
-            <div className="relative w-full sm:w-72">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-3.5 h-3.5" />
-              <input
-                type="text"
-                placeholder="Search articles in this journal..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-4 py-2 bg-white border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors shadow-sm"
-              />
+          {/* Trending Articles Grid */}
+          {previewArticles.length > 0 && (
+            <div className="flex flex-col flex-grow">
+              <div className="flex items-center justify-between mb-5">
+                <div>
+                  <h2 className="text-xl md:text-2xl font-extrabold text-navy-950 tracking-tight flex items-center gap-2">
+                    <Activity className="w-5 h-5 text-primary-600" /> Trending Research
+                  </h2>
+                  <p className="text-xs text-gray-500 mt-1">Discover the most read and cited articles in this journal.</p>
+                </div>
+                <Link to={journalPath(journal.id, 'articles')}>
+                  <Button variant="outline" className="h-8 text-xs px-3 border-gray-200 hover:bg-gray-50">View All</Button>
+                </Link>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 flex-grow">
+                {previewArticles.map((article, idx) => (
+                  <div key={article.id} className="bg-white rounded-xl border border-gray-100 p-5 flex flex-col justify-between hover:shadow-[0_4px_20px_-4px_rgba(15,23,42,0.05)] hover:border-primary-200 transition-all group h-full relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-primary-500/5 rounded-bl-[100px] -z-0"></div>
+                    <div className="relative z-10">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="w-6 h-6 rounded-md bg-primary-50 text-primary-700 font-black text-[10px] flex items-center justify-center border border-primary-100">
+                          {`0${idx + 1}`}
+                        </span>
+                        <span className="text-[9px] font-bold text-gray-400 uppercase tracking-wider">{article.type || 'Research'}</span>
+                      </div>
+                      <h3 className="font-bold text-navy-950 group-hover:text-primary-600 transition-colors leading-snug text-sm line-clamp-3 mb-2">
+                        {article.title}
+                      </h3>
+                      <p className="text-xs text-gray-500 font-medium line-clamp-1 mb-4">{article.authors?.join(', ')}</p>
+                    </div>
+                    
+                    <div className="mt-auto relative z-10 pt-4 border-t border-gray-50">
+                      <div className="flex items-center justify-between text-[10px] text-gray-400 font-semibold mb-3">
+                        <span className="line-clamp-1 flex-1 mr-2 text-navy-900">{article.journalTitle || journal.title}</span>
+                        <span className="flex items-center gap-0.5 shrink-0">
+                          <Eye className="w-3 h-3 text-gray-400" />
+                          {article.views?.toLocaleString() || '0'} views
+                        </span>
+                      </div>
+                      <div className="flex gap-2">
+                        <Link to={`/articles/${article.id}`} className="flex-1">
+                          <Button variant="outline" className="w-full text-xs h-8 rounded-lg font-bold border-gray-200 text-gray-700 hover:bg-gray-50">
+                            Read
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-
-          <div className="space-y-4">
-            {loading ? (
-              <div className="flex justify-center p-8">
-                 <div className="w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin"></div>
-              </div>
-            ) : articles.length === 0 ? (
-              <div className="text-gray-500 bg-white p-6 rounded-xl border border-gray-100">No recent articles found for this journal.</div>
-            ) : filteredArticles.length === 0 ? (
-              <div className="text-gray-500 bg-white p-6 rounded-xl border border-gray-100">
-                No articles match your search criteria "{searchQuery}".
-              </div>
-            ) : (
-              filteredArticles.map((article, i) => (
-                <motion.div
-                  key={article.id}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                >
-                  <Card className="hover:border-primary-300/70 transition-all duration-300 bg-white shadow-[0_4px_20px_-4px_rgba(15,23,42,0.03)] border-gray-100 overflow-hidden relative">
-                    <CardHeader className="pb-3 p-6">
-                      <Link to={`/articles/${article.id}`}>
-                        <CardTitle className="text-xl font-bold text-navy-950 hover:text-primary-600 transition-colors mb-2 leading-snug">
-                          {article.title}
-                        </CardTitle>
-                      </Link>
-                      <div className="flex gap-2 text-xs font-semibold mb-3 flex-wrap">
-                        {article.authors.map(author => (
-                           <span key={author} className="bg-primary-50 text-primary-700 px-2 py-0.5 rounded border border-primary-100">{author}</span>
-                        ))}
-                      </div>
-                      <div className="text-xs text-gray-500 mb-4 space-y-2">
-                         <p><strong className="text-navy-900">Abstract:</strong> {article.abstract || 'This article discusses the recent advancements in clinical oncology and novel therapeutics. Detailed abstract content is available in the full text.'}</p>
-                         <p><strong className="text-navy-900">Conclusion:</strong> {article.conclusion || 'The findings present significant clinical implications for future trials and standard of care.'}</p>
-                      </div>
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-400 font-medium">
-                        <div>Published: {new Date(article.publicationDate).toLocaleDateString()}</div>
-                        {article.doi && (
-                          <>
-                            <div className="w-1 h-1 rounded-full bg-gray-300"></div>
-                            <div>DOI: <span className="text-navy-900 font-semibold">{article.doi}</span></div>
-                          </>
-                        )}
-                      </div>
-                    </CardHeader>
-                    <CardContent className="pt-0 p-6 flex flex-wrap justify-between items-center gap-y-3">
-                      <div className="flex flex-wrap gap-2">
-                        {article.tags.map(tag => (
-                          <Badge key={tag} className="bg-gray-50 text-gray-600 border border-gray-100 hover:bg-gray-100 transition-colors font-medium text-xs px-2.5 py-1 shadow-none">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-gray-50 text-[11px] font-bold text-navy-900 border border-gray-100">
-                          <Eye className="w-3.5 h-3.5 text-gray-400 shrink-0" />
-                          {article.views?.toLocaleString() || '0'} <span className="text-gray-400 font-normal">views</span>
-                        </span>
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-gray-50 text-[11px] font-bold text-navy-900 border border-gray-100">
-                          <BarChart3 className="w-3.5 h-3.5 text-gray-400 shrink-0" />
-                          {article.impressions?.toLocaleString() || '0'} <span className="text-gray-400 font-normal">impressions</span>
-                        </span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))
-            )}
-          </div>
+          )}
         </div>
 
+        {/* Right Column / Quick Links */}
+        <div className="lg:col-span-1">
+          <div className="sticky top-28 space-y-6">
+            <h2 className="text-xl font-bold text-navy-950">Quick Links</h2>
+            <div className="grid grid-cols-1 gap-4">
+          {QUICK_LINKS.map((item) => {
+            const Icon = item.icon
+            const linkPath = item.segment ? journalPath(journal.id, ...item.segment.split('/')) : null
+            return (
+              <div key={item.key} className="bg-white rounded-xl border border-gray-100 p-5 hover:border-primary-300 hover:shadow-md transition-all group">
+                <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center mb-3 group-hover:bg-primary-100 transition-colors">
+                  <Icon className="w-5 h-5 text-primary-700" />
+                </div>
+                <h3 className="font-bold text-navy-950 text-sm mb-1.5">{item.title}</h3>
+                <p className="text-xs text-gray-500 leading-relaxed mb-4">{item.desc}</p>
+                {item.key === 'submit' ? (
+                  <Button className="h-8 text-xs px-4 bg-primary-500 hover:bg-primary-600 text-navy-950 font-bold border-none">
+                    {item.cta}
+                  </Button>
+                ) : linkPath ? (
+                  <Link to={linkPath} className="text-xs font-bold text-primary-700 hover:text-primary-800 inline-flex items-center gap-1">
+                    Learn more <ChevronRight className="w-3.5 h-3.5" />
+                  </Link>
+                ) : null}
+              </div>
+            )
+          })}
+        </div>
+          </div>
+        </div>
       </div>
-
-      {/* Right Column (Sidebar) */}
-      <div className="lg:w-1/3 space-y-6">
-        
-        <Card className="overflow-hidden border-gray-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.04)] bg-white rounded-2xl">
-          <div className="h-1.5 bg-gradient-to-r from-primary-500 to-amber-400"></div>
-          <CardHeader className="pb-3 p-6">
-            <CardTitle className="text-base font-bold text-navy-950 flex items-center gap-2">
-              About the publication
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="p-6 pt-0 space-y-4 text-xs">
-            <div className="flex justify-between border-b border-gray-100 pb-2">
-              <span className="text-gray-500 font-medium">Published:</span>
-              <span className="font-semibold text-navy-950">{journal.publishedYear || '2024'}</span>
-            </div>
-            <div className="flex justify-between border-b border-gray-100 pb-2">
-              <span className="text-gray-500 font-medium">Imprint:</span>
-              <span className="font-semibold text-navy-950">{journal.imprint || 'InnovInc Press'}</span>
-            </div>
-            <div className="flex justify-between border-b border-gray-100 pb-2">
-              <span className="text-gray-500 font-medium">Language:</span>
-              <span className="font-semibold text-navy-950">{journal.language || 'English'}</span>
-            </div>
-            <div className="flex justify-between border-b border-gray-100 pb-2">
-              <span className="text-gray-500 font-medium">ISBN / ISSN:</span>
-              <span className="font-semibold text-navy-950">{journal.isbn || journal.issn}</span>
-            </div>
-            <div className="flex justify-between pb-1">
-              <span className="text-gray-500 font-medium">DOI:</span>
-              <span className="font-semibold text-primary-600 truncate max-w-[160px] cursor-pointer" title={journal.doi}>{journal.doi || `10.1016/innovinc.${journal.id}`}</span>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
-              <Users className="w-5 h-5 text-primary-600" /> Editorial Board
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold">JD</div>
-                <div>
-                  <div className="font-medium text-sm">Dr. Jane Doe</div>
-                  <div className="text-xs text-gray-500">Editor-in-Chief</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold">JS</div>
-                <div>
-                  <div className="font-medium text-sm">Prof. John Smith</div>
-                  <div className="text-xs text-gray-500">Associate Editor</div>
-                </div>
-              </div>
-              <Link to={`/journals/${journal.id}/editorial-board`} className="block w-full">
-                <Button variant="link" className="px-0 pt-2 w-full justify-start text-primary-600">View full editorial board &rarr;</Button>
+      {specialIssues.length > 0 && (
+        <section>
+          <div className="flex items-center justify-between mb-5">
+            <h2 className="text-xl font-bold text-navy-950">Special issues</h2>
+            <Link to={journalPath(journal.id, 'special-issues')} className="text-xs font-bold text-primary-700 hover:text-primary-800 flex items-center gap-1">
+              See all ({specialIssues.length}) <ChevronRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {specialIssues.slice(0, 4).map((issue) => (
+              <Link
+                key={issue.id}
+                to={journalPath(journal.id, 'special-issues', issue.id)}
+                className="bg-white rounded-xl border border-gray-100 p-5 hover:border-primary-300 hover:shadow-md transition-all block"
+              >
+                <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-primary-700 bg-primary-50 px-2 py-0.5 rounded mb-2">
+                  {issue.status}
+                </span>
+                <h3 className="font-semibold text-navy-950 text-sm leading-snug mb-2">{issue.title}</h3>
+                <p className="text-xs text-gray-500">{issue.editors?.join(' · ')}</p>
               </Link>
-            </div>
-          </CardContent>
-        </Card>
+            ))}
+          </div>
+        </section>
+      )}
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
-              <Download className="w-5 h-5 text-primary-600" /> Downloads
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-3 text-sm">
-              <li><Link to={`/journals/${journal.id}/authors/author-guidelines`} className="text-primary-600 hover:underline">Author Guidelines (PDF)</Link></li>
-              <li><a href="#" className="text-primary-600 hover:underline">Manuscript Template (Word)</a></li>
-              <li><Link to={`/journals/${journal.id}/authors/editor-guidelines`} className="text-primary-600 hover:underline">Reviewer Guidelines (PDF)</Link></li>
-            </ul>
-          </CardContent>
-        </Card>
-        
-      </div>
+      {volumes.length > 0 && (
+        <section>
+          <div className="flex items-center justify-between mb-5">
+            <h2 className="text-xl font-bold text-navy-950">Volumes</h2>
+            <Link to={journalPath(journal.id, 'volumes')} className="text-xs font-bold text-primary-700 hover:text-primary-800 flex items-center gap-1">
+              See all ({volumes.length}) <ChevronRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {volumes.map((vol) => (
+              <Link
+                key={vol.id}
+                to={journalPath(journal.id, 'volumes', vol.id)}
+                className="bg-white rounded-xl border border-gray-100 p-5 hover:border-primary-300 hover:shadow-md transition-all text-center"
+              >
+                <BookOpen className="w-5 h-5 text-primary-600 mx-auto mb-2" />
+                <h3 className="font-semibold text-navy-950 text-sm">{vol.label}</h3>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section>
+        <div className="flex items-center justify-between mb-5">
+          <h2 className="text-xl font-bold text-navy-950">Articles</h2>
+          <Link to={journalPath(journal.id, 'articles')} className="text-xs font-bold text-primary-700 hover:text-primary-800 flex items-center gap-1">
+            See all ({articles.length}) <ChevronRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
+        {loading ? (
+          <div className="flex justify-center p-8">
+            <div className="w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin" />
+          </div>
+        ) : previewArticles.length === 0 ? (
+          <div className="bg-white rounded-xl border border-gray-100 p-8 text-center text-gray-500 text-sm">No articles published yet.</div>
+        ) : (
+          <div className="space-y-4">
+            {previewArticles.map((article) => (
+              <article key={article.id} className="bg-white rounded-xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-sm transition-all">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <span className="text-[10px] font-bold text-primary-700 uppercase tracking-wider">{article.type}</span>
+                  {formatArticleDate(article) && (
+                    <span className="text-[10px] text-gray-400">{formatArticleDate(article)}</span>
+                  )}
+                </div>
+                <Link to={`/articles/${article.id}`}>
+                  <h3 className="font-semibold text-navy-950 text-sm leading-snug mb-2 hover:text-primary-700 transition-colors">{article.title}</h3>
+                </Link>
+                <p className="text-xs text-gray-500 mb-2">{article.authors?.join(' · ')}</p>
+                <div className="flex flex-wrap items-center gap-3 text-[11px] text-gray-500">
+                  <span className="font-medium text-navy-900">{article.journalTitle}</span>
+                  {article.doi && <span>doi {article.doi}</span>}
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <section>
+        <div className="flex items-center justify-between mb-5">
+          <h2 className="text-xl font-bold text-navy-950 flex items-center gap-2">
+            <Users className="w-5 h-5 text-primary-600" /> Editors
+          </h2>
+          <Link to={journalPath(journal.id, 'editorial-board')} className="text-xs font-bold text-primary-700 hover:text-primary-800 flex items-center gap-1">
+            See all <ChevronRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {previewEditors.map((editor) => (
+            <div key={editor.name} className="bg-white rounded-xl border border-gray-100 p-5 text-center hover:border-primary-300 transition-all">
+              <div className="w-14 h-14 rounded-full bg-primary-50 border-2 border-primary-200 flex items-center justify-center mx-auto mb-3 text-sm font-bold text-primary-800">
+                {editor.name.replace(/^(Dr\.|Prof\.)\s*/, '').split(' ').map((p) => p[0]).join('').substring(0, 2)}
+              </div>
+              <h3 className="font-bold text-navy-950 text-sm mb-1">{editor.name}</h3>
+              <p className="text-[11px] text-gray-500 leading-snug">{editor.affiliation}</p>
+              <span className="inline-block mt-2 text-[10px] font-bold text-primary-700 bg-primary-50 px-2 py-0.5 rounded uppercase tracking-wider">
+                Chief Editor
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }

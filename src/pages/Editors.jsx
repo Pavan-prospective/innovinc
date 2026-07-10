@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { useParams } from 'react-router-dom'
+import { useParams, useOutletContext } from 'react-router-dom'
 import { ShieldCheck, Mail, Globe, Award, BookOpen, Users, GraduationCap, Star } from 'lucide-react'
 import { Card, CardContent } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
@@ -75,6 +75,8 @@ const editors = [
 
 export default function Editors() {
   const { journalId } = useParams()
+  const outletContext = useOutletContext()
+  const journal = outletContext?.journal
   const isJournalContext = !!journalId
 
   return (
@@ -121,7 +123,17 @@ export default function Editors() {
         </section>
       )}
 
-      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${isJournalContext ? 'py-12' : 'py-12'} relative z-20`}>
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${isJournalContext ? 'py-10' : 'py-12'} relative z-20`}>
+        {isJournalContext && (
+          <div className="mb-8">
+            <h1 className="text-2xl font-bold text-navy-950">Editorial Board</h1>
+            {journal?.chiefEditor && (
+              <p className="text-sm text-gray-500 mt-1">
+                Field chief editor: <strong className="text-navy-950">{journal.chiefEditor.name}</strong>, {journal.chiefEditor.affiliation}
+              </p>
+            )}
+          </div>
+        )}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
           {/* Explanation Section */}

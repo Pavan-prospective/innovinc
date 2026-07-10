@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { Download, Share2, Bookmark, Eye, Quote, FileText, ChevronRight } from 'lucide-react'
-import { motion } from 'framer-motion'
-import { Button } from '../components/ui/Button'
-import { Badge } from '../components/ui/Badge'
-import { Card, CardContent } from '../components/ui/Card'
+import {
+  Download, Share2, Bookmark, Eye, Quote, FileText,
+  ChevronRight, Mail, Globe, BookOpen, Users, BarChart2, X
+} from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { api } from '../api/apiClient'
+
+const SECTION_TABS = ['Abstract', 'Introduction', 'Methods', 'Results', 'Conclusion', 'References']
 
 export default function ArticleDetails() {
   const { articleId } = useParams()
   const [article, setArticle] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [showDatesInfo, setShowDatesInfo] = useState(false)
+  const [activeTab, setActiveTab] = useState('Abstract')
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -19,7 +21,7 @@ export default function ArticleDetails() {
         const data = await api.articles.getById(articleId)
         setArticle(data)
       } catch (error) {
-        console.error("Failed to fetch article", error)
+        console.error('Failed to fetch article', error)
       } finally {
         setLoading(false)
       }
@@ -29,243 +31,394 @@ export default function ArticleDetails() {
 
   if (loading) {
     return (
-      <div className="min-h-[70vh] flex items-center justify-center">
-        <div className="w-12 h-12 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin"></div>
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-12 h-12 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin" />
+          <p className="text-gray-500 text-sm">Loading article...</p>
+        </div>
       </div>
     )
   }
 
   if (!article) {
-    return <div className="text-center py-20 text-2xl font-bold">Article not found</div>
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <FileText className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-navy-950 mb-2">Article not found</h2>
+          <Link to="/journals" className="text-primary-600 hover:underline text-sm">
+            Browse all journals
+          </Link>
+        </div>
+      </div>
+    )
   }
 
+
   return (
-    <div className="bg-gray-50 min-h-screen">
-      
-      {/* Breadcrumb & Header */}
-      <div className="bg-white border-b border-gray-200 pt-24 pb-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-6">
-            <Link to="/" className="hover:text-primary-600">Home</Link>
-            <ChevronRight className="w-4 h-4" />
-            <Link to={`/journals/${article.journalId}`} className="hover:text-primary-600">{article.journalTitle}</Link>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-gray-900 truncate">Article</span>
-          </nav>
- 
-          <div className="flex flex-wrap gap-2 mb-6">
-            <Badge variant="secondary" className="bg-green-100 text-green-800 border-none">Open Access</Badge>
-            <Badge variant="outline">Research Article</Badge>
+    <div className="bg-[#f7f8fc] min-h-screen font-sans">
+
+      {/* ─── Journal Strip Banner ─── */}
+      <div className="bg-navy-950 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center gap-3 text-xs">
+          <BookOpen className="w-4 h-4 text-primary-400 shrink-0" />
+          <Link
+            to={`/journals/${article.journalId}`}
+            className="font-semibold text-primary-300 hover:text-primary-200 transition-colors"
+          >
+            {article.journalTitle}
+          </Link>
+          <ChevronRight className="w-3 h-3 text-gray-500" />
+          <span className="text-gray-400">Articles</span>
+          <ChevronRight className="w-3 h-3 text-gray-500" />
+          <span className="text-gray-400 truncate max-w-xs">{article.title}</span>
+        </div>
+      </div>
+
+      {/* ─── Article Header ─── */}
+      <div className="bg-white border-b border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-0">
+
+          {/* Badges */}
+          <div className="flex flex-wrap items-center gap-2 mb-5">
+            <span className="inline-flex items-center gap-1.5 bg-green-100 text-green-800 text-[11px] font-bold px-3 py-1 rounded-full border border-green-200">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+              Open Access
+            </span>
+            <span className="inline-flex items-center text-[11px] font-bold px-3 py-1 rounded-full border border-gray-200 text-gray-600 bg-gray-50">
+              {article.type || 'ORIGINAL RESEARCH'}
+            </span>
           </div>
- 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-950 leading-tight mb-6">
+
+          {/* Title */}
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy-950 leading-tight mb-6 max-w-4xl">
             {article.title}
           </h1>
- 
-          {/* Authors with superscript affiliations */}
-          <div className="mb-6">
-            <div className="text-navy-950 font-semibold text-lg flex flex-wrap items-baseline gap-x-2 gap-y-1">
+
+          {/* Authors */}
+          <div className="mb-4">
+            <div className="flex flex-wrap items-baseline gap-x-1.5 gap-y-1 text-sm font-semibold text-navy-950">
               {article.authorAffiliations ? (
                 article.authorAffiliations.map((author, index) => (
-                  <span key={author.name} className="inline-block">
-                    {author.name}
+                  <span key={author.name} className="inline-flex items-baseline">
+                    <button className="hover:text-primary-600 transition-colors">
+                      {author.name}
+                    </button>
                     <sup className="text-[10px] text-primary-600 font-bold ml-0.5">
-                      {author.indices.join(', ')}
+                      {author.indices.join(',')}
                     </sup>
-                    {index < article.authorAffiliations.length - 1 && <span className="text-gray-400">,</span>}
+                    {index < article.authorAffiliations.length - 1 && (
+                      <span className="text-gray-400 ml-0.5">,</span>
+                    )}
                   </span>
                 ))
               ) : (
-                <span>{article.authors.join(', ')}</span>
+                <span>{article.authors?.join(', ')}</span>
               )}
             </div>
-            
-            {/* Numbered Affiliations directory */}
+
+            {/* Affiliations */}
             {article.affiliationsList && (
-              <div className="mt-4 space-y-1.5 text-xs text-gray-500 border-l-2 border-primary-500/20 pl-4 py-1">
+              <div className="mt-3 space-y-1 text-[11px] text-gray-500 pl-0">
                 {article.affiliationsList.map(aff => (
                   <div key={aff.index} className="flex gap-2 items-start leading-relaxed">
-                    <span className="font-bold text-primary-700 w-3.5 shrink-0 text-[10px] mt-0.5">{aff.index}</span>
+                    <sup className="font-bold text-primary-700 shrink-0 mt-1">{aff.index}</sup>
                     <span>{aff.text}</span>
                   </div>
                 ))}
               </div>
             )}
           </div>
- 
-          {/* Publishing timeline history with dates info link */}
-          <div className="text-xs text-gray-500 py-3 border-t border-gray-100">
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
-              <span>Received: <strong className="text-navy-900">{article.history?.received || new Date(article.publicationDate).toLocaleDateString()}</strong></span>
-              <span className="hidden sm:inline text-gray-300">|</span>
-              <span>Revised: <strong className="text-navy-900">{article.history?.revised || new Date(article.publicationDate).toLocaleDateString()}</strong></span>
-              <span className="hidden sm:inline text-gray-300">|</span>
-              <span>Accepted: <strong className="text-navy-900">{article.history?.accepted || new Date(article.publicationDate).toLocaleDateString()}</strong></span>
-              <span className="hidden sm:inline text-gray-300">|</span>
-              <span>Available online: <strong className="text-navy-900">{article.history?.online || new Date(article.publicationDate).toLocaleDateString()}</strong></span>
-              
-              <button 
-                onClick={() => setShowDatesInfo(!showDatesInfo)}
-                className="text-primary-600 hover:text-primary-700 font-bold focus:outline-none underline ml-auto text-[11px]"
-              >
-                {showDatesInfo ? 'Show less' : 'What do these dates mean?'}
-              </button>
-            </div>
- 
-            {/* Slide explanation panel for history dates */}
-            {showDatesInfo && (
-              <motion.div 
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                className="mt-3 p-4 bg-gray-50 rounded-xl border border-gray-200/50 space-y-2 text-[11px] text-gray-600 leading-relaxed shadow-inner"
-              >
-                <p><strong>Received:</strong> Date of initial manuscript submission to the editorial office for review.</p>
-                <p><strong>Revised:</strong> Date when updated manuscript files incorporating peer reviewer modifications were re-submitted.</p>
-                <p><strong>Accepted:</strong> Date when final peer validation completed and editor-in-chief approved publication.</p>
-                <p><strong>Available online:</strong> Date when peer-validated formatting completed and full text went live on our portal.</p>
-              </motion.div>
+
+          {/* Dates bar */}
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-[11px] text-gray-500 py-3 border-t border-gray-100 mb-0">
+            {article.history?.received && <span>Received: <strong className="text-navy-900">{article.history.received}</strong></span>}
+            {article.history?.revised && <span>Revised: <strong className="text-navy-900">{article.history.revised}</strong></span>}
+            {article.history?.accepted && <span>Accepted: <strong className="text-navy-900">{article.history.accepted}</strong></span>}
+            {article.history?.online && <span>Published: <strong className="text-navy-900">{article.history.online}</strong></span>}
+            {article.doi && (
+              <span className="ml-auto font-mono text-[10px] bg-gray-50 border border-gray-200 rounded px-2 py-0.5 text-gray-600">
+                DOI: {article.doi}
+              </span>
             )}
           </div>
- 
-          {/* Action Bar with Mendeley and Share */}
-          <div className="flex flex-wrap items-center justify-between gap-4 py-4 border-t border-b border-gray-100">
-            <div className="flex flex-wrap gap-3">
-              <Button className="gap-2 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs py-2 px-5">
-                <Download className="w-4 h-4" /> Download PDF
-              </Button>
-              <Button 
-                onClick={() => window.open('https://www.mendeley.com/import', '_blank')}
-                className="gap-2 bg-[#e65c00] hover:bg-[#cc5200] text-white rounded-xl text-xs py-2 px-5 border-none"
+
+          {/* ─── Action Bar ─── */}
+          <div className="flex flex-wrap items-center gap-3 py-4 border-t border-gray-100">
+            <button className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-colors shadow-sm">
+              <Download className="w-4 h-4" />
+              Download PDF
+            </button>
+
+            <div className="flex items-center gap-1 ml-auto">
+              <button
+                onClick={() => navigator.clipboard.writeText(window.location.href)}
+                className="w-9 h-9 flex items-center justify-center rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 transition-colors text-gray-500 hover:text-primary-600"
+                title="Share"
               >
-                Add to Mendeley
-              </Button>
-              <Button variant="outline" className="gap-2 rounded-xl text-xs py-2 px-5">
-                <Quote className="w-4 h-4" /> Cite
-              </Button>
-            </div>
-            <div className="flex gap-2 text-gray-500">
-              <Button variant="ghost" size="icon" className="rounded-xl hover:bg-gray-100" title="Share" onClick={() => navigator.clipboard.writeText(window.location.href)}><Share2 className="w-5 h-5" /></Button>
-              <Button variant="ghost" size="icon" className="rounded-xl hover:bg-gray-100" title="Save"><Bookmark className="w-5 h-5" /></Button>
+                <Share2 className="w-4 h-4" />
+              </button>
+              <button
+                className="w-9 h-9 flex items-center justify-center rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 transition-colors text-gray-500 hover:text-primary-600"
+                title="Save"
+              >
+                <Bookmark className="w-4 h-4" />
+              </button>
             </div>
           </div>
-          
+
+          {/* ─── Section Tabs ─── */}
+          <div className="flex items-center gap-0 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+            {SECTION_TABS.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`flex-shrink-0 px-5 py-3 text-sm font-semibold border-b-[3px] transition-colors whitespace-nowrap ${
+                  activeTab === tab
+                    ? 'text-primary-700 border-primary-600'
+                    : 'text-gray-500 border-transparent hover:text-navy-950'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Article Content area */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col lg:flex-row gap-12">
-        
-        {/* Left Sidebar (Sticky TOC / Metrics) */}
-        <div className="hidden lg:block lg:w-1/4">
-          <div className="sticky top-28 space-y-6">
-            <Card>
-              <CardContent className="p-5">
-                <h3 className="font-semibold text-navy-900 mb-4 uppercase tracking-wider text-xs">Metrics</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-500 flex items-center gap-2"><Eye className="w-4 h-4"/> Views</span>
-                    <span className="font-medium">{article.views.toLocaleString()}</span>
+      {/* ─── Main Content ─── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+          {/* ─── Left Sidebar ─── */}
+          <div className="lg:col-span-3 order-2 lg:order-1">
+            <div className="sticky top-6 space-y-5">
+
+              {/* Article Metrics */}
+              <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Article Metrics</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600 flex items-center gap-2">
+                      <Eye className="w-4 h-4 text-blue-500" /> Views
+                    </span>
+                    <span className="font-bold text-navy-950 text-sm">{(article.views || 0).toLocaleString()}</span>
                   </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-500 flex items-center gap-2"><Download className="w-4 h-4"/> Downloads</span>
-                    <span className="font-medium">{article.downloads.toLocaleString()}</span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600 flex items-center gap-2">
+                      <Download className="w-4 h-4 text-green-500" /> Downloads
+                    </span>
+                    <span className="font-bold text-navy-950 text-sm">{(article.downloads || 0).toLocaleString()}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600 flex items-center gap-2">
+                      <BarChart2 className="w-4 h-4 text-orange-500" /> Citations
+                    </span>
+                    <span className="font-bold text-navy-950 text-sm">{article.citations || 0}</span>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
 
-            <Card>
-              <CardContent className="p-5">
-                <h3 className="font-semibold text-navy-900 mb-4 uppercase tracking-wider text-xs">Article Navigation</h3>
-                <nav className="space-y-3 text-sm text-gray-600 font-medium">
-                  <a href="#abstract" className="block hover:text-primary-600 transition-colors">Abstract</a>
-                  <a href="#introduction" className="block hover:text-primary-600 transition-colors">1. Introduction</a>
-                  <a href="#methods" className="block hover:text-primary-600 transition-colors">2. Methods</a>
-                  <a href="#results" className="block hover:text-primary-600 transition-colors">3. Results</a>
-                  <a href="#conclusion" className="block hover:text-primary-600 transition-colors">Conclusion</a>
-                  <a href="#references" className="block hover:text-primary-600 transition-colors">References</a>
-                </nav>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
-        {/* Main Article Body */}
-        <div className="lg:w-2/3 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
-          
-          <section id="abstract" className="mb-12">
-            <h2 className="text-2xl font-bold text-navy-900 mb-4 pb-2 border-b border-gray-100">Abstract</h2>
-            <p className="text-gray-700 leading-relaxed text-base mb-6">
-              {article.abstract}
-            </p>
-            <div className="flex gap-2 items-center flex-wrap">
-              <span className="font-semibold text-xs text-navy-950 uppercase tracking-wider">Keywords:</span>
-              {article.tags.map(tag => (
-                <span key={tag} className="text-xs text-primary-700 bg-primary-50 px-2.5 py-1 rounded-md font-medium">{tag}</span>
-              ))}
-            </div>
-          </section>
-
-          <section id="introduction" className="mb-10">
-            <h2 className="text-2xl font-bold text-navy-900 mb-4">1. Introduction</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-            </p>
-          </section>
-
-          <section id="methods" className="mb-10">
-            <h2 className="text-2xl font-bold text-navy-900 mb-4">2. Methods</h2>
-             <p className="text-gray-700 leading-relaxed">
-               Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-             </p>
-          </section>
-
-          <section id="results" className="mb-10">
-            <h2 className="text-2xl font-bold text-navy-900 mb-4">3. Results</h2>
-             <p className="text-gray-700 leading-relaxed">
-              Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
-             </p>
-          </section>
-
-          <section id="conclusion" className="mb-10 border-t border-gray-100 pt-8">
-            <h2 className="text-2xl font-bold text-navy-900 mb-4">Conclusion</h2>
-            <p className="text-gray-700 leading-relaxed">
-              {article.conclusion || 'In conclusion, the clinical datasets demonstrate strong alignment with theoretical models. Future research directions will evaluate scalability, reproducibility, and long-term implications of these diagnostic protocols.'}
-            </p>
-          </section>
-
-          <section id="references" className="mb-6 border-t border-gray-100 pt-8">
-            <h2 className="text-2xl font-bold text-navy-900 mb-6">
-              References ({article.referencesCount || 39})
-            </h2>
-            <div className="space-y-4 text-xs">
-              {article.references ? (
-                article.references.map(ref => (
-                  <div key={ref.id} className="flex gap-3 items-start pb-4 border-b border-gray-50 last:border-none">
-                    <span className="font-bold text-primary-700 w-8 shrink-0 text-center bg-gray-50 border border-gray-100 py-1 rounded">[{ref.id}]</span>
-                    <div className="space-y-1">
-                      <p className="text-gray-700 leading-relaxed">{ref.citation}</p>
-                      <Link to={ref.link} className="inline-flex items-center gap-1 text-[11px] font-bold text-primary-600 hover:text-primary-750 transition-colors">
-                        View Journal Directory &rarr;
-                      </Link>
-                    </div>
+              {/* Keywords */}
+              {article.tags && article.tags.length > 0 && (
+                <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+                  <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Keywords</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {article.tags.map(tag => (
+                      <span
+                        key={tag}
+                        className="text-xs text-primary-700 bg-primary-50 border border-primary-100 px-2.5 py-1 rounded-full font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
-                ))
-              ) : (
-                <div className="space-y-3">
-                  <p className="text-gray-500 leading-relaxed">Standard academic references list is currently archived.</p>
                 </div>
               )}
-            </div>
-          </section>
-        </div>
 
+              {/* Journal Info */}
+              <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Published in</h3>
+                <Link
+                  to={`/journals/${article.journalId}`}
+                  className="text-sm font-bold text-navy-950 hover:text-primary-600 transition-colors leading-snug block mb-3"
+                >
+                  {article.journalTitle}
+                </Link>
+                <Link
+                  to={`/journals/${article.journalId}/articles`}
+                  className="text-xs font-semibold text-primary-600 hover:text-primary-800 flex items-center gap-1"
+                >
+                  Browse all articles <ChevronRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+
+              {/* Quick Nav */}
+              <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Quick Navigation</h3>
+                <nav className="space-y-2">
+                  {SECTION_TABS.map(tab => (
+                    <button
+                      key={tab}
+                      onClick={() => setActiveTab(tab)}
+                      className={`block w-full text-left text-sm px-3 py-1.5 rounded-lg transition-colors font-medium ${
+                        activeTab === tab
+                          ? 'bg-primary-50 text-primary-700'
+                          : 'text-gray-600 hover:bg-gray-50 hover:text-navy-950'
+                      }`}
+                    >
+                      {tab}
+                    </button>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          {/* ─── Article Body ─── */}
+          <div className="lg:col-span-6 order-1 lg:order-2">
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+
+              {/* Tab Content */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.2 }}
+                  className="p-8 md:p-10"
+                >
+                  {activeTab === 'Abstract' && (
+                    <section>
+                      <h2 className="text-xl font-bold text-navy-950 mb-5 pb-3 border-b border-gray-100">Abstract</h2>
+                      <p className="text-gray-700 leading-relaxed text-[15px]">{article.abstract}</p>
+                    </section>
+                  )}
+
+                  {activeTab === 'Introduction' && (
+                    <section>
+                      <h2 className="text-xl font-bold text-navy-950 mb-5 pb-3 border-b border-gray-100">1. Introduction</h2>
+                      <p className="text-gray-700 leading-relaxed mb-4 text-[15px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p className="text-gray-700 leading-relaxed text-[15px]">
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                      </p>
+                    </section>
+                  )}
+
+                  {activeTab === 'Methods' && (
+                    <section>
+                      <h2 className="text-xl font-bold text-navy-950 mb-5 pb-3 border-b border-gray-100">2. Methods</h2>
+                      <p className="text-gray-700 leading-relaxed text-[15px]">
+                        Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.
+                      </p>
+                    </section>
+                  )}
+
+                  {activeTab === 'Results' && (
+                    <section>
+                      <h2 className="text-xl font-bold text-navy-950 mb-5 pb-3 border-b border-gray-100">3. Results</h2>
+                      <p className="text-gray-700 leading-relaxed text-[15px]">
+                        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus.
+                      </p>
+                    </section>
+                  )}
+
+                  {activeTab === 'Conclusion' && (
+                    <section>
+                      <h2 className="text-xl font-bold text-navy-950 mb-5 pb-3 border-b border-gray-100">Conclusion</h2>
+                      <p className="text-gray-700 leading-relaxed text-[15px]">
+                        {article.conclusion || 'In conclusion, the clinical datasets demonstrate strong alignment with theoretical models. Future research directions will evaluate scalability, reproducibility, and long-term implications of these diagnostic protocols.'}
+                      </p>
+                    </section>
+                  )}
+
+                  {activeTab === 'References' && (
+                    <section>
+                      <h2 className="text-xl font-bold text-navy-950 mb-5 pb-3 border-b border-gray-100">
+                        References <span className="text-gray-400 text-base font-normal">({article.referencesCount || 0})</span>
+                      </h2>
+                      <div className="space-y-5">
+                        {article.references ? (
+                          article.references.map(ref => (
+                            <div key={ref.id} className="flex gap-4 items-start group">
+                              <span className="shrink-0 w-7 h-7 flex items-center justify-center rounded-lg bg-primary-50 text-primary-700 text-[11px] font-bold border border-primary-100 mt-0.5">
+                                {ref.id}
+                              </span>
+                              <div>
+                                <p className="text-[13px] text-gray-700 leading-relaxed">{ref.citation}</p>
+                                <Link
+                                  to={ref.link}
+                                  className="text-[11px] font-semibold text-primary-600 hover:text-primary-800 mt-1 inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                                >
+                                  View Journal <ChevronRight className="w-3 h-3" />
+                                </Link>
+                              </div>
+                            </div>
+                          ))
+                        ) : (
+                          <p className="text-sm text-gray-500">References are being compiled.</p>
+                        )}
+                      </div>
+                    </section>
+                  )}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* ─── Right Sidebar ─── */}
+          <div className="lg:col-span-3 order-3">
+            <div className="sticky top-6 space-y-5">
+
+              {/* Authors Card */}
+              <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                  <Users className="w-3.5 h-3.5" /> Authors
+                </h3>
+                <ul className="space-y-3">
+                  {(article.authorAffiliations || []).map(author => (
+                    <li key={author.name} className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-400 to-primary-700 flex items-center justify-center text-white text-xs font-bold shrink-0">
+                        {author.name.charAt(0)}
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-navy-950 leading-tight">{author.name}</p>
+                        <p className="text-[11px] text-gray-400 mt-0.5">
+                          Affiliation {author.indices.join(', ')}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Correspondence */}
+              <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Correspondence</h3>
+                <div className="space-y-3 text-sm">
+                  <a href="mailto:correspondence@innovinc.com" className="flex items-center gap-2 text-primary-600 hover:text-primary-800 font-medium">
+                    <Mail className="w-4 h-4" /> Email corresponding author
+                  </a>
+                  <a href="#" className="flex items-center gap-2 text-primary-600 hover:text-primary-800 font-medium">
+                    <Globe className="w-4 h-4" /> View author profile
+                  </a>
+                </div>
+              </div>
+
+              {/* Copyright */}
+              <div className="bg-gray-50 rounded-2xl border border-gray-100 p-5 text-[11px] text-gray-500 leading-relaxed">
+                <p className="font-semibold text-gray-600 mb-1">© {new Date().getFullYear()} InnovInc</p>
+                <p>This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY).</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
+
     </div>
   )
 }
-
