@@ -50,10 +50,7 @@ export function Navbar() {
                 <Search className="w-5 h-5" />
               </button>
               <Link to="/login">
-                <Button variant="outline" className="hidden lg:inline-flex">Sign In</Button>
-              </Link>
-              <Link to="/submit-article">
-                <Button>Submit Article</Button>
+                <Button>Sign In</Button>
               </Link>
             </div>
           </div>
@@ -90,10 +87,7 @@ export function Navbar() {
           </div>
           <div className="pt-4 flex flex-col space-y-3 border-t border-gray-100">
             <Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>
-              <Button variant="outline" className="w-full justify-center">Sign In</Button>
-            </Link>
-            <Link to="/submit-article" onClick={() => setIsMobileMenuOpen(false)}>
-              <Button className="w-full justify-center">Submit Article</Button>
+              <Button className="w-full justify-center">Sign In</Button>
             </Link>
           </div>
         </div>

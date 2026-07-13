@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, ChevronRight, BookOpen, ShieldCheck, Globe, Activity, Eye, BarChart3, Download } from 'lucide-react'
+import { Search, ChevronRight, BookOpen, ShieldCheck, Globe, Activity, Eye, BarChart3, Download, Calendar, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Button } from '../components/ui/Button'
 import { api } from '../api/apiClient'
@@ -121,9 +121,6 @@ export default function Home() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight font-extrabold leading-[1.1] drop-shadow-md">
               <span className="text-primary-500 bg-gradient-to-r from-primary-400 to-primary-500 bg-clip-text text-transparent">InnovInc</span> Academic Publishing
             </h1>
-            <p className="text-gray-300 text-lg md:text-xl font-medium max-w-2xl mt-4">
-              Pioneering the future of open science. Connecting researchers worldwide to accelerate innovations.
-            </p>
           </motion.div>
           
           <motion.div 
@@ -163,8 +160,104 @@ export default function Home() {
 
 
 
+      {/* Featured Discoveries (Bento Grid) */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+            <div>
+              <h2 className="text-3xl font-black text-navy-950 tracking-tight">Featured Discoveries</h2>
+              <p className="text-gray-500 text-sm mt-2">Explore groundbreaking research, editor's picks, and trending topics.</p>
+            </div>
+            <Link to="/journals">
+              <Button variant="outline" className="border-gray-200 text-navy-900 hover:bg-gray-50 h-10 px-6 rounded-full text-sm font-semibold transition-colors">
+                Explore All Content
+              </Button>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[500px]">
+            {/* Large Featured Article (spans 2 columns, 2 rows on desktop) */}
+            {articles[0] && (
+              <Link to={`/articles/${articles[0].id}`} className="group relative col-span-1 md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 min-h-[300px]">
+                <img 
+                  src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Featured Science" 
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-transparent"></div>
+                
+                <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="bg-primary-500 text-navy-950 text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-md shadow-sm">
+                      Featured Research
+                    </span>
+                    <span className="text-gray-300 text-xs font-medium flex items-center gap-1.5">
+                      <Calendar className="w-3.5 h-3.5" /> {articles[0].publishedDate || '2026'}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-white text-2xl md:text-3xl leading-snug mb-3 group-hover:text-primary-400 transition-colors">
+                    {articles[0].title}
+                  </h3>
+                  <p className="text-gray-300 text-sm line-clamp-2 max-w-xl">
+                    {articles[0].abstract || articles[0].authors?.join(', ')}
+                  </p>
+                  <div className="mt-6 flex items-center gap-4 text-xs font-semibold text-gray-400">
+                     <span className="text-white">{articles[0].journalTitle || 'InnovInc Journal'}</span>
+                     <span className="flex items-center gap-1"><Eye className="w-4 h-4" /> {articles[0].views?.toLocaleString() || '1,200'} Views</span>
+                  </div>
+                </div>
+              </Link>
+            )}
+
+            {/* Top Right Card: Trending / Hot Topic */}
+            {articles[1] && (
+              <Link to={`/articles/${articles[1].id}`} className="group relative col-span-1 md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden bg-[#f8fafc] border border-gray-100 p-6 flex flex-col hover:border-primary-300/70 hover:shadow-lg transition-all duration-300 min-h-[240px]">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-accent-500/10 to-transparent rounded-bl-full pointer-events-none"></div>
+                <div className="flex items-start justify-between mb-3 relative z-10">
+                  <span className="text-accent-600 text-[10px] font-bold uppercase tracking-wider">
+                    Trending Now
+                  </span>
+                </div>
+                <h3 className="font-bold text-navy-950 text-base leading-snug mb-2 group-hover:text-primary-600 transition-colors line-clamp-3 relative z-10">
+                  {articles[1].title}
+                </h3>
+                <p className="text-gray-500 text-xs line-clamp-2 mb-4 flex-grow relative z-10">
+                  {articles[1].authors ? articles[1].authors.join(', ') : 'Various Authors'}
+                </p>
+                <div className="mt-auto flex items-center justify-between text-[10px] font-bold text-navy-900 uppercase tracking-widest truncate relative z-10">
+                  <span className="truncate mr-2">{articles[1].journalTitle}</span>
+                  <ArrowRight className="w-4 h-4 text-primary-500 group-hover:translate-x-1 transition-transform shrink-0" />
+                </div>
+              </Link>
+            )}
+
+            {/* Bottom Right Card: Editor's Choice */}
+            {articles[2] && (
+               <Link to={`/articles/${articles[2].id}`} className="group relative col-span-1 md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden bg-navy-950 text-white p-6 flex flex-col shadow-lg hover:shadow-xl transition-all duration-300 min-h-[240px]">
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary-500/20 blur-2xl rounded-full pointer-events-none"></div>
+                <div className="flex items-start justify-between mb-3 relative z-10">
+                  <span className="text-primary-400 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5" /> Editor's Choice
+                  </span>
+                </div>
+                <h3 className="font-bold text-white text-base leading-snug mb-2 group-hover:text-primary-400 transition-colors line-clamp-3 relative z-10">
+                  {articles[2].title}
+                </h3>
+                <p className="text-gray-400 text-xs line-clamp-2 mb-4 flex-grow relative z-10">
+                  {articles[2].authors ? articles[2].authors.join(', ') : 'Various Authors'}
+                </p>
+                <div className="mt-auto flex items-center justify-between text-[10px] font-bold text-gray-300 uppercase tracking-widest truncate relative z-10">
+                  <span className="truncate mr-2">{articles[2].journalTitle}</span>
+                  <ArrowRight className="w-4 h-4 text-primary-400 group-hover:translate-x-1 transition-transform shrink-0" />
+                </div>
+              </Link>
+            )}
+          </div>
+        </div>
+      </section>
+
       {/* Featured Journals Section */}
-      <section className="py-16 bg-white border-y border-gray-100">
+      <section className="py-16 bg-[#f8fafc] border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center max-w-2xl mx-auto mb-12">
 
@@ -396,9 +489,11 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center mt-2">
-            <Button variant="outline" className="rounded-full px-8 border-gray-300 text-gray-600 hover:bg-gray-50 h-9 text-sm">
-              See more news <ChevronRight className="w-4 h-4 ml-1" />
-            </Button>
+            <Link to="/news">
+              <Button variant="outline" className="rounded-full px-8 border-gray-300 text-gray-600 hover:bg-gray-50 h-9 text-sm">
+                See more news <ChevronRight className="w-4 h-4 ml-1" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

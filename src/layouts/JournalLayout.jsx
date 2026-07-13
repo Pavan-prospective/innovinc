@@ -117,18 +117,7 @@ export function JournalLayout() {
             </div>
           </div>
         </section>
-      ) : (
-        <div className="bg-white border-b border-gray-200 pt-6 pb-4">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav className="flex items-center gap-1.5 text-xs text-gray-500 mb-2">
-              <Link to="/journals" className="hover:text-primary-700">Journals</Link>
-              <ChevronRight className="w-3 h-3" />
-              <Link to={journalPath(journalId)} className="hover:text-primary-700 truncate max-w-[200px]">{journal.title}</Link>
-            </nav>
-            <h1 className="text-xl font-bold text-navy-950">{journal.title}</h1>
-          </div>
-        </div>
-      )}
+      ) : null}
 
       <Outlet context={{ journal }} />
     </div>

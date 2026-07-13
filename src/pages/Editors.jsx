@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { useParams, useOutletContext } from 'react-router-dom'
+import { useParams, useOutletContext, Link } from 'react-router-dom'
 import { ShieldCheck, Mail, Globe, Award, BookOpen, Users, GraduationCap, Star } from 'lucide-react'
 import { Card, CardContent } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
@@ -134,6 +134,24 @@ export default function Editors() {
             )}
           </div>
         )}
+
+        <div className="mb-8">
+          <div className="bg-primary-50 rounded-xl p-5 border border-primary-100 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left shadow-sm">
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 shadow-sm">
+              <BookOpen className="w-5 h-5 text-primary-600" />
+            </div>
+            <div className="flex-grow">
+              <h4 className="text-sm font-bold text-navy-950">Join our Editorial Board</h4>
+              <p className="text-xs text-gray-600 mt-0.5">Help shape the future of scientific research.</p>
+            </div>
+            <Link to="/apply-editor" className="shrink-0">
+              <Button variant="outline" className="text-xs h-9 px-4 border-primary-200 text-primary-700 hover:bg-primary-100">
+                Apply Now
+              </Button>
+            </Link>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
           {/* Explanation Section */}
