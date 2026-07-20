@@ -1,0 +1,16 @@
+Biological and Catalytical Properties of Core-Shell Au@Pd Nanorods for Theranostic Applications
+
+Cristina Satriano
+NanoHybrid Biointerfaces Lab (NHBIL) - Department of Chemical Sciences, University of Catania, Catania, Italy 
+
+
+
+ABSTRACT: 
+Palladium nanoparticles (Pd NPs) are widely recognized for their catalytic activity, while recent studies have unveiled their potential in biomedical applications. In this work, we report the synthesis and characterization of gold–palladium core–shell nanorods (Au@Pd NRs), prepared either bare or with a polyvinylpyrrolidone (PVP) capping layer (Au@Pd@PVP NRs). Their physicochemical properties were systematically investigated through UV–visible spectroscopy, atomic force microscopy (AFM), zeta potential, and dynamic light scattering (DLS). Biointerface interactions were probed by confocal laser scanning microscopy (LSM), along with cytotoxicity and mitochondrial ROS assays in cancer cells. Furthermore, their plasmonic, photothermal, and photocatalytic behaviors were evaluated to assess multifunctional performance. The results demonstrate that Au@Pd NRs act as a tri-modal nanoplatform, where size, surface chemistry, and light activation govern dose-dependent cytotoxicity. These findings highlight the potential of Au@Pd-based nanostructures as advanced theranostic agents for tumour therapy.
+Acknowledgements 
+The financial supported by MUR in the framework of PRIN2022-PNRR call under project CoMu4CaT is acknowledged.
+
+
+
+
+  

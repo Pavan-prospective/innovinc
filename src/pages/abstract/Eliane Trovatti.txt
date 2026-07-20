@@ -1,0 +1,11 @@
+Lysine grafted poly(lactic acid): An intrinsically antimicrobial polymer
+ Eliane Trovatti a, Bruna Carolina Dorma, Tamires Souza Nossab, Benedito Domingos Netoa, Monica Rosas Costa Iemmaa, Antonio Jose Felix Carvalhoc,
+ a University of Araraquara - UNIARA, Rua Carlos Gomes, 1217, 14801-340 Araraquara, SP, Brazil;
+b Laboratory of Materials (LabMat) and Laboratory of Biopolymers (LaBioPol), Federal Institute of Education, Science and Technology of Sa ̃o Paulo, Av. Joa ̃o Olímpio de Oliveira, 1561, 18202-000 Itapetininga, SP, Brazil; c Department of Materials Engineering, Sa ̃o Carlos School of Engineering, University of Sa ̃o Paulo, Av. Joa ̃o Dagnone, 1100 13563-120 Sao Carlos, SP, Brazil 
+
+Abstract:
+
+Plastics are widely used in biomedical devices in clinical approaches due to their ease of processing, sterilization. Handling can lead these devices to contamination and the worst situation is the microbial spreading, once they inherently lack antimicrobial properties. To address this limitation, poly(lactic acid) (PLA) was chemically modified by maleation followed by L-lysine grafting, producing a novel derivative (PLA-g-Lys) with potential antimicrobial functionality. Structural analyses using FTIR and ¹H NMR confirmed the success of the modifications. Biological assays demonstrated that PLA-g-Lys inhibited approximately 99% of Staphylococcus aureus growth by direct contact, while showing no cytotoxic effects on L929 mouse fibroblast cells. thermal analysis and tensile testing indicated that the modified PLA retained its mechanical integrity and even showed improved processability. These findings suggest that PLA-g-Lys is a promising material for the development of safer, antimicrobial medical devices, combining biocompatibility with enhanced performance for future biomedical applications. The new and not published data correspond to the modified PLA processing by extrusion and 3D printing, with promising results for future manufacturing scalability. 
+ Acknowledgements: The authors thank The São Paulo Research Foundation (FAPESP) for funding the project, grant number 2017-18782-6.
+
+

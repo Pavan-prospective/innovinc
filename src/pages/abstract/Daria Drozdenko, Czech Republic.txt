@@ -1,0 +1,12 @@
+Low-alloyed Mg alloys with high strength and moderate ductility
+Daria Drozdenko1,* Patrik Dobroň1,Kristián Máthis1, Michiaki Yamasaki2, Soya Nisimoto2, Shin-ichi Inoue3, Yoshihito Kawamura3 
+1 Department of Physics of Materials, Faculty of Mathematics and Physics, Charles University, Ke Karlovu 5, 12116, Prague 2, Czech Republic
+2 Department of Materials Science, Kumamoto University, 2-39-1 Kurokami, Chuo-ku, 860-8555 Kumamoto, Japan
+3 Magnesium Research Center, Kumamoto University, 2-39-1 Kurokami, Chuo-ku, 860-8555 Kumamoto, Japan
+
+Abstract: 
+The increasing demand for lightweight structural materials in engineering and transportation applications drives the development of Mg alloys with improved mechanical performance and corrosion resistance. At the same time, Mg alloys are promising candidates for biodegradable implants, where biocompatibility and controlled degradation are essential. From both biomedical and economic perspectives, reducing the content of rare-earth (RE) elements is highly desirable. To preserve good mechanical properties of Mg-Zn-RE alloys with a reduced RE content, optimization of processing parameters has to be considered. Among others, the rapidly solidified ribbon-consolidation (RSRC) technique has been found to be effective in producing Mg alloys with exceptional properties. The present study focuses on dilute Mg–Zn–Y/Gd alloys prepared by RSRC, focused on the relationship between processing parameters, microstructure, and resulting properties. In particular, the effects of alloy composition and metal flow rate during extrusion were systematically investigated.
+
+The developed materials exhibit an ultrafine-grained (UFG) microstructure (average grain size ~1 µm) with a weak basal texture. Despite the low alloying content (≤ 2 at.%), the formation of solute-enriched stacking faults and its agglomeration in cluster-arranged layers or nanoplates provides effective strengthening by hindering dislocation motion. In addition, the alloys demonstrate remarkable thermal stability compared to conventional UFG Mg alloys.
+ Mechanical properties and corrosion behaviour were correlated with key microstructural features, including grain size, distribution of stacking faults, and internal strain heterogeneity. The results reveal that the heterogeneous distribution of internal strain within the complex microstructure plays a crucial role in determining the overall performance of low-alloyed RSRC Mg alloys.
+

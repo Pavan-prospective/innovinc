@@ -1,0 +1,10 @@
+Application of advanced in-situ techniques for investigation of deformation behavior in Mg alloys
+Patrik Dobroň*, Daria Drozdenko
+Charles University, Faculty of Mathematics and Physics, Department of Physics of Materials, Ke Karlovu 5, 12116, Prague 2, Czech Republic
+
+
+
+ABSTRACT:
+In-situ observations of dislocation and twinning activity in hcp metals using scanning and transmission electron microscopy (SEM, TEM) are becoming more popular nowadays, despite providing information from a limited volume of samples. On the other hand, diffraction methods operate within higher penetration depths. Both the electron microscopy and diffraction methods, however, require a certain, finite time for data collection. At the same time, the acoustic emission (AE) monitoring during deformation provides information on local dynamic changes from the entire volume of the material in real-time. The development of the AE technique in the last decade enables the storage and processing of data with a very high time resolution. Moreover, the application of modern statistical analyses to the AE data, particularly clustering techniques, also significantly contributes to the identification and understanding of the processes that occur during deformation of the material. The combination of the AE technique with other methods provides complementary information about deformation mechanisms. For example, the AE technique is sensitive to collective dislocation movement and twin nucleation, and the neutron diffraction method refers to dislocation density and changes in twin volume fraction (twin growth). Thus, an appropriate combination of experimental methods will allow us to comprehensively study deformation behavior with very high temporal and spatial resolution.
+
+

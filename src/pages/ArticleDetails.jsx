@@ -12,6 +12,7 @@ const SECTION_TABS = ['Abstract', 'Introduction', 'Methods', 'Results', 'Conclus
 export default function ArticleDetails() {
   const { articleId } = useParams()
   const [article, setArticle] = useState(null)
+  const [relatedArticles, setRelatedArticles] = useState([])
   const [loading, setLoading] = useState(true)
   const [activeTab, setActiveTab] = useState('Abstract')
 
@@ -20,6 +21,8 @@ export default function ArticleDetails() {
       try {
         const data = await api.articles.getById(articleId)
         setArticle(data)
+        const journalArticles = await api.articles.getByJournal(data.journalId)
+        setRelatedArticles(journalArticles.filter(a => a.id !== data.id).slice(0, 3))
       } catch (error) {
         console.error('Failed to fetch article', error)
       } finally {
@@ -251,6 +254,36 @@ export default function ArticleDetails() {
                 >
                   Browse all articles <ChevronRight className="w-3.5 h-3.5" />
                 </Link>
+              </div>
+
+              {/* Related Articles */}
+              <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Related Articles</h3>
+                {relatedArticles && relatedArticles.length > 0 ? (
+                  <div className="space-y-4">
+                    {relatedArticles.map((rel) => (
+                      <Link key={rel.id} to={`/articles/${rel.id}`} className="block group">
+                        <h4 className="text-sm font-semibold text-navy-950 group-hover:text-primary-600 transition-colors line-clamp-2 leading-snug">
+                          {rel.title}
+                        </h4>
+                        <p className="text-[11px] text-gray-500 mt-1 truncate">
+                          {rel.authors?.join(', ')}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-sm text-gray-500">No related articles found.</p>
+                )}
+                
+                <div className="mt-5 pt-4 border-t border-gray-100">
+                  <Link
+                    to={`/journals/${article.journalId}/articles`}
+                    className="text-xs font-semibold text-primary-600 hover:text-primary-800 flex items-center justify-between"
+                  >
+                    View All Articles <ChevronRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
               </div>
 
               {/* Quick Nav */}

@@ -1,0 +1,13 @@
+Robust Mix-charged Polyzwitterionic Hydrogels for Ultra-efficient Atmospheric Water Harvesting and Evaporative Cooling
+
+Jintu Fan & Xuanxuan Du
+
+Research Centre of Textiles for Future Fashion, PolyU Academy of Interdisciplinary Research, School of Fashion and Textiles, The Hong Kong Polytechnic University, Hong Kong
+
+
+ABSTRACT: 
+
+Atmospheric water harvesting (AWH) presents a great potential in addressing the increasing global challenges in freshwater and energy supply, especially in arid and semi-arid regions. While hydrogels are excellent materials for harvesting abundant atmospheric water, estimated 12,900 trillion kilograms, for their inherent high moisture absorbency, their practical use is largely hampered due to generally poor mechanical strength. In this study, we report a novel tunable hygroscopic mix-charged polyzwitterionic hydrogel (THMPH) achieving dual excellence in outstanding moisture absorbency and mechanical robustness. Owing to its broad ionic bond strength distribution enabled by superior charge mobility and the optimized topological structure coupled with improved LiCl binding affinity, THMPH exhibited more than 200 times higher mechanical ductility at high mass swelling ratio (225 kPa tensile strength retention at 200% mass swelling ratio) and 1.7 times higher water uptake (2.9 g g-1 at 25°C, 70% RH) in comparison with polybetaine, which is a commonly-used polyzwitterionc hydrogels for AWH. When THMPH is used for daytime photovoltaic panel cooling after nighttime moisture absorption, it can provide a 15°C temperature reduction of a photovoltaic panel under 1.0 kW m−2 solar irradiation, resulting in 7.33% increase in solar energy conversion efficiency. With high hygroscopicity and exceptional toughness, THMPH surpassed mostly reported SAWH materials (polyzwitterions/polyelectrolytes/aerogels etc). The application of our novel THMPH can therefore have far-reaching implications in water and energy harvesting and utilization. 
+
+  
+

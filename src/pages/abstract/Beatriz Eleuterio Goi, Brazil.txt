@@ -1,0 +1,22 @@
+Design of Mn(II) e Ni(II)-NHC complexes as photocatalysts for radical polymerization under visible light and 3D printing
+ B. E. Goi1*, C. Bignardi1, N. Pesqueira1, Y. M. Shimizo1, V. P. Carvalho-Jr1, Jacques Lalevée2 
+1Department of Chemistry and Biochemistry, FCT-UNESP, Presidente Prudente, Brazil
+ 2Institut de Science des Matériaux de Mulhouse, Université de Haute Alsace, France 
+
+In recent years, metal-based photocatalysts have emerged as key players in the development of efficient photopolymerization processes and 3D printing technologies. This work highlights the design and photochemical evaluation of two new photocatalytic systems based on first-row transition metals coordinated to N-heterocyclic carbene (NHC) ligands: a manganese(II) complex [Mn(PyImes)2](PF6)2 and nickel(II) complexes [Ni(Py-NHC)2](PF6)2 and [Ni(Ph-NHC)2] (Figure 1). These complexes exhibit visible-light absorption and
+photoluminescence properties, making them suitable candidates for photoinduced free radical polymerization (FRP) and controlled radical photopolymerization (CRP2). The Mn(II) complex showed effective activation under LED (405–532 nm) and was successfully applied in laser-assisted 3D printing. Similarly, Ni(II)-NHC complexes   demonstrated   excellent
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 1. Photoinitiating system with NHC-Metal and 3D printing
+performance under 405 nm irradiation, with high monomer conversions and remarkable resolution in 3D patterns. Mechanistic investigations supported by cyclic voltammetry, ESR, fluorescence quenching, and photolysis experiments confirmed their role as efficient photocatalysts via both oxidative and reductive pathways. These findings underline the potential of earth-abundant metal complexes as sustainable alternatives to precious metal- based systems in advanced manufacturing.
+ 

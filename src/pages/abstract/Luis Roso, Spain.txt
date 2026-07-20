@@ -1,0 +1,19 @@
+Structured Light for Material Processing
+Luis Roso
+Department of Applied Physics, University of Salamanca, 37008 Salamanca, Spain 
+
+ABSTRACT:
+
+No doubt that lasers are of paramount importance to multiple applications in material science, but the possibilities of lasers are not fully explored yet. Among other applications of CW or long pulse lasers there are a large number of possibilities of ultrafast lasers. By such lasers we understand lasers in the picosecond, femtosecond and attosecond domains. Those lasers present special features because they can ionize the surface, or even the inside of a transparent material. Applications from nano-structuring to shock peening are well known.
+
+At the moment, most of the applications consider Gaussian descriptions. Modelling other kind of beams was difficult. However, such Gaussian beams are very elusive in the experimental arena, and the most efficient way is to use specific intracavity components at the price to reduce the total power emitted. Particularly in applications where power is an issue, lasers have non-Gaussian profiles that, as the intensity increases, evolve to flat top profiles.
+In the present contribution we will show new ways to control and structure the focus of a laser allowing material irradiation with unprecedent shapes and features. The work is a theoretical study of the diffraction made to a degree of sophistication not yet achieved so far. In our study we will describe the shape of a real laser focus, very different from the typical Gaussian profile and we will analyze how is the field distribution -and how to structure it- before and after focus allowing new benefits and possibilities of placing the irradiated material to irradiate.
+
+Observe that this is not just a space distribution of field, it is a spatiotemporal structure. It allows sub-lambda structures (say nanopatterns of irradiation). Among other things it is remarkable the simplicity to obtain OAM (Orbital Angular Momentum) pulses and the structure of the irradiation they allow.
+
+Note: This work is presented on behalf of a large collaboration involving scientists from the University of Salamanca, the Salamanca Pulsed Lasers Center, the University of Maryland (USA) and the University of Alberta (Canada). If accepted, in the definitive abstract a complete list of co-authors will be indicated. 
+ BIOGRAPHY:
+At present Full Professor at the Universidad de Salamanca, since 1991. Has been the Director of CLPU (2008-2022), and moreover, promotor of its creation (2004-2007). Graduate in Physics and Mathematics in 1977 (simultaneously) at the Universidad de Barcelona, and PhD in Physics at Universidad Autónoma de Barcelona in 1982. Associate Professor (1984-1991) at the Universidad Autónoma, and visiting Scholar at the University of Rochester, Rochester, New York, in 1985/86. Among other things, now is member of the Scientific Advisory Committee of the European XFEL (2023-2026). Corresponding Academician of the Royal Academy of Arts and Sciences of Barcelona since 2020.
+
+
+

@@ -1,7 +1,7 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useParams, useOutletContext, Link } from 'react-router-dom'
-import { ShieldCheck, Mail, Globe, Award, BookOpen, Users, GraduationCap, Star } from 'lucide-react'
+import { ShieldCheck, Mail, Globe, Award, BookOpen, Users, GraduationCap, Star, X } from 'lucide-react'
 import { Card, CardContent } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
 import { Button } from '../components/ui/Button'
@@ -9,67 +9,40 @@ import { Button } from '../components/ui/Button'
 // ... editors array is unchanged ...
 const editors = [
   {
-    name: 'Dr. Sarah Chen',
-    role: 'Editor-in-Chief',
-    specialty: 'Molecular Oncology & Genomics',
-    institution: 'Stanford University School of Medicine',
-    bio: 'Dr. Chen leads our editorial strategy with over 15 years of oncology research, focusing on target identification and genomic alterations in solid tumors.',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400&h=400',
-    email: 's.chen@sgcr-editorial.org'
+    name: 'Prof. Nguyen Quang Chinh',
+    role: 'Board Member',
+    specialty: 'Materials Physics',
+    institution: 'Eötvös Loránd University, Hungary',
+    bio: 'Doctor of Science (DSc) from the Hungarian Academy of Sciences (HAS), graduated in Physics from Eötvös Loránd University (ELTE) in 1985.\n\nSince then he has been working in various fields of materials science.\n\nHis recent main research topics are: i) Plastic behavior and strengthening mechanisms of metals and alloys, ii) Microstructural and mechanical characteristics of ultrafine-grained and nanocrystalline materials, iii) Development of the depth sensing indentation method.\n\nHe participated in many international collaborations. Currently he is the leader of the Hungarian group in a joint project with Russian researchers entitled “Study of the physical nature and development of ultra-low-temperature superplasticity in ultrafine-grained Al alloys for innovative applications”.',
+    image: '/editors/Nguyen Q. Chinh, Hungary.png',
+    email: 'contact@sgcr-editorial.org'
   },
   {
-    name: 'Prof. Michael Roberts',
-    role: 'Associate Editor',
-    specialty: 'Clinical Immunotherapy & Trials',
-    institution: 'University of Oxford Research Hospital',
-    bio: 'Professor Roberts leads clinical trials in immune checkpoint inhibitors and cellular therapeutics, aiming to bridge clinical innovations to patient bedside care.',
-    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=400&h=400',
-    email: 'm.roberts@sgcr-editorial.org'
+    name: 'Dr. Malcolm Xing',
+    role: 'Board Member',
+    specialty: 'Biomaterials & Tissue Engineering',
+    institution: 'University of Manitoba, Canada',
+    bio: 'Dr. Malcolm Xing is a Professor at the University of Manitoba, Winnipeg, specializing in biomaterials for tissue engineering, bioadhesives, hemostasis, biofabrication, and implantable biosensors.\n\nWith over 200 publications in leading journals — including Nature Nanotechnology, Nature Biomedical Engineering, Nature Communications, Science Advances, and Advanced Materials — his research has garnered widespread recognition across the scientific community.\n\nHis work on high-performance hydrogels for applications in wound healing, gastrointestinal diseases, and vascular tissue regeneration has been notably featured in Nature Reviews Cardiology, Science, Nature Reviews Materials, ACS Headline News, and the Royal Society of Chemistry.\n\nHis research on sustainable materials has received broad media coverage, including features in Time, Fortune, and Forbes. Dr. Xing is an elected Fellow of the Canadian Academy of Engineering and the American Institute for Medical and Biological Engineering.',
+    image: '/editors/Malcolm Xing, Canada.png',
+    email: 'contact@sgcr-editorial.org'
   },
   {
-    name: 'Dr. Elena Rodriguez',
-    role: 'Review Editor',
-    specialty: 'Cancer Epigenetics & Genetics',
-    institution: 'MIT Koch Institute for Integrative Cancer Research',
-    bio: 'Dr. Rodriguez\'s research addresses epigenetic mechanisms of tumor growth and hereditary cancer predisposition diagnostics.',
-    image: 'https://images.unsplash.com/photo-1594824813573-246434de83fb?auto=format&fit=crop&q=80&w=400&h=400',
-    email: 'e.rodriguez@sgcr-editorial.org'
+    name: 'Prof. Lia Krusin-Elbaum',
+    role: 'Board Member',
+    specialty: 'Condensed Matter Physics',
+    institution: 'The City College of New York - CUNY, USA',
+    bio: 'Lia Krusin-Elbaum has been a Professor of Physics at The City College of New York since 2010. Her Ph.D. degree is in Condensed Matter Physics (NYU, 1979) and she was a scientist at the IBM\'s T.J. Watson Research Center, NY (1979-2010).\n\nDr. Krusin-Elbaum is a recipient of ten IBM Invention Achievement Awards and holds over 27 US patents.\n\nShe is a Fellow of the American Physical Society (1993-) and was elected (2022) to serve on the USDOE Basic Energy Sciences Advisory Committee. She is a co-lead of the Columbia U. NSF-MRSEC PAQM (2020-) and of the NSF-CREST IDEALS Centers (2015-).',
+    image: '/editors/Lia Krusin-Elbaum (Keynote), USA.png',
+    email: 'contact@sgcr-editorial.org'
   },
   {
-    name: 'Prof. David Kim',
-    role: 'Guest Editor',
-    specialty: 'Hematologic Oncology & Biomarkers',
-    institution: 'Seoul National University Hospital',
-    bio: 'Professor Kim specializes in leukemia biomarkers, chimeric antigen receptor T-cell trials, and bone marrow microenvironments.',
-    image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400&h=400',
-    email: 'd.kim@sgcr-editorial.org'
-  },
-  {
-    name: 'Dr. James Wilson',
-    role: 'Senior Editor',
-    specialty: 'Pediatric Oncology & Stem Cells',
-    institution: 'Cambridge Stem Cell Institute',
-    bio: 'Dr. Wilson focuses on pediatric neuro-oncology, cancer stem cell niche plasticity, and developmental medicine advancements.',
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400&h=400',
-    email: 'j.wilson@sgcr-editorial.org'
-  },
-  {
-    name: 'Prof. Jane Doe',
-    role: 'Senior Advisor',
-    specialty: 'Radiation Oncology & Regimens',
-    institution: 'Harvard Medical School',
-    bio: 'Prof. Doe designs advanced stereotactic radiotherapy regimens and conducts clinical protocols for multi-modal cancer care.',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400',
-    email: 'j.doe@sgcr-editorial.org'
-  },
-  {
-    name: 'Prof. John Smith',
-    role: 'Senior Board Member',
-    specialty: 'Breast Cancer Therapeutics',
-    institution: 'Johns Hopkins Medicine',
-    bio: 'Prof. Smith leads translational labs identifying drug resistance mechanisms in hormone-positive breast malignancies.',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=400',
-    email: 'j.smith@sgcr-editorial.org'
+    name: 'Dr. Gregory A. Hudalla',
+    role: 'Board Member',
+    specialty: 'Biomedical Engineering',
+    institution: 'University of Florida, USA',
+    bio: 'Dr. Hudalla is the Integra LifeSciences Term Professor in the J. Crayton Pruitt Family Department of Biomedical Engineering at the University of Florida. Dr. Hudalla’s research applies molecular and materials engineering to advance biotherapeutic delivery.\n\nDr. Hudalla has authored more than 60 publications and holds 8 patents.\n\nDr. Hudalla has received numerous awards and honors, including a National Science Foundation (NSF) RAISE award, the National Institutes of Health (NIH)Trailblazer award, the NSF Career award, the NIH Maximizing Investigators’ Research Award, and was recently recognized with the Invention of the Year by UF Innovate.',
+    image: '/editors/Gregory A Hudalla, USA.png',
+    email: 'contact@sgcr-editorial.org'
   }
 ]
 
@@ -78,6 +51,8 @@ export default function Editors() {
   const outletContext = useOutletContext()
   const journal = outletContext?.journal
   const isJournalContext = !!journalId
+
+  const [selectedEditor, setSelectedEditor] = useState(null)
 
   return (
     <div className={`min-h-screen ${isJournalContext ? '' : 'bg-gray-50 pb-20'}`}>
@@ -226,10 +201,11 @@ export default function Editors() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.08 }}
-                  className="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_-5px_rgba(212,163,89,0.1)] hover:border-primary-300/80 transition-all duration-300 overflow-hidden flex flex-col group"
+                  onClick={() => setSelectedEditor(editor)}
+                  className="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_-5px_rgba(212,163,89,0.1)] hover:border-primary-300/80 transition-all duration-300 overflow-hidden flex flex-col group cursor-pointer"
                 >
                   <div className="flex gap-4 p-5 items-start">
-                    <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-gray-100 shadow-sm relative">
+                    <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-gray-100 shadow-sm relative cursor-pointer">
                       <img
                         src={editor.image}
                         alt={editor.name}
@@ -252,7 +228,7 @@ export default function Editors() {
                   </div>
 
                   <div className="px-5 pb-5 flex-1 flex flex-col justify-between space-y-4">
-                    <p className="text-[11px] text-gray-500 leading-relaxed font-normal italic">
+                    <p className="text-[11px] text-gray-500 leading-relaxed font-normal italic line-clamp-4">
                       "{editor.bio}"
                     </p>
                     
@@ -270,7 +246,7 @@ export default function Editors() {
                           <Mail className="w-3.5 h-3.5 text-gray-300" />
                           {editor.email}
                         </span>
-                        <span className="text-primary-600 group-hover:translate-x-0.5 transition-transform flex items-center gap-0.5 font-bold cursor-pointer">
+                        <span className="text-primary-600 group-hover:translate-x-0.5 transition-transform flex items-center gap-0.5 font-bold cursor-pointer hover:text-primary-800">
                           Profile <Globe className="w-3 h-3" />
                         </span>
                       </div>
@@ -283,6 +259,75 @@ export default function Editors() {
           
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedEditor && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/60 backdrop-blur-sm">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
+            >
+              <button 
+                onClick={() => setSelectedEditor(null)}
+                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-500 rounded-full transition-colors z-10"
+              >
+                <X className="w-4 h-4" />
+              </button>
+              <div className="p-8">
+                <div className="flex flex-col sm:flex-row gap-6 items-start">
+                  <div className="w-32 h-32 rounded-2xl overflow-hidden shrink-0 border border-gray-100 shadow-sm relative">
+                    <img
+                      src={selectedEditor.image}
+                      alt={selectedEditor.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="space-y-2 pt-2">
+                    <h3 className="font-extrabold text-navy-950 text-2xl leading-tight">
+                      {selectedEditor.name}
+                    </h3>
+                    <span className="inline-block text-xs font-bold text-primary-700 bg-primary-50 px-2 py-1 rounded-md uppercase tracking-wider">
+                      {selectedEditor.role}
+                    </span>
+                    <div className="text-sm text-gray-500 font-medium leading-snug flex items-center gap-1.5 mt-2">
+                      <Award className="w-4 h-4 text-gray-400" />
+                      <span>{selectedEditor.institution}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-sm text-gray-500 font-medium mt-1">
+                      <Mail className="w-4 h-4 text-gray-400" />
+                      <span>{selectedEditor.email}</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-8">
+                  <h4 className="text-sm font-bold text-navy-950 mb-3 border-b border-gray-100 pb-2">Biography</h4>
+                  <div className="space-y-3">
+                    {selectedEditor.bio.split('\n\n').map((paragraph, idx) => (
+                      <p key={idx} className="text-[14px] text-gray-700 leading-loose">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="mt-6">
+                  <h4 className="text-sm font-bold text-navy-950 mb-3 border-b border-gray-100 pb-2">Specialties</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedEditor.specialty.split('&').map(spec => (
+                      <Badge key={spec} className="bg-gray-50 text-gray-600 border border-gray-100 text-xs px-3 py-1 rounded-lg font-medium">
+                        {spec.trim()}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
