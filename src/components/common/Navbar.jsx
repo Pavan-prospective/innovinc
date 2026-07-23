@@ -11,8 +11,28 @@ export function Navbar() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'All Journals', path: '/journals' },
-    { name: 'About', path: '/about' },
   ]
+
+  const aboutLinks = {
+    scope: [
+      { label: 'Mission and scope', path: '/about/mission-and-scope' },
+      { label: 'Editorial and Advisory Boards', path: '/about/editorial-board' },
+      { label: 'Open access statement', path: '/about/open-access-statement' },
+      { label: 'Copyright statement', path: '/about/copyright-statement' },
+      { label: 'Editorial & quality processes', path: '/about/editorial-quality-processes' },
+      { label: 'Contact', path: '/about/contact' },
+    ],
+    authors: [
+      { label: 'Why publish with us?', path: '/authors/why-publish-with-us' },
+      { label: 'Publishing fees', path: '/authors/publishing-fees' },
+      { label: 'Article types', path: '/authors/article-types' },
+      { label: 'Manuscript formatting guidelines', path: '/authors/manuscript-formatting-guidelines' },
+      { label: 'Review guidelines', path: '/authors/review-guidelines' },
+      { label: 'Quick submission checklist', path: '/authors/submission-checklist' },
+    ],
+  }
+
+  const [isAboutOpen, setIsAboutOpen] = useState(false)
 
   return (
     <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all">
@@ -43,6 +63,55 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
+
+              {/* About Dropdown */}
+              <div 
+                className="relative flex items-center"
+                onMouseEnter={() => setIsAboutOpen(true)}
+                onMouseLeave={() => setIsAboutOpen(false)}
+              >
+                <Link
+                  to="/about"
+                  className={cn(
+                    "flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary-600 h-full",
+                    location.pathname === '/about' || location.pathname.startsWith('/about/') || location.pathname.startsWith('/authors/') ? "text-primary-600" : "text-gray-600"
+                  )}
+                >
+                  About Journal <ChevronDown className="w-4 h-4" />
+                </Link>
+                {isAboutOpen && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 min-w-[720px] bg-white border border-gray-200 shadow-xl rounded-b-xl z-50">
+                    <div className="max-w-7xl px-8 py-8 grid grid-cols-2 gap-8">
+                      {[
+                        { title: 'Scope', links: aboutLinks.scope },
+                        { title: 'For authors', links: aboutLinks.authors },
+                      ].map((col) => (
+                        <div key={col.title}>
+                          <h4 className="font-bold text-navy-950 text-sm mb-4 pb-1 border-b-2 border-primary-500 inline-block">
+                            {col.title}
+                          </h4>
+                          <ul className="space-y-2.5">
+                            {col.links.map((link) => (
+                              <li key={link.path}>
+                                <Link
+                                  to={link.path}
+                                  onClick={() => setIsAboutOpen(false)}
+                                  className={cn(
+                                    'text-sm transition-colors hover:text-primary-700 block',
+                                    location.pathname === link.path ? 'text-navy-950 font-semibold' : 'text-gray-500'
+                                  )}
+                                >
+                                  {link.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
             
             <div className="flex items-center space-x-4 border-l border-gray-200 pl-6">
@@ -83,6 +152,33 @@ export function Navbar() {
               >
                 {link.name}
               </Link>
+            ))}
+
+            {/* Mobile About Menu */}
+            <Link 
+              to="/about"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={cn(
+                "block px-3 py-2 text-base font-semibold transition-colors rounded-md mt-2",
+                location.pathname === '/about' ? "bg-primary-50 text-primary-600" : "text-gray-900 border-t border-gray-100 hover:text-primary-600"
+              )}
+            >
+              About Journal Overview
+            </Link>
+            {Object.entries(aboutLinks).map(([key, links]) => (
+              <div key={key} className="pt-2">
+                <div className="px-3 text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">{key}</div>
+                {links.map((link) => (
+                  <Link 
+                    key={link.path} 
+                    to={link.path} 
+                    onClick={() => setIsMobileMenuOpen(false)} 
+                    className="block px-3 py-1.5 pl-6 text-[13px] text-gray-600 hover:text-primary-700 rounded-md"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
             ))}
           </div>
           <div className="pt-4 flex flex-col space-y-3 border-t border-gray-100">

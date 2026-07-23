@@ -15,6 +15,17 @@ import JournalAbout from './pages/JournalAbout'
 
 import Home from './pages/Home'
 import About from './pages/About'
+import MissionAndScope from './pages/about/MissionAndScope'
+import OpenAccessStatement from './pages/about/OpenAccessStatement'
+import CopyrightStatement from './pages/about/CopyrightStatement'
+import EditorialQualityProcesses from './pages/about/EditorialQualityProcesses'
+import Contact from './pages/about/Contact'
+import WhyPublishWithUs from './pages/authors/WhyPublishWithUs'
+import PublishingFees from './pages/authors/PublishingFees'
+import ArticleTypes from './pages/authors/ArticleTypes'
+import ManuscriptFormatting from './pages/authors/ManuscriptFormatting'
+import ReviewGuidelines from './pages/authors/ReviewGuidelines'
+import SubmissionChecklist from './pages/authors/SubmissionChecklist'
 import News from './pages/News'
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -36,7 +47,23 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route path="about">
+            <Route index element={<About />} />
+            <Route path="mission-and-scope" element={<MissionAndScope />} />
+            <Route path="editorial-board" element={<Editors />} />
+            <Route path="open-access-statement" element={<OpenAccessStatement />} />
+            <Route path="copyright-statement" element={<CopyrightStatement />} />
+            <Route path="editorial-quality-processes" element={<EditorialQualityProcesses />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
+          <Route path="authors">
+            <Route path="why-publish-with-us" element={<WhyPublishWithUs />} />
+            <Route path="publishing-fees" element={<PublishingFees />} />
+            <Route path="article-types" element={<ArticleTypes />} />
+            <Route path="manuscript-formatting-guidelines" element={<ManuscriptFormatting />} />
+            <Route path="review-guidelines" element={<ReviewGuidelines />} />
+            <Route path="submission-checklist" element={<SubmissionChecklist />} />
+          </Route>
           <Route path="news" element={<News />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
