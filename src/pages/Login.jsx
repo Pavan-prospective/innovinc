@@ -20,7 +20,7 @@ export default function Login() {
       if (email.endsWith('@innovinc.org')) {
         navigate('/admin')
       } else {
-        navigate('/dashboard')
+        navigate('/')
       }
     }, 1500)
   }

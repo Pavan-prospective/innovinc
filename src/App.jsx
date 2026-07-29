@@ -2,9 +2,6 @@ import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { MainLayout } from './layouts/MainLayout'
 import { ScrollToTop } from './components/common/ScrollToTop'
-
-import { AuthorLayout } from './layouts/AuthorLayout'
-import AuthorDashboard from './pages/author/AuthorDashboard'
 import AuthorSubmit from './pages/author/AuthorSubmit'
 
 import { JournalLayout } from './layouts/JournalLayout'
@@ -75,7 +72,7 @@ function App() {
           <Route path="journals/:journalId" element={<JournalLayout />}>
             <Route index element={<JournalDetails />} />
             <Route path="articles" element={<JournalArticles />} />
-            <Route path="submit" element={<JournalPlaceholderPage title="Submit Manuscript" />} />
+            <Route path="submit" element={<AuthorSubmit />} />
             <Route path="special-issues" element={<JournalPlaceholderPage title="Special Issues" />} />
             <Route path="special-issues/:issueId" element={<JournalPlaceholderPage />} />
             <Route path="volumes" element={<JournalPlaceholderPage title="Volumes" />} />
@@ -91,13 +88,6 @@ function App() {
 
           <Route path="editorial-board" element={<Editors />} />
           <Route path="*" element={<NotFound />} />
-        </Route>
-
-        <Route path="/dashboard" element={<AuthorLayout />}>
-          <Route index element={<AuthorDashboard />} />
-          <Route path="submit" element={<AuthorSubmit />} />
-          <Route path="submissions" element={<JournalPlaceholderPage title="My Submissions" />} />
-          <Route path="settings" element={<JournalPlaceholderPage title="Profile Settings" />} />
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>

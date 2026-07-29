@@ -115,7 +115,7 @@ export default function JournalSectionDetails() {
                 </div>
                 <div className="text-xs uppercase tracking-widest text-gray-400 font-bold mb-5">Published Articles</div>
                 
-                <Link to="/dashboard/submit" className="w-full block mb-3">
+                <Link to={journalPath(journal.id, 'submit')} className="w-full block mb-3">
                   <Button className="w-full bg-primary-600 hover:bg-primary-500 text-white shadow-lg shadow-primary-900/50 h-12 text-sm font-bold border-none transition-all hover:scale-[1.02]">
                     Submit Manuscript
                   </Button>
@@ -228,7 +228,7 @@ export default function JournalSectionDetails() {
                 </div>
                 <h3 className="text-xl font-black text-navy-950 mb-2">No articles found</h3>
                 <p className="text-gray-500 mb-8 max-w-md mx-auto">There are currently no articles published in this specific section. Be the first to submit!</p>
-                <Link to="/dashboard/submit">
+                <Link to={journalPath(journal.id, 'submit')}>
                   <Button className="shadow-sm">Submit to {section.name}</Button>
                 </Link>
               </motion.div>

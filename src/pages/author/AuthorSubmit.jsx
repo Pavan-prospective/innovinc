@@ -3,17 +3,20 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { UploadCloud, CheckCircle, FileText, ArrowRight, X, UserCheck } from 'lucide-react'
 import { Button } from '../../components/ui/Button'
 import { JOURNALS } from '../../utils/dummyData'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 export default function AuthorSubmit() {
+  const { journalId } = useParams()
   const [step, setStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [uploadedFileUrl, setUploadedFileUrl] = useState('')
+  const [error, setError] = useState(null)
   
   const [formData, setFormData] = useState({
     title: '',
     abstract: '',
-    journalId: '',
+    journalId: journalId || '',
     coAuthors: '',
     file: null
   })
@@ -21,15 +24,76 @@ export default function AuthorSubmit() {
   const handleNext = () => setStep(step + 1)
   const handleBack = () => setStep(step - 1)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!formData.file) {
+      setError('Please upload a file first.')
+      return
+    }
+
     setIsSubmitting(true)
+    setError(null)
     
-    // Simulate API submission
-    setTimeout(() => {
+    try {
+      // 1. Convert file to Base64
+      const base64Promise = new Promise((resolve, reject) => {
+        const reader = new FileReader()
+        reader.onload = () => resolve(reader.result)
+        reader.onerror = (err) => reject(err)
+        reader.readAsDataURL(formData.file)
+      })
+      
+      const base64Data = await base64Promise
+      const journalTitle = JOURNALS.find(j => j.id === formData.journalId)?.title || formData.journalId
+      
+      // 2. Prepare payload
+      const payload = {
+        title: formData.title,
+        abstract: formData.abstract,
+        journalId: formData.journalId,
+        journalTitle: journalTitle,
+        coAuthors: formData.coAuthors,
+        fileName: formData.file.name,
+        mimeType: formData.file.type || 'application/octet-stream',
+        fileContent: base64Data
+      }
+      
+      // 3. Send payload to Google Apps Script Web App
+      const uploadUrl = import.meta.env.VITE_GOOGLE_DRIVE_UPLOAD_URL || 'https://script.google.com/macros/s/AKfycby68mAUqQIV9Zo_cNo3mnxcIYJHwkXvphP9d8RqQ70eX2OKa7JsaWj4vGXv13d86xWbcA/exec'
+      
+      const response = await fetch(uploadUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify(payload)
+      })
+      
+      if (!response.ok) {
+        throw new Error(`Server returned HTTP status ${response.status}`)
+      }
+      
+      const responseText = await response.text()
+      let result
+      try {
+        result = JSON.parse(responseText)
+      } catch (parseErr) {
+        console.error('Apps Script response parsing failed:', parseErr, responseText)
+        throw new Error('Received invalid response format from submission server.')
+      }
+      
+      if (result.status === 'success') {
+        setUploadedFileUrl(result.fileUrl)
+        setIsSuccess(true)
+      } else {
+        throw new Error(result.message || 'Failed to upload manuscript to Google Drive')
+      }
+    } catch (err) {
+      console.error('Submission error:', err)
+      setError(err.message || 'An unexpected error occurred during submission. Please try again.')
+    } finally {
       setIsSubmitting(false)
-      setIsSuccess(true)
-    }, 2000)
+    }
   }
 
   const handleFileDrop = (e) => {
@@ -53,6 +117,8 @@ export default function AuthorSubmit() {
     })
     setStep(1)
     setIsSuccess(false)
+    setUploadedFileUrl('')
+    setError(null)
   }
 
   if (isSuccess) {
@@ -68,17 +134,17 @@ export default function AuthorSubmit() {
           </div>
           <h2 className="text-2xl font-bold text-navy-950 mb-2">Manuscript Submitted!</h2>
           <p className="text-gray-500 mb-8 text-sm leading-relaxed">
-            Your manuscript "{formData.title || 'Untitled'}" has been successfully uploaded. You can track its progress in the "My Submissions" tab.
+            Your manuscript "{formData.title || 'Untitled'}" has been successfully uploaded.
           </p>
           <div className="flex flex-col gap-3">
-            <Link to="/dashboard/submissions">
-              <Button className="w-full h-11 rounded-xl shadow-sm">
-                View My Submissions
-              </Button>
-            </Link>
-            <Button variant="outline" onClick={resetForm} className="w-full h-11 rounded-xl text-gray-600">
+            <Button onClick={resetForm} className="w-full h-11 rounded-xl shadow-sm">
               Submit Another Manuscript
             </Button>
+            <Link to="/">
+              <Button variant="outline" className="w-full h-11 rounded-xl text-gray-600">
+                Go back to Home
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>
@@ -254,6 +320,15 @@ export default function AuthorSubmit() {
                 exit={{ opacity: 0, x: -20 }}
                 className="space-y-6"
               >
+                {error && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-2xl text-red-700 text-sm flex items-center justify-between shadow-sm">
+                    <span className="font-medium">{error}</span>
+                    <button type="button" onClick={() => setError(null)} className="text-red-500 hover:text-red-700">
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+                )}
+                
                 <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200 space-y-5 text-sm">
                   <div>
                     <span className="block text-gray-500 font-semibold text-xs mb-1 uppercase tracking-wider">Target Journal</span>
