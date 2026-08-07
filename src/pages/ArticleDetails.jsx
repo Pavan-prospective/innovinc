@@ -15,6 +15,7 @@ export default function ArticleDetails() {
   const [relatedArticles, setRelatedArticles] = useState([])
   const [loading, setLoading] = useState(true)
   const [activeTab, setActiveTab] = useState('Abstract')
+  const [isAffiliationsModalOpen, setIsAffiliationsModalOpen] = useState(false)
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -56,6 +57,12 @@ export default function ArticleDetails() {
       </div>
     )
   }
+
+  const filteredTabs = ['Abstract', 'Introduction', 'Methods', 'Results', 'Conclusion', 'Biography', 'References'].filter((tab) => {
+    if (tab === 'Abstract') return true
+    const field = tab.toLowerCase()
+    return !!article[field]
+  })
 
 
   return (
@@ -102,33 +109,47 @@ export default function ArticleDetails() {
           <div className="mb-4">
             <div className="flex flex-wrap items-baseline gap-x-1.5 gap-y-1 text-sm font-semibold text-navy-950">
               {article.authorAffiliations ? (
-                article.authorAffiliations.map((author, index) => (
-                  <span key={author.name} className="inline-flex items-baseline">
-                    <button className="hover:text-primary-600 transition-colors">
-                      {author.name}
+                <>
+                  {article.authorAffiliations.slice(0, 4).map((author, index) => (
+                    <span key={author.name} className="inline-flex items-baseline">
+                      <button 
+                        onClick={() => setIsAffiliationsModalOpen(true)}
+                        className="hover:text-primary-600 hover:underline transition-colors"
+                      >
+                        {author.name}
+                      </button>
+                      <sup className="text-[10px] text-primary-600 font-bold ml-0.5">
+                        {author.indices.join(',')}
+                      </sup>
+                      {(index < Math.min(article.authorAffiliations.length, 4) - 1 || article.authorAffiliations.length > 4) && (
+                        <span className="text-gray-400 ml-0.5">,</span>
+                      )}
+                    </span>
+                  ))}
+                  {article.authorAffiliations.length > 4 && (
+                    <button 
+                      onClick={() => setIsAffiliationsModalOpen(true)}
+                      className="text-primary-600 hover:text-primary-800 hover:underline font-bold text-xs ml-1"
+                    >
+                      + {article.authorAffiliations.length - 4} more authors
                     </button>
-                    <sup className="text-[10px] text-primary-600 font-bold ml-0.5">
-                      {author.indices.join(',')}
-                    </sup>
-                    {index < article.authorAffiliations.length - 1 && (
-                      <span className="text-gray-400 ml-0.5">,</span>
-                    )}
-                  </span>
-                ))
+                  )}
+                </>
               ) : (
                 <span>{article.authors?.join(', ')}</span>
               )}
             </div>
 
-            {/* Affiliations */}
-            {article.affiliationsList && (
-              <div className="mt-3 space-y-1 text-[11px] text-gray-500 pl-0">
-                {article.affiliationsList.map(aff => (
-                  <div key={aff.index} className="flex gap-2 items-start leading-relaxed">
-                    <sup className="font-bold text-primary-700 shrink-0 mt-1">{aff.index}</sup>
-                    <span>{aff.text}</span>
-                  </div>
-                ))}
+            {/* Affiliations Link / Button */}
+            {(article.affiliationsList || article.authorAffiliations) && (
+              <div className="mt-2.5">
+                <button
+                  onClick={() => setIsAffiliationsModalOpen(true)}
+                  className="text-xs font-semibold text-primary-600 hover:text-primary-800 hover:underline inline-flex items-center gap-1.5 bg-primary-50/50 hover:bg-primary-50 px-3 py-1 rounded-full border border-primary-100/60 transition-all"
+                >
+                  <Users className="w-3.5 h-3.5" />
+                  View affiliations & author details
+                </button>
               </div>
             )}
           </div>
@@ -171,21 +192,23 @@ export default function ArticleDetails() {
           </div>
 
           {/* ─── Section Tabs ─── */}
-          <div className="flex items-center gap-0 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
-            {SECTION_TABS.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`flex-shrink-0 px-5 py-3 text-sm font-semibold border-b-[3px] transition-colors whitespace-nowrap ${
-                  activeTab === tab
-                    ? 'text-primary-700 border-primary-600'
-                    : 'text-gray-500 border-transparent hover:text-navy-950'
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
+          {filteredTabs.length > 1 && (
+            <div className="flex items-center gap-0 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 border-t border-gray-100 mt-2">
+              {filteredTabs.map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`flex-shrink-0 px-5 py-3 text-sm font-semibold border-b-[3px] transition-colors whitespace-nowrap ${
+                    activeTab === tab
+                      ? 'text-primary-700 border-primary-600'
+                      : 'text-gray-500 border-transparent hover:text-navy-950'
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
@@ -287,24 +310,26 @@ export default function ArticleDetails() {
               </div>
 
               {/* Quick Nav */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Quick Navigation</h3>
-                <nav className="space-y-2">
-                  {SECTION_TABS.map(tab => (
-                    <button
-                      key={tab}
-                      onClick={() => setActiveTab(tab)}
-                      className={`block w-full text-left text-sm px-3 py-1.5 rounded-lg transition-colors font-medium ${
-                        activeTab === tab
-                          ? 'bg-primary-50 text-primary-700'
-                          : 'text-gray-600 hover:bg-gray-50 hover:text-navy-950'
-                      }`}
-                    >
-                      {tab}
-                    </button>
-                  ))}
-                </nav>
-              </div>
+              {filteredTabs.length > 1 && (
+                <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+                  <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Quick Navigation</h3>
+                  <nav className="space-y-2">
+                    {filteredTabs.map(tab => (
+                      <button
+                        key={tab}
+                        onClick={() => setActiveTab(tab)}
+                        className={`block w-full text-left text-sm px-3 py-1.5 rounded-lg transition-colors font-medium ${
+                          activeTab === tab
+                            ? 'bg-primary-50 text-primary-700'
+                            : 'text-gray-600 hover:bg-gray-50 hover:text-navy-950'
+                        }`}
+                      >
+                        {tab}
+                      </button>
+                    ))}
+                  </nav>
+                </div>
+              )}
             </div>
           </div>
 
@@ -325,7 +350,11 @@ export default function ArticleDetails() {
                   {activeTab === 'Abstract' && (
                     <section>
                       <h2 className="text-xl font-bold text-navy-950 mb-5 pb-3 border-b border-gray-100">Abstract</h2>
-                      <p className="text-gray-700 leading-relaxed text-[15px]">{article.abstract}</p>
+                      <div className="space-y-6 text-gray-700 leading-relaxed text-[15px] font-light">
+                        {article.abstract.split('\n\n').map((paragraph, index) => (
+                          <p key={index}>{paragraph}</p>
+                        ))}
+                      </div>
                     </section>
                   )}
 
@@ -359,12 +388,25 @@ export default function ArticleDetails() {
                     </section>
                   )}
 
-                  {activeTab === 'Conclusion' && (
+                  {activeTab === 'Conclusion' && article.conclusion && (
                     <section>
                       <h2 className="text-xl font-bold text-navy-950 mb-5 pb-3 border-b border-gray-100">Conclusion</h2>
-                      <p className="text-gray-700 leading-relaxed text-[15px]">
-                        {article.conclusion || 'In conclusion, the clinical datasets demonstrate strong alignment with theoretical models. Future research directions will evaluate scalability, reproducibility, and long-term implications of these diagnostic protocols.'}
-                      </p>
+                      <div className="space-y-4 text-gray-700 leading-relaxed text-[15px] font-light">
+                        {article.conclusion.split('\n\n').map((paragraph, index) => (
+                          <p key={index}>{paragraph}</p>
+                        ))}
+                      </div>
+                    </section>
+                  )}
+
+                  {activeTab === 'Biography' && article.biography && (
+                    <section>
+                      <h2 className="text-xl font-bold text-navy-950 mb-5 pb-3 border-b border-gray-100">Author Biography</h2>
+                      <div className="space-y-4 text-gray-700 leading-relaxed text-[15px] font-light">
+                        {article.biography.split('\n\n').map((paragraph, index) => (
+                          <p key={index}>{paragraph}</p>
+                        ))}
+                      </div>
                     </section>
                   )}
 
@@ -451,6 +493,97 @@ export default function ArticleDetails() {
 
         </div>
       </div>
+
+      {/* ─── Affiliations & Authors Modal ─── */}
+      <AnimatePresence>
+        {isAffiliationsModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsAffiliationsModalOpen(false)}
+              className="absolute inset-0 bg-navy-950/60 backdrop-blur-sm"
+            />
+
+            {/* Modal Body */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 350 }}
+              className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden max-h-[85vh] flex flex-col border border-gray-100"
+            >
+              {/* Header */}
+              <div className="px-6 py-5 border-b border-gray-100 flex items-center justify-between bg-[#f8fafc]">
+                <div>
+                  <h3 className="text-base font-bold text-navy-950">Author Affiliations</h3>
+                  <p className="text-xs text-gray-500 mt-0.5">Complete list of contributors and institutions</p>
+                </div>
+                <button
+                  onClick={() => setIsAffiliationsModalOpen(false)}
+                  className="p-1.5 rounded-xl hover:bg-gray-200 text-gray-400 hover:text-navy-950 transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Scrollable Content */}
+              <div className="p-6 overflow-y-auto space-y-6">
+                <div>
+                  <p className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mb-1.5">Article Title</p>
+                  <h4 className="text-sm font-bold text-navy-950 leading-snug">{article.title}</h4>
+                </div>
+
+                {/* Authors Section */}
+                <div>
+                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-3">Authors</p>
+                  <div className="flex flex-wrap gap-2.5">
+                    {(article.authorAffiliations || []).map((author) => (
+                      <span key={author.name} className="inline-flex items-center gap-1 bg-[#f1f5f9] text-navy-900 px-3 py-1.5 rounded-xl text-xs font-semibold">
+                        {author.name}
+                        {author.indices && author.indices.length > 0 && (
+                          <sup className="text-[9px] text-primary-600 font-bold ml-0.5 bg-white px-1 py-0.5 rounded border border-gray-100">
+                            {author.indices.join(',')}
+                          </sup>
+                        )}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Institutions Section */}
+                {article.affiliationsList && (
+                  <div className="pt-4 border-t border-gray-100">
+                    <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-3">Institutions & Affiliations</p>
+                    <div className="space-y-3">
+                      {article.affiliationsList.map((aff) => (
+                        <div key={aff.index} className="flex gap-3 items-start bg-gray-50/50 p-3 rounded-2xl border border-gray-100/50">
+                          <span className="shrink-0 w-6 h-6 flex items-center justify-center rounded-lg bg-primary-50 text-primary-700 text-xs font-bold border border-primary-100">
+                            {aff.index}
+                          </span>
+                          <span className="text-xs text-gray-600 leading-relaxed font-light">{aff.text}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Footer */}
+              <div className="px-6 py-4 border-t border-gray-100 bg-[#f8fafc] flex justify-end">
+                <button
+                  onClick={() => setIsAffiliationsModalOpen(false)}
+                  className="px-5 py-2 bg-navy-950 text-white rounded-xl text-xs font-bold hover:bg-navy-900 transition-colors shadow-sm"
+                >
+                  Close Window
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
     </div>
   )

@@ -1,4 +1,4 @@
-import { JOURNALS, ARTICLES, CATEGORIES, STATS } from '../utils/dummyData'
+import { JOURNALS, ARTICLES, CATEGORIES, STATS } from '../utils/data'
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 

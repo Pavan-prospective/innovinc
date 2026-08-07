@@ -159,11 +159,14 @@ export default function Journals() {
             </div>
           </div>
 
-          <div className="space-y-10">
+          <div className="space-y-6">
             {filteredJournals.map((journal) => (
-              <article key={journal.id} className="flex flex-col sm:flex-row gap-6 group pb-10 border-b border-gray-100 last:border-0">
-                <Link to={`/journals/${journal.id}`} className="shrink-0">
-                  <div className="w-24 h-32 sm:w-28 sm:h-36 rounded-lg overflow-hidden bg-gray-100 shadow-sm border border-gray-200">
+              <article 
+                key={journal.id} 
+                className="flex flex-col sm:flex-row gap-6 bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group"
+              >
+                <Link to={`/journals/${journal.id}`} className="shrink-0 flex items-center justify-center sm:justify-start">
+                  <div className="w-28 h-36 rounded-xl overflow-hidden bg-gray-50 border border-gray-200/60 shadow-sm relative">
                     <img
                       src={journal.coverImage}
                       alt={journal.title}
@@ -171,39 +174,54 @@ export default function Journals() {
                     />
                   </div>
                 </Link>
-                <div className="flex flex-col pt-1 flex-1">
+                <div className="flex flex-col flex-grow">
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <span className="text-[10px] font-bold text-primary-700 bg-primary-50 px-2 py-0.5 rounded uppercase tracking-wider">
+                      {journal.category}
+                    </span>
+                  </div>
+                  
                   <Link to={`/journals/${journal.id}`}>
-                    <h3 className="text-xl font-bold text-navy-950 mb-2 hover:text-primary-700 transition-colors">{journal.title}</h3>
+                    <h3 className="text-xl font-bold text-navy-950 mb-2 hover:text-primary-600 transition-colors leading-snug">
+                      {journal.title}
+                    </h3>
                   </Link>
-                  <p className="text-sm text-gray-500 leading-relaxed mb-4">{journal.description}</p>
+                  
+                  <p className="text-xs text-gray-500 font-light leading-relaxed line-clamp-2 mb-4">
+                    {journal.description}
+                  </p>
 
                   {journal.chiefEditor && (
-                    <div className="mb-3">
-                      <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">Field chief editor</p>
-                      <p className="text-sm text-gray-600">
-                        <strong className="text-navy-950">{journal.chiefEditor.name}</strong>, {journal.chiefEditor.affiliation}
+                    <div className="mb-4 text-xs">
+                      <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-0.5">Field chief editor</span>
+                      <p className="text-gray-600 leading-snug">
+                        <strong className="text-navy-950 font-semibold">{journal.chiefEditor.name}</strong> – <span className="text-gray-500">{journal.chiefEditor.affiliation}</span>
                       </p>
                     </div>
                   )}
 
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-500 font-medium mt-auto">
-                    <span>{journal.stats?.articles?.toLocaleString()} articles</span>
-                    <span className="text-gray-300">|</span>
-                    <span>{journal.impactFactor} IF</span>
-                    {journal.citeScore && (
-                      <>
-                        <span className="text-gray-300">|</span>
-                        <span>{journal.citeScore} CiteScore</span>
-                      </>
+                  <div className="flex flex-wrap items-center gap-2 mt-auto pt-4 border-t border-gray-50">
+                    <span className="px-2.5 py-1 bg-navy-50 text-navy-900 rounded-lg text-[10px] font-bold uppercase tracking-wider">
+                      {journal.stats?.articles || 0} Articles
+                    </span>
+                    {journal.impactFactor && (
+                      <span className="px-2.5 py-1 bg-primary-50 text-primary-800 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-primary-100">
+                        {journal.impactFactor} IF
+                      </span>
                     )}
+                    {journal.citeScore && (
+                      <span className="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-emerald-100">
+                        {journal.citeScore} CiteScore
+                      </span>
+                    )}
+                    
+                    <Link
+                      to={`/journals/${journal.id}`}
+                      className="ml-auto inline-flex items-center gap-1 text-xs font-bold text-primary-700 hover:text-primary-800 transition-colors"
+                    >
+                      More details <ChevronRight className="w-3.5 h-3.5" />
+                    </Link>
                   </div>
-
-                  <Link
-                    to={`/journals/${journal.id}`}
-                    className="inline-flex items-center gap-1 mt-4 text-xs font-bold text-primary-700 hover:text-primary-800 transition-colors"
-                  >
-                    More details <ChevronRight className="w-3.5 h-3.5" />
-                  </Link>
                 </div>
               </article>
             ))}

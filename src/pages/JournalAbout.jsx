@@ -32,6 +32,9 @@ export default function JournalAbout() {
       return <Component />
     }
 
+    const paragraphs = journal.descriptionParagraphs || (journal.description ? [journal.description] : [])
+    const isJournalInfoTab = aboutId === 'mission-and-scope' || aboutId === 'journal-information'
+
     return (
       <motion.div 
         initial={{ opacity: 0, y: 10 }}
@@ -41,22 +44,32 @@ export default function JournalAbout() {
       >
         <h2 className="text-3xl font-black text-navy-950 mb-6">{currentItem?.label}</h2>
         
-        <div className="bg-amber-50 border border-amber-100 rounded-2xl p-6 mb-8 text-amber-800">
-          <h4 className="flex items-center gap-2 font-bold text-amber-900 mb-2">
-            <Info className="w-5 h-5" /> Content Coming Soon
-          </h4>
-          <p className="text-sm leading-relaxed">
-            This is a placeholder for the <strong>{currentItem?.label}</strong> content for <em>{journal.title}</em>. 
-            In the future, this highly specific journal information will be loaded dynamically from our headless CMS.
-          </p>
-        </div>
-        
-        <p className="text-gray-600 leading-relaxed text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        <p className="text-gray-600 leading-relaxed text-lg mt-4">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        {isJournalInfoTab ? (
+          <div className="space-y-6 text-gray-600 leading-relaxed text-lg font-light">
+            {paragraphs.map((p, idx) => (
+              <p key={idx}>{p}</p>
+            ))}
+          </div>
+        ) : (
+          <>
+            <div className="bg-amber-50 border border-amber-100 rounded-2xl p-6 mb-8 text-amber-800">
+              <h4 className="flex items-center gap-2 font-bold text-amber-900 mb-2">
+                <Info className="w-5 h-5" /> Content Coming Soon
+              </h4>
+              <p className="text-sm leading-relaxed">
+                This is a placeholder for the <strong>{currentItem?.label}</strong> content for <em>{journal.title}</em>. 
+                In the future, this highly specific journal information will be loaded dynamically from our headless CMS.
+              </p>
+            </div>
+            
+            <p className="text-gray-600 leading-relaxed text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <p className="text-gray-600 leading-relaxed text-lg mt-4">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </>
+        )}
       </motion.div>
     )
   }

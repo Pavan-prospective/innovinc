@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { UploadCloud, CheckCircle, FileText, ArrowRight, X, UserCheck } from 'lucide-react'
 import { Button } from '../../components/ui/Button'
-import { JOURNALS } from '../../utils/dummyData'
+import { JOURNALS } from '../../utils/data'
 import { Link, useParams } from 'react-router-dom'
 
 export default function AuthorSubmit() {
