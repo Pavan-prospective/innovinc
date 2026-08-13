@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useOutletContext } from 'react-router-dom'
-import { Search, ChevronDown } from 'lucide-react'
+import { Search, ChevronDown, BookOpen } from 'lucide-react'
 import { api } from '../api/apiClient'
 import { formatArticleDate } from '../utils/journalUtils'
 
@@ -132,10 +132,16 @@ export default function JournalArticles() {
           <div className="flex justify-center py-20">
             <div className="w-10 h-10 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin" />
           </div>
+        ) : articles.length === 0 ? (
+          <div className="text-center py-20 bg-white border border-gray-200/80 rounded-2xl shadow-sm text-gray-500 max-w-md mx-auto my-12 px-6">
+            <BookOpen className="w-12 h-12 text-gray-300 mx-auto mb-4" />
+            <h3 className="text-lg font-bold text-navy-950 mb-1.5">No articles in this journal</h3>
+            <p className="text-sm text-gray-400 leading-relaxed">There are currently no articles published in this journal. Check back soon for new research.</p>
+          </div>
         ) : filtered.length === 0 ? (
-           <div className="text-center py-2 text-gray-500 text-base">
-             No articles match your criteria.
-           </div>
+          <div className="text-center py-16 text-gray-400 text-sm">
+            No articles match your search or filter criteria.
+          </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {filtered.map((article) => (

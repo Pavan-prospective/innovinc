@@ -1,0 +1,44 @@
+                                                                                                                        
+ 
+Title: Climate-Resilient Agrivoltaic Systems: Enhancing Agricultural Sustainability in 
+Southeast Spain 
+ 
+Name: José Miguel Molina-Martínez 
+Technical University of Cartagena, Spain 
+Abstract: 
+To respond to the critical challenges facing modern agriculture in the Southeast of Spain—such as 
+climate change, recurring droughts, torrential rain, and excessive solar radiation—we have 
+developed a resilient and sustainable agrivoltaic system. This innovative solution is designed to 
+optimize solar radiation for crop development in real -time while providing a physical shield against 
+extreme weather events. A core objective of this technology is to significantly reduce and eliminate 
+the carbon footprint associated with intensive agricultural activities. By integrating renewable 
+energy production directly into the farming infrastructure, the system powers its own automated 
+irrigation and lighting technologies, replacing fossil fuel dependency with clean, on-site energy. 
+The system features a mobile roof composed of solar panels that move in a coplanar manner to 
+manage light transmission. During periods of peak radiation, the panels close to protect crops from 
+thermal stress; during torrential rains, they close to act as a catchment surface. This allows for the 
+intelligent collection and storage of rainwater for efficient irrigation, preventing the leaching of 
+pollutants into aquifers and reducing surface runoff that contaminates nearby ecosystems. 
+Furthermore, the system is equipped with luminescent spotlights powered by the stored 
+photovoltaic energy to ensure optimal light spectra for plant growth even when the panels are 
+closed. This integrated approach not only enhances climate resilience but also provides a 
+transformative model for carbon-neutral, environmentally respectful horticulture. 
+ 
+Biography  
+José Miguel Molina -Martínez is a Professor and the current Director of the School of Agricultural 
+Engineering at the Technical University of Cartagena (UPCT). Holding a PhD in Agricultural 
+Engineering, he serves as the Principal Investigator of the "Agromotics and Sea Engineering" 
+(IAM) R&D group. His research focuses on automation, remote control, and the efficient 
+management of water and energy resources, with more than 40 articles published in high- impact 
+journals (JCR Q1) and several patents currently in use. He has led numerous national and 
+international projects centered on technological sustainability within the agri-food sector. 
+ 
+Presenting author details  
+Full name: José Miguel Molina Martínez 
+Contact number: +34 968 32 5929 
+Twitter account: 
+Linked In account: 
+Session name/ number: Agricultural Sustainability and Climate Change 
+Category: Poster presentation 
+ 
+

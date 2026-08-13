@@ -1,70 +1,45 @@
 import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Calendar, ArrowRight, Tag } from 'lucide-react'
+import { Calendar, ArrowRight, Tag, X, BookOpen, ExternalLink } from 'lucide-react'
 import { Button } from '../components/ui/Button'
-
-const dummyNews = [
-  {
-    id: 1,
-    title: "Tech race moves from AI to factories, hospitals, and power grids",
-    category: "InnovInc News",
-    date: "28 Jun 2026",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
-    summary: "In the Top 10 Emerging Technologies of 2026 report, cutting-edge technologies act directly on power grids, drug pipelines, food production, cooling systems, and robotics."
-  },
-  {
-    id: 2,
-    title: "InnovInc in Science: How 'peacemakers' of the immune system could unlock long-term disease remission",
-    category: "Science News",
-    date: "25 Jun 2026",
-    image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=800",
-    summary: "'Peacemaker' immune cells could help treat diseases ranging from type 1 diabetes to neurodegeneration."
-  },
-  {
-    id: 3,
-    title: "Arabian Sea humpback whale's long-distance trip further highlights species' unique ecology",
-    category: "Nature News",
-    date: "19 Jun 2026",
-    image: "https://images.unsplash.com/photo-1572949645841-094f3a9c4c94?auto=format&fit=crop&q=80&w=800",
-    summary: "The results showed most whales are homebodies – moving within a narrow latitudinal band."
-  },
-  {
-    id: 4,
-    title: "Breakthrough in Quantum Computing: New Error Correction Protocol",
-    category: "Technology",
-    date: "15 Jun 2026",
-    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800",
-    summary: "Researchers have demonstrated a novel approach to quantum error correction, paving the way for more stable quantum systems."
-  },
-  {
-    id: 5,
-    title: "Global Summit on Climate Change Highlights Urgent Need for Action",
-    category: "Environment",
-    date: "10 Jun 2026",
-    image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9cce?auto=format&fit=crop&q=80&w=800",
-    summary: "World leaders gather to discuss aggressive new targets for reducing carbon emissions by 2030."
-  },
-  {
-    id: 6,
-    title: "Advancements in Personalized Medicine Show Promise in Cancer Trials",
-    category: "Health",
-    date: "05 Jun 2026",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800",
-    summary: "Tailored treatments based on individual genetic profiles are showing unprecedented success rates in early-stage trials."
-  }
-]
+import { JOURNALS } from '../utils/data'
 
 export default function News() {
   const [activeCategory, setActiveCategory] = useState('All')
-  const categories = ['All', 'InnovInc News', 'Science News', 'Nature News', 'Technology', 'Environment', 'Health']
+  const [selectedNews, setSelectedNews] = useState(null)
+  const [visibleCount, setVisibleCount] = useState(6)
 
+  // Dynamically compile all news items from all journals
+  const allNews = JOURNALS.reduce((acc, journal) => {
+    if (journal.news) {
+      const journalNews = journal.news.map((item, idx) => ({
+        id: `${journal.id}-news-${idx}`,
+        title: item.title,
+        summary: item.summary,
+        image: item.image,
+        category: journal.category || 'General Science',
+        journalId: journal.id,
+        journalTitle: journal.title,
+        date: item.date || '13 Aug 2026'
+      }))
+      return [...acc, ...journalNews]
+    }
+    return acc
+  }, [])
+
+  // Dynamically compile unique categories
+  const categories = ['All', ...new Set(allNews.map(news => news.category).filter(Boolean))]
+
+  // Filter news
   const filteredNews = activeCategory === 'All' 
-    ? dummyNews 
-    : dummyNews.filter(news => news.category === activeCategory)
+    ? allNews 
+    : allNews.filter(news => news.category === activeCategory)
+
+  const displayedNews = filteredNews.slice(0, visibleCount)
 
   return (
-    <div className="bg-[#f8fafc] min-h-screen">
+    <div className="bg-[#f8fafc] min-h-screen pb-20">
       {/* Hero Section */}
       <section className="relative bg-navy-950 py-24 overflow-hidden border-b border-white/10">
         <div className="absolute top-[-50%] left-[-20%] w-[800px] h-[800px] bg-primary-600/10 rounded-full blur-[120px] pointer-events-none"></div>
@@ -80,7 +55,7 @@ export default function News() {
               Latest <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-500">News</span> & Insights
             </h1>
             <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
-              Stay updated with the latest breakthroughs, research highlights, and announcements from the scientific community.
+              Stay updated with the latest breakthroughs, research highlights, and announcements from all Scientra Journals.
             </p>
           </motion.div>
         </div>
@@ -94,7 +69,7 @@ export default function News() {
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => { setActiveCategory(cat); setVisibleCount(6); }}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
                 activeCategory === cat
                   ? 'bg-navy-900 text-white shadow-md'
@@ -108,22 +83,25 @@ export default function News() {
 
         {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredNews.map((news, idx) => (
+          {displayedNews.map((news, idx) => (
             <motion.div
               key={news.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{ duration: 0.4, delay: Math.min(idx * 0.05, 0.5) }}
             >
-              <Link to={`/news/${news.id}`} className="group block h-full">
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.03)] hover:shadow-xl hover:border-primary-300/70 transition-all duration-300 flex flex-col h-full overflow-hidden">
+              <button 
+                onClick={() => setSelectedNews(news)}
+                className="group block text-left w-full h-full"
+              >
+                <div className="bg-white rounded-2xl border border-gray-200/50 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.03)] hover:shadow-xl hover:border-primary-400/50 transition-all duration-300 flex flex-col h-full overflow-hidden">
                   
                   {/* Image */}
-                  <div className="h-56 overflow-hidden relative shrink-0">
+                  <div className="h-52 overflow-hidden relative shrink-0 bg-gray-100">
                     <img 
                       src={news.image} 
                       alt={news.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-md text-[10px] font-bold text-navy-900 uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
                       <Tag className="w-3 h-3 text-primary-600" /> {news.category}
@@ -132,15 +110,15 @@ export default function News() {
                   
                   {/* Content */}
                   <div className="p-6 flex flex-col flex-grow">
-                    <div className="flex items-center gap-1.5 text-gray-500 text-xs font-semibold mb-3">
+                    <div className="flex items-center gap-1.5 text-gray-400 text-xs font-semibold mb-3">
                       <Calendar className="w-3.5 h-3.5" /> {news.date}
                     </div>
                     
-                    <h3 className="font-bold text-navy-950 text-xl leading-snug mb-3 group-hover:text-primary-600 transition-colors line-clamp-3">
+                    <h3 className="font-bold text-navy-950 text-lg leading-snug mb-3 group-hover:text-primary-600 transition-colors line-clamp-3">
                       {news.title}
                     </h3>
                     
-                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 flex-grow">
+                    <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 flex-grow">
                       {news.summary}
                     </p>
                     
@@ -150,18 +128,109 @@ export default function News() {
                   </div>
                   
                 </div>
-              </Link>
+              </button>
             </motion.div>
           ))}
         </div>
+
+        {/* Load More Button */}
+        {visibleCount < filteredNews.length && (
+          <div className="flex justify-center mt-12">
+            <Button 
+              onClick={() => setVisibleCount(prev => prev + 6)} 
+              variant="outline" 
+              className="rounded-full px-8 border-gray-300 text-gray-600 hover:bg-gray-50 h-9 text-sm font-bold shadow-sm hover:border-primary-500 hover:text-primary-600 transition-colors"
+            >
+              Load more news
+            </Button>
+          </div>
+        )}
         
         {filteredNews.length === 0 && (
-          <div className="text-center py-20">
-            <h3 className="text-xl font-bold text-gray-500">No news articles found in this category.</h3>
+          <div className="text-center py-20 bg-white border border-gray-200/60 rounded-2xl max-w-md mx-auto">
+            <h3 className="text-lg font-bold text-gray-500">No news articles found in this category.</h3>
           </div>
         )}
 
       </section>
+
+      {/* --- News Details Modal --- */}
+      <AnimatePresence>
+        {selectedNews && (
+          <div className="fixed inset-0 bg-navy-950/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="bg-white rounded-3xl overflow-hidden max-w-2xl w-full max-h-[85vh] overflow-y-auto relative shadow-2xl border border-gray-200/50 flex flex-col"
+            >
+              {/* Top Banner Image */}
+              <div className="h-64 md:h-72 w-full overflow-hidden relative shrink-0 bg-gray-100">
+                <img 
+                  src={selectedNews.image} 
+                  alt={selectedNews.title} 
+                  className="w-full h-full object-cover"
+                />
+                <button
+                  onClick={() => setSelectedNews(null)}
+                  className="absolute top-4 right-4 bg-white/90 hover:bg-white text-navy-950 hover:text-primary-600 p-2 rounded-full shadow-md transition-all hover:scale-105 border border-gray-100 shrink-0"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+                <div className="absolute bottom-4 left-4 bg-navy-950/80 backdrop-blur-md px-3.5 py-1.5 rounded-lg text-xs font-bold text-primary-400 uppercase tracking-widest flex items-center gap-1.5 shadow-sm border border-white/10">
+                  <Tag className="w-3.5 h-3.5" /> {selectedNews.category}
+                </div>
+              </div>
+
+              {/* Body */}
+              <div className="p-6 md:p-8 flex-1">
+                <div className="flex items-center gap-1.5 text-gray-400 text-xs font-semibold mb-4">
+                  <Calendar className="w-3.5 h-3.5" /> {selectedNews.date}
+                </div>
+
+                <h2 className="text-xl md:text-2xl font-bold text-navy-950 leading-snug mb-5">
+                  {selectedNews.title}
+                </h2>
+
+                {/* Journal Attribution Badge */}
+                <div className="mb-6 p-4 bg-navy-50 rounded-2xl border border-navy-100/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <BookOpen className="w-5 h-5 text-primary-600 shrink-0" />
+                    <div>
+                      <div className="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Source Journal</div>
+                      <div className="text-sm font-semibold text-navy-950 leading-snug">{selectedNews.journalTitle}</div>
+                    </div>
+                  </div>
+                  <Link 
+                    to={`/journals/${selectedNews.journalId}`}
+                    onClick={() => setSelectedNews(null)}
+                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-navy-200/80 text-xs font-bold text-navy-950 hover:bg-navy-50 transition-colors shadow-sm shrink-0"
+                  >
+                    View Journal <ExternalLink className="w-3.5 h-3.5 text-primary-600" />
+                  </Link>
+                </div>
+
+                <div className="text-gray-700 leading-relaxed text-sm md:text-base font-light space-y-4 whitespace-pre-wrap">
+                  {selectedNews.summary}
+                </div>
+              </div>
+
+              {/* Footer close button */}
+              <div className="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-end shrink-0">
+                <Button 
+                  onClick={() => setSelectedNews(null)} 
+                  variant="outline" 
+                  className="rounded-xl px-5 border-gray-300 text-gray-600 hover:bg-gray-100 h-9 text-xs"
+                >
+                  Close
+                </Button>
+              </div>
+
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

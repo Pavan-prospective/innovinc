@@ -1,0 +1,14 @@
+Increased Lactate Can Promote Histone Lactylation In Failing Right Ventricular Cardiomyocytes In Pulmonary Arterial Hypertension
+
+Talati M*, Brittain E, Simons K, Fortune N, Blackwell T, West J, Hemnes A
+
+Vanderbilt University Medical Center, United States
+
+Background: Using a multimodal approach, we have recently shown that in pulmonary arterial hypertension (PAH), lactate is a key feature of altered cardiomyocyte metabolism in the failing right ventricle (RV) that is detectable in human plasma. Elevated lactate has been shown to promote histone lactylation, linking dysregulated metabolism with epigenetic changes. We hypothesized that increased lactate in failing RV cardiomyocytes leads to autocrine and paracrine epigenetic modifications. 
+
+Methods: We conducted immunoblotting on frozen RV tissue from control (n=3) and PAH patients (n=9), and BMPR2-mutant mice (n=4) compared to controls (n=4). Immunofluorescence studies used L-lactyllysine, MCT1, and MCT4 antibodies on paraffin-embedded human RV tissue from controls (n=5), idiopathic PAH (IPAH, n=5), and heritable PAH (HPAH, n=5). Mass spectrometry was used to measure lactate in organs and plasma from BMPR2-mutant (n = 4) and control mice (n = 4). 
+
+Results: In human PAH-RVs, we examined the autocrine effect of increased lactate on histone lysine lactylation (a novel protein posttranslational modification driven by lactate). In both human PAH-RVs and BMPR2-mutant RVs, there was a significant increase in histone lactylation (p<0.05), and lactyllysine immunostaining was notable in human PAH-RV cardiomyocytes (p<0.05). We examined the paracrine effects of lactate, by assessing the efflux of lactate via lactate-transporter proteins MCT1 and MCT4 in human PAH-RVs vs controls. Human PAH-RVs exhibited increased MCT-4 expression (p<0.05) and a trend towards an increase in MCT-1 expression, with significant cytoplasmic localization of MCT-1 and MCT-4 in PAH-RV cardiomyocytes (p<0.05). Additionally, lactate levels were significantly elevated in the RV, lung, and plasma of BMPR2-mutant mice (p<0.01), but not in the spleen, kidney, liver, gastrocnemius muscle, or LV.
+
+Conclusion: Lactate promotes histone lactylation in an autocrine manner in human PAH-RVs. Elevated plasma lactate arises from specific PAH-related organs, potentially causing local and systemic adverse effects, with implications for RV dysfunction in PAH.
+

@@ -9,17 +9,17 @@ export default function Contact() {
   const contacts = [
     {
       title: "General & Editorial Inquiries",
-      value: "editor@innovinc.org",
+      value: "editor@scientra.org",
       icon: <Mail className="w-5 h-5 text-primary-600" />
     },
     {
       title: "Author & Submission Support",
-      value: "support@innovinc.org",
+      value: "support@scientra.org",
       icon: <MessageSquare className="w-5 h-5 text-primary-600" />
     },
     {
       title: "Publishing & Permissions",
-      value: "permissions@innovinc.org",
+      value: "permissions@scientra.org",
       icon: <Mail className="w-5 h-5 text-primary-600" />
     },
     {
@@ -56,7 +56,7 @@ export default function Contact() {
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
           >
-            Have questions about submitting a paper, joining our editorial board, or partnering with Innovinc? We are here to help.
+            Have questions about submitting a paper, joining our editorial board, or partnering with Scientra? We are here to help.
           </motion.p>
         </div>
       </section>

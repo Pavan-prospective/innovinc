@@ -1,0 +1,17 @@
+Lifestyle factors as mediators in the resilience–job satisfaction relationship among nurses: a cross-sectional study
+Lena Serafin1, & Katarzyna Wesołowska-Gorniak1, Angeli Malewska2, Karolina Kruszewska1, Justyna Kujawa3, Bożena Czarkowska-Pączek1
+1Medical University of Warsaw, Warsaw, Poland  2Pediatric Hospital of the Medical University of Warsaw, Warsaw, Poland 3 Military Institute of Medicine – National Research Institute, Warsaw, Poland
+Background: In the context of the global nursing shortage and increasing occupational stress, resilience has been identified as a key factor supporting job satisfaction, retention, and quality of care¹,². Previous research demonstrates that higher resilience is associated with greater job satisfaction and lower turnover intention among nurses³,⁴. However, resilience is a dynamic construct that may be influenced by health-promoting behaviors, including sleep quality and social support⁵,⁶. While individual lifestyle factors have been linked to resilience and occupational outcomes, their mediating role in the resilience–job satisfaction relationship remains insufficiently explored³. This study aimed to examine whether selected lifestyle factors mediate the relationship between resilience and job satisfaction among nurses and whether work experience moderates this association.
+Methods: A cross-sectional correlational study was conducted among 508 professionally active Polish nurses (September 2022–February 2023). Standardized instruments were used: the Minnesota Satisfaction Questionnaire, Brief Resilience Coping Scale, Athens Insomnia Scale, International Physical Activity Questionnaire, and Healthy Lifestyle and Personal Control Questionnaire. Mediation (model 4) and moderation (model 1) analyses were performed using Hayes’ PROCESS macro for SPSS.
+Results: Resilience was positively associated with intrinsic and extrinsic job satisfaction. Sleep quality and social support emerged as significant partial mediators. Higher resilience was related to better sleep quality and stronger perceived social support, which in turn predicted higher job satisfaction. Physical activity and dietary behaviors did not demonstrate significant mediating effects. Work experience moderated the relationship between resilience and extrinsic job satisfaction: the association was strongest among early-career nurses and weakened with increasing professional tenure.
+Conclusions: The findings demonstrate that sleep quality and social support are key mechanisms linking resilience with job satisfaction. Interventions aimed at strengthening resilience should extend beyond individual training to include organizational strategies promoting healthy sleep patterns and supportive professional relationships. Tailored approaches for different career stages may enhance nurse retention and workforce sustainability.
+
+References:
+	•	International Council of Nurses. ICN Policy Brief: The Global Nursing Shortage and Nurse Retention; 2021.
+	•	Sihvola, S.; Nurmeksela, A.; Mikkonen, S.; et al. BMC Health Serv. Res. 2023, 23, 632.
+	•	Mantas-Jiménez, S.; Lluch-Canut, M. T.; Roldán-Merino, J.; et al. J. Nurs. Manag. 2022, 30, 2084–2092.
+	•	Zhao, Y.; Wang, H.; Sun, D.; et al. Int. J. Nurs. Pract. 2021, 27, e12941.
+	•	Lin, Y. E.; Lin, C. T.; Hu, M. L.; et al. Nurs. Open 2023, 10, 4004–4012.
+	•	Moisoglou, I.; Katsiroumpa, A.; Malliarou, M.; et al. Healthcare (Basel) 2024, 12, 710.
+
+

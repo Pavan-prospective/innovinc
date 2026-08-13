@@ -1,0 +1,12 @@
+
+Beyond Fibrillin-1: Elastic Fiber Assembly and Vascular Dysfunction in Marfan Syndrome
+Rodrigo Barbosa de Souza
+Faculty of Santa Marcelina, São Paulo, SP, Brazil
+
+Marfan syndrome (MFS) is an autosomal dominant disease of the connective tissue caused by mutations in the fibrillin-1 gene. Fibrillin-1 is a pivotal component of elastic fibers. The alterations in fibrillin-1 are considered to be the primary causal factor for cardiovascular disease's related morbidity and mortality in MFS. However, the investigation of other components associated with fibrillin-1 in elastic fiber assembly has been less explored. This study aimed to investigate components of matrix extracellular that bind to fibrillin1 for the assembly of elastic fibers in the MFS syndrome animal model, mgΔlpn, which showed the classical phenotype of MFS, alterations in the eye, skeletal, and cardiovascular systems. In this study, the MFS group showed a significant increase in elastic fiber fragmentation. The MFS group showed a significant reduction in fibrillin-1, fibronectin, perlecan, integrinβ1 when compared to the WT group. The 3D ultrastructural analysis revealed a decreased amount of microfibrils in the MFS group. In addition, local elastic fiber fragmentation was associated with a significant increase in collagen deposition, as observed by second-harmonic generation and immunofluorescence (for collagen type I), besides, was observed the increased of the α-smooth muscle actin. These results suggest that, as a possible compensatory mechanism, the instability of elastic fibers may induce collagen fiber deposition. Furthermore, ultrasound flow analysis revealed a significant reduction in blood flow and alterations in the spectral curve in the thoracic aorta of the MFS group. Structural changes in elastic fibers in the aorta may result in hemodynamic alterations in the MFS group, which could potentially influence the cardiovascular phenotype in MFS.
+
+Biography
+
+Rodrigo B. de Souza completed his PhD in 2020 at the University of São Paulo, where he investigated classical phenotypes and the effects of losartan in a Marfan syndrome animal model. During his doctoral training, he conducted research on ultrastructural 3D reconstruction of elastic fibers and completed academic visits to Cardiff University and the Sengle laboratory at the University of Cologne, focusing on extracellular matrix balance in Marfan syndrome. Since 2022, he has been an Assistant Professor in the Department of Descriptive and Topographic Anatomy at Santa Marcelina Faculty.
+
+

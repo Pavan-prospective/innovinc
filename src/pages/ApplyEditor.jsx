@@ -45,7 +45,7 @@ export default function ApplyEditor() {
           </div>
           <h2 className="text-2xl font-black text-navy-950 mb-3 tracking-tight">Application Received!</h2>
           <p className="text-gray-500 mb-8 text-sm leading-relaxed">
-            Thank you for applying to the InnovInc Editorial Board. Our review committee will evaluate your application and get back to you within 2-3 weeks.
+            Thank you for applying to the Scientra Editorial Board. Our review committee will evaluate your application and get back to you within 2-3 weeks.
           </p>
           <Link to="/">
             <Button className="w-full h-12 rounded-xl shadow-lg shadow-primary-500/20 font-bold">

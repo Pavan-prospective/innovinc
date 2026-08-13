@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 export default function AdminEmployees() {
   const [employees, setEmployees] = useState([
-    { id: 1, name: 'Alice Admin', email: 'alice@innovinc.org', role: 'Super Admin', status: 'Active' },
-    { id: 2, name: 'Bob Reviewer', email: 'bob@innovinc.org', role: 'Editor', status: 'Active' },
-    { id: 3, name: 'Charlie Staff', email: 'charlie@innovinc.org', role: 'Staff', status: 'Inactive' },
+    { id: 1, name: 'Alice Admin', email: 'alice@scientra.org', role: 'Super Admin', status: 'Active' },
+    { id: 2, name: 'Bob Reviewer', email: 'bob@scientra.org', role: 'Editor', status: 'Active' },
+    { id: 3, name: 'Charlie Staff', email: 'charlie@scientra.org', role: 'Staff', status: 'Inactive' },
   ])
   const [searchTerm, setSearchTerm] = useState('')
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
@@ -179,15 +179,15 @@ export default function AdminEmployees() {
                     <input
                       type="email"
                       required
-                      pattern=".*@innovinc\.org"
-                      title="Must be an @innovinc.org email address"
+                      pattern=".*@scientra\.org"
+                      title="Must be an @scientra.org email address"
                       value={newEmployee.email}
                       onChange={(e) => setNewEmployee({...newEmployee, email: e.target.value})}
                       className="w-full pl-11 pr-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none text-sm font-medium text-navy-900 placeholder-gray-400"
-                      placeholder="j.doe@innovinc.org"
+                      placeholder="j.doe@scientra.org"
                     />
                   </div>
-                  <p className="text-[11px] text-gray-500">Employee emails must end in @innovinc.org.</p>
+                  <p className="text-[11px] text-gray-500">Employee emails must end in @scientra.org.</p>
                 </div>
 
                 <div className="space-y-1.5">

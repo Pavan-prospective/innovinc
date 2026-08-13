@@ -26,7 +26,7 @@ export default function ArticleTypes() {
     },
     {
       title: "Letters to the Editor",
-      desc: "Short discussions or commentary regarding recently published papers in Innovinc journals.",
+      desc: "Short discussions or commentary regarding recently published papers in Scientra journals.",
       icon: <MessageSquare className="w-8 h-8 text-primary-600" />
     }
   ]
@@ -60,7 +60,7 @@ export default function ArticleTypes() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 w-full space-y-12">
         <section className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center max-w-4xl mx-auto">
           <p className="text-gray-700 text-lg leading-relaxed">
-            <strong className="text-navy-900">Innovinc</strong> welcomes diverse scientific and academic contributions across multiple disciplines. Authors can submit manuscripts under the following categories:
+            <strong className="text-navy-900">Scientra</strong> welcomes diverse scientific and academic contributions across multiple disciplines. Authors can submit manuscripts under the following categories:
           </p>
         </section>
 

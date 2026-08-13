@@ -1,0 +1,34 @@
+                                                                                                                       
+High-Resolution Energy Characterization of the Colombian Manufacturing Sector as a Foundation for Climate Change Mitigation
+Sergio A. Ardila Gómez* & Carlos A. Diaz González 
+Engineering School, Universidad Autónoma de Bucaramanga,
+Bucaramanga, Santander, Colombia
+Abstract:
+Industrial decarbonization is a central pillar of global climate change mitigation strategies under the Paris Agreement and the IPCC 2022 mitigation pathways1. In developing countries, however, limited data disaggregation often constrains the design of effective, sector-specific mitigation policies. In Colombia, the manufacturing sector plays a strategic role in national energy demand and greenhouse gas emissions, yet available statistics are typically aggregated at a two-digit industrial classification level, masking substantial heterogeneity across subsectors2.
+
+This research presents a high-resolution energy characterization of the Colombian manufacturing sector using four-digit ISIC (CIIU Rev. 4) codes3. Official national data sources, including the Colombian Energy Balance (BECO)4 and the Annual Manufacturing Survey (EAM)5, were systematically integrated to construct a detailed energy balance for more than 110 manufacturing subsectors.The methodology estimates final energy consumption by source (electricity, natural gas, coal, biomass, among others), differentiates between thermal and mechanical uses, and accounts for self-generation and cogeneration processes. CO₂ emissions were calculated using internationally recognized emission factors. The resulting subsectoral energy profiles were validated by comparison with aggregated national statistics, demonstrating methodological consistency.
+
+Results reveal significant variability in energy intensity and emission patterns across manufacturing activities, highlighting priority subsectors for targeted efficiency improvements and low-carbon technology adoption. By overcoming aggregation limitations, this study provides a robust quantitative foundation to support evidence-based industrial climate mitigation strategies in Colombia.The proposed framework contributes to closing data gaps in developing economies and offers a replicable methodological approach for integrating industrial energy diagnostics into broader decarbonization planning.
+
+Biography	 1. IPCC. Climate Change 2022: Mitigation of Climate Change; Summary for Policymakers; IPCC: Geneva, 2022.
+2. Ministerio de Ambiente y Desarrollo Sostenible. Nationally Determined Contribution of Colombia; Government of Colombia: Bogotá, 2020.
+3. DANE. International Standard Industrial Classification Rev. 4 Adapted for Colombia; DANE: Bogotá, 2022.
+4. UPME. Balance Energético Colombiano 2021; UPME: Bogotá, 2022.
+5. DANE. Encuesta Anual Manufacturera 2021; DANE: Bogotá, 2021.
+
+Presenting author details  Full name: Sergio Andrés Ardila Gómez Contact number: +57 3168470374 Orcid: https://orcid.org/0000-0002-2115-1225 Linked In account:  HYPERLINK "https://www.linkedin.com/in/sergio-andres-ardila-gomez-b93167150/" https://www.linkedin.com/in/sergio-andres-ardila-gomez-b93167150/  Session name/ number:  Climate Change Mitigation
+Category: Poster presentation
+
+
+
+
+
+
+
+
+
+
+
+
+
+

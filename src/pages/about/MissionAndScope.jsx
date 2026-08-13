@@ -69,7 +69,7 @@ export default function MissionAndScope() {
           <div>
             <h2 className="text-3xl font-bold text-navy-950 mb-4">Mission Statement</h2>
             <p className="text-gray-700 text-lg leading-relaxed">
-              At <strong className="text-navy-900">Innovinc</strong>, our mission is to empower researchers, academics, and industry professionals by providing an open, rigorous, and rapid platform for disseminating groundbreaking scientific research. We are dedicated to fostering global knowledge sharing, advancing interdisciplinary collaboration, and ensuring that high-quality scholarly work reaches the widest possible audience.
+              At <strong className="text-navy-900">Scientra</strong>, our mission is to empower researchers, academics, and industry professionals by providing an open, rigorous, and rapid platform for disseminating groundbreaking scientific research. We are dedicated to fostering global knowledge sharing, advancing interdisciplinary collaboration, and ensuring that high-quality scholarly work reaches the widest possible audience.
             </p>
           </div>
         </section>
@@ -82,7 +82,7 @@ export default function MissionAndScope() {
                 <Globe className="w-8 h-8 text-primary-600" /> Scope of the Journal
               </h2>
               <p className="text-gray-600 text-lg max-w-3xl">
-                Innovinc publishes peer-reviewed scholarly research across a broad spectrum of disciplines.
+                Scientra publishes peer-reviewed scholarly research across a broad spectrum of disciplines.
               </p>
             </div>
           </div>

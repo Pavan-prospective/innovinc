@@ -1,0 +1,35 @@
+STEMI and beyond: The diagnostic pitfalls of localized ST elevations
+
+Ruihai Zhou*, Sudhir Prasada
+
+Division of Cardiology, Department of Medicine, University of North Carolina at Chapel Hill, Chapel Hill, North Carolina 27599-7075, USA
+
+ST-segment elevation (STE) myocardial infarction (STEMI) results from the acute occlusion of a coronary artery and requires prompt restoration of coronary perfusion to salvage ischemic myocardium. Implementation of a Code STEMI protocol facilitates this process. Timely and accurate electrocardiogram (ECG) diagnosis is the first and most critical step in responding to a Code STEMI. Here, we report and discuss several clinical settings that mimicked STEMI but showed no evidence of coronary artery disease on cardiac catheterization, including: 1. Metastatic myocardial infiltration, with ECG showing localized STE and ST–T changes resembling those of true STEMI, and on serial follow-up ECGs, demonstrating a slowly evolving ST-T pattern (“slow motion”) in response to immunochemotherapy. 2. Perimyocarditis, with ECG demonstrating migrating STE, although in a localized pattern. 3. Inflammatory infiltrative cardiomyopathies due to cardiac sarcoidosis and giant cell myocarditis, with ECG findings mimicking STEMI. We also describe cases of paradoxically localized STE in relation to the culprit coronary artery. In summary, not all localized STEs represent STEMI, and not all localized STEs align intuitively with the culprit vessel distribution. The significance of serial ECG monitoring in assessing the effects of immunochemotherapy for metastatic myocardial infiltration is also discussed.
+
+Biography
+
+Ruihai Zhou, is a cardiologist on the faculty of Division of Cardiology, University of North Carolina at Chapel Hill. He is board certified by American Board of Internal Medicine in general and interventional cardiology. Dr Zhou is also a registered physician in vascular interpretation (RPVI) certified by the Alliance for Certification & Advancement (APCA). He has broad basic science training and research experience in pharmacology, clinical pharmacology, and molecular and cell biology, in addition to his complete clinical training both in China and the United States. He has published more than 40 papers in prestigious international journals.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

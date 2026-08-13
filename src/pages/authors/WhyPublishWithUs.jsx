@@ -51,7 +51,7 @@ export default function WhyPublishWithUs() {
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
           >
-            The Innovinc Advantage
+            The Scientra Advantage
           </motion.p>
         </div>
       </section>
@@ -59,7 +59,7 @@ export default function WhyPublishWithUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 w-full space-y-16">
         <section className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100 text-center max-w-4xl mx-auto">
           <p className="text-gray-700 text-lg leading-relaxed">
-            Publishing with <strong className="text-navy-900">Innovinc</strong> offers researchers a high-impact global platform to maximize the reach, readership, and real-world application of their work.
+            Publishing with <strong className="text-navy-900">Scientra</strong> offers researchers a high-impact global platform to maximize the reach, readership, and real-world application of their work.
           </p>
         </section>
 

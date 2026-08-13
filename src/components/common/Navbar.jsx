@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Search, Menu, X, ChevronDown, BookOpen } from 'lucide-react'
+import { Search, Menu, X, ChevronDown } from 'lucide-react'
 import { Button } from '../ui/Button'
 import { cn } from '../../utils/cn'
 
@@ -39,13 +39,12 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center group-hover:bg-primary-700 transition-colors">
-              <BookOpen className="text-white w-6 h-6" />
-            </div>
-            <span className="font-bold text-2xl tracking-tight text-navy-950">
-              InnovInc<span className="text-primary-600">.</span>
-            </span>
+          <Link to="/" className="flex items-center group py-1">
+            <img 
+              src="/assets/images/logo_transparent.png" 
+              alt="Scientra Journals Logo" 
+              className="h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -106,6 +105,29 @@ export function Navbar() {
                               </li>
                             ))}
                           </ul>
+
+                          {/* News subsection below For authors column */}
+                          {col.title === 'For authors' && (
+                            <div className="mt-6 pt-5 border-t border-gray-100">
+                              <h4 className="font-bold text-navy-950 text-sm mb-3.5 pb-1 border-b-2 border-primary-500 inline-block">
+                                News
+                              </h4>
+                              <ul className="space-y-2.5">
+                                <li>
+                                  <Link
+                                    to="/news"
+                                    onClick={() => setIsAboutOpen(false)}
+                                    className={cn(
+                                      'text-sm transition-colors hover:text-primary-700 block font-medium',
+                                      location.pathname === '/news' ? 'text-navy-950 font-semibold' : 'text-gray-500'
+                                    )}
+                                  >
+                                    Latest news
+                                  </Link>
+                                </li>
+                              </ul>
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -180,6 +202,18 @@ export function Navbar() {
                 ))}
               </div>
             ))}
+            
+            {/* Mobile News Menu */}
+            <div className="pt-2">
+              <div className="px-3 text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">News</div>
+              <Link 
+                to="/news" 
+                onClick={() => setIsMobileMenuOpen(false)} 
+                className="block px-3 py-1.5 pl-6 text-[13px] text-gray-600 hover:text-primary-700 rounded-md"
+              >
+                Latest news
+              </Link>
+            </div>
           </div>
           <div className="pt-4 flex flex-col space-y-3 border-t border-gray-100">
             <Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>

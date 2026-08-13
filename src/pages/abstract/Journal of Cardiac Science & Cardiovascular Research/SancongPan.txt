@@ -1,0 +1,9 @@
+Progress of triglyceride glucose-body mass index (TyG-BMI) as insulin resistance (IR) surrogate marker in various diseases
+ Ke Song, Sancong Pan* 
+Department of Cardiovascular Medicine, Jincheng People's Hospital, Shanxi Province, China
+
+Insulin resistance (IR) is a key metabolic risk factor, and it is closely associated with an increased susceptibility to cardiovascular, digestive, and immune system diseases. The triglyceride- glucose-body mass index (TyG-BMI), a composite biomarker integrating blood lipids, glucose, and body mass index(BMI), has emerged as a promising candidate for IR evaluation due to its simple detection and comprehensive coverage of metabolic pathways. This study searched Web of Science, PubMed, Embase, and the Cochrane Library for TyG-BMI-related studies in cardiovascular, metabolic, and tumor-associated disorders, systematically evaluating its pathological mechanisms and clinical value. Clinical studies link the TyG-BMI index to cardiovascular, metabolic, and malignant diseases, with its levels closely associated with disease occurrence and prognosis. Potential mechanisms involve chronic inflammation, oxidative stress, and vascular endothelial dysfunction. With advantages of simple operation and easy accessibility, the TyG-BMI index offers significant clinical value in disease early screening, assessment, and prognosis. Despite confirmed associations with multiple diseases, unified thresholds across populations and disease types remain undefined. Further research is needed to address this gap and support precision prevention and treatment strategy development.
+
+Biography:  Sancong Pan has completed her PhD from Zhengzhou University. She is a chief physician, Master's Supervisor and director of cardiology in Jincheng People's Hospital of China, specializing in cardiovascular intervention, clinical cardiology and cardiovascular metabolism. with over 20 peer- reviewed papers published in relevant fields.
+
+

@@ -1,0 +1,34 @@
+                                                                                                                       
+Title: Soil available phosphorus and pH regulate the distribution of Juniperus przewalskii forest understory plant community diversity along an elevation gradient
+
+Name: Zhenjie Dong, Qinghong Geng, Kun Wei, Lin Hou, Yuping Jiang*
+Northwest A&F University, China
+Abstract:
+Plant diversity is vital to forest ecosystem stability, yet the elevational distribution patterns of shrub and herb diversity in Qinghai–Tibet Plateau’s Juniperus przewalskii forests remain unclear. We investigated understory plant communities at 100-m intervals from 3000 to 3800 m asl., analyzing species composition, α/β-diversity, and soil property drivers. A total of 128 species (79 genera, 30 families) were recorded, including 110 herb and 18 shrub species. Shrub species richness was stable below 3400 m asl. and linearly decreased thereafter, while herb richness increased up to 3400 m asl. with no significant change at higher elevations. α-diversity of both layers peaked at 3400 m asl., showing a unimodal pattern. Shrub β-diversity similarity indices (Jaccard, Sorenson) peaked at 3400–3500 m asl., and the highest species turnover rate (Whittaker, Cody indices) for both shrubs and herbs occurred at 3300–3400 m asl. Random Forest analysis revealed that shrub α-diversity was positively correlated with soil available phosphorus (AP), while herb α-diversity was negatively regulated by soil pH. Our findings confirm 3400 m asl. as the optimal elevation for multi-species survival in this ecosystem and highlight soil AP and pH as key regulators of shrub and herb diversity, respectively. This study advances understanding of plant community distribution along elevational gradients and the plant–soil interaction mechanisms shaping forest biodiversity in the Qinghai–Tibet Plateau, a region highly sensitive to climate change.
+
+
+Presenting author details  Full name: Yuping Jiang  Contact number:15619626653 Twitter account: Linked In account: Session name/ number:
+Category: (Oral presentation)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

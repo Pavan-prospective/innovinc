@@ -38,7 +38,7 @@ export default function PublishingFees() {
               <h2 className="text-2xl font-bold text-navy-950">Article Processing Charges (APC)</h2>
             </div>
             <p className="text-gray-700 text-lg leading-relaxed mb-8">
-              As an open-access publisher, Innovinc does not charge subscription fees to readers or academic institutions. To sustain our publishing infrastructure—including peer-review management, copyediting, typesetting, DOI registration, and digital archiving—an Article Processing Charge (APC) is billed <strong className="text-navy-900">only after</strong> a manuscript is formally accepted for publication.
+              As an open-access publisher, Scientra does not charge subscription fees to readers or academic institutions. To sustain our publishing infrastructure—including peer-review management, copyediting, typesetting, DOI registration, and digital archiving—an Article Processing Charge (APC) is billed <strong className="text-navy-900">only after</strong> a manuscript is formally accepted for publication.
             </p>
 
             <div className="border border-gray-200 rounded-xl overflow-hidden mb-8">
@@ -74,7 +74,7 @@ export default function PublishingFees() {
               <h2 className="text-2xl font-bold text-navy-950">Waivers & Financial Support</h2>
             </div>
             <p className="text-gray-700 text-lg leading-relaxed">
-              Innovinc is committed to supporting authors from low- and middle-income economies. Article processing fee waivers or discounts are available upon request for eligible primary authors experiencing financial constraints.
+              Scientra is committed to supporting authors from low- and middle-income economies. Article processing fee waivers or discounts are available upon request for eligible primary authors experiencing financial constraints.
             </p>
           </CardContent>
         </Card>

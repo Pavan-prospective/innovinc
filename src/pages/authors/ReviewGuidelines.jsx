@@ -54,7 +54,7 @@ export default function ReviewGuidelines() {
               <h2 className="text-2xl font-bold text-navy-950">Guidance for Peer Reviewers</h2>
             </div>
             <p className="text-gray-700 text-lg leading-relaxed mb-10">
-              Peer reviewers play a vital role in maintaining the academic integrity and scientific quality of Innovinc journals. We ask all peer reviewers to provide objective, constructive, and timely feedback.
+              Peer reviewers play a vital role in maintaining the academic integrity and scientific quality of Scientra journals. We ask all peer reviewers to provide objective, constructive, and timely feedback.
             </p>
 
             <h3 className="text-xl font-bold text-navy-950 mb-6">Primary Evaluation Criteria</h3>

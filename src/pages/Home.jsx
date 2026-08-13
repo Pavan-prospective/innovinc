@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, ChevronRight, BookOpen, ShieldCheck, Globe, Activity, Eye, BarChart3, Download, Calendar, ArrowRight } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { Search, ChevronRight, BookOpen, ShieldCheck, Globe, Activity, Eye, BarChart3, Download, Calendar, ArrowRight, X, Tag, ExternalLink } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '../components/ui/Button'
 import { api } from '../api/apiClient'
 
@@ -38,6 +38,25 @@ export default function Home() {
   const [stats, setStats] = useState(null)
   const [loading, setLoading] = useState(true)
   const [activeResourceTab, setActiveResourceTab] = useState('authors')
+  const [selectedNews, setSelectedNews] = useState(null)
+
+  // Compile news dynamically from loaded journals
+  const allNews = journals.reduce((acc, journal) => {
+    if (journal.news) {
+      const journalNews = journal.news.map((item, idx) => ({
+        id: `${journal.id}-news-${idx}`,
+        title: item.title,
+        summary: item.summary,
+        image: item.image,
+        category: journal.category || 'General Science',
+        journalId: journal.id,
+        journalTitle: journal.title,
+        date: item.date || '13 Aug 2026'
+      }))
+      return [...acc, ...journalNews]
+    }
+    return acc
+  }, [])
 
   const specificStats = [
     { value: "15,000+", label: "authors" },
@@ -119,7 +138,7 @@ export default function Home() {
             className="flex flex-col gap-3 mb-6 max-w-3xl"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight font-extrabold leading-[1.1] drop-shadow-md">
-              <span className="text-primary-500 bg-gradient-to-r from-primary-400 to-primary-500 bg-clip-text text-transparent">InnovInc</span> Academic Publishing
+              <span className="text-primary-500 bg-gradient-to-r from-primary-400 to-primary-500 bg-clip-text text-transparent">Scientra</span> Academic Publishing
             </h1>
           </motion.div>
           
@@ -202,7 +221,7 @@ export default function Home() {
                     {articles[0].abstract || articles[0].authors?.join(', ')}
                   </p>
                   <div className="mt-6 flex items-center gap-4 text-xs font-semibold text-gray-400">
-                     <span className="text-white">{articles[0].journalTitle || 'InnovInc Journal'}</span>
+                     <span className="text-white">{articles[0].journalTitle || 'Scientra Journal'}</span>
                      <span className="flex items-center gap-1"><Eye className="w-4 h-4" /> {articles[0].views?.toLocaleString() || '1,200'} Views</span>
                   </div>
                 </div>
@@ -422,88 +441,99 @@ export default function Home() {
       </section>
 
       {/* News Section (Frontiers Style Grid) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-10">
-        <h2 className="text-2xl font-bold text-navy-950 mb-6">News</h2>
-        <div className="flex flex-col gap-6">
-          
-          {/* Top Featured News (Full Width Split) */}
-          <Link to="/news/1" className="block group">
-            <div className="bg-white rounded-lg border border-gray-100 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.05)] flex flex-col md:flex-row overflow-hidden hover:shadow-md transition-shadow h-[350px]">
-              <div className="md:w-1/2 overflow-hidden bg-gray-100">
-                <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" 
-                  alt="AI Factory" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                />
+      {allNews.length >= 3 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-10">
+          <h2 className="text-2xl font-bold text-navy-950 mb-6">News</h2>
+          <div className="flex flex-col gap-6">
+            
+            {/* Top Featured News (Full Width Split) */}
+            <button 
+              onClick={() => setSelectedNews(allNews[0])} 
+              className="block group text-left w-full"
+            >
+              <div className="bg-white rounded-lg border border-gray-100 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.05)] flex flex-col md:flex-row overflow-hidden hover:shadow-md transition-shadow h-[350px]">
+                <div className="md:w-1/2 overflow-hidden bg-gray-100">
+                  <img 
+                    src={allNews[0].image} 
+                    alt={allNews[0].title} 
+                    className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" 
+                  />
+                </div>
+                <div className="md:w-1/2 p-8 flex flex-col justify-center">
+                  <span className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-2">{allNews[0].category}</span>
+                  <span className="text-[11px] text-gray-400 mb-4">Published on {allNews[0].date}</span>
+                  <h3 className="text-2xl md:text-3xl font-semibold text-navy-900 leading-tight mb-4 group-hover:text-primary-600 transition-colors line-clamp-2">
+                    {allNews[0].title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                    {allNews[0].summary}
+                  </p>
+                </div>
               </div>
-              <div className="md:w-1/2 p-8 flex flex-col justify-center">
-                <span className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-2">InnovInc News</span>
-                <span className="text-[11px] text-gray-400 mb-4">Published on 28 Jun 2026</span>
-                <h3 className="text-2xl md:text-3xl font-semibold text-navy-900 leading-tight mb-4 group-hover:text-primary-600 transition-colors">
-                  Tech race moves from AI to factories, hospitals, and power grids
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
-                  In the Top 10 Emerging Technologies of 2026 report, cutting-edge technologies act directly on power grids, drug pipelines, food production, cooling systems, and robotics.
-                </p>
-              </div>
+            </button>
+
+            {/* Second Row (Half Width) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-[400px]">
+              <button 
+                onClick={() => setSelectedNews(allNews[1])} 
+                className="bg-white rounded-lg border border-gray-100 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.05)] overflow-hidden flex flex-col group hover:shadow-md transition-shadow text-left"
+              >
+                <div className="h-56 overflow-hidden bg-gray-100 shrink-0">
+                  <img src={allNews[1].image} alt={allNews[1].title} className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" />
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-[11px] font-bold text-gray-500 uppercase tracking-widest">{allNews[1].category}</span>
+                    <span className="text-[11px] text-gray-400">Published on {allNews[1].date}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-navy-900 leading-snug mb-2 group-hover:text-primary-600 transition-colors line-clamp-2">
+                    {allNews[1].title}
+                  </h3>
+                  <p className="text-gray-600 text-sm line-clamp-2">
+                    {allNews[1].summary}
+                  </p>
+                </div>
+              </button>
+
+              <button 
+                onClick={() => setSelectedNews(allNews[2])} 
+                className="bg-white rounded-lg border border-gray-100 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.05)] overflow-hidden flex flex-col group hover:shadow-md transition-shadow text-left"
+              >
+                <div className="h-56 overflow-hidden bg-gray-100 shrink-0">
+                  <img src={allNews[2].image} alt={allNews[2].title} className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" />
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-[11px] font-bold text-gray-500 uppercase tracking-widest">{allNews[2].category}</span>
+                    <span className="text-[11px] text-gray-400">Published on {allNews[2].date}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-navy-900 leading-snug mb-2 group-hover:text-primary-600 transition-colors line-clamp-2">
+                    {allNews[2].title}
+                  </h3>
+                  <p className="text-gray-600 text-sm line-clamp-2">
+                    {allNews[2].summary}
+                  </p>
+                </div>
+              </button>
             </div>
-          </Link>
 
-          {/* Second Row (Half Width) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-[400px]">
-            <Link to="/news/2" className="bg-white rounded-lg border border-gray-100 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.05)] overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
-              <div className="h-56 overflow-hidden bg-gray-100 shrink-0">
-                <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=800" alt="Virus" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-[11px] font-bold text-gray-500 uppercase tracking-widest">Science News</span>
-                  <span className="text-[11px] text-gray-400">Published on 25 Jun 2026</span>
-                </div>
-                <h3 className="text-lg font-semibold text-navy-900 leading-snug mb-2 group-hover:text-primary-600 transition-colors">
-                  InnovInc in Science: How 'peacemakers' of the immune system could unlock long-term disease remission
-                </h3>
-                <p className="text-gray-600 text-sm line-clamp-2">
-                  'Peacemaker' immune cells could help treat diseases ranging from type 1 diabetes to neurodegeneration.
-                </p>
-              </div>
-            </Link>
-
-            <Link to="/news/3" className="bg-white rounded-lg border border-gray-100 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.05)] overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
-              <div className="h-56 overflow-hidden bg-gray-100 shrink-0">
-                <img src="https://images.unsplash.com/photo-1572949645841-094f3a9c4c94?auto=format&fit=crop&q=80&w=800" alt="Whale" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-[11px] font-bold text-gray-500 uppercase tracking-widest">Nature News</span>
-                  <span className="text-[11px] text-gray-400">Published on 19 Jun 2026</span>
-                </div>
-                <h3 className="text-lg font-semibold text-navy-900 leading-snug mb-2 group-hover:text-primary-600 transition-colors">
-                  Arabian Sea humpback whale's long-distance trip further highlights species' unique ecology
-                </h3>
-                <p className="text-gray-600 text-sm line-clamp-2">
-                  The results showed most whales are homebodies – moving within a narrow latitudinal band.
-                </p>
-              </div>
-            </Link>
+            <div className="flex justify-center mt-2">
+              <Link to="/news">
+                <Button variant="outline" className="rounded-full px-8 border-gray-300 text-gray-600 hover:bg-gray-50 h-9 text-sm">
+                  See more news <ChevronRight className="w-4 h-4 ml-1" />
+                </Button>
+              </Link>
+            </div>
           </div>
-
-          <div className="flex justify-center mt-2">
-            <Link to="/news">
-              <Button variant="outline" className="rounded-full px-8 border-gray-300 text-gray-600 hover:bg-gray-50 h-9 text-sm">
-                See more news <ChevronRight className="w-4 h-4 ml-1" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
 
 
       {/* Why Publish with Us (Compact Cards) */}
       <section className="bg-white py-12 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl font-bold text-navy-900 mb-6 text-center">Publish with InnovInc</h2>
+          <h2 className="text-xl font-bold text-navy-900 mb-6 text-center">Publish with Scientra</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyPublish.map((item, i) => (
               <div key={i} className="bg-gray-50 p-6 rounded-lg border border-gray-100 shadow-sm flex flex-col items-center text-center">
@@ -531,10 +561,10 @@ export default function Home() {
             Empowering Authors to Share Knowledge Globally.
           </h3>
           <p className="text-gray-700 leading-relaxed text-sm pt-2">
-            Founded with the vision to break down barriers in scientific communication, InnovInc has grown into a trusted home for thousands of researchers worldwide. We believe that critical research should not be locked behind paywalls. 
+            Founded with the vision to break down barriers in scientific communication, Scientra has grown into a trusted home for thousands of researchers worldwide. We believe that critical research should not be locked behind paywalls. 
           </p>
           <p className="text-gray-700 leading-relaxed text-sm pb-4">
-            Our commitment is to provide authors with rigorous peer review, rapid publication timelines, and maximum global visibility. When you publish with InnovInc, you are joining a legacy of academic excellence and open-access innovation.
+            Our commitment is to provide authors with rigorous peer review, rapid publication timelines, and maximum global visibility. When you publish with Scientra, you are joining a legacy of academic excellence and open-access innovation.
           </p>
           <Button variant="outline" className="text-navy-900 border-gray-300 h-9 text-sm">Read our full story</Button>
         </div>
@@ -555,6 +585,84 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* --- News Details Modal --- */}
+      <AnimatePresence>
+        {selectedNews && (
+          <div className="fixed inset-0 bg-navy-950/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="bg-white rounded-3xl overflow-hidden max-w-2xl w-full max-h-[85vh] overflow-y-auto relative shadow-2xl border border-gray-200/50 flex flex-col text-left font-sans"
+            >
+              {/* Top Banner Image */}
+              <div className="h-64 md:h-72 w-full overflow-hidden relative shrink-0 bg-gray-100">
+                <img 
+                  src={selectedNews.image} 
+                  alt={selectedNews.title} 
+                  className="w-full h-full object-cover"
+                />
+                <button
+                  onClick={() => setSelectedNews(null)}
+                  className="absolute top-4 right-4 bg-white/90 hover:bg-white text-navy-950 hover:text-primary-600 p-2 rounded-full shadow-md transition-all hover:scale-105 border border-gray-100 shrink-0"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+                <div className="absolute bottom-4 left-4 bg-navy-950/80 backdrop-blur-md px-3.5 py-1.5 rounded-lg text-xs font-bold text-primary-400 uppercase tracking-widest flex items-center gap-1.5 shadow-sm border border-white/10">
+                  <Tag className="w-3.5 h-3.5" /> {selectedNews.category}
+                </div>
+              </div>
+
+              {/* Body */}
+              <div className="p-6 md:p-8 flex-1">
+                <div className="flex items-center gap-1.5 text-gray-400 text-xs font-semibold mb-4">
+                  <Calendar className="w-3.5 h-3.5" /> {selectedNews.date}
+                </div>
+
+                <h2 className="text-xl md:text-2xl font-bold text-navy-950 leading-snug mb-5">
+                  {selectedNews.title}
+                </h2>
+
+                {/* Journal Attribution Badge */}
+                <div className="mb-6 p-4 bg-navy-50 rounded-2xl border border-navy-100/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <BookOpen className="w-5 h-5 text-primary-600 shrink-0" />
+                    <div>
+                      <div className="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Source Journal</div>
+                      <div className="text-sm font-semibold text-navy-950 leading-snug">{selectedNews.journalTitle}</div>
+                    </div>
+                  </div>
+                  <Link 
+                    to={`/journals/${selectedNews.journalId}`}
+                    onClick={() => setSelectedNews(null)}
+                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-navy-200/80 text-xs font-bold text-navy-950 hover:bg-navy-50 transition-colors shadow-sm shrink-0"
+                  >
+                    View Journal <ExternalLink className="w-3.5 h-3.5 text-primary-600" />
+                  </Link>
+                </div>
+
+                <div className="text-gray-700 leading-relaxed text-sm md:text-base font-light space-y-4 whitespace-pre-wrap">
+                  {selectedNews.summary}
+                </div>
+              </div>
+
+              {/* Footer close button */}
+              <div className="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-end shrink-0">
+                <Button 
+                  onClick={() => setSelectedNews(null)} 
+                  variant="outline" 
+                  className="rounded-xl px-5 border-gray-300 text-gray-600 hover:bg-gray-100 h-9 text-xs"
+                >
+                  Close
+                </Button>
+              </div>
+
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
     </div>
   )

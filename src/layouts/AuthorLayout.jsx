@@ -23,7 +23,7 @@ export function AuthorLayout() {
               <BookOpen className="text-white w-5 h-5" />
             </div>
             <span className="font-bold tracking-tight text-navy-950">
-              InnovInc <span className="text-primary-500 text-[10px] uppercase tracking-widest ml-1">Author</span>
+              Scientra <span className="text-primary-500 text-[10px] uppercase tracking-widest ml-1">Author</span>
             </span>
           </Link>
         </div>

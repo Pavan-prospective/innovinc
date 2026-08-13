@@ -1,0 +1,19 @@
+Biologically active fermented ingredient for bread fortification based on sub-standard peas
+Francesca Valerio*a, Mariaelena Di Biasea, Giusy Rita Caponiob, Valentina Cifarellia, Stella Lisa Lonigroa, Mara Pulpitoa, Claudia Grandolfoc, Graziana Difonzoc, Sonia Calligarisd,
+Stella Plazzottad, Grazia Tammab
+a National Research Council, Institute of Sciences of Food Production, Via G. Amendola 122/O, 70126, Bari, Italy
+b University of Bari Aldo Moro, Department of Bioscience, Biotechnology and Environment,
+Via Orabona 4, 70125, Bari, Italy
+c University of Bari Aldo Moro, Department of Soil, Plant and Food Sciences, Via Amendola 165/A, 70126, Bari, Italy
+d University of Udine, Department of Agricultural, Food, Environmental and Animal
+Sciences, Via Sondrio 2/A, 33100, Udine
+
+Sub-standard peas (sP) represent a major underutilized by-product of pea processing, despite their richness in proteins, fibers, and bioactive compounds. This study explores a biotechnological strategy to valorize sP through fermentation, aiming to obtain a functional bioingredient suitable for bread fortification1. Sub-standard peas were ground, mixed with water (40:60 w/w), and fermented with Lactiplantibacillus plantarum ITM21B (5.00 log₁₀ CFU/g, 14 h, 37 °C), yielding the bioingredient Bio21B-P. The fermented material was characterized for its nutritional, biochemical, and biological properties.
+Fermentation significantly improved the chemical profile of sP: lactic and acetic acids increased to 29.09 and 4.41 mmol/kg, respectively; globulin and glutelin fractions rose from 0.37 to 2.97 g/kg and from 0.98 to 2.96 g/kg; and total phenolic content increased from 13.92 to 19.08 mg GAE/L. These changes were associated with a marked enhancement in antioxidant activity. Biological assays conducted on HepG2 liver cells treated with oleate/palmitate to induce steatosis showed a relevant, though not statistically significant, reduction in lipid droplet accumulation at 1 mg/mL of fermented extract.
+Freeze-dried Bio21B-P was incorporated into bread formulations at 0%, 2.5%, 7.4%, 16.6%, and 25.4% (w/w flour). Increasing substitution levels led to a significant reduction in predicted glycaemic index and starch hydrolysis (from 62.02 in control bread to 50.24 at 25.4% replacement). Protein content and total free amino acids markedly increased, reaching 1886.30 mg/kg at the highest level. Textural analysis revealed that 7.4% Bio21B- P improved crumb softness and cohesiveness, while higher incorporation levels compromised bread structure.
+Overall, fermentation enhanced the nutritional and functional properties of legume waste, enabling the production of a sustainable, health-promoting ingredient for bread enrichment and contributing to circular food system strategies.
+1 Di Biase, et al. Appl. Food Res., 2025, 101515.
+
+BIOGRAPHY:
+
+Employed at the CNR-ISPA by 1998. Currently senior researcher principally involved in the improvement of food quality and nutritional value by the application of microbial biotechnologies. Her research activities are aimed at improving the quality and safety of foods through the use and optimization of microbial biotechnologies, including fermentation of cereal and vegetable matrices, using microbial strains with peculiar technological and probiotic characteristics. Application of microbiological and chemical methodologies (HPLC), uni- and multivariate statistical analysis. She engages in national and international projects/collaborations.

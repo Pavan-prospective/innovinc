@@ -34,7 +34,7 @@ export default function OpenAccessStatement() {
               <h2 className="text-2xl font-bold text-navy-950">Our Commitment to Open Access</h2>
             </div>
             <p className="text-gray-700 text-lg leading-relaxed">
-              Innovinc is fully committed to the principle of open, unrestricted access to scientific knowledge. All articles published by Innovinc are <strong className="text-navy-900">immediately and permanently free</strong> for anyone to read, download, copy, distribute, print, and search without paywalls or subscription barriers.
+              Scientra is fully committed to the principle of open, unrestricted access to scientific knowledge. All articles published by Scientra are <strong className="text-navy-900">immediately and permanently free</strong> for anyone to read, download, copy, distribute, print, and search without paywalls or subscription barriers.
             </p>
           </CardContent>
         </Card>

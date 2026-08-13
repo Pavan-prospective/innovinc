@@ -1,0 +1,14 @@
+Constructing predictive models to evaluate the risk of hypertension with different age groups
+
+Wenqiang Wang, Beijing Anzhen 
+Nanchong Hospital of Capital Medical University, China
+
+Abstract 
+ Objectives: Targeted prevention of hypertension risk factors across various age groups and developed risk prediction models for hypertension with different age groups.
+ Study Design：This is a retrospective, cross-sectional analysis based on NHANES databases. 
+
+Methods: The LASSO regression model and multivariate logistic regression were performed to analyze the risk factors for hypertension across using R software for each age group. 
+Results: A total of 3741 individuals were included and 1371 (36.6%) had hypertension. According to the results of the LASSO regression model and multivariate logistic regression， VAI (>2.099), Waist Circumference/ Height (>0.559), Thyroid problem (Yes) ,Age（35-45), Gender(male), Trouble sleeping (Yes) are associated with hypertension in individuals aged 20-45 years. Age（56-60), Waist Circumference (>85cm), Diabetes (Yes),CHD (Yes), Stroke (Yes), Cre(>133umol/L), Trouble sleeping (Yes) ,RCDW (>=15%) are associated with hypertension in individuals aged 46-60 years. Diabetes（YES), Gender(Female),Gout (Yes), CHD (Yes) ,Stroke (Yes) , Trouble sleeping (Yes) , Cre(>133umol/L),RCDW (>=15%) are associated with hypertension in individuals aged 61-80 years. Risk prediction models for hypertension with different age groups in this study presented good discrimination and good calibration. 
+
+Conclusions: This study find metabolic factors are closely associated with the onset of hypertension in young and middle-aged populations, while common diseases such as CHD, diabetes, and stroke are strongly correlated with the occurrence of hypertension in the elderly. This study also developed risk prediction models for hypertension with different age groups, and these prediction models may assist clinicians in devising strategies to prevent hypertension and enhance the quality of care.
+

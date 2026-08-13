@@ -5,10 +5,18 @@ import { Input } from '../components/ui/Input'
 import { api } from '../api/apiClient'
 import { ALPHABET, formatArticleDate, getFirstLetter } from '../utils/journalUtils'
 
+export const cleanJournalTitle = (title) => {
+  if (!title) return ''
+  return title
+    .replace(/^(Journal of|Global Journal of|Scientra in|Journal of the|International Journal of)\s+/i, '')
+    .trim()
+}
+
 export default function Journals() {
   const [journals, setJournals] = useState([])
   const [categories, setCategories] = useState([])
   const [popularArticles, setPopularArticles] = useState([])
+  const [extraArticles, setExtraArticles] = useState([])
   const [loading, setLoading] = useState(true)
   const [searchQuery, setSearchQuery] = useState('')
   const [activeLetter, setActiveLetter] = useState('All')
@@ -17,14 +25,29 @@ export default function Journals() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [journalsData, articlesData, categoriesData] = await Promise.all([
+        const [journalsData, articlesData, categoriesData, allArticlesData] = await Promise.all([
           api.journals.getAll(),
           api.articles.getMostViewed(),
           api.categories.getAll(),
+          api.articles.getAll()
         ])
         setJournals(journalsData)
         setPopularArticles(articlesData)
         setCategories(categoriesData)
+
+        // Identify the 8 root articles that act as the independent feed
+        const rootArticleIds = [
+          "robust-polyzwitterionic-hydrogels-water-harvesting",
+          "low-alloyed-magnesium-alloys-strength-ductility",
+          "structured-light-ultrafast-lasers-material-processing",
+          "magnetron-deposition-sandwich-multilayer-coating-steel",
+          "lysine-grafted-polylactic-acid-antimicrobial-polymer",
+          "core-shell-nanorods-theranostic-applications",
+          "acoustic-emission-study-of-deformation-activity-in-low-alloyed-magnesium-alloys",
+          "photocatalysts-visible-light-radical-polymerization-3d-printing"
+        ]
+        const extraFeed = allArticlesData.filter(a => rootArticleIds.includes(a.id))
+        setExtraArticles(extraFeed)
       } catch (error) {
         console.error('Failed to fetch data', error)
       } finally {
@@ -51,11 +74,11 @@ export default function Journals() {
         j.description?.toLowerCase().includes(q) ||
         j.category?.toLowerCase().includes(q) ||
         j.chiefEditor?.name?.toLowerCase().includes(q)
-      const matchesLetter = activeLetter === 'All' || getFirstLetter(j.title) === activeLetter
+      const matchesLetter = activeLetter === 'All' || getFirstLetter(cleanJournalTitle(j.title)) === activeLetter
       const matchesCategory = activeCategory === 'All' || j.category === activeCategory
       return matchesSearch && matchesLetter && matchesCategory
     })
-    .sort((a, b) => a.title.localeCompare(b.title))
+    .sort((a, b) => cleanJournalTitle(a.title).localeCompare(cleanJournalTitle(b.title)))
 
   return (
     <div className="flex flex-col min-h-screen bg-[#f8fafc]">
@@ -128,7 +151,7 @@ export default function Journals() {
                 All
               </button>
               {ALPHABET.map((letter) => {
-                const hasJournals = journals.some((j) => getFirstLetter(j.title) === letter)
+                const hasJournals = journals.some((j) => getFirstLetter(cleanJournalTitle(j.title)) === letter)
                 return (
                   <button
                     key={letter}
@@ -183,7 +206,7 @@ export default function Journals() {
                   
                   <Link to={`/journals/${journal.id}`}>
                     <h3 className="text-xl font-bold text-navy-950 mb-2 hover:text-primary-600 transition-colors leading-snug">
-                      {journal.title}
+                      {cleanJournalTitle(journal.title)}
                     </h3>
                   </Link>
                   
@@ -271,6 +294,45 @@ export default function Journals() {
           </div>
         </aside>
       </section>
+
+      {/* Additional Research Articles Feed */}
+      {extraArticles.length > 0 && (
+        <section className="bg-gray-50 py-16 border-t border-gray-200 w-full mt-auto">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mb-10">
+              <h2 className="text-2xl font-bold text-navy-950 mb-2">Additional Research Feed</h2>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Explore independent research articles and submissions published across all domains.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {extraArticles.map((article) => (
+                <Link 
+                  to={`/articles/${article.id}`} 
+                  key={article.id}
+                  className="bg-white p-6 rounded-2xl shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 border border-gray-150 flex flex-col h-full group"
+                >
+                  <div className="mb-4">
+                    <span className="text-[10px] font-bold text-primary-600 uppercase tracking-wide">
+                      {article.type || 'Research paper'}
+                    </span>
+                    <p className="text-[11px] text-gray-400 mt-1">
+                      Published on {article.publicationDate || '13 Aug 2026'}
+                    </p>
+                  </div>
+                  <h3 className="text-sm font-semibold text-navy-950 leading-snug mb-4 group-hover:text-primary-600 transition-colors line-clamp-3">
+                    {article.title}
+                  </h3>
+                  <p className="text-[11px] text-gray-500 mt-auto pt-4 border-t border-gray-100 line-clamp-2">
+                    {article.authors?.join(' · ')}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   )
 }

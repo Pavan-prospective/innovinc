@@ -7,11 +7,11 @@ export default function CopyrightStatement() {
   const policies = [
     {
       title: "Copyright Retention",
-      desc: "Authors retain full copyright of their work published with Innovinc."
+      desc: "Authors retain full copyright of their work published with Scientra."
     },
     {
       title: "Publishing License",
-      desc: "Authors grant Innovinc an exclusive or non-exclusive license to publish, display, distribute, and archive the article."
+      desc: "Authors grant Scientra an exclusive or non-exclusive license to publish, display, distribute, and archive the article."
     },
     {
       title: "Reuse Policy",
@@ -48,7 +48,7 @@ export default function CopyrightStatement() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold text-navy-950">Author Ownership & Licensing Rights</h2>
-                <p className="text-gray-600 mt-1">At Innovinc, we believe authors should retain ownership of their intellectual property:</p>
+                <p className="text-gray-600 mt-1">At Scientra, we believe authors should retain ownership of their intellectual property:</p>
               </div>
             </div>
 

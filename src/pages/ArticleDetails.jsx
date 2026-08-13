@@ -60,6 +60,7 @@ export default function ArticleDetails() {
 
   const filteredTabs = ['Abstract', 'Introduction', 'Methods', 'Results', 'Conclusion', 'Biography', 'References'].filter((tab) => {
     if (tab === 'Abstract') return true
+    if (tab === 'Biography') return !!article.biography || !!article.authorImage
     const field = tab.toLowerCase()
     return !!article[field]
   })
@@ -399,13 +400,26 @@ export default function ArticleDetails() {
                     </section>
                   )}
 
-                  {activeTab === 'Biography' && article.biography && (
+                  {activeTab === 'Biography' && (article.biography || article.authorImage) && (
                     <section>
                       <h2 className="text-xl font-bold text-navy-950 mb-5 pb-3 border-b border-gray-100">Author Biography</h2>
-                      <div className="space-y-4 text-gray-700 leading-relaxed text-[15px] font-light">
-                        {article.biography.split('\n\n').map((paragraph, index) => (
-                          <p key={index}>{paragraph}</p>
-                        ))}
+                      <div className="flex flex-col md:flex-row gap-6 items-start">
+                        {article.authorImage && (
+                          <div className="shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden shadow border border-gray-200 bg-white">
+                            <img 
+                              src={article.authorImage} 
+                              alt="Author" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        )}
+                        {article.biography && (
+                          <div className="space-y-4 text-gray-700 leading-relaxed text-[15px] font-light flex-1">
+                            {article.biography.split('\n\n').map((paragraph, index) => (
+                              <p key={index}>{paragraph}</p>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </section>
                   )}
@@ -474,7 +488,7 @@ export default function ArticleDetails() {
               <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
                 <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Correspondence</h3>
                 <div className="space-y-3 text-sm">
-                  <a href="mailto:correspondence@innovinc.com" className="flex items-center gap-2 text-primary-600 hover:text-primary-800 font-medium">
+                  <a href="mailto:correspondence@scientra.com" className="flex items-center gap-2 text-primary-600 hover:text-primary-800 font-medium">
                     <Mail className="w-4 h-4" /> Email corresponding author
                   </a>
                   <a href="#" className="flex items-center gap-2 text-primary-600 hover:text-primary-800 font-medium">
@@ -485,7 +499,7 @@ export default function ArticleDetails() {
 
               {/* Copyright */}
               <div className="bg-gray-50 rounded-2xl border border-gray-100 p-5 text-[11px] text-gray-500 leading-relaxed">
-                <p className="font-semibold text-gray-600 mb-1">© {new Date().getFullYear()} InnovInc</p>
+                <p className="font-semibold text-gray-600 mb-1">© {new Date().getFullYear()} Scientra</p>
                 <p>This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY).</p>
               </div>
             </div>

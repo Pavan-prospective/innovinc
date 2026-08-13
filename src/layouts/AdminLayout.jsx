@@ -24,7 +24,7 @@ export function AdminLayout() {
               <BookOpen className="text-white w-5 h-5" />
             </div>
             <span className="font-bold tracking-tight">
-              InnovInc <span className="text-primary-500 text-[10px] uppercase tracking-widest ml-1">Admin</span>
+              Scientra <span className="text-primary-500 text-[10px] uppercase tracking-widest ml-1">Admin</span>
             </span>
           </Link>
         </div>
@@ -54,7 +54,7 @@ export function AdminLayout() {
             </div>
             <div className="flex flex-col">
               <span className="text-sm font-bold text-white">Admin User</span>
-              <span className="text-[10px] text-gray-400">admin@innovinc.org</span>
+              <span className="text-[10px] text-gray-400">admin@scientra.org</span>
             </div>
           </div>
           <Link to="/" className="flex items-center gap-3 px-4 py-3 rounded-xl text-red-400 hover:bg-red-500/10 hover:text-red-300 transition-colors font-medium text-sm">

@@ -61,7 +61,7 @@ export default function EditorialQualityProcesses() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold text-navy-950">Rigorous Quality Control Workflow</h2>
-                <p className="text-gray-600 mt-1">To maintain high academic standards, every manuscript submitted to Innovinc undergoes a systematic quality check:</p>
+                <p className="text-gray-600 mt-1">To maintain high academic standards, every manuscript submitted to Scientra undergoes a systematic quality check:</p>
               </div>
             </div>
 
