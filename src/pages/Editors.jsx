@@ -54,6 +54,20 @@ export default function Editors() {
 
   const [selectedEditor, setSelectedEditor] = useState(null)
 
+  const displayedEditors = isJournalContext
+    ? (journal?.chiefEditor
+        ? [{
+            name: journal.chiefEditor.name,
+            role: 'Chief Editor',
+            institution: journal.chiefEditor.affiliation,
+            bio: journal.chiefEditor.biography || journal.chiefEditor.bio || '',
+            image: journal.chiefEditor.image,
+            specialty: '',
+            email: 'contact@sgcr-editorial.org'
+          }]
+        : [])
+    : editors
+
   return (
     <div className={`min-h-screen ${isJournalContext ? '' : 'bg-gray-50 pb-20'}`}>
       
@@ -195,7 +209,7 @@ export default function Editors() {
               <Users className="w-6 h-6 text-primary-600" /> Lead Board Members
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {editors.map((editor, index) => (
+              {displayedEditors.map((editor, index) => (
                 <motion.div
                   key={editor.name}
                   initial={{ opacity: 0, y: 15 }}
@@ -205,12 +219,16 @@ export default function Editors() {
                   className="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_-5px_rgba(212,163,89,0.1)] hover:border-primary-300/80 transition-all duration-300 overflow-hidden flex flex-col group cursor-pointer"
                 >
                   <div className="flex gap-4 p-5 items-start">
-                    <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-gray-100 shadow-sm relative cursor-pointer">
-                      <img
-                        src={editor.image}
-                        alt={editor.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
+                    <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-gray-100 shadow-sm relative cursor-pointer flex items-center justify-center bg-primary-50 text-primary-800 font-bold text-lg">
+                      {editor.image ? (
+                        <img
+                          src={editor.image}
+                          alt={editor.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        editor.name.replace(/^(Dr\.|Prof\.)\s*/, '').split(' ').map((p) => p[0]).join('').substring(0, 2)
+                      )}
                       <div className="absolute inset-0 bg-gradient-to-t from-navy-950/20 to-transparent"></div>
                     </div>
                     <div className="space-y-1">
@@ -233,13 +251,15 @@ export default function Editors() {
                     </p>
                     
                     <div className="space-y-3 pt-2 border-t border-gray-50">
-                      <div className="flex flex-wrap gap-1.5">
-                        {editor.specialty.split('&').map(spec => (
-                          <Badge key={spec} className="bg-gray-50 text-gray-600 border border-gray-100 hover:bg-gray-100 transition-colors font-medium text-[9px] px-2 py-0.5 rounded">
-                            {spec.trim()}
-                          </Badge>
-                        ))}
-                      </div>
+                      {editor.specialty && (
+                        <div className="flex flex-wrap gap-1.5">
+                          {editor.specialty.split('&').map(spec => (
+                            <Badge key={spec} className="bg-gray-50 text-gray-600 border border-gray-100 hover:bg-gray-100 transition-colors font-medium text-[9px] px-2 py-0.5 rounded">
+                              {spec.trim()}
+                            </Badge>
+                          ))}
+                        </div>
+                      )}
                       
                       <div className="flex items-center justify-between text-[10px] text-gray-400 font-medium">
                         <span className="flex items-center gap-1">
@@ -277,12 +297,16 @@ export default function Editors() {
               </button>
               <div className="p-8">
                 <div className="flex flex-col sm:flex-row gap-6 items-start">
-                  <div className="w-32 h-32 rounded-2xl overflow-hidden shrink-0 border border-gray-100 shadow-sm relative">
-                    <img
-                      src={selectedEditor.image}
-                      alt={selectedEditor.name}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="w-32 h-32 rounded-2xl overflow-hidden shrink-0 border border-gray-100 shadow-sm relative flex items-center justify-center bg-primary-50 text-primary-800 font-bold text-2xl">
+                    {selectedEditor.image ? (
+                      <img
+                        src={selectedEditor.image}
+                        alt={selectedEditor.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      selectedEditor.name.replace(/^(Dr\.|Prof\.)\s*/, '').split(' ').map((p) => p[0]).join('').substring(0, 2)
+                    )}
                   </div>
                   <div className="space-y-2 pt-2">
                     <h3 className="font-extrabold text-navy-950 text-2xl leading-tight">
@@ -305,7 +329,7 @@ export default function Editors() {
                 <div className="mt-8">
                   <h4 className="text-sm font-bold text-navy-950 mb-3 border-b border-gray-100 pb-2">Biography</h4>
                   <div className="space-y-3">
-                    {selectedEditor.bio.split('\n\n').map((paragraph, idx) => (
+                    {(selectedEditor.bio || selectedEditor.biography || '').split('\n\n').map((paragraph, idx) => (
                       <p key={idx} className="text-[14px] text-gray-700 leading-loose">
                         {paragraph}
                       </p>
@@ -313,16 +337,18 @@ export default function Editors() {
                   </div>
                 </div>
                 
-                <div className="mt-6">
-                  <h4 className="text-sm font-bold text-navy-950 mb-3 border-b border-gray-100 pb-2">Specialties</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedEditor.specialty.split('&').map(spec => (
-                      <Badge key={spec} className="bg-gray-50 text-gray-600 border border-gray-100 text-xs px-3 py-1 rounded-lg font-medium">
-                        {spec.trim()}
-                      </Badge>
-                    ))}
+                {selectedEditor.specialty && (
+                  <div className="mt-6">
+                    <h4 className="text-sm font-bold text-navy-950 mb-3 border-b border-gray-100 pb-2">Specialties</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedEditor.specialty.split('&').map(spec => (
+                        <Badge key={spec} className="bg-gray-50 text-gray-600 border border-gray-100 text-xs px-3 py-1 rounded-lg font-medium">
+                          {spec.trim()}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </motion.div>
           </div>

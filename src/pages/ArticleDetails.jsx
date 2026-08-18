@@ -109,7 +109,7 @@ export default function ArticleDetails() {
           {/* Authors */}
           <div className="mb-4">
             <div className="flex flex-wrap items-baseline gap-x-1.5 gap-y-1 text-sm font-semibold text-navy-950">
-              {article.authorAffiliations ? (
+              {article.authorAffiliations && article.authorAffiliations.length > 0 ? (
                 <>
                   {article.authorAffiliations.slice(0, 4).map((author, index) => (
                     <span key={author.name} className="inline-flex items-baseline">
@@ -119,9 +119,6 @@ export default function ArticleDetails() {
                       >
                         {author.name}
                       </button>
-                      <sup className="text-[10px] text-primary-600 font-bold ml-0.5">
-                        {author.indices.join(',')}
-                      </sup>
                       {(index < Math.min(article.authorAffiliations.length, 4) - 1 || article.authorAffiliations.length > 4) && (
                         <span className="text-gray-400 ml-0.5">,</span>
                       )}
@@ -136,8 +133,10 @@ export default function ArticleDetails() {
                     </button>
                   )}
                 </>
+              ) : article.authors && article.authors.length > 0 ? (
+                <span>{article.authors.join(', ')}</span>
               ) : (
-                <span>{article.authors?.join(', ')}</span>
+                <span className="text-gray-400 font-normal italic">Author information not available</span>
               )}
             </div>
 
@@ -468,19 +467,31 @@ export default function ArticleDetails() {
                   <Users className="w-3.5 h-3.5" /> Authors
                 </h3>
                 <ul className="space-y-3">
-                  {(article.authorAffiliations || []).map(author => (
-                    <li key={author.name} className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-400 to-primary-700 flex items-center justify-center text-white text-xs font-bold shrink-0">
-                        {author.name.charAt(0)}
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-navy-950 leading-tight">{author.name}</p>
-                        <p className="text-[11px] text-gray-400 mt-0.5">
-                          Affiliation {author.indices.join(', ')}
-                        </p>
-                      </div>
-                    </li>
-                  ))}
+                  {article.authorAffiliations && article.authorAffiliations.length > 0 ? (
+                    article.authorAffiliations.map(author => (
+                      <li key={author.name} className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-400 to-primary-700 flex items-center justify-center text-white text-xs font-bold shrink-0">
+                          {author.name.charAt(0)}
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-navy-950 leading-tight">{author.name}</p>
+                        </div>
+                      </li>
+                    ))
+                  ) : article.authors && article.authors.length > 0 ? (
+                    article.authors.map(author => (
+                      <li key={author} className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-400 to-primary-700 flex items-center justify-center text-white text-xs font-bold shrink-0">
+                          {author.charAt(0)}
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-navy-950 leading-tight">{author}</p>
+                        </div>
+                      </li>
+                    ))
+                  ) : (
+                    <li className="text-xs text-gray-400 italic">Author details not available</li>
+                  )}
                 </ul>
               </div>
 
