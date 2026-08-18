@@ -566,7 +566,9 @@ export default function Home() {
           <p className="text-gray-700 leading-relaxed text-sm pb-4">
             Our commitment is to provide authors with rigorous peer review, rapid publication timelines, and maximum global visibility. When you publish with Scientra, you are joining a legacy of academic excellence and open-access innovation.
           </p>
-          <Button variant="outline" className="text-navy-900 border-gray-300 h-9 text-sm">Read our full story</Button>
+          <Link to="/about">
+            <Button variant="outline" className="text-navy-900 border-gray-300 h-9 text-sm">Read our full story</Button>
+          </Link>
         </div>
 
         {/* Right: Indexed In & Partners */}

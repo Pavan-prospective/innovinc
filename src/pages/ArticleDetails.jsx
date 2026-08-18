@@ -499,7 +499,7 @@ export default function ArticleDetails() {
               <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
                 <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Correspondence</h3>
                 <div className="space-y-3 text-sm">
-                  <a href="mailto:correspondence@scientra.com" className="flex items-center gap-2 text-primary-600 hover:text-primary-800 font-medium">
+                  <a href="mailto:support@scientrajournals.org" className="flex items-center gap-2 text-primary-600 hover:text-primary-800 font-medium">
                     <Mail className="w-4 h-4" /> Email corresponding author
                   </a>
                   <a href="#" className="flex items-center gap-2 text-primary-600 hover:text-primary-800 font-medium">

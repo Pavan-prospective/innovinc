@@ -185,6 +185,7 @@ export const JOURNALS = [
     "chiefEditor": {
       "name": "Mikhail G. Kolonin",
       "affiliation": "University of Texas, Houston, USA",
+      "image": "/assets/editors/mikhail_g_kolonin.jfif",
       "biography": "Mikhail G. Kolonin, PhD, is a Professor at the McGovern Medical School, The University of Texas Health Science Center at Houston (UTHealth Houston), and Director of the Center for Metabolic and Degenerative Diseases. His research focuses on obesity, adipose tissue biology, metabolism, aging, and type 2 diabetes, with an emphasis on developing targeted therapies for metabolic diseases. Dr. Kolonin has authored numerous high-impact scientific publications and is internationally recognized for his contributions to metabolic research and translational medicine."
     },
     "stats": {
@@ -299,6 +300,7 @@ export const JOURNALS = [
     "chiefEditor": {
       "name": "Jeffrey T. Hutchinson",
       "affiliation": "University of Texas at San Antonio, United States",
+      "image": "/assets/editors/jeffrey_t_hutchinson.jfif",
       "biography": "Dr. Jeffrey T. Hutchinson is an Associate Professor specializing in aquatic plant ecology, invasive species management, and freshwater ecosystem conservation. His research focuses on aquatic macrophytes, plant responses to environmental changes, biodiversity, and the ecological impacts of non-native species. He investigates plant-based indicators of ecosystem health, water quality, and sustainable management strategies. His work contributes to understanding plant\u2013environment interactions and the conservation of aquatic and terrestrial ecosystems."
     },
     "stats": {
@@ -413,6 +415,7 @@ export const JOURNALS = [
     "chiefEditor": {
       "name": "Lia Krusin-Elbaum",
       "affiliation": "The City College of New York, United States",
+      "image": "/assets/editors/lia_krusin_elbaum.jfif",
       "biography": "Lia Krusin-Elbaum has been a Professor of Physics at The City College of New York since 2010. Her Ph.D. degree is in Condensed Matter Physics (NYU, 1979) and she was a scientist at the IBM's T.J. Watson Research Center, NY (1979-2010). Dr. Krusin-Elbaum is a recipient of ten IBM Invention Achievement Awards and holds over 27 US patents. She is a Fellow of the American Physical Society (1993-) and was elected (2022) to serve on the USDOE Basic Energy Sciences Advisory Committee. She is a co-lead of the Columbia U. NSF-MRSEC PAQM (2020-) and of the NSF-CREST IDEALS Centers (2015-)."
     },
     "stats": {
@@ -523,6 +526,7 @@ export const JOURNALS = [
     "chiefEditor": {
       "name": "Lorraine Tighe",
       "affiliation": "Earth Sciences Solutions, USA",
+      "image": "/assets/editors/lorraine_tighe.jfif",
       "biography": "Dr. Lorraine Tighe is a geoscientist and thought leader with over 20 years of experience advancing Earth science through innovative mapping technologies. As Director of Earth Sciences Solutions at Esri, she leads national initiatives that integrate geologic, topographic, and natural resource data using GIS and Earth observation tools. With a Ph.D. in Earth Sciences (Physics), an M.Sc. in Remote Sensing, and a B.Sc. in Physics and Geology, Dr. Tighe brings deep scientific expertise to her mission of promoting sustainability through geospatial thinking."
     },
     "stats": {
@@ -641,6 +645,7 @@ export const JOURNALS = [
     "chiefEditor": {
       "name": "Oliver Micke",
       "affiliation": "Department of Radiation Therapy and Radiation Oncology, Franziskus Hospital,Germany",
+      "image": "/assets/editors/oliver_micke.webp",
       "biography": "Head of the department of radiotherapy and radiation oncology, and clinical director of the Franziskus Hospital Bielefeld, Germany, teaching hospital of the Hannover Medical School (MHH). He is president of the German Magnesium Society and chairman of the German Working Group \u201cTrace Elements and Electrolytes in Radiation Oncology\u201d and associate editor of \u201cTrace Elements and Electrolytes\u201d- Official Organ of the \"Society of Magnesium Research\", Germany, and German Working Group \u201cTrace Elements and Electrolytes in Radiation Oncology\u201d AKTE, Germany. He authored more than 270 publications in peer reviewed scientific journals and has been invited as speaker at national and international meetings."
     },
     "stats": {
@@ -771,6 +776,7 @@ export const JOURNALS = [
     "chiefEditor": {
       "name": "Ashraf Youssef, Tarek Hammad",
       "affiliation": "Takeda Development Center Americas, Inc., Cambridge, MA, USA",
+      "image": "/assets/editors/ashraf_youssef.jfif",
       "biography": "Dr. Ashraf F. Youssef, M.D., Ph.D., M.B.A. DABT-2025 is a Global Pharmaceutical Safety Expert with > 30 years in drug development. His expertise covers both experimental and clinical safety. For the last 10 years he led post-marketed product safety at Shire/Takeda Pharmaceuticals, covering Neurology, Oncology, and Rare Diseases. Dr. Youssef has managed global teams and developed strategies for numerous high-profile drugs. A prolific speaker and author, he has presented at national and international conferences and published with significant contributions to drug safety standards."
     },
     "stats": {
@@ -909,6 +915,7 @@ export const JOURNALS = [
     "chiefEditor": {
       "name": "Jatin Nathwani",
       "affiliation": "Emeritus Professor, University of Waterloo, Canada",
+      "image": "/assets/editors/jatin_nathwani.jfif",
       "biography": "Professor Jatin Nathwani, Emeritus Professor, University of Waterloo, Management Science and Engineering, Faculty of Engineering, University of Waterloo was the Founding Executive Director of Waterloo Institute for Sustainable Energy (WISE), and Fellow Balsillie School of International Affairs (BSIA),; Fellow, Balsillie School of International Affairs, (BSIA), Canada. He is the Director of the Affordable Energy for Humanity (AE4H), a consortium of global entities, NGOs, and academic thought leaders working to eradicate global energy poverty. At BSIA, he leads the Technology Governance Initiative (TGI) and the STEM for Global Resilience Research Cluster. Professor Nathwani has served in a leadership capacity in the Canadian energy sector, bringing a unique combination of academic perspectives with industry experience. He serves on several Boards at the provincial and national levels, has appeared frequently in the media and has over 200 publications, including eight books."
     },
     "stats": {
@@ -930,7 +937,7 @@ export const JOURNALS = [
       },
       {
         "name": "Climate and Energy Policy",
-        "slug": "climate-and-energy-policy"
+        "slug": "climate-change-and-energy-policy"
       },
       {
         "name": "Climate Change Adaptation",
@@ -1047,6 +1054,7 @@ export const JOURNALS = [
     "chiefEditor": {
       "name": "Ioana Dumitru",
       "affiliation": "Tampa General Hospital/University of South Florida, Tampa, Fl, USA",
+      "image": "/assets/editors/ioana_dumitru.jpg",
       "biography": "Ioana Dumitru is a heart failure and transplant cardiologist, professor of medicine with University of South Florida and currently the Medical Director of MCS Program and Co-Director of Heart Failure Center of Excellence at Tampa General Hospital in Tampa, Florida. She has founded and directed two prior successful heart failure, MCS and heart transplant programs in her career with University of Nebraska Medical Center in Omaha Nebraska as well as Memorial Regional Hospital in Hollywood Florida. She has been involved in national landmark trials and has had multiple presentations and publications in the field of heart failure, MCS and cardiac transplantation."
     },
     "stats": {

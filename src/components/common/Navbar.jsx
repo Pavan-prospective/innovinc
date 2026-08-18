@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Search, Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
 import { Button } from '../ui/Button'
 import { cn } from '../../utils/cn'
 
@@ -137,9 +137,6 @@ export function Navbar() {
             </div>
             
             <div className="flex items-center space-x-4 border-l border-gray-200 pl-6">
-              <button className="text-gray-500 hover:text-primary-600 transition-colors">
-                <Search className="w-5 h-5" />
-              </button>
               <Link to="/login">
                 <Button>Sign In</Button>
               </Link>

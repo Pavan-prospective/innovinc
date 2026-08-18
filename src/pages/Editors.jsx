@@ -15,7 +15,7 @@ const editors = [
     institution: 'Eötvös Loránd University, Hungary',
     bio: 'Doctor of Science (DSc) from the Hungarian Academy of Sciences (HAS), graduated in Physics from Eötvös Loránd University (ELTE) in 1985.\n\nSince then he has been working in various fields of materials science.\n\nHis recent main research topics are: i) Plastic behavior and strengthening mechanisms of metals and alloys, ii) Microstructural and mechanical characteristics of ultrafine-grained and nanocrystalline materials, iii) Development of the depth sensing indentation method.\n\nHe participated in many international collaborations. Currently he is the leader of the Hungarian group in a joint project with Russian researchers entitled “Study of the physical nature and development of ultra-low-temperature superplasticity in ultrafine-grained Al alloys for innovative applications”.',
     image: '/editors/Nguyen Q. Chinh, Hungary.png',
-    email: 'contact@sgcr-editorial.org'
+    email: 'support@scientrajournals.org'
   },
   {
     name: 'Dr. Malcolm Xing',
@@ -24,7 +24,7 @@ const editors = [
     institution: 'University of Manitoba, Canada',
     bio: 'Dr. Malcolm Xing is a Professor at the University of Manitoba, Winnipeg, specializing in biomaterials for tissue engineering, bioadhesives, hemostasis, biofabrication, and implantable biosensors.\n\nWith over 200 publications in leading journals — including Nature Nanotechnology, Nature Biomedical Engineering, Nature Communications, Science Advances, and Advanced Materials — his research has garnered widespread recognition across the scientific community.\n\nHis work on high-performance hydrogels for applications in wound healing, gastrointestinal diseases, and vascular tissue regeneration has been notably featured in Nature Reviews Cardiology, Science, Nature Reviews Materials, ACS Headline News, and the Royal Society of Chemistry.\n\nHis research on sustainable materials has received broad media coverage, including features in Time, Fortune, and Forbes. Dr. Xing is an elected Fellow of the Canadian Academy of Engineering and the American Institute for Medical and Biological Engineering.',
     image: '/editors/Malcolm Xing, Canada.png',
-    email: 'contact@sgcr-editorial.org'
+    email: 'support@scientrajournals.org'
   },
   {
     name: 'Prof. Lia Krusin-Elbaum',
@@ -33,7 +33,7 @@ const editors = [
     institution: 'The City College of New York - CUNY, USA',
     bio: 'Lia Krusin-Elbaum has been a Professor of Physics at The City College of New York since 2010. Her Ph.D. degree is in Condensed Matter Physics (NYU, 1979) and she was a scientist at the IBM\'s T.J. Watson Research Center, NY (1979-2010).\n\nDr. Krusin-Elbaum is a recipient of ten IBM Invention Achievement Awards and holds over 27 US patents.\n\nShe is a Fellow of the American Physical Society (1993-) and was elected (2022) to serve on the USDOE Basic Energy Sciences Advisory Committee. She is a co-lead of the Columbia U. NSF-MRSEC PAQM (2020-) and of the NSF-CREST IDEALS Centers (2015-).',
     image: '/editors/Lia Krusin-Elbaum (Keynote), USA.png',
-    email: 'contact@sgcr-editorial.org'
+    email: 'support@scientrajournals.org'
   },
   {
     name: 'Dr. Gregory A. Hudalla',
@@ -42,7 +42,7 @@ const editors = [
     institution: 'University of Florida, USA',
     bio: 'Dr. Hudalla is the Integra LifeSciences Term Professor in the J. Crayton Pruitt Family Department of Biomedical Engineering at the University of Florida. Dr. Hudalla’s research applies molecular and materials engineering to advance biotherapeutic delivery.\n\nDr. Hudalla has authored more than 60 publications and holds 8 patents.\n\nDr. Hudalla has received numerous awards and honors, including a National Science Foundation (NSF) RAISE award, the National Institutes of Health (NIH)Trailblazer award, the NSF Career award, the NIH Maximizing Investigators’ Research Award, and was recently recognized with the Invention of the Year by UF Innovate.',
     image: '/editors/Gregory A Hudalla, USA.png',
-    email: 'contact@sgcr-editorial.org'
+    email: 'support@scientrajournals.org'
   }
 ]
 
@@ -63,7 +63,7 @@ export default function Editors() {
             bio: journal.chiefEditor.biography || journal.chiefEditor.bio || '',
             image: journal.chiefEditor.image,
             specialty: '',
-            email: 'contact@sgcr-editorial.org'
+            email: 'support@scientrajournals.org'
           }]
         : [])
     : editors
@@ -192,7 +192,7 @@ export default function Editors() {
                 <div className="border-t border-gray-100 pt-5">
                   <div className="bg-gray-50 p-4 rounded-xl border border-gray-200/60 text-center">
                     <p className="text-xs font-medium text-gray-500 mb-2">Interested in joining our board or review panels?</p>
-                    <a href="mailto:governance@sgcr-editorial.org">
+                    <a href="mailto:support@scientrajournals.org">
                       <Button className="w-full text-xs py-2 bg-navy-950 hover:bg-navy-900 text-white font-bold rounded-lg transition-colors">
                         Contact Governance
                       </Button>

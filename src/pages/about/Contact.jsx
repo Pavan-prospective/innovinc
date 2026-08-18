@@ -9,27 +9,27 @@ export default function Contact() {
   const contacts = [
     {
       title: "General & Editorial Inquiries",
-      value: "editor@scientra.org",
+      value: "support@scientrajournals.org",
       icon: <Mail className="w-5 h-5 text-primary-600" />
     },
     {
       title: "Author & Submission Support",
-      value: "support@scientra.org",
+      value: "support@scientrajournals.org",
       icon: <MessageSquare className="w-5 h-5 text-primary-600" />
     },
     {
       title: "Publishing & Permissions",
-      value: "permissions@scientra.org",
+      value: "support@scientrajournals.org",
       icon: <Mail className="w-5 h-5 text-primary-600" />
     },
     {
       title: "Main Office Address",
-      value: "[Insert Company Street Address, City, Country]",
+      value: "5201 Great America Pkwy #320, Santa Clara, CA 95054, United States",
       icon: <MapPin className="w-5 h-5 text-primary-600" />
     },
     {
       title: "Phone / Support Line",
-      value: "+1 (XXX) XXX-XXXX",
+      value: "1-408-465-0048",
       icon: <Phone className="w-5 h-5 text-primary-600" />
     }
   ]

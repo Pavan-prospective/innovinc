@@ -168,7 +168,11 @@ export default function JournalDetails() {
             <div className="grid grid-cols-1 gap-4">
           {QUICK_LINKS.map((item) => {
             const Icon = item.icon
-            const linkPath = item.segment ? journalPath(journal.id, ...item.segment.split('/')) : null
+            const linkPath = item.key === 'submit'
+              ? journalPath(journal.id, 'submit')
+              : item.segment
+                ? journalPath(journal.id, ...item.segment.split('/'))
+                : null
             return (
               <div key={item.key} className="bg-white rounded-xl border border-gray-100 p-5 hover:border-primary-300 hover:shadow-md transition-all group">
                 <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center mb-3 group-hover:bg-primary-100 transition-colors">
@@ -177,9 +181,11 @@ export default function JournalDetails() {
                 <h3 className="font-bold text-navy-950 text-sm mb-1.5">{item.title}</h3>
                 <p className="text-xs text-gray-500 leading-relaxed mb-4">{item.desc}</p>
                 {item.key === 'submit' ? (
-                  <Button className="h-8 text-xs px-4 bg-primary-500 hover:bg-primary-600 text-navy-950 font-bold border-none">
-                    {item.cta}
-                  </Button>
+                  <Link to={linkPath}>
+                    <Button className="h-8 text-xs px-4 bg-primary-500 hover:bg-primary-600 text-navy-950 font-bold border-none">
+                      {item.cta}
+                    </Button>
+                  </Link>
                 ) : linkPath ? (
                   <Link to={linkPath} className="text-xs font-bold text-primary-700 hover:text-primary-800 inline-flex items-center gap-1">
                     Learn more <ChevronRight className="w-3.5 h-3.5" />

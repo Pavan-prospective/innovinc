@@ -27,8 +27,8 @@ export function Footer() {
             <Link to="/journals" className="hover:text-primary-400 transition-colors font-medium">Journals</Link>
             <Link to="/editorial-board" className="hover:text-primary-400 transition-colors font-medium">Editorial Board</Link>
             <Link to="/about" className="hover:text-primary-400 transition-colors font-medium">About</Link>
-            <a href="mailto:info@scientra.org" className="hover:text-primary-400 transition-colors flex items-center gap-1 font-medium">
-              <Mail className="w-3.5 h-3.5 text-primary-500 shrink-0" /> info@scientra.org
+            <a href="mailto:support@scientrajournals.org" className="hover:text-primary-400 transition-colors flex items-center gap-1 font-medium">
+              <Mail className="w-3.5 h-3.5 text-primary-500 shrink-0" /> support@scientrajournals.org
             </a>
           </div>
         </div>

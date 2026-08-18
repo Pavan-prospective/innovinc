@@ -17,7 +17,7 @@ export default function Login() {
     setTimeout(() => {
       setIsLoading(false)
       // Smart Routing: Employees go to admin, others go to dashboard
-      if (email.endsWith('@scientra.org')) {
+      if (email.endsWith('@scientra.org') || email.endsWith('@scientrajournals.org')) {
         navigate('/admin')
       } else {
         navigate('/')
