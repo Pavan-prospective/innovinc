@@ -12,6 +12,7 @@ export default function JournalSectionDetails() {
   const { journal } = useOutletContext()
   
   const [articles, setArticles] = useState([])
+  const [fallbackArticles, setFallbackArticles] = useState([])
   const [loading, setLoading] = useState(true)
 
   const section = journal?.sections?.find(s => s.slug === sectionId)
@@ -23,6 +24,12 @@ export default function JournalSectionDetails() {
       try {
         const data = await api.articles.getByJournalAndSection(journalId, sectionId)
         setArticles(data)
+        if (data.length === 0) {
+          const generalArticles = await api.articles.getByJournal(journalId)
+          setFallbackArticles(generalArticles)
+        } else {
+          setFallbackArticles([])
+        }
       } catch (error) {
         console.error('Failed to fetch section articles', error)
       } finally {
@@ -218,20 +225,98 @@ export default function JournalSectionDetails() {
                 <p className="text-sm font-medium text-gray-500 animate-pulse">Loading articles...</p>
               </div>
             ) : articles.length === 0 ? (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="bg-white rounded-3xl border border-gray-100 p-16 text-center shadow-sm"
-              >
-                <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-5">
-                  <FileText className="w-10 h-10 text-gray-300" />
-                </div>
-                <h3 className="text-xl font-black text-navy-950 mb-2">No articles found</h3>
-                <p className="text-gray-500 mb-8 max-w-md mx-auto">There are currently no articles published in this specific section. Be the first to submit!</p>
-                <Link to={journalPath(journal.id, 'submit')}>
-                  <Button className="shadow-sm">Submit to {section.name}</Button>
-                </Link>
-              </motion.div>
+              <div className="space-y-10">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="bg-white rounded-3xl border border-gray-100 p-12 text-center shadow-sm"
+                >
+                  <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <FileText className="w-8 h-8 text-gray-300" />
+                  </div>
+                  <h3 className="text-xl font-black text-navy-950 mb-2">No articles in this section yet</h3>
+                  <p className="text-gray-500 mb-6 max-w-md mx-auto text-sm">There are currently no articles published under this specific scientific topic. Be the first to submit!</p>
+                  <Link to={journalPath(journal.id, 'submit')}>
+                    <Button className="shadow-sm">Submit to {section.name}</Button>
+                  </Link>
+                </motion.div>
+
+                {fallbackArticles.length > 0 && (
+                  <div className="space-y-6">
+                    <h3 className="text-xl font-black text-navy-950 pb-3 border-b border-gray-200">
+                      Other publications in this journal
+                    </h3>
+                    <motion.div 
+                      variants={containerVariants}
+                      initial="hidden"
+                      animate="visible"
+                      className="space-y-5"
+                    >
+                      {fallbackArticles.map((article) => (
+                        <motion.article 
+                          variants={itemVariants}
+                          key={article.id} 
+                          className="bg-white rounded-3xl border border-gray-100 p-6 sm:p-8 hover:border-primary-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 group relative overflow-hidden"
+                        >
+                          <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                          
+                          <div className="flex flex-wrap items-center gap-3 mb-4">
+                            <span className="text-[10px] font-black text-primary-700 uppercase tracking-widest bg-primary-50 px-3 py-1.5 rounded-lg border border-primary-100/50">
+                              {article.type}
+                            </span>
+                            {formatArticleDate(article) && (
+                              <span className="text-xs text-gray-500 font-semibold flex items-center gap-1.5">
+                                <div className="w-1 h-1 rounded-full bg-gray-300"></div>
+                                {formatArticleDate(article)}
+                              </span>
+                            )}
+                          </div>
+                          
+                          <Link to={`/articles/${article.id}`}>
+                            <h3 className="font-black text-navy-950 text-xl sm:text-2xl leading-tight mb-4 group-hover:text-primary-700 transition-colors pr-8">
+                              {article.title}
+                            </h3>
+                          </Link>
+                          
+                          <p className="text-sm text-gray-600 mb-6 leading-relaxed line-clamp-3">
+                            {article.abstract}
+                          </p>
+                          
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-gray-50">
+                            <div className="flex items-center gap-3 flex-wrap">
+                              <div className="flex -space-x-2">
+                                {[1,2,3].slice(0, Math.min(3, article.authors?.length || 1)).map((_, i) => (
+                                  <div key={i} className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-gray-500">
+                                    {article.authors?.[i]?.charAt(0) || 'A'}
+                                  </div>
+                                ))}
+                              </div>
+                              <p className="text-xs text-gray-500 font-semibold max-w-[200px] truncate">
+                                {article.authors?.join(', ')}
+                              </p>
+                            </div>
+                            
+                            <div className="flex items-center gap-4 text-xs font-bold text-gray-400">
+                              {article.views !== undefined && (
+                                <span className="flex items-center gap-1.5 group-hover:text-navy-900 transition-colors">
+                                  <Eye className="w-4 h-4" />
+                                  {article.views.toLocaleString()}
+                                </span>
+                              )}
+                              {article.downloads !== undefined && (
+                                <span className="flex items-center gap-1.5 group-hover:text-navy-900 transition-colors">
+                                  <Download className="w-4 h-4" />
+                                  {article.downloads.toLocaleString()}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        </motion.article>
+                      ))}
+                    </motion.div>
+                  </div>
+                )}
+              </div>
             ) : (
               <motion.div 
                 variants={containerVariants}
