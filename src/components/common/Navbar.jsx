@@ -6,6 +6,7 @@ import { cn } from '../../utils/cn'
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false)
   const location = useLocation()
 
   const navLinks = [
@@ -137,8 +138,8 @@ export function Navbar() {
             </div>
             
             <div className="flex items-center space-x-4 border-l border-gray-200 pl-6">
-              <Link to="/login">
-                <Button>Sign In</Button>
+              <Link to="/submit">
+                <Button>Submit your manuscript</Button>
               </Link>
             </div>
           </div>
@@ -157,7 +158,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-6 space-y-4 shadow-lg absolute w-full">
+        <div className="md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-6 space-y-4 shadow-lg absolute w-full max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <Link
@@ -173,48 +174,62 @@ export function Navbar() {
               </Link>
             ))}
 
-            {/* Mobile About Menu */}
-            <Link 
-              to="/about"
-              onClick={() => setIsMobileMenuOpen(false)}
+            {/* Mobile About Menu Trigger */}
+            <button 
+              onClick={() => setIsMobileAboutOpen(!isMobileAboutOpen)}
               className={cn(
-                "block px-3 py-2 text-base font-semibold transition-colors rounded-md mt-2",
-                location.pathname === '/about' ? "bg-primary-50 text-primary-600" : "text-gray-900 border-t border-gray-100 hover:text-primary-600"
+                "flex items-center justify-between w-full px-3 py-2 text-base font-semibold transition-colors rounded-md mt-2 border-t border-gray-100 text-left text-gray-900 hover:text-primary-600"
               )}
             >
-              About Journal Overview
-            </Link>
-            {Object.entries(aboutLinks).map(([key, links]) => (
-              <div key={key} className="pt-2">
-                <div className="px-3 text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">{key}</div>
-                {links.map((link) => (
+              <span>About Journal</span>
+              <ChevronDown className={cn("w-4 h-4 transition-transform duration-200", isMobileAboutOpen && "rotate-180")} />
+            </button>
+
+            {isMobileAboutOpen && (
+              <div className="pl-4 space-y-2 bg-gray-50/50 rounded-lg pb-3 pt-1 border border-gray-100">
+                <Link 
+                  to="/about"
+                  onClick={() => { setIsMobileMenuOpen(false); setIsMobileAboutOpen(false); }}
+                  className={cn(
+                    "block px-3 py-1.5 text-sm font-semibold transition-colors rounded-md hover:text-primary-600",
+                    location.pathname === '/about' ? "text-primary-600" : "text-gray-700"
+                  )}
+                >
+                  About Journal Overview
+                </Link>
+                {Object.entries(aboutLinks).map(([key, links]) => (
+                  <div key={key} className="pt-2">
+                    <div className="px-3 text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">{key}</div>
+                    {links.map((link) => (
+                      <Link 
+                        key={link.path} 
+                        to={link.path} 
+                        onClick={() => { setIsMobileMenuOpen(false); setIsMobileAboutOpen(false); }} 
+                        className="block px-3 py-1.5 pl-6 text-[13px] text-gray-600 hover:text-primary-700 rounded-md"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                ))}
+                
+                {/* Mobile News Menu inside dropdown */}
+                <div className="pt-2">
+                  <div className="px-3 text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">News</div>
                   <Link 
-                    key={link.path} 
-                    to={link.path} 
-                    onClick={() => setIsMobileMenuOpen(false)} 
+                    to="/news" 
+                    onClick={() => { setIsMobileMenuOpen(false); setIsMobileAboutOpen(false); }} 
                     className="block px-3 py-1.5 pl-6 text-[13px] text-gray-600 hover:text-primary-700 rounded-md"
                   >
-                    {link.label}
+                    Latest news
                   </Link>
-                ))}
+                </div>
               </div>
-            ))}
-            
-            {/* Mobile News Menu */}
-            <div className="pt-2">
-              <div className="px-3 text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">News</div>
-              <Link 
-                to="/news" 
-                onClick={() => setIsMobileMenuOpen(false)} 
-                className="block px-3 py-1.5 pl-6 text-[13px] text-gray-600 hover:text-primary-700 rounded-md"
-              >
-                Latest news
-              </Link>
-            </div>
+            )}
           </div>
           <div className="pt-4 flex flex-col space-y-3 border-t border-gray-100">
-            <Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>
-              <Button className="w-full justify-center">Sign In</Button>
+            <Link to="/submit" onClick={() => setIsMobileMenuOpen(false)}>
+              <Button className="w-full justify-center">Submit your manuscript</Button>
             </Link>
           </div>
         </div>

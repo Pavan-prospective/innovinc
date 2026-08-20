@@ -62,6 +62,7 @@ function App() {
             <Route path="submission-checklist" element={<SubmissionChecklist />} />
           </Route>
           <Route path="news" element={<News />} />
+          <Route path="submit" element={<AuthorSubmit />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="apply-editor" element={<ApplyEditor />} />

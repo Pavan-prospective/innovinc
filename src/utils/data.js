@@ -21,7 +21,7 @@ export const CATEGORIES = [
 
 export const JOURNALS = [
   {
-    "id": "journal-of-global-cancer-research",
+    "id": "cancer-research",
     "title": "Journal of Global Cancer Research",
     "category": "Medicine & Health",
     "impactFactor": "4.5",
@@ -166,7 +166,7 @@ export const JOURNALS = [
     ]
   },
   {
-    "id": "global-journal-of-endocrinology-diabetes-and-metabolism",
+    "id": "endocrinology-diabetes-and-metabolism",
     "title": "Global Journal of Endocrinology, Diabetes & Metabolism",
     "category": "Medicine & Health",
     "impactFactor": "4.2",
@@ -281,7 +281,7 @@ export const JOURNALS = [
     ]
   },
   {
-    "id": "journal-of-plant-science-and-biosecurity",
+    "id": "plant-science-and-biosecurity",
     "title": "Journal of Plant Science & Biosecurity",
     "category": "Biology",
     "impactFactor": "3.8",
@@ -396,7 +396,7 @@ export const JOURNALS = [
     ]
   },
   {
-    "id": "journal-of-materials-science-and-nanotechnology-research",
+    "id": "materials-science-and-nanotechnology-research",
     "title": "Journal of Materials Science & Nanotechnology Research",
     "category": "Biology",
     "impactFactor": "5.1",
@@ -507,7 +507,7 @@ export const JOURNALS = [
     ]
   },
   {
-    "id": "journal-of-geology-and-earth-science-research",
+    "id": "geology-and-earth-science-research",
     "title": "Journal of Geology & Earth Science Research",
     "category": "Biology",
     "impactFactor": "4.3",
@@ -626,7 +626,7 @@ export const JOURNALS = [
     ]
   },
   {
-    "id": "journal-of-food-innovation-and-sustainability",
+    "id": "food-innovation-and-sustainability",
     "title": "Journal of Food Innovation & Sustainability",
     "category": "Biology",
     "impactFactor": "4.1",
@@ -757,7 +757,7 @@ export const JOURNALS = [
     ]
   },
   {
-    "id": "journal-of-nursing-science-and-clinical-practice",
+    "id": "nursing-science-and-clinical-practice",
     "title": "Journal of Nursing Science & Clinical Practice",
     "category": "Medicine & Health",
     "impactFactor": "3.9",
@@ -896,7 +896,7 @@ export const JOURNALS = [
     ]
   },
   {
-    "id": "journal-of-climate-resilience-and-adaptation",
+    "id": "climate-resilience-and-adaptation",
     "title": "Journal of Climate Resilience & Adaptation",
     "category": "Biology",
     "impactFactor": "4.6",
@@ -1035,7 +1035,7 @@ export const JOURNALS = [
     ]
   },
   {
-    "id": "journal-of-cardiac-science-and-cardiovascular-research",
+    "id": "cardiac-research",
     "title": "Journal of Cardiac Science & Cardiovascular Research",
     "category": "Medicine & Health",
     "impactFactor": "5.4",
@@ -1194,6 +1194,130 @@ export const JOURNALS = [
       }
     ]
   }
+,
+  {
+    "id": "pediatric-neonatal-Research",
+    "title": "Journal of Pediatric & Neonatal Research (JPNR)",
+    "category": "Medicine & Health",
+    "impactFactor": "3.9",
+    "citeScore": "4.3",
+    "latestIssue": "Vol. 1, Issue 1 (2026)",
+    "society": "Scientra Pediatric Research Society",
+    "description": "The Journal of Pediatric & Neonatal Research (JPNR) is an international, peer-reviewed scientific platform dedicated to advancing research in pediatric medicine, neonatal care, and child health development. The journal publishes original research articles, clinical studies, reviews, and emerging discoveries covering the full spectrum of pediatric and neonatal health, including neonatal physiology, infant nutrition, childhood diseases, developmental pediatrics, pediatric immunology, infectious diseases in children, and therapeutic innovations for newborns and pediatric patients. JPNR provides a multidisciplinary forum that encompasses research on growth and development, pediatric surgery, pediatric cardiology, neonatal intensive care, pediatric oncology, metabolic disorders in children, and evidence-based clinical practices that improve outcomes for vulnerable pediatric and neonatal populations.",
+    "descriptionParagraphs": [
+      "The Journal of Pediatric & Neonatal Research (JPNR) is an international, peer-reviewed scientific platform dedicated to advancing research in pediatric medicine, neonatal care, and child health development. The journal publishes original research articles, clinical studies, reviews, and emerging discoveries covering the full spectrum of pediatric and neonatal health, including neonatal physiology, infant nutrition, childhood diseases, developmental pediatrics, pediatric immunology, infectious diseases in children, and therapeutic innovations for newborns and pediatric patients. JPNR provides a multidisciplinary forum that encompasses research on growth and development, pediatric surgery, pediatric cardiology, neonatal intensive care, pediatric oncology, metabolic disorders in children, and evidence-based clinical practices that improve outcomes for vulnerable pediatric and neonatal populations.",
+      "The journal serves as a comprehensive platform for pediatricians, neonatologists, researchers, clinicians, nurses, and healthcare professionals to explore advances in pediatric science, including newborn screening, early childhood interventions, infectious disease prevention, chronic disease management in children, and regenerative medicine approaches for pediatric conditions. JPNR aims to promote scientific collaboration, translate cutting-edge pediatric and neonatal research into improved clinical practice, and advance the health and well-being of children from birth through adolescence. By fostering dialogue between academic researchers, clinical practitioners, and healthcare policymakers, the journal contributes to the translation of evidence-based research into actionable strategies that enhance pediatric care quality, improve neonatal survival rates, reduce childhood morbidity and mortality, and promote healthy development and optimal outcomes for children globally."
+    ],
+    "coverImage": "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=400",
+    "backgroundImage": "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=2500",
+    "issn": "2457-0021",
+    "editors": "Scientra Editorial Board",
+    "chiefEditor": {
+      "name": "Dr. Aris Papageorghiou",
+      "affiliation": "St George's University Hospital, London, UK",
+      "image": "/assets/editors/yifan_li.jpg",
+      "biography": "Dr. Papageorghiou is a world-renowned specialist in maternal-fetal medicine and pediatric screening standards. His research aims to optimize fetal and neonatal development diagnostics, reducing mortality rates globally."
+    },
+    "stats": {
+      "sections": 15,
+      "articles": 0,
+      "views": 4320
+    },
+    "publishedYear": "2026",
+    "imprint": "Scientra Press",
+    "language": "English",
+    "sections": [
+      {
+        "name": "General Pediatrics",
+        "slug": "general-pediatrics"
+      },
+      {
+        "name": "Neonatology & Newborn Care",
+        "slug": "neonatology-and-newborn-care"
+      },
+      {
+        "name": "Neonatal Intensive Care",
+        "slug": "neonatal-intensive-care"
+      },
+      {
+        "name": "Pediatric Critical Care & Emergency Medicine",
+        "slug": "pediatric-critical-care-and-emergency-medicine"
+      },
+      {
+        "name": "Pediatric Infectious Diseases",
+        "slug": "pediatric-infectious-diseases"
+      },
+      {
+        "name": "Pediatric Cardiology",
+        "slug": "pediatric-cardiology"
+      },
+      {
+        "name": "Pediatric Neurology & Neurodevelopment",
+        "slug": "pediatric-neurology-and-neurodevelopment"
+      },
+      {
+        "name": "Pediatric Oncology & Hematology",
+        "slug": "pediatric-oncology-and-hematology"
+      },
+      {
+        "name": "Pediatric Gastroenterology & Nutrition",
+        "slug": "pediatric-gastroenterology-and-nutrition"
+      },
+      {
+        "name": "Pediatric Endocrinology & Metabolism",
+        "slug": "pediatric-endocrinology-and-metabolism"
+      },
+      {
+        "name": "Pediatric Respiratory Medicine",
+        "slug": "pediatric-respiratory-medicine"
+      },
+      {
+        "name": "Pediatric Genetics & Genomic Medicine",
+        "slug": "pediatric-genetics-and-genomic-medicine"
+      },
+      {
+        "name": "Pediatric Surgery & Perinatal Medicine",
+        "slug": "pediatric-surgery-and-perinatal-medicine"
+      },
+      {
+        "name": "Child Growth, Development & Adolescent Health",
+        "slug": "child-growth-development-and-adolescent-health"
+      },
+      {
+        "name": "Pediatric Clinical & Translational Research",
+        "slug": "pediatric-clinical-and-translational-research"
+      }
+    ],
+    "specialIssues": [],
+    "volumes": [
+      {
+        "id": "v1",
+        "label": "Volume 1 - 2026"
+      }
+    ],
+    "news": [
+      {
+        "title": "Smartphone acquisition and insufficient sleep in adolescents",
+        "summary": "In an observational cohort study of 1959 adolescents with no smartphone at age 13 years, subsequent smartphone acquisition was associated with insufficient sleep at age 14 years; this risk was mitigated by leaving the smartphone outside the bedroom.",
+        "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=400"
+      },
+      {
+        "title": "Trends in smoking and nicotine product use among United States youth",
+        "summary": "New data from the National Youth Tobacco Survey (NYTS) show declines in tobacco use among youth, but concern remains over daily vaping intensity and nicotine pouch use. Flavoring restrictions remain a key advocacy area.",
+        "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=400"
+      },
+      {
+        "title": "Return to play after surgery for capitellar osteochondritis dissecans",
+        "summary": "A systematic review of 16 observational studies showed that 92 percent of youth baseball players were able to return to play following operative management; however, 29 of 60 pitchers could not return to pitching.",
+        "image": "https://images.unsplash.com/photo-1508459855340-fb63ac591728?auto=format&fit=crop&q=80&w=400"
+      },
+      {
+        "title": "Caregivers' concerns about vaccine safety and sources of misinformation",
+        "summary": "Concerns about vaccine safety are a major cause of exemption requests. Recent retractions of flawed studies linking vaccines to autism and sudden infant death syndrome emphasize the need for robust clinician guidance.",
+        "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=400"
+      }
+    ]
+  }
 ]
 
 export const ARTICLES = [
@@ -1205,7 +1329,7 @@ export const ARTICLES = [
       "Jintu Fan",
       "Xuanxuan Du"
     ],
-    "journalId": "journal-of-materials-science-and-nanotechnology-research",
+    "journalId": "materials-science-and-nanotechnology-research",
     "journalTitle": "Journal of Materials Science & Nanotechnology Research",
     "publicationDate": "2026-06-20",
     "abstract": "Atmospheric water harvesting (AWH) presents a great potential in addressing the increasing global challenges in freshwater and energy supply, especially in arid and semi-arid regions. While hydrogels are excellent materials for harvesting abundant atmospheric water, estimated 12,900 trillion kilograms, for their inherent high moisture absorbency, their practical use is largely hampered due to generally poor mechanical strength.\n\nIn this study, we report a novel tunable hygroscopic mix-charged polyzwitterionic hydrogel (THMPH) achieving dual excellence in outstanding moisture absorbency and mechanical robustness. Owing to its broad ionic bond strength distribution enabled by superior charge mobility and the optimized topological structure coupled with improved LiCl binding affinity, THMPH exhibited more than 200 times higher mechanical ductility at high mass swelling ratio (225 kPa tensile strength retention at 200% mass swelling ratio) and 1.7 times higher water uptake (2.9 g g-1 at 25\u00b0C, 70% RH) in comparison with polybetaine, which is a commonly-used polyzwitterionc hydrogels for AWH.\n\nWhen THMPH is used for daytime photovoltaic panel cooling after nighttime moisture absorption, it can provide a 15\u00b0C temperature reduction of a photovoltaic panel under 1.0 kW m\u22122 solar irradiation, resulting in 7.33% increase in solar energy conversion efficiency. With high hygroscopicity and exceptional toughness, THMPH surpassed mostly reported SAWH materials (polyzwitterions/polyelectrolytes/aerogels etc). The application of our novel THMPH can therefore have far-reaching implications in water and energy harvesting and utilization.",
@@ -1221,7 +1345,7 @@ export const ARTICLES = [
     "authors": [
       "Daria Drozdenko"
     ],
-    "journalId": "journal-of-materials-science-and-nanotechnology-research",
+    "journalId": "materials-science-and-nanotechnology-research",
     "journalTitle": "Journal of Materials Science & Nanotechnology Research",
     "publicationDate": "2026-06-20",
     "abstract": "The increasing demand for lightweight structural materials in engineering and transportation applications drives the development of Mg alloys with improved mechanical performance and corrosion resistance. At the same time, Mg alloys are promising candidates for biodegradable implants, where biocompatibility and controlled degradation are essential. From both biomedical and economic perspectives, reducing the content of rare-earth (RE) elements is highly desirable. To preserve good mechanical properties of Mg-Zn-RE alloys with a reduced RE content, optimization of processing parameters has to be considered. Among others, the rapidly solidified ribbon-consolidation (RSRC) technique has been found to be effective in producing Mg alloys with exceptional properties.\n\nThe present study focuses on dilute Mg\u2013Zn\u2013Y/Gd alloys prepared by RSRC, focused on the relationship between processing parameters, microstructure, and resulting properties. In particular, the effects of alloy composition and metal flow rate during extrusion were systematically investigated. The developed materials exhibit an ultrafine-grained (UFG) microstructure (average grain size ~1 \u00b5m) with a weak basal texture. Despite the low alloying content (\u2264 2 at.%), the formation of solute-enriched stacking faults and its agglomeration in cluster-arranged layers or nanoplates provides effective strengthening by hindering dislocation motion. In addition, the alloys demonstrate remarkable thermal stability compared to conventional UFG Mg alloys. Mechanical properties and corrosion behaviour were correlated with key microstructural features, including grain size, distribution of stacking faults, and internal strain heterogeneity. The results reveal that the heterogeneous distribution of internal strain within the complex microstructure plays a crucial role in determining the overall performance of low-alloyed RSRC Mg alloys.",
@@ -1237,7 +1361,7 @@ export const ARTICLES = [
     "authors": [
       "Luis Roso"
     ],
-    "journalId": "journal-of-materials-science-and-nanotechnology-research",
+    "journalId": "materials-science-and-nanotechnology-research",
     "journalTitle": "Journal of Materials Science & Nanotechnology Research",
     "publicationDate": "2026-06-20",
     "abstract": "No doubt that lasers are of paramount importance to multiple applications in material science, but the possibilities of lasers are not fully explored yet. Among other applications of CW or long pulse lasers there are a large number of possibilities of ultrafast lasers. By such lasers we understand lasers in the picosecond, femtosecond and attosecond domains. Those lasers present special features because they can ionize the surface, or even the inside of a transparent material. Applications from nano-structuring to shock peening are well known. At the moment, most of the applications consider Gaussian descriptions.\n\nModelling other kind of beams was difficult. However, such Gaussian beams are very elusive in the experimental arena, and the most efficient way is to use specific intracavity components at the price to reduce the total power emitted. Particularly in applications where power is an issue, lasers have non-Gaussian profiles that, as the intensity increases, evolve to flat top profiles. In the present contribution we will show new ways to control and structure the focus of a laser allowing material irradiation with unprecedent shapes and features. The work is a theoretical study of the diffraction made to a degree of sophistication not yet achieved so far. In our study we will describe the shape of a real laser focus, very different from the typical Gaussian profile and we will analyze how is the field distribution -and how to structure it- before and after focus allowing new benefits and possibilities of placing the irradiated material to irradiate. Observe that this is not just a space distribution of field, it is a spatiotemporal structure. It allows sub-lambda structures (say nanopatterns of irradiation). Among other things it is remarkable the simplicity to obtain OAM (Orbital Angular Momentum) pulses and the structure of the irradiation they allow.",
@@ -1274,7 +1398,7 @@ export const ARTICLES = [
         "text": "Faculty of Mechanical Engineering, Jan Evangelista Purkyne University in \u00dast\u00ed nad Labem, Czech Republic"
       }
     ],
-    "journalId": "journal-of-materials-science-and-nanotechnology-research",
+    "journalId": "materials-science-and-nanotechnology-research",
     "journalTitle": "Journal of Materials Science & Nanotechnology Research",
     "publicationDate": "2026-06-20",
     "abstract": "A quality of a tool parts coating can ensure a quality workpiece surface for both users and manufacturers. The idea of combining coatings into a multilayer was developed in response to industry demand to improve the mechanical properties of the resulting coating. The substrate material chosen was 100Cr6 chromium bearing steel. The aim is to analyze the results of measurement methods of magnetron deposition of surface TiAlN and TiB2 multilayers and their evaluation. The issues of PVD deposition, magnetron sputtering, specifically the HiPIMS method, which is the method of deposition of the investigated multilayer, are described.\n\nThe aim of the research activity was to prove the improvement of the properties of the multilayer while maintaining the conditions. Firstly, the individual TiAlN and TiB2 coatings and their composition were analyzed using glow discharge spectroscopy and X-ray diffraction. Then the multilayer was analyzed. There were positive findings, such as a really significant increase in the microhardness of the coated layers. The microhardness was double that of the reference uncoated sample. In addition, the thickness of the individual coatings and the resulting multilayer conforms to the requirements and thus there is no influence on the dimensional properties. The linear analysis showed a good interconnection between the individual coatings as well as between the coating and the substrate. Tribological testing revealed an improvement in abrasion resistance. It can also be concluded from this test that the improvement in the mechanical properties mentioned above occurred while maintaining the frictional conditions. Thus, the deposition of these coatings on top of each other in a sandwich multilayer is possible, there is an excellent interlocking of the coatings for improved mechanical properties. The choice of TiAlN provides toughness, while the ceramics - TiB2 coating provides hardness.",
@@ -1291,7 +1415,7 @@ export const ARTICLES = [
     "authors": [
       "Eliane Trovatti"
     ],
-    "journalId": "journal-of-materials-science-and-nanotechnology-research",
+    "journalId": "materials-science-and-nanotechnology-research",
     "journalTitle": "Journal of Materials Science & Nanotechnology Research",
     "publicationDate": "2026-06-20",
     "abstract": "Plastics are widely used in biomedical devices in clinical approaches due to their ease of processing, sterilization. Handling can lead these devices to contamination and the worst situation is the microbial spreading, once they inherently lack antimicrobial properties. To address this limitation, poly(lactic acid) (PLA) was chemically modified by maleation followed by L-lysine grafting, producing a novel derivative (PLA-g-Lys) with potential antimicrobial functionality. Structural analyses using FTIR and \u00b9H NMR confirmed the success of the modifications.\n\nBiological assays demonstrated that PLA-g-Lys inhibited approximately 99% of Staphylococcus aureus growth by direct contact, while showing no cytotoxic effects on L929 mouse fibroblast cells. thermal analysis and tensile testing indicated that the modified PLA retained its mechanical integrity and even showed improved processability. These findings suggest that PLA-g-Lys is a promising material for the development of safer, antimicrobial medical devices, combining biocompatibility with enhanced performance for future biomedical applications. The new data correspond to the modified PLA processing by extrusion and 3D printing, with promising results for future manufacturing scalability.",
@@ -1307,7 +1431,7 @@ export const ARTICLES = [
     "authors": [
       "Cristina Satriano"
     ],
-    "journalId": "journal-of-materials-science-and-nanotechnology-research",
+    "journalId": "materials-science-and-nanotechnology-research",
     "journalTitle": "Journal of Materials Science & Nanotechnology Research",
     "publicationDate": "2026-06-20",
     "abstract": "Palladium nanoparticles (Pd NPs) are widely recognized for their catalytic activity, while recent studies have unveiled their potential in biomedical applications. In this work, we report the synthesis and characterization of gold\u2013palladium core\u2013shell nanorods (Au@Pd NRs), prepared either bare or with a polyvinylpyrrolidone (PVP) capping layer (Au@Pd@PVP NRs). Their physicochemical properties were systematically investigated through UV\u2013visible spectroscopy, atomic force microscopy (AFM), zeta potential, and dynamic light shrinkage (DLS).\n\nBiointerface interactions were probed by confocal laser scanning microscopy (LSM), along with cytotoxicity and mitochondrial ROS assays in cancer cells. Furthermore, their plasmonic, photothermal, and photocatalytic behaviors were evaluated to assess multifunctional performance. The results demonstrate that Au@Pd NRs act as a tri-modal nanoplatform, where size, surface chemistry, and light activation govern dose-dependent cytotoxicity. These findings highlight the potential of Au@Pd-based nanostructures as advanced theranostic agents for tumour therapy.",
@@ -1376,7 +1500,7 @@ export const ARTICLES = [
         "text": "Institut de Science des Mat\u00e9riaux de Mulhouse, Universit\u00e9 de Haute Alsace, France"
       }
     ],
-    "journalId": "journal-of-materials-science-and-nanotechnology-research",
+    "journalId": "materials-science-and-nanotechnology-research",
     "journalTitle": "Journal of Materials Science & Nanotechnology Research",
     "publicationDate": "2026-06-20",
     "abstract": "In recent years, metal-based photocatalysts have emerged as key players in the development of efficient photopolymerization processes and 3D printing technologies. This work highlights the design and photochemical evaluation of two new photocatalytic systems based on first-row transition metals coordinated to N-heterocyclic carbene (NHC) ligands: a manganese(II) complex [Mn(PyImes)2](PF6)2 and nickel(II) complexes [Ni(Py-NHC)2](PF6)2 and [Ni(Ph-NHC)2].\n\nThese complexes exhibit visible-light absorption and photoluminescence properties, making them suitable candidates for photoinduced free radical polymerization (FRP) and controlled radical photopolymerization (CRP2). The Mn(II) complex showed effective activation under LED (405\u2013532 nm) and was successfully applied in laser-assisted 3D printing. Similarly, Ni(II)-NHC complexes demonstrated excellent visible-light catalytic performance.",
@@ -1393,7 +1517,7 @@ export const ARTICLES = [
     "authors": [
       "Abdulaziz A. Aloliqi"
     ],
-    "journalId": "journal-of-global-cancer-research",
+    "journalId": "cancer-research",
     "journalTitle": "Journal of Global Cancer Research",
     "publicationDate": "2026-08-01",
     "abstract": "Deoxy thymidylate kinase (DTYMK) plays a key role in the progression of pancreatic cancer (PC). The computational study began by selecting DTYMK as an anti-cancer target and using a drug library called the FDA-approved anticancer drug library, which contains 1745 compounds. Using molecular docking analysis, MD simulation, and pharmacokinetics profiling, the study identified three novel drug compounds, AZD2281, MDV3100, and carbamazepine with docking scores of \u22129.8 kcal/mol, \u22129.7 kcal/mol, and \u22129.6 kcal/mol, respectively. Additionally, the control compound (E)-1-(4-(hydroxy (phosphonooxy) phosphoryl) but-2-en-1-yl)-5-methyl pyrimidine-1, 3-diium-2, 4-bis (olate) showed a binding affinity of \u22127.3 kcal/mol. All three compounds met the Lipinski Rule of Five and were considered drug-like. The DTYMK complexes had mean RMSD values of 2.00 \u00c5, 2.07 \u00c5, 1.92 \u00c5, and 2.84 \u00c5 for AZD2281, MDV3100, carbamazepine, and the control, respectively.\n\nThe AZD2281 complex demonstrated the highest stability with no major deviation observed. Salt bridge analysis revealed key interactions such as Glu140-Arg14, Glu26-Arg22, Glu40-Arg37, and Asp103-Lys106. PCA analysis was performed to simplify large datasets, revealing that the eigenvalue patterns of the complexes were quite distinct. MMGB/PBSA calculations showed values of \u221295.96 kcal/mol and \u221297.36 kcal/mol for AZD2281, indicating its stability during ligand binding. The most suitable entropy value for AZD2281 suggested the most consistent and ordered binding. This in silico approach identified novel therapeutic compounds for pancreatic cancer, which still require experimental validation and may be modified for targeting DTYMK.",
@@ -1409,7 +1533,7 @@ export const ARTICLES = [
     "authors": [
       "Melinda Ildiko Mitranovici"
     ],
-    "journalId": "journal-of-global-cancer-research",
+    "journalId": "cancer-research",
     "journalTitle": "Journal of Global Cancer Research",
     "publicationDate": "2026-08-03",
     "abstract": "Classical anticancer therapy is facing the biggest challenge: drug resistance, responsible for cancer recurrence and metastasis. Two underlying mechanisms could be responsible: the stemness of cancer stem cells (CSCs) associated with pro-survival autophagy. The relationship between CSCs and autophagy in gynecological cancer is still unknown. But it has been shown that the ability to self-renewal in vitro of CSCs were decreased when autophagy was inhibited. Autophagy is a catabolic process involved in the degradation of long-lived proteins and cytoplasmic organelles, that helps to maintain normal tissue homeostasis.\n\nAutophagy act as a key player in self-regenerating tissues in the human body having also a reproductive function, contributes to decidualization for successful pregnancy. While it has been proved that autophagy can act as a tumor suppressor, it also acts and a promote of tumor progression. Moreover, it has been linked to the regulation of cancer stem cells, therapy resistance, cancer invasion and metastasis. Several molecular mechanisms have been linked to autophagy, such as epithelial-to-mesenchymal transition, the modulation of the tumor microenvironment, various signaling pathways, including PI3K/mTOR, AMPK/mTOR, hypoxia and p53.\n\nRemarkably, some of the cellular processes, including autophagy, required for proper placentation are common between placental development and tumor growth. Just as trophoblast cells invade and migrate, so do cancer cells. While in the trophoblast this phenomenon is programmed and controlled, in cancer this regulation is lost. Thus, we observed that autophagy has a dual role in cancer, as it has been shown, as tumor promoter and inhibitor, depending on the stage. By better understanding the similarities and differences between the role of autophagy in placentation and cancers could lead to the development of effective targeted therapies in cancers. However, in what extent autophagy has a key role in promoting stemness, dormancy and drug resistance remains to be determined.",
@@ -1425,7 +1549,7 @@ export const ARTICLES = [
     "authors": [
       "Gulcin Ertas"
     ],
-    "journalId": "journal-of-global-cancer-research",
+    "journalId": "cancer-research",
     "journalTitle": "Journal of Global Cancer Research",
     "publicationDate": "2026-08-04",
     "abstract": "Metaplastic breast carcinomas (MBC) was first described by Huvos in 1973, they are rare tumors and account for approximately 0.25-1% of all breast malignancies. These tumors are histologically defined by the differentiation of the neoplastic epithelium into squamous or mesenchymal-like elements. According to the Who classification, low grade adenosquamous carcinoma, fibromatosis like MBC, squamous cell carcinoma, spindle cell carcinoma, MBC with mesenchymal differentiation (chondroid, osseous, and other types), and mixed type MBC are divided into subtypes. Clinically, it is manifested by a rapidly growing mass in the breast but axillary metastases are seen rarely.\n\nThe average age is 55 years in some studies. There is high density mass in mammography, microcalcification is seen rarely in the presence of in situ component. Immunohistochemically, ER, PR and Cerb-b2 are generally negative. PIK3CA/PIK3R1 mutations and TP53 mutation are high in their genetic characteristics. TERT promoter mutation is also seen. Metaplastic breast carcinomas have a worse prognosis than other triple-negative breast carcinomas and higher risk of distant metastases. They often metastasize to the lungs and bones. In some species, the risk of local recurrence is higher.\n\nWhile mastectomy or breast-conserving surgery is applied in the treatment, mastectomy is generally more preferred due to the large diameter of the tumor. Radiotherapy and chemotherapy are used as adjuvant therapy, studies have shown that the benefit of neoadjuvant chemotherapy is generally low. Immunotherapy and smart drug therapies are also used. Chemotherapy protocols are generally similar with other triple negative tumors. In some studies those who receive anti-HER-2 therapy have better survival than those who do not, for HER-2 positive MBC. In high-risk, triple negative - stage 2-3 patients, preoperative pembrolizumab-carboplatin-paclitaxel+preoperative pembrolizumab-cyclophosphamide-doxorubicin+adjuvant pembrolizumab treatment options are available.\n\nIn our retrospective study from SB\u00dc. Ankara Oncology Training and Researche Hospital, there were 56 patients with MBC (June 2006-December 2016). The most common subtype was squamous cell (14.2%) MBC, the most common T stage was T2 (57.1%). Average age was 51.3. Average tumor diameter was 4 cm (1.3-16.6 ). Triple negativity was 67.8%. Axillary node positive patients rate was 44.6%, aksillary node negative patients rate was 41%. Median follow-up 45.8 months (4.9-130). 5 years OS rate was 67%, DFS rate was 64%. Local recurrence was seen in 4 patients (7.1%) .Distant metastases rate was 26.7%. In our study, there was one patient with bilateral squamous cell MBC.\n\nPatient received radiotherapy and chemotherapy after operation for both side. Receptor was negative but Her- 2 was positive for right side tumor so patient also received anti Her 2 therapy for right side. Triple negative for left side tumor. After 7 months of left side breast tumor lung metastasis was developed. Receptor was negative but Her 2 was positive on pleural fluid cytology. 6 cycles vinorelbine, trastuzumab chemotherapy was applied to patient and overall survival was 34 months in this patient.",
@@ -1441,7 +1565,7 @@ export const ARTICLES = [
     "authors": [
       "Haihe Wang"
     ],
-    "journalId": "journal-of-global-cancer-research",
+    "journalId": "cancer-research",
     "journalTitle": "Journal of Global Cancer Research",
     "publicationDate": "2026-08-05",
     "abstract": "The presentation highlights a small adaptor protein, SH3BGRL, as a major driver in breast cancer, which promotes metastasis and drug resistance by boosting HER2 signaling, activating Src/FAK/ERK/AKT pathways, enhancing basal autophagy level, degrading PFN1, and enhancing EMT.\n\nMechanistically, SH3BGRL modulates gene translation through interactions with ribosomal proteins and translation factors to regulate gene expression at the translational level or through its interaction with cell context-specific effectors. Therefore, the combined treatment with AKT inhibitors or novel small molecules can efficiently reverse the chemoresistance and inhibit tumor cell metastasis. Additionally, SH3BGRL can shape the tumor microenvironment by enriching tumor-associated macrophages (TAMs) for tumor cell metastasis.\n\nOverall, this presentation shows SH3BGRL as a key node in integrating multiple oncogenic events, and its expression serves as a potential prognostic biomarker. Targeting SH3BGRL or its downstream signaling represents a promising strategy to overcome metastasis and drug resistance in the clinical management of breast cancer.",
@@ -1457,7 +1581,7 @@ export const ARTICLES = [
     "authors": [
       "Vimolmas Tansathitaya"
     ],
-    "journalId": "journal-of-global-cancer-research",
+    "journalId": "cancer-research",
     "journalTitle": "Journal of Global Cancer Research",
     "publicationDate": "2026-08-02",
     "abstract": "Outdoor physical activity is frequently promoted as a paramount approach to health improvement. However, this widely held belief is being re-evaluated due to the prevalence of air pollution, particularly nitrogen dioxide (NO2), which poses a significant risk to the human respiratory system. Sustained NO2 exposure during outdoor exercise has been linked to the potential induction of lung cancer. NO2 ubiquitous, arising from indoor sources like cooking and air-conditioning, and outdoor sources including vehicular exhaust, industrial traffic, restaurant emissions, and forest fires.\n\nConsequently, individuals who participate in outdoor activities, such as running, are at risk from these pollutants. While physical activity is generally known to suppress cancer, these individuals may still face a heightened risk of lung cancer development. Frequent NO 2 inhalation may trigger internal and biochemical responses, notably changes in nasal bacteria (Microbiome) and microRNAs (miRNAs), which are known to contribute to lung carcinogenesis. This raises criticalquestions concerning the role of varying physical activity intensities, durations, frequencies, and repetitions in either mitigating or accelerating lung cancer development in this at-risk group.",
@@ -1473,7 +1597,7 @@ export const ARTICLES = [
     "authors": [
       "Filippo Dell\u2019Anno"
     ],
-    "journalId": "journal-of-global-cancer-research",
+    "journalId": "cancer-research",
     "journalTitle": "Journal of Global Cancer Research",
     "publicationDate": "2026-08-04",
     "abstract": "Pets, particularly dogs and cats, have gained increasing attention as comparative oncology models due to their spontaneous tumour development, shared living environments with humans, and strong genetic, molecular, and immunological parallels with human biology. Unlike laboratory models, companion animals experience the same environmental exposures\u2014such as air pollutants, household chemicals, and dietary contaminants\u2014making them uniquely positioned to mirror human cancer risks.\n\nAmong environmental carcinogens, heavy metals such as cadmium (Cd) stand out for their persistence, bioaccumulation, and documented involvement in a broad spectrum of malignancies, including lung, prostate, breast, and kidney cancers. Understanding how these toxicants contribute to cancer in pets is therefore not only crucial for veterinary oncology but also provides early-warning insights relevant to human public health, positioning pets as true environmental sentinels.\n\nThis study integrates epidemiological data from canine and feline populations to explore associations between tumour occurrence, reproductive status, and environmental Cd contamination. In a dataset of 1,764 dogs from areas with differing pollution levels, mixed-effects Poisson models showed markedly increased proportional morbidity ratios (PMRs) for mammary, penile/testicular, soft tissue, and skin tumours in municipalities with very high Cd levels, suggesting a strong environmental contribution to their pathogenesis.\n\nAnalysis of 4,399 feline cancer cases from Liguria (2002\u20132022) further highlighted distinct tumour patterns and risk factors. Mammary gland tumours predominated in females, with not-neutered cats showing significantly higher risk than neutered ones. Conversely, neutering increased susceptibility to soft tissue and skin tumours in both sexes. Cancer risk in cats also correlated with environmental contamination assessed through wild boar biomonitoring, with PMRs exceeding 40 in polluted municipalities. Overall, the results underscore the impact of environmental Cd exposure on cancer development in companion animals and reinforce their value as sentinel species in comparative oncology and environmental health research.",
@@ -1490,7 +1614,7 @@ export const ARTICLES = [
       "G. Bales",
       "H. Mayer"
     ],
-    "journalId": "global-journal-of-endocrinology-diabetes-and-metabolism",
+    "journalId": "endocrinology-diabetes-and-metabolism",
     "journalTitle": "Global Journal of Endocrinology, Diabetes & Metabolism",
     "publicationDate": "2026-08-01",
     "abstract": "Background and Objectives: The rising prevalence of multimorbid and complex chronically ill young and middle-aged adults poses significant challenges for patients, healthcare professionals, and the Swiss healthcare system. This highlights the need for innovative care models and roles to address the complex healthcare demands of this population. Advanced Practice Nurses are well-positioned to play a crucial role in this context. A clear description of the APN role tailored to these complex population needs is currently lacking. This study aims to develop an evidence-based model delineating the APN role within an APN-led clinic in a hospital setting.\n\nDesign and Methods: The study incorporated qualitative analyses from interviews with various stakeholders: patients (n=16), relatives (n=4), APNs from the USA/Canada (n=7), APNs in Switzerland (n=12), and leading physicians (n=6), and results of a literature review, while also considering contextual factors specific to Switzerland. Based on this evidence, the concept was developed under consideration of the PEPPA-plus framework, the PARISHS framework and the Transitional Care Model.\n\nResults: The model outlines the competencies and scope of practice of APNs, as well as the characteristics and care needs of the target population. It delineates key components of the APN-led model and highlights essential APN activities. In addition to transitional care, the model emphasizes a person-centred approach, focusing on the psychosocial needs. The model prioritizing stabilization and integration of this population group during the transitional care process according to their principles - participation, regaining autonomy and independence, mastering everyday life and returning to normal life.",
@@ -1507,7 +1631,7 @@ export const ARTICLES = [
     "authors": [
       "Cynthia Otene"
     ],
-    "journalId": "global-journal-of-endocrinology-diabetes-and-metabolism",
+    "journalId": "endocrinology-diabetes-and-metabolism",
     "journalTitle": "Global Journal of Endocrinology, Diabetes & Metabolism",
     "publicationDate": "2026-08-02",
     "abstract": "This study examined the experiences of M\u0101ori, the Indigenous people of Aotearoa New Zealand, who received podiatry foot screening prior to diabetes-related lower limb amputation. The aim was to understand how screening practices might better prevent amputations and how cultural factors influence engagement with podiatry care. Guided by Kaupapa M\u0101ori methodology (an Indigenous research framework grounded in M\u0101ori worldviews) and a narrative analytical approach, fourteen participants shared their accounts of podiatry care before, during, and after their amputation journey. Eight interconnected themes emerged. A central finding concerned wairuatanga (spiritual wellbeing).\n\nFor many M\u0101ori, the feet are considered tapu (sacred or spiritually restricted), and clinical encounters that failed to acknowledge this cultural meaning caused discomfort and reduced trust. Participants emphasised the role of karakia (prayer), family involvement, and culturally significant practices such as returning amputated body parts to ancestral burial grounds as essential to emotional and spiritual recovery. A second theme related to whenua (land, place, and belonging). Participants reported feeling more motivated to engage in care when connected to their home environments, cultural identity, and family networks. Disconnection from whenua and wh\u0101nau (family) reduced engagement and increased vulnerability.\n\nAccess to podiatry services was inconsistent, characterised by delayed referrals, limited follow-up, travel barriers, and fragmented continuity of care. The relationship with the podiatrist was pivotal: interpersonal warmth, clear communication, and cultural awareness significantly improved engagement, whereas rushed or impersonal care reinforced avoidance. Emotional experiences, particularly whakam\u0101 (shame/embarrassment) and self-blame, often prevented individuals from seeking timely care. These feelings were intensified by systemic barriers that were interpreted as personal failings. Finally, wh\u0101nau support played a crucial role in decision- making, recovery, and ongoing engagement with podiatry care. Where wh\u0101nau connection was absent, participants faced greater isolation and delayed help-seeking. Overall, the findings highlight the need for culturally informed, relational, and equitable podiatry foot screening to reduce preventable amputations among Indigenous populations.",
@@ -1524,7 +1648,7 @@ export const ARTICLES = [
     "authors": [
       "Julie Sherfan"
     ],
-    "journalId": "global-journal-of-endocrinology-diabetes-and-metabolism",
+    "journalId": "endocrinology-diabetes-and-metabolism",
     "journalTitle": "Global Journal of Endocrinology, Diabetes & Metabolism",
     "publicationDate": "2026-08-03",
     "abstract": "Glycated albumin (GA), a non-enzymatically glycated serum protein, reflects glycaemia over the preceding 2-3 weeks and has emerged as a potential alternative glycaemic marker in clinical scenarios where HbA1c may be unreliable. In this study, we evaluated the diagnostic performance of GA, alongside fructosamine, for detecting previously unrecognised prediabetes and diabetes in patients presenting to an emergency department.\n\nA total of 523 adult patients were screened using HbA1c, GA and fructosamine, with GA measured by an enzymatic assay traceable to reference standards. Prediabetes and diabetes were defined according to Australian Diabetes Society HbA1c criteria, and diagnostic performance was assessed using receiver operating characteristic curve analysis. The correlation between GA and HbA1c was modest, highlighting potential biological differences between glycaemic markers.\n\nThese findings support GA as a clinically useful mid-term glycaemic marker, particularly in acute care settings where HbA1c interpretation may be limited, and suggest that its incorporation into emergency department screening pathways could enhance early detection and risk stratification of dysglycaemia.",
@@ -1556,7 +1680,7 @@ export const ARTICLES = [
       "Solomon Tebeje Gizaw",
       "Rosalba Senese"
     ],
-    "journalId": "global-journal-of-endocrinology-diabetes-and-metabolism",
+    "journalId": "endocrinology-diabetes-and-metabolism",
     "journalTitle": "Global Journal of Endocrinology, Diabetes & Metabolism",
     "publicationDate": "2026-08-04",
     "authorAffiliations": [
@@ -1695,7 +1819,7 @@ export const ARTICLES = [
     "authors": [
       "Dr. Nicholaos Mansolas"
     ],
-    "journalId": "global-journal-of-endocrinology-diabetes-and-metabolism",
+    "journalId": "endocrinology-diabetes-and-metabolism",
     "journalTitle": "Global Journal of Endocrinology, Diabetes & Metabolism",
     "publicationDate": "2026-08-04",
     "abstract": "Background: Somatostatin analogues such as octreotide are frequently used in the prevention of carcinoid syndrome in the perioperative period following neuroendocrine tumour resection. This is the first reported case of ventricular asystole associated with postoperative intravenous octreotide infusion in a patient with previous congenital cardiac surgery.\n\nCase presentation: We present the case of a 62-year-old white British male patient with a history of previous congenital cardiac surgery who sustained multiple episodes of ventricular asystole and associated loss of cardiac output during octreotide infusion. Recurrent asystole ceased following discontinuation of the octreotide infusion.",
@@ -1719,7 +1843,7 @@ export const ARTICLES = [
       "Chia-Chang Huang",
       "Ming-Chih Hou"
     ],
-    "journalId": "global-journal-of-endocrinology-diabetes-and-metabolism",
+    "journalId": "endocrinology-diabetes-and-metabolism",
     "journalTitle": "Global Journal of Endocrinology, Diabetes & Metabolism",
     "publicationDate": "2026-08-05",
     "abstract": "Links have been reported between the airflow limitation and both metabolic syndrome (MetS) and fatty liver (FL). Additionally, associations between genetic factors and risks of MetS, FL, and airflow limitation have been identified separately in different studies. Our study aims to simultaneously explore the association between specific single nucleotide polymorphisms (SNPs) of certain genes and the risk of the three associated diseases. In this retrospective cross-sectional nationwide study, 150,709 participants from the Taiwan Biobank (TWB) were enrolled. We conducted a genotype-phenotype association analysis of nine SNPs on seven genes (ApoE-rs429358, MBOAT7-rs641738, LEPR-rs1805096, APOC3-rs2854116, APOC3-rs2854117, PPP1R3B-rs4240624, PPP1R3B-rs4841132, TM6SF2-rs58542926, and IFNL4-rs368234815) using data from the TWB1.0 and TWB2.0 genotype dataset.\n\nParticipants underwent a series of assessments including questionnaires, blood examinations, abdominal ultrasounds, and spirometry examinations. MetS was associated with FL and airflow limitation. ApoE-rs429358, LEPR-rs1805096, APOC3-rs2854116, APOC3-rs2854117, PPP1R3B-rs4240624, PPP1R3B-rs4841132, and TM6SF2-rs58542926 were significantly associated with the risk of MetS. The cumulative impact of T alleles of ApoE-rs429358 and TM6SF2-rs58542926 on the risk of FL was observed. Individuals without MetS and airflow limitation carrying LEPR-rs1805096 G/G genotype exhibited a reduction in forced expiratory volume, low forced vital capacity, and low vital capacity percentage prediction.\n\nMetS significantly correlated with FL and airflow limitation. Multiple SNPs were notably associated with MetS. Specifically, T alleles of ApoE-rs429358 and TM6SF2-rs58542926 cumulatively increased the risk of FL. LEPR-rs1805096 shows a trend-wise association with pulmonary function, which is significant in patients without MetS or airflow limitation.",
@@ -1736,7 +1860,7 @@ export const ARTICLES = [
     "authors": [
       "James A. Grant\u2011Jacob"
     ],
-    "journalId": "journal-of-plant-science-and-biosecurity",
+    "journalId": "plant-science-and-biosecurity",
     "journalTitle": "Journal of Plant Science & Biosecurity",
     "publicationDate": "2026-08-01",
     "abstract": "This invited talk discusses work leading to the demonstration of a low\u2011cost optical imaging approach for pollen classification and image reconstruction using deep learning, with emphasis on accessible hardware and scalable deployment. Accurate identification of airborne pollen is critical for plant science, agriculture, and biosecurity, yet existing monitoring techniques typically rely on labour\u2011intensive manual microscopy or expensive commercial instrumentation.\n\nInstead of imaging pollen grains directly, the presented approach captures light\u2011scattering patterns generated by light illuminated pollen grains using a compact optical configuration comprising a simple lens, a low\u2011cost camera sensor, and an inexpensive light source. Neural networks are trained directly on these scattering patterns and are shown to both classify multiple pollen taxa and reconstruct images of pollen grains that are equivalent in quality to those obtained using conventional microscopy.\n\nIn effect, the method uses data\u2011driven inference to replace complex and costly optics, offering a promising route toward next\u2011generation pollen monitoring tools for plant biosecurity, environmental surveillance, and agricultural applications.",
@@ -1753,7 +1877,7 @@ export const ARTICLES = [
     "authors": [
       "Lars Wiik"
     ],
-    "journalId": "journal-of-plant-science-and-biosecurity",
+    "journalId": "plant-science-and-biosecurity",
     "journalTitle": "Journal of Plant Science & Biosecurity",
     "publicationDate": "2026-08-02",
     "abstract": "The use of PFAS pesticides, as well as PFAS substances in general, can be questioned based on yesterday's and today's knowledge. PFAS (per- and polyfluorinated alkyl substances) are included in a very large number of commercial products and many of these can be broken down to TFA (trifluoroacetic acid), the latter water-soluble and both very mobile and very persistent. TFA is yet another example of risks that have been overlooked, like previous ones such as neonicotinoids, DDT, CFCs and PCBs.\n\nAmong the thousands of commercial PFAS substances are a few dozen pesticides, and among them there are a smaller number pesticides that are used to control one of the worst diseases of potatoes, potato late blight caused by the oomycete Phytophthora infestans. Denmark, with its rigorous requirements for its drinking water, decided 2025 to phase out some PFAS pesticides, including fluazinam. Fluazinam is included in potato late blight control programs most often with more than ten treatments per season.\n\nThe phase out in Denmark has has brought the issue into greater focus in other countries, not least in Sweden, another country in the EU's northern zone. A ban on PFAS/TFA pesticides will make it more difficult to implement control programs for potato late blight and tuber rot because the number of approved active substances is already small, eight in Sweden for the moment. The different fungicides in a control program should take into account and use the properties of the active substances optimally, limit the risk of fungicide resistance and follow the conditions of their approval. During the presentation, examples of such control programs with and without PFAS/TFA pesticides are given. In addition, consideration is made based on one year's results in two ongoing projects on PFAS in potato cultivation.",
@@ -1782,7 +1906,7 @@ export const ARTICLES = [
       "Paula Cruz",
       "Fabio Wyss"
     ],
-    "journalId": "journal-of-plant-science-and-biosecurity",
+    "journalId": "plant-science-and-biosecurity",
     "journalTitle": "Journal of Plant Science & Biosecurity",
     "publicationDate": "2026-08-03",
     "authorAffiliations": [
@@ -1912,7 +2036,7 @@ export const ARTICLES = [
     "authors": [
       "Munruchi Kaur"
     ],
-    "journalId": "journal-of-plant-science-and-biosecurity",
+    "journalId": "plant-science-and-biosecurity",
     "journalTitle": "Journal of Plant Science & Biosecurity",
     "publicationDate": "2026-08-03",
     "abstract": "The North-West Indian Himalayas are a part of the broader Himalayan biodiversity hotspot and are a home to a diverse range of agaric species. With the inherent curiosity to understand the distribution of agarics, a number of fungal forays were undertaken over the past three decades especially during the monsoon season with an aim to document the existing agaric flora, along with their characterization and identification. The best way of identifying agarics up to the species level was by integrating the detailed field notes, spore print and chemical color reactions of each taxa with anatomical details were the base of identification. Although, a rapid transformation from conventional morphologybased system to contemporary molecular phylogenetic system based on sequence analysis i.e with the advent of molecular tools it is suggested that such aids in deciphering the difficult genera and species.\n\nAs a result of mycofloristic survey approximately 2000 collections were made of which 15 species have been described as new to science. The commonly met with agarics in the study area include species of Leucoagaricus, Lepiota, Cystolepiota, Macrolepiota, Russula, Lactarius, Lactiflus, Amanita, Volvariella, Pluteus, Leucocoprinus, Claarkeinda, Chlorolepiota, Chlorophyllum, Termitomyces, Entoloma, Laccaria, Lentinus, Inocybe, Gymnopilus, Hypholoma, Agaricus, Gymnopus, Marasmiellus, Xeromphalina, etc. Further these taxa have been categorised into edible, hallucinating and as putative mycorrhizal.\n\nUnderstanding the need of the hour the present research focuses on the exploration, identification and domestication of this minor forest product by adopting a coordinated approach with a view to conserve them for long term use in the service of society. Thus, this study highlights the vast potential of wild agarics, spanning sustainable nutrition, environmental conservation, and novel therapeutic possibilities.",
@@ -1931,7 +2055,7 @@ export const ARTICLES = [
       "Robin Thorn",
       "Neil Willey"
     ],
-    "journalId": "journal-of-plant-science-and-biosecurity",
+    "journalId": "plant-science-and-biosecurity",
     "journalTitle": "Journal of Plant Science & Biosecurity",
     "publicationDate": "2026-08-04",
     "abstract": "The increasing global population and the negative effects of climate change demand a more sustainable approach to food production. Controlled Environment Agriculture (CEA), particularly hydroponics, is a viable option for solving these challenges through its efficient resource, yield and environmental management compared to traditional systems. However, conventional hydroponics lack rhizosphere interactions that in natural systems are vital for nutrient-cycling, stress resistance, and microbial interactions, which raise concerns about its sustainability.\n\nThis research aims to develop a circular Hydroponic-Bioelectrical System (BES) for urban agriculture; a convergence of Microbial Fuel Cells (MFCs) and hydroponics to form a prosthetic rhizosphere. This will improve nitrogen metabolism and support plant growth, yield and quality with fewer inorganic inputs. The prosthesis will capture nutrients from wastewater-catholyte and produces beneficial organic compounds like those of the natural rhizosphere through the integration with Microbial Electrosynthesis Cells (MECs). Basil is used as test crop and cultivated hydroponically using the nutrient film technique (NFT).\n\nThe response of basil to different treatment will be evaluated through phenotypic, biochemical and molecular approaches. The research outcome is expected to provide novel insights into sustainable hydroponic production methods that lead to a more nutritious and fresh vegetables with little reliance on unsustainable inputs and external energy sources. This will inform CEA users about a more sustainable production method.",
@@ -1950,7 +2074,7 @@ export const ARTICLES = [
       "Weizhen Zhang",
       "Guo Li"
     ],
-    "journalId": "journal-of-plant-science-and-biosecurity",
+    "journalId": "plant-science-and-biosecurity",
     "journalTitle": "Journal of Plant Science & Biosecurity",
     "publicationDate": "2026-08-05",
     "abstract": "Plant\u2013microbe\u2013water interactions constitute a fundamental regulatory framework governing the structure, functioning, and resilience of aquatic ecosystems. Aquatic and wetland vegetation actively modifies surrounding water and sediment environments through root-mediated oxygen release, secretion of organic exudates, and nutrient uptake, thereby exerting strong selective pressures on associated microbial communities. In turn, these microbial assemblages drive essential biogeochemical processes\u2014including nutrient transformation, organic contaminant degradation, and redox regulation\u2014that enhance plant stress tolerance and promote ecosystem stability.\n\nIncreasing evidence indicates that the integration of these tightly coupled interactions is central to the success of aquatic ecosystem restoration efforts. Recent advances demonstrate that synergistic plant\u2013microbe systems substantially improve water quality by enhancing nitrogen and phosphorus removal, mitigating eutrophication, and accelerating the transition of emerging contaminants such as antibiotics and microplastics. Furthermore, diverse and functionally resilient microbial communities associated with aquatic vegetation contribute to ecosystem biosecurity by suppressing pathogenic microorganisms and limiting the establishment and spread of invasive species.\n\nHydrological regimes further modulate plant\u2013microbe interactions by controlling oxygen availability, nutrient fluxes, and microbial metabolic pathways, underscoring the critical role of water dynamics in shaping restoration outcomes. Integrating plant\u2013microbe\u2013water interactions into aquatic ecosystem restoration and biosecurity strategies provides a nature-based and adaptive pathway to enhancing ecosystem multifunctionality and resilience under escalating anthropogenic pressures and climate change. Future research should prioritize mechanistic, cross-scale investigations of these interactions and the development of system-specific restoration frameworks that explicitly leverage plant\u2013microbe\u2013water coupling to support sustainable aquatic ecosystem management.",
@@ -1981,7 +2105,7 @@ export const ARTICLES = [
         "text": "Novolipetsk Steel, Lipetsk, Russia"
       }
     ],
-    "journalId": "journal-of-materials-science-and-nanotechnology-research",
+    "journalId": "materials-science-and-nanotechnology-research",
     "journalTitle": "Journal of Materials Science & Nanotechnology Research",
     "publicationDate": "2025-08-01",
     "abstract": "Presently steel products manufacturers focus on searches of influence of chemical composition and parameters of thermal-deformation treatment of metal on the formation of microstructure and system of nanosized phase precipitates of different types and, ultimately, the obtained mechanical properties. The report presents one of the solutions to this problem.\n\nThe influence of structural state characteristics on the mechanical properties of low-carbon hot-rolled Mo-containing steels of three microalloying systems, Ti-Mo, V-Mo, and Nb-V-Mo, was studied, depending on the temperatures of the rolling end and coiling of the strip. To analyze the type and quantity of nanosized phase precipitates, the transmission electron microscopy method and thermodynamic calculation of the temperature dependences of the equilibrium phase composition of the studied steels were used.\n\nIt was found that the highest values \u200b\u200bof strength and ductility are exhibited by steels microalloyed with titanium and molybdenum with a single-phase ferritic microstructure. In this case, the metal matrix consists of ferrite of two morphological types: polygonal and block. The high level of strength is achieved due to precipitation hardening caused by a large number of nanoscale interphase precipitates. This was facilitated by relatively high temperatures of the rolling end (860-880 \u00baC) and coiling (570-590 \u00baC) and a molybdenum concentration of \u2265 0.16 wt.%.",
@@ -2093,7 +2217,7 @@ export const ARTICLES = [
         "text": "ENEA Centro Ricerche Portici, Portici, Naples, Italy"
       }
     ],
-    "journalId": "journal-of-materials-science-and-nanotechnology-research",
+    "journalId": "materials-science-and-nanotechnology-research",
     "journalTitle": "Journal of Materials Science & Nanotechnology Research",
     "publicationDate": "2025-08-02",
     "abstract": "Among smart materials, photomobile materials (PMP) have emerged as a novel class that has attracted considerable attention due to their capability to respond to light stimuli and produce precise movements. A central feature of these materials is the incorporation of azobenzene moieties, which serve as primary driver of motion due to their ability to undergo reversible trans\u2013cis photoisomerization when irradiated at specific wavelengths.\n\nTo improve the performances of PMP films, we investigated their photomechanical responsiveness, particularly the bending angles and actuation speed, under various conditions. We tried different strategies to improve thermal distribution by laminating the PMP film with a copper layer, enabling the material to withstand higher levels radiation without performance degradation. We incorporated different types of nanoparticles (e.g. carbon black, zinc oxides, silver nanocuboids, etc.) into the PMP polymer matrix, indirectly activating the azobenzene, to enlarge the spectral bandwidth usable for actuation and to increase actuation efficiency and reduce response time.\n\nThe dynamic behavior of PMP actuator was modelled over time and the results revealed that its response can be approximated by harmonic oscillator models, offering a predictive framework for the future design and application of these light-driven systems.\n\nWe investigated the potential of solar radiation to induce mechanical motion, and we extended the investigation to examine the self-oscillation properties of the PMPs under continuous light radiation, and their effects when coupled with piezoelectric devices (PZL), enabling the generation of electrical energy. The resulting electro-optical behaviours were discussed to provide guidelines for designing innovative opto-mechanical energy-harvesting system prototypes.\n\nFinally, we present a novel materials-based strategy that bypasses alignment procedures by integrating ZnO nanoparticles into an LCE ink, enabling a simplified, direct-write 4D printing process. This approach offers a scalable pathway towards the rapid fabrication of complex, stimuli-responsive architectures for applications in soft robotics and adaptive systems.",
@@ -2124,7 +2248,7 @@ export const ARTICLES = [
         "text": "Institute for Chemical Research, Kyoto University, Japan"
       }
     ],
-    "journalId": "journal-of-materials-science-and-nanotechnology-research",
+    "journalId": "materials-science-and-nanotechnology-research",
     "journalTitle": "Journal of Materials Science & Nanotechnology Research",
     "publicationDate": "2025-08-03",
     "abstract": "The crystal structure of alloys is a key factor for determining their physicochemical properties. Therefore, the development of novel crystal structures is an important method for realizing novel properties and high functionality. However, although the formation of various metastable phases has been reported in recent years, in many cases these are well-known crystal structures, making the exploration of new crystal structures a challenging task.\n\nWe recently succeeded in synthesizing the unprecedented Z3-Fe(Pd,In)3 structure, driven by the inter-element miscibility of In, which is immiscible with Fe but highly miscible with Pd. We also confirmed that the nanoscale is important for Z3 phase formation. However, the atomic diffusion process leading to Z3 phase formation remained unclear. We considered that elucidating the formation mechanism of the Z3 phase should contribute to the development of various unexplored phases in the future.\n\nIn this research, to precisely investigate the diffusion process to form Z3 phase, we synthesized two-types of well-designed PdInx@Fe and FePd3@PdInx core@shell nanoparticles as nanoparticulate precursor and performed in-situ or ex-site powder X-ray diffraction (XRD) measurement, atomic-resolution energy dispersive X-ray spectroscopy (EDX) mapping, and first-principles calculation. We found that the adjacency of the immiscible element pair Fe and In increases the activation barrier for Z3 phase formation, making the formation of Z3 phase difficult. These findings imply that controlling atomic diffusion processes is also necessary when exploring new crystal structures including immiscible element pairs, highlighting the importance of nanoparticle synthesis techniques.",
@@ -2218,7 +2342,7 @@ export const ARTICLES = [
         "text": "CNRS 7334, IM2NP, Universit\u00e9 de Toulon, Universit\u00e9 d\u2032Aix Marseille, La Garde Cedex, France"
       }
     ],
-    "journalId": "journal-of-materials-science-and-nanotechnology-research",
+    "journalId": "materials-science-and-nanotechnology-research",
     "journalTitle": "Journal of Materials Science & Nanotechnology Research",
     "publicationDate": "2025-08-04",
     "abstract": "In the general framework of photodegradation of pollutants in aqueous environments, a BiOBr (denoted as BOB) precursor was first obtained by hydrothermal synthesis, and then, thermally treated at 400, 450, 500, 550 and 600 \u00b0C. The decomposition of the BiOBr phase consisted in the progressive formation of Bi24O31Br10 (Bi24) phase leading to a BiOBr/Bi24O31Br10 composite system. The phase transformation was analyzed using TDA-TGA, X-ray diffraction (XRD), Raman spectroscopy, scanning electron microscopy (SEM) coupled with energy dispersive X-Ray analysis (SEM-EDX). The optical properties were investigated with UV-visible diffuse reflection spectroscopy (DRS).\n\nThe band and electronic structures of the single phases BiOBr and Bi24O31Br10 were determined from calculations using Density Functional theory (DFT). These BiOBr/Bi24O31Br10 composite systems were used to photodegrade the antibiotic ciprofloxacin (CIP) under simulated-sunlight irradiation. The optimal photocatalytic efficiency was obtained from the BOB-450 mix system obtained at 450 \u00b0C, characterized by approximately 22 mol % of Bi24 phase. The variable photocatalytic performance was ascribed to the flower-like porous morphologies and the probable existence of homo and heterojunctions in this system. The main parameters influencing the photocatalytic activity of BiOBr/Bi24O31Br10 composites such as pH, CIP content, photocatalyst amount and irradiation type were analyzed. The photocatalytic mechanism and the factors driving the enhanced performance of BOB-450 system was proposed.",
@@ -2249,7 +2373,7 @@ export const ARTICLES = [
         "text": "Department of Materials Physics, E\u00f6tv\u00f6s Lor\u00e1nd University, Budapest, Hungary"
       }
     ],
-    "journalId": "journal-of-materials-science-and-nanotechnology-research",
+    "journalId": "materials-science-and-nanotechnology-research",
     "journalTitle": "Journal of Materials Science & Nanotechnology Research",
     "publicationDate": "2025-08-05",
     "abstract": "Indentation Size Effect (ISE) is a well-known phenomenon, especially when working at small length scales. We show that this phenomenon is inherent to the indentation method, due to the strain gradient occurring during the measurement, regardless of the material under investigation.\n\nDespite the different underlying mechanisms, the ISE phenomenon can be described uniformly from crystalline to amorphous structured materials. However, the appearance of this phenomenon depends on whether the strain gradient has a long-term or short-term effect on the indentation process. We have demonstrated such effects through some typical examples.\n\nThe unified description expresses the universal nature of the indentation size effect, making the interpretation of nanoindentation measurements, including also the absence of the indentation size effect, more understandable and correct.",
@@ -2294,7 +2418,7 @@ export const ARTICLES = [
         "text": "School of Electrical and Mechanical Engineering, the University of Adelaide, Adelaide, SA 5005, Australia"
       }
     ],
-    "journalId": "journal-of-geology-and-earth-science-research",
+    "journalId": "geology-and-earth-science-research",
     "journalTitle": "Journal of Geology & Earth Science Research",
     "publicationDate": "2025-08-01",
     "abstract": "To make use of shallow geothermal energy, Ground Source Refrigeration and Air Conditioning (GSRAC) systems becomes more and more popular. However, the performance of a conventional GSRAC with a borehole heat exchanger (BHE) may deteriorate over years due to the soil thermal imbalance issue that affects these systems.\n\nThis study proposes a novel concept of using soil as media for seasonal cold energy storage via a passive device termed as Thermal Diode Tank (TDT). The TDT consists of an insulated water tank fitted with an array of heat pipes. By integrating the TDT into a conventional GSRAC system, \u201ccold\u201d energy can be passively collected from ambient air during winter, injected into the BHE, and stored in the soil.\n\nThe stored \u201ccold\u201d energy can then be retrieved in the summer, facilitating the cross-seasonal cold energy storage (CS). Thus, a conventional GSRAC system can be transformed into a GSRAC system with cross-seasonal cold energy storage capability, ie. GSRAC+CS system. The validated BHE model previously developed by the authors is used to predict the performance improvements achieved by the GSRAC+CS system.\n\nResults indicate that the Annual Net Cold Energy Storage Efficiency (ANESE), increased from 5.7% to 10.7% over a ten-year period. The average Borehole Performance Improvement (BPI) due to the addition of cold storage capability is 11% over the same timeframe. The study also discusses the impacts of varying design and operational parameters on ANESE and BPI. Results demonstrated that GSRAC+CS systems not only mitigate the soil thermal imbalance issue faced by conventional GSRAC systems but also require less BHE depth to achieve equivalent performance.",
@@ -2346,7 +2470,7 @@ export const ARTICLES = [
         "text": "Department of Earth Sciences at the University of Gothenburg, Gothenburg, Sweden"
       }
     ],
-    "journalId": "journal-of-geology-and-earth-science-research",
+    "journalId": "geology-and-earth-science-research",
     "journalTitle": "Journal of Geology & Earth Science Research",
     "publicationDate": "2025-08-02",
     "abstract": "When Geologists gather for a beer after work or around a campfire after a long day in the field, the conversation can easily turn to how our profession is portrayed in movies. Are Geologists\u2019 heroes or villains? Do they appear only in supporting roles \u2014 their parts limited to entering an office, uttering \u201cDrill here\u201d, and promptly leaving the scene \u2014 or are they main characters? In an article from 1990 (Geotimes) it was suggested the Geologists on the silver screen are to a great extent the good guys. Only a few Geologists are evil and often misguided souls. This article did not provide any statistical background to support the claim, and therefore, the work presented here took up the task of having this soundly tested through statistics and watching a lot of movies.\n\nAn article from 1988, \u201cThe Physicist as Mad Scientist\u201d in Physics Today found that Physicists and Chemists are very often described as mad scientists striving for world domination or the destruction of Earth. Thus, how in contrast are Geologists depicted? And in how many movies do they appear? In our survey, 141 American and British cinema movies were found to include Geologists (Sturkell et al., 2015 & 2026). To be included, the movie must have been shown in cinemas, and a Geologist must appear in picture, dead or alive, preferably alive. Of the 141 movies, a total number of 202 Geologists show up and of these 85% are good guys. The overall death percentage is 34.2% but among the evil Geologists, 77% dies. As for the friendly Geologists, the death percentage is (only) 23%. Clearly, it does not pay off to be evil. The best way to survive as a Geologist in a movie is to be a hero. Of the 202 geologists, 38 are heroes and of these 10 suffer a heroic death saving the world or a selection of people. In summary, Geologists in movies are to 85% portraited as the good guys and 19% are heroes. This is a fantastic outcome and a few more movies will not change the results. In truth and statistics, Geologists are heroes!",
@@ -2377,7 +2501,7 @@ export const ARTICLES = [
         "text": "Weston Observatory, Boston College, USA"
       }
     ],
-    "journalId": "journal-of-geology-and-earth-science-research",
+    "journalId": "geology-and-earth-science-research",
     "journalTitle": "Journal of Geology & Earth Science Research",
     "publicationDate": "2025-08-03",
     "abstract": "This presentation is a prospective forecast of the locations of the next Mw\u22656.5 earthquakes in California and Nevada based on the locations and rates of occurrence of M\u22654.0 earthquakes during the past 30 years, called here preshocks. The time period of the forecast is arbitrarily set at 33 years. The forecast faults are the Anza section of the San Jacinto Fault, the Calaveras Fault, the creeping section of the San Andreas Fault, the Maacama Fault, the San Bernardino section of the San Jacinto Fault, and the southern San Andreas Fault, all strike-slip faults in California, and the normal-faulting Wassuk Range Fault in Nevada. The suspected preshocks have occurred randomly along the expected future fault ruptures at rates of at least 0.5 events per year. The temporal history of preshocks for past M\u22656.5 earthquakes in California do not indicate when the future mainshock will occur.\n\nOutside of California, preshock activity was observed before the 2016 Mw7.0 Kumamoto, Japan earthquake, the 2023 Mw 7.8 Kahramanmaras, Turkey earthquake, and the 2017 Mw 6.5 Juizhaigou, China earthquake, all strike-slip events, as well as the 2008 Mw 7.9 Wenchuan, China thrust earthquake. The two mainshocks in China had preshock rates less than 0.5 events per year. By publishing this spatial earthquake forecast, seismologists in the future can evaluate whether or not this forecast was a total success, a total failure, or a partial success. The probability of just one of the forecast events actually taking place during the forecast time period is less than 2%.",
@@ -2408,7 +2532,7 @@ export const ARTICLES = [
         "text": "Moscow State University, Sevastopol Branch"
       }
     ],
-    "journalId": "journal-of-geology-and-earth-science-research",
+    "journalId": "geology-and-earth-science-research",
     "journalTitle": "Journal of Geology & Earth Science Research",
     "publicationDate": "2025-08-04",
     "abstract": "There is a link between climate change on Earth and the release of hydrocarbon compounds into the atmosphere. Some of them come from cold seeps from the bottom of the seas and oceans. In Laspi Bay, seeps are located at depths of up to 3 m. Gases from them are released into the atmosphere. This study presents the results of a fluid study from seeps in Laspi Bay.\n\nDuring different observation periods, from 8 to 20 gas bubble releases are observed. Their flow rate is not constant, ranging from 2.6 to 20.3 mL/min. The composition of gases and fluids changes over the course of an hour or a day. It was determined on a Chromatek-Crystal 5000 gas chromatograph. The fluid gases were represented by: CH4 (55.7\u201360.4%), C2H6, C2H4, C3H8, C3H6, C4H10, C5H12, N2 (9.62\u201340.01%), O2 (0.14\u201314.81%), CO2 (0.12\u20130.46%), He (0.0047\u20131.1901%), CS2 (0.16\u20130.46%), H2S (0.031\u20130.053 ppm), and COS (0.042\u20130.081 ppm).\n\nFluids are accompanied by aqueous solutions. The salinity of seawater in Laspi Bay is 18.8\u2030, while the salt content in aqueous solutions is less than 9.5\u2030. Aqueous fluid solutions differ from seawater in the content of geochemical elements. According to the results of five analyses, the content of Br, B, Sr, Si, Li, Mn, Se, As, Hg, Be, Ti, Ga, Ge, As, Zr, Os, Pt, Au, Te, Cs, Ba, Bi, Th and U is higher than in the seawater of Laspi Bay. In contrast to aqueous solutions, seawater from Laspi Bay is characterized by elevated contents of Al, Fe, Rb, Y, Mo, Sn, Zn, Cu, Ni, Co, Cr, Pb, and Hf.\n\nAs a result of the research, the features of the multicomponent gas composition of fluids and the presence of aqueous solutions in them were established for the first time.",
@@ -2452,7 +2576,7 @@ export const ARTICLES = [
         "text": "Aerospace Information Research Institute, Chinese Academy of Sciences, Beijing 100094, China"
       }
     ],
-    "journalId": "journal-of-geology-and-earth-science-research",
+    "journalId": "geology-and-earth-science-research",
     "journalTitle": "Journal of Geology & Earth Science Research",
     "publicationDate": "2025-08-05",
     "abstract": "The 2030 Agenda for Sustainable Development established 17 Sustainable Development Goals (SDGs), but SDG monitoring and evaluation remain constrained by data gaps, insufficient research methods, and uneven progress. Conventional data sources, including statistical surveys, administrative records, and censuses, are often costly, time-consuming, difficult to update frequently, and affected by differences in statistical systems among countries. Space-based Earth observation provides an important technical pathway by offering objective, dynamic, wide-coverage, and historically traceable data support for SDG evaluation and policy-making. However, most existing satellites lack dedicated capability for observing human activities and socioeconomic processes.\n\nSDGSAT-1 was developed to address this need. Designed, developed, and operated by the International Research Center of Big Data for Sustainable Development Goals (CBAS), it is the first scientific satellite specifically serving the 2030 Agenda. With the scientific objective of precisely depicting traces of anthropic activity, SDGSAT-1 carries the Thermal Infrared Spectrometer (TIS), Glimmer Imager (GLI), and Multispectral Imager (MSI). Through coordinated day-night observations of light, heat, and water, it dynamically acquires data describing human activity and its interaction with the natural environment, with overall performance reaching an internationally leading level.\n\nSince the launch of the SDGSAT-1 Open Science Program in September 2022, its data have been freely shared worldwide. By November 2025, SDGSAT-1 had acquired more than 480,000 images, supported researchers from over 110 countries, contributed to more than 230 papers and 17 United Nations reports, and covered more than 20 specific targets under 11 SDGs. Its data have been applied to poverty mapping, disaster response, urban heat-island analysis, and water-quality monitoring. The Sustainable Development Satellite Constellation and the Alliance of Sustainable Development Satellites (ASSA) further provide coordinated Earth-observation support for global SDG monitoring.",
@@ -2517,7 +2641,7 @@ export const ARTICLES = [
         "text": "State Key Laboratory of Geological Processes and Mineral Resources, China University of Geosciences, Wuhan, Hubei 430074, China"
       }
     ],
-    "journalId": "journal-of-geology-and-earth-science-research",
+    "journalId": "geology-and-earth-science-research",
     "journalTitle": "Journal of Geology & Earth Science Research",
     "publicationDate": "2025-08-05",
     "abstract": "Deep-seated brines in the Jianghan Basin represent a strategic lithium resource with significant industrial potential. Analytical results reveal Li concentrations of 22 \u2013261 mg/L, a high Li/Mg ratio (10\u201320), and co-enrichment of K (1\u20134 g/L), Br (100\u2013900 mg/L), and B (40\u2013930 mg/L). This study elucidates the synergetic \"multi-source and multi-driver\" enrichment mechanism through geochemical signatures, mineralogical evaluation, and multi-isotopic tracers (H, O, S, B, Li).\n\nMulti-isotopic evidence provides robust constraints on fluid evolution. H-O isotopes (\u03b4D avg. -61.2\u2030; \u03b418O avg. -5.73\u2030) reflect the mixing of meteoric water and concentrated liquors along an evaporation trend. Enriched \u03b434S (+11.4 to 53.5\u2030) indicates intense thermochemical sulfate reduction (TSR) of sedimentary gypsum. Furthermore, low \u03b411B (+9 to 41\u2030) and \u03b47Li (+9 to 22\u2030) values, significantly below seawater averages, correlate with continental geothermal fluids and deep-seated hydrothermal inflows, confirming a multi-source origin.\n\nThe \"multi-driver\" mechanism is centered on temperature-controlled mineralogical transformations. Mineralogical data show that Li concentration is positively correlated with chlorite, illite, and smectite-suggesting initial adsorption-but strongly negatively correlated with illite/smectite (I/S) mixed-layer minerals. At the critical burial depth of 2500\u20133000 meters, the rising geothermal gradient triggers the transformation of smectite to illite, releasing structurally adsorbed lithium into the brines. Beyond 3000 meters, Li grades continue to increase as water-rock interactions intensify, further augmented by hydrothermal heat in regions like the Jiangling Sag.\n\nIn conclusion, we propose a \"Source-Heat-Dynamics\" model where surface pre-concentration is enhanced by deep-burial processes. The I/S mixed-layer zone and low \u03b47Li signatures are established as key mineralogical and geochemical markers for Li-rich brine exploration. This framework offers new theoretical guidance for assessing deep-seated brine resources in continental salt lake basins.",
@@ -2562,7 +2686,7 @@ export const ARTICLES = [
         "text": "Department of Food Biotechnology, Albert K\u00e1zm\u00e9r Mosonmagyar\u00f3v\u00e1r Faculty, Sz\u00e9chenyi Istv\u00e1n University, H-9200 Mosonmagyar\u00f3v\u00e1r, Hungary"
       }
     ],
-    "journalId": "journal-of-food-innovation-and-sustainability",
+    "journalId": "food-innovation-and-sustainability",
     "journalTitle": "Journal of Food Innovation & Sustainability",
     "publicationDate": "2026-06-20",
     "abstract": "Legume proteins are increasingly recognized as sustainable alternatives to animal proteins because of their high nutritional value and low environmental footprint. However, compact globular structures, strong intermolecular interactions, and limited digestibility often restrict functionality and the release of beneficial compounds. Enzymatic hydrolysis with plant-derived proteases offers a green and efficient route to overcome these limitations and create ingredients of enhanced biological value, such as peptides with improved techno-functional and physiological benefits. In this study the impact of papain, bromelain, and ficin was evaluated, applied both individually and in combined systems, for hydrolyzing proteins from pea, chickpea, and lentil. Protein isolates were prepared as 2.5% (w/v) slurries and treated under optimized pH and temperature conditions for 1\u20133 h using simultaneous multi-enzyme or sequential hydrolysis strategies. Hydrolysates were heat-inactivated, freeze-dried, and characterized for degree of hydrolysis, water-soluble protein, antioxidant capacity, total polyphenols, total flavonoids, peptide generation, and structural protein changes by 1D SDS-PAGE. Plant-based proteases markedly improved all measured properties compared to the non-hydrolyzed controls. The simultaneous papain:bromelain:ficin system generated the highest degree of hydrolysis, reaching 36.5% in pea, 33.6% in chickpea, and 34.4% in lentil after 3 h. Sequential hydrolysis maximized soluble protein, achieving 292, 291, and 283 mg/g in pea, chickpea, and lentil, respectively. Antioxidant capacity increased strongly, reaching 353 mg Trolox equivalents/g in pea, 334 mg/g in chickpea, and 323 mg/g in lentil, almost double the best conventional control treatment. Total polyphenol content rose to approximately 50 mg/g, while total flavonoid content reached 27.82 mg/g in pea. SDS-PAGE profiles confirmed the occurrence of extensive degradation of the major storage proteins, disappearance of high-molecular-weight bands, and accumulation of low-molecular-weight peptide fractions, demonstrating efficient oligopeptide release. Overall, pea proteins showed the greatest susceptibility to enzymatic modification, followed by chickpea and lentil. These findings demonstrate that combining papain, bromelain, and ficin is a powerful clean-label strategy for producing next-generation functional food and nutraceutical ingredients from legumes sustainably worldwide.\n\nKeywords: Legume proteins; enzymatic hydrolysis; papain; bromelain; ficin; bioactive peptides",
@@ -2607,7 +2731,7 @@ export const ARTICLES = [
         "text": "Department of Chemical Engineering and Applied Chemistry, University of Toronto, Canada."
       }
     ],
-    "journalId": "journal-of-food-innovation-and-sustainability",
+    "journalId": "food-innovation-and-sustainability",
     "journalTitle": "Journal of Food Innovation & Sustainability",
     "publicationDate": "2026-06-20",
     "abstract": "Background: High-purity protein isolates from leguminous crops are essential for producing peptides with enhanced bioactivity and functionality. This study developed a comprehensive purification strategy for protein isolates from Chilean granado beans (Phaseolus vulgaris L.) using targeted enzymatic hydrolysis and membrane-based ultrafiltration. Two protein fractions \u2013 acid-soluble protein isolate (SPI) and precipitated protein isolate (PPI) \u2013 were purified by selectively degrading carbohydrate and phosphorus-containing impurities. Enzymatic treatments with cellulases, hemicellulases, amylase, and phosphatase were applied at upstream, midstream, and downstream stages of the protein isolates\u2019 production process to evaluate their impact on protein purity. The highly pure protein isolates were hydrolyzed using Alcalase enzyme to obtain bioactive peptides with antidiabetic potential.\n\nResults: Downstream treatment with CTec3 and HTec3 enzymes was most effective, increasing SPI protein concentration from 46% to 91%. Phosphatase treatment enhanced purity by hydrolyzing phytate-bound phosphorus, while diafiltration facilitated removal of low-molecular-weight solutes. Mass balance analysis confirmed phosphorus reductions of 62% in SPI and 79% in PPI.\n\nConclusion: Strategic enzymatic hydrolysis combined with membrane separation significantly enhances the purity of legume-derived protein isolates. These findings provide valuable insights for producing high-quality protein ingredients for food and nutraceutical industries.\n\nPractical Applications: The purification method studied in this work can be applied to enhance the protein concentration in food ingredients from legumes, where the purity and functionality of the protein isolate are priorities. Purified protein products from common beans can be used for dietetic purposes and functional foods due to their high bioavailability and the presence of bioactive peptides, with the potential to lower the glycemic index and offer health benefits, such as reducing the risk of type-II diabetes.",
@@ -2720,7 +2844,7 @@ export const ARTICLES = [
         "text": "University of Udine, Department of Agricultural, Food, Environmental and Animal, Sciences, Via Sondrio 2/A, 33100, Udine"
       }
     ],
-    "journalId": "journal-of-food-innovation-and-sustainability",
+    "journalId": "food-innovation-and-sustainability",
     "journalTitle": "Journal of Food Innovation & Sustainability",
     "publicationDate": "2026-06-20",
     "abstract": "Sub-standard peas (sP) represent a major underutilized by-product of pea processing, despite their richness in proteins, fibers, and bioactive compounds. This study explores a biotechnological strategy to valorize sP through fermentation, aiming to obtain a functional bioingredient suitable for bread fortification1. Sub-standard peas were ground, mixed with water (40:60 w/w), and fermented with Lactiplantibacillus plantarum ITM21B (5.00 log\u2081\u2080 CFU/g, 14 h, 37 \u00b0C), yielding the bioingredient Bio21B-P. The fermented material was characterized for its nutritional, biochemical, and biological properties.\n\nFermentation significantly improved the chemical profile of sP: lactic and acetic acids increased to 29.09 and 4.41 mmol/kg, respectively; globulin and glutelin fractions rose from 0.37 to 2.97 g/kg and from 0.98 to 2.96 g/kg; and total phenolic content increased from 13.92 to 19.08 mg GAE/L. These changes were associated with a marked enhancement in antioxidant activity. Biological assays conducted on HepG2 liver cells treated with oleate/palmitate to induce steatosis showed a relevant, though not statistically significant, reduction in lipid droplet accumulation at 1 mg/mL of fermented extract.\n\nFreeze-dried Bio21B-P was incorporated into bread formulations at 0%, 2.5%, 7.4%, 16.6%, and 25.4% (w/w flour). Increasing substitution levels led to a significant reduction in predicted glycaemic index and starch hydrolysis (from 62.02 in control bread to 50.24 at 25.4% replacement). Protein content and total free amino acids markedly increased, reaching 1886.30 mg/kg at the highest level. Textural analysis revealed that 7.4% Bio21B- P improved crumb softness and cohesiveness, while higher incorporation levels compromised bread structure.\n\nOverall, fermentation enhanced the nutritional and functional properties of legume waste, enabling the production of a sustainable, health-promoting ingredient for bread enrichment and contributing to circular food system strategies.\n\n1 Di Biase, et al. Appl. Food Res., 2025, 101515.",
@@ -2826,7 +2950,7 @@ export const ARTICLES = [
         "text": "Cargill, Inc., Wichita, KS 67202, USA, e Department of Agricultural, Food and Nutritional Science, University of Alberta, Edmonton, AB T6G 2R3, Canada, f Department of Animal Biosciences, University of Guelph, Guelph, ON N1G2W1, Canada"
       }
     ],
-    "journalId": "journal-of-food-innovation-and-sustainability",
+    "journalId": "food-innovation-and-sustainability",
     "journalTitle": "Journal of Food Innovation & Sustainability",
     "publicationDate": "2026-06-20",
     "abstract": "The objective of this study was to evaluate rapid evaporative ionization mass spectrometry (REIMS) as a rapid method to predict tenderness and biochemical markers of beef tenderness. Over a 3-year period, steak samples were collected from beef carcasses (Canada AA, n = 1505; Canada AAA, n = 1363) and aged 14 d. Metabolomic profiling of beef samples was performed using REIMS (N = 2,853). A subset of samples (n = 600) were selected to evaluate sarcomere length, myofibril fragmentation index (MFI), desmin degradation, troponin- T degradation, and collagen content. For the prediction of beef slice shear force population mean and standard deviation (SD) were calculated to generate 4 SD categories (\u00b12). Accuracies for the predictive models using the PCA-FS dataset ranged from 55.0\u00a0% to 83.0\u00a0%. The top accuracies of 82.8\u00a0% and 83.0\u00a0% were generated from Treebag and RF, respectively (P\u00a0<\u00a00.001). A stepwise regression model was constructed to examine the relationships between sarcomere length, MFI, intact and degraded desmin, intact and degraded troponin-T, total, soluble, and insoluble collagen, and spectra generated from REIMS. Selected REIMS bins accounted for 64.4% of the variation in predicted sarcomere length (R2 = 0.644, P < 0.001), 31.6% in predicted MFI (R2 = 0.316, P < 0.001), 58.3% in predicted intact desmin (R2 = 0.583, P < 0.001), 54.2% in predicted degraded desmin (R2 = 0.542, P < 0.001), 12.8% in predicted intact troponin-T (R2 = 0.128, P < 0.001), 8.4% in predicted degraded troponin-T (R2 = 0.084, P < 0.001), 23.7% in predicted total collagen (R2 = 0.237, P < 0.001), 25.2% in predicted soluble collagen (R2 = 0.252, P < 0.001), and 23.5% in predicted insoluble collagen (R2 = 0.235, P < 0.001). These results support the conclusion that REIMS metabolomic profiling is responsive to key biochemical features known to influence beef tenderness.",
@@ -2859,7 +2983,7 @@ export const ARTICLES = [
       }
     ],
     "affiliationsList": [],
-    "journalId": "journal-of-food-innovation-and-sustainability",
+    "journalId": "food-innovation-and-sustainability",
     "journalTitle": "Journal of Food Innovation & Sustainability",
     "publicationDate": "2026-06-20",
     "abstract": "aCenter for Vascular Biology Research, Beth Israel Deaconess Medical Center, Harvard Medical School, Boston, MA 02215;bDepartment of Pathology, Beth Israel Deaconess Medical Center, Harvard Medical School, Boston, MA 02215\n\nEpoxy fatty acids (EpFAs) are endogenous lipid metabolites derived from Omega 3 (\uf077-3) and Omega 6 (\uf077-6) poly-unsaturated fatty acids (PUFAs) via the enzyme Cytochrome P4501. \uf077-3 PUFAs are high in certain nuts, fish oils, and seeds and are essential dietary precursors for EpFAs2. EpFAs are active in suppressing inflammation by inhibiting the NF-\uf06bB pathway, decreasing endoplasmic reticulum stress, and regulating endothelial cell function3. However, EpFAs are rapidly metabolized by the soluble epoxide hydrolase enzyme (sEH)4. Cancer immune check point inhibitor (ICI) therapies such as anti-PD1 and anti-CTLA, induce an increase in sEH and inflammatory cytokines in the tumor microenvironment (TME) which paradoxically stimulates inflammation5. To interrogate the role of EpFAs in tumor growth during ICI treatment, we treated C57BL/6 mice inoculated with Bladder (MB49), Prostate (RM1) or Skin (B16F10) cancers with anti-PD1 or anti-CTLA ICI therapies. These mice were either a fed high \uf077-3 diet or a control diet, and tumor volume, weight and oxylipin profiles via LCMS-MS were analyzed. The \uf077-3 diet enhanced the efficacy of ICI therapy via increasing the amount of EpFA to counteract the ICI induced increase in sEH, causing a decrease in inflammation in the TME and decreasing tumorigenesis. Oxylipin profiles were altered between \uf077-3, \uf077-6, and control diets, indicating the role of endogenous lipid metabolites in carcinogenesis. Diet and nutrition play an important role in inflammation resolution in the tumor microenvironment. Therefore, targeting lipid mediators such  as  EpFAs  is  an  important  strategy  in  optimizing  nutrition  in  cancer.\n\n\u2022\tK. Node et al., Anti- inflammatory properties of cytochrome P450 epoxygenase- derived eicosanoids. Science 285, 1276\u20131279 (1999).\n\n\u2022\tP. M. Kris- Etherton, W. S. Harris, L. J. Appel, Fish consumption, fish oil, omega- 3 fatty acids, and cardiovascular disease. Arterioscler. Thromb. Vasc. Biol. 23, 2747-2754 (2003).\n\n\u2022\tJ. D. Imig, B. D. Hammock, Soluble epoxide hydrolase as a therapeutic target for cardiovascular diseases. Nat. Rev. Drug Discov. 8, 794\u2013805 (2009).\n\n\u2022\tA. Das Mahapatra, R. Choubey, B. Datta, Small molecule soluble epoxide hydrolase inhibitors in multitarget and combination therapies for inflammation and cancer. Molecules 25, 5488, 1-3 (2020).\n\n\u2022\tA. G. Kelly et al., Enhancing cancer immunotherapy via inhibition of soluble epoxide hydrolase. PNAS 121, 2 (2024).",
@@ -2901,7 +3025,7 @@ export const ARTICLES = [
         "text": "Universidade Cat\u00f3lica Portuguesa, CBQF - Centro de Biotecnologia e Qu\u00edmica Fina \u2013 Laborat\u00f3rio Associado, Escola Superior de Biotecnologia, Rua de Diogo Botelho 1327, 4169-005, Porto, Portugal, Mental health disorders, including depression, anxiety, and neurocognitive impairment, remain among the leading contributors to global disease burden."
       }
     ],
-    "journalId": "journal-of-food-innovation-and-sustainability",
+    "journalId": "food-innovation-and-sustainability",
     "journalTitle": "Journal of Food Innovation & Sustainability",
     "publicationDate": "2026-06-20",
     "abstract": "The rising prevalence of these conditions has stimulated significant research into novel and complementary therapeutic approaches. Growing evidence highlights the involvement of oxidative stress, neuroinflammation, mitochondrial impairment, and immune dysregulation as central pathological mechanisms underlying these conditions. In parallel, bioactive compounds derived from marine sources have gained significant attention as potential modulators of these pathways due to their potent antioxidant and anti-inflammatory properties. Notably, astaxanthin, a xanthophyll carotenoid, and fucoidan, a sulfated polysaccharide from brown seaweeds, have demonstrated promising neuroprotective across preclinical studies and emerging clinical evidence.\n\nThis work provides an integrated synthesis of current findings regarding the influence of astaxanthin and fucoidan on molecular and cellular processes implicated in mental health disorders. Particular emphasis is given to their roles in regulating oxidative homeostasis, attenuating neuroimmune activation, modulating mitochondrial function, and supporting neuroplasticity-related signaling pathways. Furthermore, this analysis emphasizes the strategic importance of interdisciplinary methodologies that combine biotechnology, molecular neuroscience, and clinical research to facilitate rigorous translational advancement. Biotechnological approaches remain essential for optimizing extraction, purification, structural characterization, and bioavailability of these marine-derived compounds. In parallel, advances in neuroscience enable mechanistic investigations spanning synaptic, cellular, and circuit-level dynamics, while clinical research frameworks are required to evaluate safety, efficacy, and therapeutic potential in human populations.\n\nTogether, current findings suggest that astaxanthin and fucoidan hold significant promise as adjunctive therapeutic candidates for mental health disorders, owing to their multifaceted neuroprotective properties. Continued interdisciplinary collaboration will be crucial to bridge mechanistic insights with clinical implementation, ultimately strengthening the translational potential of marine bioactive compounds within neuropsychiatric health.",
@@ -2953,7 +3077,7 @@ export const ARTICLES = [
         "text": "Academy of National Food and Strategic Reserves Administration, National Engineering Research Center for Grain Storage and Transportation, Beijing 102209, China."
       }
     ],
-    "journalId": "journal-of-food-innovation-and-sustainability",
+    "journalId": "food-innovation-and-sustainability",
     "journalTitle": "Journal of Food Innovation & Sustainability",
     "publicationDate": "2026-06-20",
     "abstract": "For solving the problem of feeding the increasing world population, the physicochemical, cooking, textural, pasting, microstructural, and thermal properties of two early indica rice varieties (newly harvested SRN variety and IP46 variety with one-year in-bin storage) were analysed over 12 months of storage at 15\u00b0C and 30\u00b0C, respectively. A General Linear Model Univariate (GLMU) analysis was adopt to show significant effects of three factors (variety, storage temperature, and time). Compared with 15\u00b0C storage, 30\u00b0C storage resulted in a higher free fatty acid (FFA) content, amylose content, conductivity, kernel broken index, chalky kernel percent, and chalkiness degree, and a reduced taste value. The cooking test showed that 30\u00b0C storage increased the cooking time and the hardness of cooked rice but decreased the gruel solid loss and the adhesiveness and resilience of cooked rice. Compared with 15\u00b0C storage, 30\u00b0C storage increased the pasting temperature and peak, breakdown, and setback viscosities of the two early indica rice varieties. Moreover, there was an increase in the peak temperature of gelatinization but no change in starch ageing. Infrared spectroscopy analysis confirmed that, in contrast to 15\u00b0C storage, 30\u00b0C storage increased the crystallinity of starch, the interaction between protein and starch, and the \u03b2-sheet percent in the early indica rice. Microstructure analysis showed that SRN raw rice exhibited a consistent polygonal shape of starch granules after 12 months of storage at 30\u00b0C, but the edges of the chalky portion of the starch granules were not obvious in IP46 rice. It can be concluded that 30\u00b0C storage can maintain the taste value, paste aging, and cooked rice texture of early indica rice after two years of storage, despite blurring of the edges of the chalky portion of starch granules.\n\nKeywords: Early indica rice; Low-temperature storage; Kernel broken index; \u03b2-sheet percent; polygonal shape in starch granules; Amylose content.",
@@ -3020,7 +3144,7 @@ export const ARTICLES = [
         "text": "Adaptive Food Systems Accelerator-Science Centre, Wroclaw University of Economics and Business, Wroclaw, Poland"
       }
     ],
-    "journalId": "journal-of-food-innovation-and-sustainability",
+    "journalId": "food-innovation-and-sustainability",
     "journalTitle": "Journal of Food Innovation & Sustainability",
     "publicationDate": "2026-06-20",
     "abstract": "Oat beta-glucan (OBG) is a linear, water-soluble polysaccharide with numerous health-promoting properties, such as hypoglycemic, hypolipidemic, prebiotic, as well as immunomodulatory, anti-inflammatory, and anticancer effects. In vitro and in vivo studies detail the mechanisms of prebiotic action, including modulation of gut microbiota composition and stimulation of short-chain fatty acids production. The immunomodulatory and related anti-inflammatory effects of OBG have been well studied in rodent models, including by our team, but there is a lack of detailed preclinical and clinical studies. This presentation aims to detail the mechanisms of action of OBG in IBD through its prebiotic and anti-inflammatory effects. This presentation is based on studies in the scientific literature, including our team's results, as well as the preliminary results of our preclinical study in domestic pigs and human trials. Our previous studies in a rat model of Crohn's disease demonstrated the strong anti-inflammatory effect of a highly purified OBG isolate, which significantly reduced the expression of multiple pro-inflammatory cytokines in the inflamed colon. These studies also demonstrated the immunomodulatory effect of OBG by influencing the lymphocyte profile in the lamina propria of the colonic mucosa and reducing the expression of many chemokines and their receptors. In addition, OBG supplementation showed a protective effect against damaged intestinal barrier by inhibiting excessive apoptosis. The effect of OBG on reducing the expression of proinflammatory cytokines was also demonstrated by our study in a rat model of LPS-induced enteritis, as well as by other authors in a mouse model of DSS-induced colitis. These results are complemented by a current porcine preclinical study in which local mild to moderate colonic inflammation was induced. In this study, OBG administration led to a significant decrease fecal calprotectin concentration and modulation of myeloid and lymphoid cell profiles in colon. These changes caused by OBG supply demonstrate the anti-inflammatory and immunomodulatory effect of this polysaccharide, particularly by prebiotic properties.\n\nAcknowledgments: The authors acknowledge the financial support of the National Science Centre (NCN), Poland (grant no. 2022/47/B/NZ9/03123).",
@@ -3169,7 +3293,7 @@ export const ARTICLES = [
         "text": "Menzies Health Institute Queensland and School of Nursing and Midwifery, Griffith University, Gold Coast, Australia"
       }
     ],
-    "journalId": "journal-of-nursing-science-and-clinical-practice",
+    "journalId": "nursing-science-and-clinical-practice",
     "journalTitle": "Journal of Nursing Science & Clinical Practice",
     "publicationDate": "2026-06-20",
     "abstract": "Objective: To explore the experiences and preferences of patients with wounds treated with negative pressure wound therapy (NPWT) regarding shared decision-making and patient participation.\n\nMethod: Semi-structured interviews were conducted with adult patients treated with NPWT. Interview topics included shared decision-making and patients' active participation in wound treatment. Thematic analysis was applied to identify themes.\n\nResults: The interview cohort comprised ten patients. Four themes emerged: (1) Having a wound makes patients uncertain and thus influences their quality of life; (2) NPWT influences patients' daily lives; (3) Patients consider professional treatment decisions most important in the decision-making processes; (4) Self-management of wounds is accepted by patients only for low-complexity and well-healing wounds under supervision. Participants emphasised their worries about the future and the impact of the wound/treatment on their families. After being thoroughly informed, participants preferred that health professionals decide on the treatment choice. In addition, participants and/or their relatives did not want to actively participate in complex wound care. As well as expressing a need for qualified wound care professionals, participants reported that they did not want to be or feel responsible for the wound treatment.\n\nConclusion: Shared decision-making and active patient participation are underused and underexposed topics in wound care. Patients' recognition of the importance of their personal preferences can facilitate shared decision-making.",
@@ -3235,7 +3359,7 @@ export const ARTICLES = [
         "text": "\u2022\tSchool of Public Health and Community Medicine, Institute of Medicine, Sahlgrenska Academy, University of Gothenburg, Gothenburg, Sweden., \u2022\tGreen Ink Publishing Services Ltd, Oxford, United Kingdom, \u2022\tGlobal Public Health, Karolinska Institute, Stockholm, Sweden; Department of Disease Control, London School of Hygiene and Tropical Medicine, London, United Kingdom, \u2022\tDepartment of Women\u2019s and Children\u2019s Health/IMCH, Uppsala University, Uppsala, Sweden, \u2022\tDepartment of Obstetrics and Gynecology, University of Gothenburg, Gothenburg, Sweden, Department of Obstetrics and Gynecology, \u2022\tWestern Health Care Region, Sahlgrenska University Hospital, Gothenburg, Sweden"
       }
     ],
-    "journalId": "journal-of-nursing-science-and-clinical-practice",
+    "journalId": "nursing-science-and-clinical-practice",
     "journalTitle": "Journal of Nursing Science & Clinical Practice",
     "publicationDate": "2026-06-20",
     "abstract": "Background\n\nOver the past fifty years, global maternal and newborn health (MNH) has been shaped by major policy milestones, advocacy movements, and evolving rights-based frameworks. Foundational initiatives - including the Alma-Ata Declaration, the Safe Motherhood Initiative, and the International Conference on Population and Development\u2014redefined MNH as a core component of primary health care and human rights. These developments informed the Millennium Development Goals and later the Sustainable Development Goals, establishing new expectations for accountability, equity, and investment.\n\nMethods\n\nThis paper synthesizes historical policy documents, global strategies, and epidemiological evidence from the 1970s to 2025. It examines how international commitments, political momentum, and health system reforms have influenced MNH outcomes and identifies persistent gaps that continue to hinder progress.\n\nResults\n\nDespite substantial advances, MNH remains an unfinished global agenda. In 2023, one woman died from maternal causes every two minutes, one newborn died every 14 seconds, and a stillbirth occurred every 17 seconds. Progress toward universal health coverage has slowed, with minimal improvements in essential service coverage since 2015. Recent reductions in official development assistance for health further threaten gains. In response, World Health Day 2025 launched a global campaign to renew commitment to ending preventable maternal and neonatal deaths, emphasizing strengthened health systems and investment in nurses, midwives, and primary care.\n\nConclusion\n\nFive decades of global initiatives have laid a strong foundation for advancing maternal and newborn health and rights, yet current trends signal an urgent need for renewed political will, sustained financing, and rights-based approaches. The present moment offers a critical opportunity to reinforce global solidarity and ensure that women and newborns not only survive but thrive well beyond 2025.\n\nSource: Moller AB, Patten J, Hanson C, Ess\u00e9n B, Jacobsson B. Five decades of advancing global maternal and newborn health and rights: Milestones and initiatives. Int J Gynaecol Obstet. 2026 Jan;172(1):149-162.",
@@ -3313,7 +3437,7 @@ export const ARTICLES = [
         "text": "Faculty of Nursing and Health Sciences, Nord University, Postbox 93, 7601 Levanger, Norway."
       }
     ],
-    "journalId": "journal-of-nursing-science-and-clinical-practice",
+    "journalId": "nursing-science-and-clinical-practice",
     "journalTitle": "Journal of Nursing Science & Clinical Practice",
     "publicationDate": "2026-06-20",
     "abstract": "For their health and well-being, nursing home residents increasingly depend on appropriate basic nursing care that requires certain clinical skills. In our study, we examined how the managers of nursing homes facilitate appropriate clinical learning environments to promote basic nursing skills. Following a qualitative design and with reference to complexity theory, we probed multiple sources of data in a reflexive thematic analysis. The results revealed the NH managers adopted a holistic approach balancing a complexity of interests: maintaining effective oversight, supporting staff in delivering high-quality care, and providing learners with valuable learning experiences and guidance. They recognised that integrating these complex interests was best achieved by empowering the caring staff and supporting them in doing so. Clinical learning environments have inherent self-organizing capacities, where staff can autonomously manage their tasks and collaborate effectively. This self-organization is a powerful aspect that complements the managerial authority. Facilitating learners' insight into the power of the caring staff's self-organizing capacities is important for basic nursing competencies The managers' understanding of how the caring staff naturally organise their work represents a resource for both maintaining and enhancing the quality of both care and clinical learning. Thus, their contribution and involvement are vital for the success of any initiative aimed at enhancing the clinical learning environment.",
@@ -3344,7 +3468,7 @@ export const ARTICLES = [
         "text": "Lohmann & Rauscher GmbH & Co. KG, Neuwied, Germany"
       }
     ],
-    "journalId": "journal-of-nursing-science-and-clinical-practice",
+    "journalId": "nursing-science-and-clinical-practice",
     "journalTitle": "Journal of Nursing Science & Clinical Practice",
     "publicationDate": "2026-06-20",
     "abstract": "Background:\n\nEfficient compression therapy considers the applied compression pressure (P), the overlapping layers (La), the components and construction of the compression devices (C) and their elasticity (E) (P-La-C-E) concept. For the treatment of venous leg ulcers (VLUs) with compression therapy, for example, two-layer bandage systems, four-layer systems, and multicomponent systems including elastic and inelastic bandages are available. A clear advantage of one system over the others has not yet been demonstrated. An alternative to using multiple single components with different characteristics could be the use of a bandage that combines several properties.\n\nMethod:\n\nTwo commercially available all-in-one multicomponent compression systems have been tested for the sub-bandage resting and working pressures during continuous wearing for a period of one week in an observational randomized controlled pilot study in a cohort of healthy volunteers. A literature search was conducted for comparison with established multi-layer systems. The participants were asked for the feedback on the wearing comfort of the bandages and how well they tolerated the bandages.\n\nResults:\n\nA total of 22 healthy volunteers took part in the study. A mean resting and working pressure within the relevant therapeutic range of 20\u201340mmHg was achieved with both bandage systems. At application, the mean pressures were 46mmHg with both bandages and dropped to within the therapeutic range by the next day. The mean bandage slippage with both bandages was <5cm on the third day.\n\nConclusion:\n\nBoth bandages achieved therapeutic working pressures and tolerable resting pressures and values comparable to established multi-layer systems. Both products were well tolerated.  Confirmation in a larger cohort of patients with e.g. venous leg ulcers in a real-world setting reflecting clinical routine is recommended.\n\n* Dini V, Vietina A, Michelucci A, Rizzello F, Romanelli M, Mosti G, Namislo A, B\u00f6hm C, Abel M.  J Wound Care 2026, 35(1):26-34. https://doi.org/10.12968/jowc.2025.0456",
@@ -3418,7 +3542,7 @@ export const ARTICLES = [
         "text": "Military Institute of Medicine \u2013 National Research Institute, Warsaw, Poland"
       }
     ],
-    "journalId": "journal-of-nursing-science-and-clinical-practice",
+    "journalId": "nursing-science-and-clinical-practice",
     "journalTitle": "Journal of Nursing Science & Clinical Practice",
     "publicationDate": "2026-06-20",
     "abstract": "Background:\n\nIn the context of the global nursing shortage and increasing occupational stress, resilience has been identified as a key factor supporting job satisfaction, retention, and quality of care\u00b9,\u00b2. Previous research demonstrates that higher resilience is associated with greater job satisfaction and lower turnover intention among nurses\u00b3,\u2074. However, resilience is a dynamic construct that may be influenced by health-promoting behaviors, including sleep quality and social support\u2075,\u2076. While individual lifestyle factors have been linked to resilience and occupational outcomes, their mediating role in the resilience\u2013job satisfaction relationship remains insufficiently explored\u00b3. This study aimed to examine whether selected lifestyle factors mediate the relationship between resilience and job satisfaction among nurses and whether work experience moderates this association.\n\nMethods:\n\nA cross-sectional correlational study was conducted among 508 professionally active Polish nurses (September 2022\u2013February 2023). Standardized instruments were used: the Minnesota Satisfaction Questionnaire, Brief Resilience Coping Scale, Athens Insomnia Scale, International Physical Activity Questionnaire, and Healthy Lifestyle and Personal Control Questionnaire. Mediation (model 4) and moderation (model 1) analyses were performed using Hayes\u2019 PROCESS macro for SPSS.\n\nResults:\n\nResilience was positively associated with intrinsic and extrinsic job satisfaction. Sleep quality and social support emerged as significant partial mediators. Higher resilience was related to better sleep quality and stronger perceived social support, which in turn predicted higher job satisfaction. Physical activity and dietary behaviors did not demonstrate significant mediating effects. Work experience moderated the relationship between resilience and extrinsic job satisfaction: the association was strongest among early-career nurses and weakened with increasing professional tenure.\n\nConclusions:\n\nThe findings demonstrate that sleep quality and social support are key mechanisms linking resilience with job satisfaction. Interventions aimed at strengthening resilience should extend beyond individual training to include organizational strategies promoting healthy sleep patterns and supportive professional relationships. Tailored approaches for different career stages may enhance nurse retention and workforce sustainability.\n\nReferences:\n\n\u2022\tInternational Council of Nurses.\u00a0ICN Policy Brief: The Global Nursing Shortage and Nurse Retention; 2021.\n\n\u2022\tSihvola, S.; Nurmeksela, A.; Mikkonen, S.; et al. BMC Health Serv. Res.\u00a02023,\u00a023, 632.\n\n\u2022\tMantas-Jim\u00e9nez, S.; Lluch-Canut, M. T.; Rold\u00e1n-Merino, J.; et al. J. Nurs. Manag.\u00a02022,\u00a030, 2084\u20132092.\n\n\u2022\tZhao, Y.; Wang, H.; Sun, D.; et al. Int. J. Nurs. Pract.\u00a02021,\u00a027, e12941.\n\n\u2022\tLin, Y. E.; Lin, C. T.; Hu, M. L.; et al. Nurs. Open\u00a02023,\u00a010, 4004\u20134012.\n\n\u2022\tMoisoglou, I.; Katsiroumpa, A.; Malliarou, M.; et al. Healthcare (Basel)\u00a02024,\u00a012, 710.",
@@ -3456,7 +3580,7 @@ export const ARTICLES = [
         "text": "Nanchong Hospital of Capital Medical University, China"
       }
     ],
-    "journalId": "journal-of-nursing-science-and-clinical-practice",
+    "journalId": "nursing-science-and-clinical-practice",
     "journalTitle": "Journal of Nursing Science & Clinical Practice",
     "publicationDate": "2026-06-20",
     "abstract": "Objectives: Targeted prevention of hypertension risk factors across various age groups and developed risk prediction models for hypertension with different age groups.\n\nStudy Design\uff1aThis is a retrospective, cross-sectional analysis based on NHANES databases.\n\nMethods: The LASSO regression model and multivariate logistic regression were performed to analyze the risk factors for hypertension across using R software for each age group.\n\nResults: A total of 3741 individuals were included and 1371 (36.6%) had hypertension. According to the results of the LASSO regression model and multivariate logistic regression\uff0c VAI (>2.099), Waist Circumference/ Height (>0.559), Thyroid problem (Yes) ,Age\uff0835-45), Gender(male), Trouble sleeping (Yes) are associated with hypertension in individuals aged 20-45 years. Age\uff0856-60), Waist Circumference (>85cm), Diabetes (Yes),CHD (Yes), Stroke (Yes), Cre(>133umol/L), Trouble sleeping (Yes) ,RCDW (>=15%) are associated with hypertension in individuals aged 46-60 years. Diabetes\uff08YES), Gender(Female),Gout (Yes), CHD (Yes) ,Stroke (Yes) , Trouble sleeping (Yes) , Cre(>133umol/L),RCDW (>=15%) are associated with hypertension in individuals aged 61-80 years. Risk prediction models for hypertension with different age groups in this study presented good discrimination and good calibration.\n\nConclusions: This study find metabolic factors are closely associated with the onset of hypertension in young and middle-aged populations, while common diseases such as CHD, diabetes, and stroke are strongly correlated with the occurrence of hypertension in the elderly. This study also developed risk prediction models for hypertension with different age groups, and these prediction models may assist clinicians in devising strategies to prevent hypertension and enhance the quality of care.",
@@ -3487,7 +3611,7 @@ export const ARTICLES = [
         "text": "Independent Research Contributor, Brazzaville, Congo"
       }
     ],
-    "journalId": "journal-of-climate-resilience-and-adaptation",
+    "journalId": "climate-resilience-and-adaptation",
     "journalTitle": "Journal of Climate Resilience & Adaptation",
     "publicationDate": "2026-06-20",
     "abstract": "Climate change remains one of the greatest global public health threats in 2026. International conferences on climate and health emphasized the increasing impact of extreme heat, air pollution, floods, droughts, and infectious diseases on vulnerable populations. Experts highlighted that rising temperatures contribute to respiratory illnesses, cardiovascular diseases, food insecurity, and mental health disorders. African countries are particularly affected because of limited healthcare resources and growing environmental pressures. Participants recommended strengthening healthcare systems through improved emergency preparedness, climate-resilient infrastructure, scientific research, and early disease surveillance. Greater international cooperation and financial support were also encouraged to assist developing nations in adapting to climate-related health risks. The conference concluded that climate action is essential not only for environmental protection but also for safeguarding human health and future generations.",
@@ -3533,7 +3657,7 @@ export const ARTICLES = [
         "text": "Name: Jos\u00e9 Miguel Molina-Mart\u00ednez, Technical University of Cartagena, Spain"
       }
     ],
-    "journalId": "journal-of-climate-resilience-and-adaptation",
+    "journalId": "climate-resilience-and-adaptation",
     "journalTitle": "Journal of Climate Resilience & Adaptation",
     "publicationDate": "2026-06-20",
     "abstract": "To respond to the critical challenges facing modern agriculture in the Southeast of Spain\u2014such as\n\nclimate change, recurring droughts, torrential rain, and excessive solar radiation\u2014we have\n\ndeveloped a resilient and sustainable agrivoltaic system. This innovative solution is designed to\n\noptimize solar radiation for crop development in real -time while providing a physical shield against\n\nextreme weather events. A core objective of this technology is to significantly reduce and eliminate\n\nthe carbon footprint associated with intensive agricultural activities. By integrating renewable\n\nenergy production directly into the farming infrastructure, the system powers its own automated\n\nirrigation and lighting technologies, replacing fossil fuel dependency with clean, on-site energy.\n\nThe system features a mobile roof composed of solar panels that move in a coplanar manner to\n\nmanage light transmission. During periods of peak radiation, the panels close to protect crops from\n\nthermal stress; during torrential rains, they close to act as a catchment surface. This allows for the\n\nintelligent collection and storage of rainwater for efficient irrigation, preventing the leaching of\n\npollutants into aquifers and reducing surface runoff that contaminates nearby ecosystems.\n\nFurthermore, the system is equipped with luminescent spotlights powered by the stored\n\nphotovoltaic energy to ensure optimal light spectra for plant growth even when the panels are\n\nclosed. This integrated approach not only enhances climate resilience but also provides a\n\ntransformative model for carbon-neutral, environmentally respectful horticulture.",
@@ -3565,7 +3689,7 @@ export const ARTICLES = [
         "text": "Eric Kamgang, Laval university, Quebec, Canada"
       }
     ],
-    "journalId": "journal-of-climate-resilience-and-adaptation",
+    "journalId": "climate-resilience-and-adaptation",
     "journalTitle": "Journal of Climate Resilience & Adaptation",
     "publicationDate": "2026-06-20",
     "abstract": "Regional food supply is increasingly mobilized as a lever for the transition toward more sustainable food\n\nsystems, particularly in relation to climate issues, territorial resilience, and the support of local\n\neconomies. Despite growing interest and public support, many initiatives struggle to stabilize over time\n\nas a mode of supplying professional markets, which are structured by dominant economic, regulatory,\n\nand professional requirements.  This study examines the conditions under which these initiatives can\n\nstabilize within this context. Drawing on the institutional logics perspective, it analyzes the articulation\n\nof heterogeneous principles such as economic efficiency, standardization, regulatory compliance,\n\nterritorial anchoring, and environmental sustainability. The analysis is based on 36 interviews conducted\n\nwith actors from the food system in Qu\u00e9bec (Canada). The findings highlight the coexistence of multiple\n\nlogics and the presence of structuring tensions, particularly related to price, volumes, logist ics, and\n\nstandardization. These tensions constrain the integration of sustainability objectives, including those\n\nrelated to reducing environmental impacts.  The study identifies key organizational mechanisms\n\n(intermediation, logistics coordination, and resource mutualization ) that support critical functions such\n\nas supply aggregation, order management, delivery planning, and commercial interfacing. The degree of\n\nintegration of these functions conditions both the stabilization of initiatives and their ability  to meet the\n\nrequirements of professional markets.  These results show that the contribution of regional food supply\n\nto sustainability and climate-related challenges relies on the ability to develop integrated and coordinated\n\norganizational arrangements over time.",
@@ -3629,7 +3753,7 @@ export const ARTICLES = [
         "text": "World Benchmarking Alliance, *employed at Ericsson AB when main study was performed"
       }
     ],
-    "journalId": "journal-of-climate-resilience-and-adaptation",
+    "journalId": "climate-resilience-and-adaptation",
     "journalTitle": "Journal of Climate Resilience & Adaptation",
     "publicationDate": "2026-06-20",
     "abstract": "The use of information and communication technologies are increasing in society. Carbon emissions can be found throughout the entire life cycle of access networks, data centers and communication user devices. The focus of this study is the embodied carbon emissions taking place before the use of user devices associated with accessing networks, hence tablets, smartphones and feature phones, laptop and desktop PCs, PC displays and customer premises equipment (CPEs).\n\nThe purpose is to investigate the embodied carbon emissions by applying different approaches: i) the commonly used approach where estimated product carbon emissions are scaled up by shipments, ii) allocation of the electronic sector companies\u2019 reported data combined with materials data for the products, and iii) the upstream carbon emissions reported by user device vendors (final manufacturers). Despite its sensitivity to allocation the second approach is considered to give the most reasonable overall result of about 180 million metric ton carbon dioxide equivalents (Mt CO2e) related to chosen user device types and shipments in 20201. Underreporting of scope 3 in the data sources of the vendors, and sensitivity to specific product data sets with very high display values are two major concerns of the other approaches. Representative embodied emissions for user devices are derived for 20201: 50 kg CO2e for a smartphone, 20 kg CO2e for a feature phone, 100 kg CO2e for a tablet, 200 kg CO2e for a laptop, 350 kg CO2e for a desktop PC, 100 kg CO2e for a PC display and 30 kg CO2e for a CPE.\n\nData for 2024 indicate a total of about 150 Mt CO2e and that the representative values should be lowered by about 10% for smartphones and tablets and PCs.\n\n[1] L\u00f6vehagen, N., Malmodin, J., Bergmark, P., & Matinfar, S. Assessing embodied carbon emissions of communication user devices by combining approaches.\u00a0Renewable Sustainable Energy Rev.,\u00a02023, 183, 113422.\n\n[2] Malmodin, J., L\u00f6vehagen, N., Dahl, T., Lund\u00e9n, D., Frantz Schneider, A. ICT sector electricity consumption, GHG emissions, and other key figures \u2013 Development 2007 to 2024. Accepted for publication at ICT for Sustainability (ICT4S), Bern 8-12 June, 2026.",
@@ -3703,7 +3827,7 @@ export const ARTICLES = [
         "text": "Universite de Pau et des Pays de l'Adour, E2S UPPA, CNRS, IPREM, Pau, France 2Sonatrach, Division Laboratories, Avenue du 1er Novembre, Boumerd\u00e9s, Algerie"
       }
     ],
-    "journalId": "journal-of-climate-resilience-and-adaptation",
+    "journalId": "climate-resilience-and-adaptation",
     "journalTitle": "Journal of Climate Resilience & Adaptation",
     "publicationDate": "2026-06-20",
     "abstract": "Bioremediation is a promising, environmentally friendly approach for treating oil drilling waste, a\n\nchallenge that is particularly acute in arid regions with intensive petroleum production. Effective\n\nbioaugmentation strategies require microbial consortia that are naturally adapted to such harsh\n\nenvironmental conditions. In this study, four metal(loid)-resistant, hydrocarbon-degrading microbial\n\nconsortia capable of growing at 40\u202f\u00b0C were isolated from oil drilling waste subjected to different\n\nphytomanagement conditions. These consortia displayed distinct microbial compositions and were\n\nable to degrade between 15% and 35% of total petroleum hydrocarbons within 15 days. The\n\ndegradation processes produced varying hydrocarbon fraction profiles, supported by the\n\nidentification of 14 specific OTUs determined through linear discriminant analysis effect size\n\n(LEfSe). Each consortium was characterized by groups of genera correlated with particular\n\nhydrocarbon fractions, accounting for their differences in degradation efficiency and resulting\n\nfraction profiles. Consequently, these consortia could be applied individually or sequentially to\n\ndevelop effective bioremediation strategies for managing multi -contaminated oil drilling waste in\n\narid environments.",
@@ -3742,7 +3866,7 @@ export const ARTICLES = [
         "text": "Engineering School, Universidad Aut\u00f3noma de Bucaramanga, Bucaramanga, Santander, Colombia"
       }
     ],
-    "journalId": "journal-of-climate-resilience-and-adaptation",
+    "journalId": "climate-resilience-and-adaptation",
     "journalTitle": "Journal of Climate Resilience & Adaptation",
     "publicationDate": "2026-06-20",
     "abstract": "Industrial decarbonization is a central pillar of global climate change mitigation strategies under the Paris Agreement and the IPCC 2022 mitigation pathways1. In developing countries, however, limited data disaggregation often constrains the design of effective, sector-specific mitigation policies. In Colombia, the manufacturing sector plays a strategic role in national energy demand and greenhouse gas emissions, yet available statistics are typically aggregated at a two-digit industrial classification level, masking substantial heterogeneity across subsectors2.\n\nThis research presents a high-resolution energy characterization of the Colombian manufacturing sector using four-digit ISIC (CIIU Rev. 4) codes3. Official national data sources, including the Colombian Energy Balance (BECO)4 and the Annual Manufacturing Survey (EAM)5, were systematically integrated to construct a detailed energy balance for more than 110 manufacturing subsectors.The methodology estimates final energy consumption by source (electricity, natural gas, coal, biomass, among others), differentiates between thermal and mechanical uses, and accounts for self-generation and cogeneration processes. CO\u2082 emissions were calculated using internationally recognized emission factors. The resulting subsectoral energy profiles were validated by comparison with aggregated national statistics, demonstrating methodological consistency.\n\nResults reveal significant variability in energy intensity and emission patterns across manufacturing activities, highlighting priority subsectors for targeted efficiency improvements and low-carbon technology adoption. By overcoming aggregation limitations, this study provides a robust quantitative foundation to support evidence-based industrial climate mitigation strategies in Colombia.The proposed framework contributes to closing data gaps in developing economies and offers a replicable methodological approach for integrating industrial energy diagnostics into broader decarbonization planning.",
@@ -3801,7 +3925,7 @@ export const ARTICLES = [
         "text": "Northwest A&F University, China"
       }
     ],
-    "journalId": "journal-of-climate-resilience-and-adaptation",
+    "journalId": "climate-resilience-and-adaptation",
     "journalTitle": "Journal of Climate Resilience & Adaptation",
     "publicationDate": "2026-06-20",
     "abstract": "Plant diversity is vital to forest ecosystem stability, yet the elevational distribution patterns of shrub and herb diversity in Qinghai\u2013Tibet Plateau\u2019s Juniperus przewalskii forests remain unclear. We investigated understory plant communities at 100-m intervals from 3000 to 3800 m asl., analyzing species composition, \u03b1/\u03b2-diversity, and soil property drivers. A total of 128 species (79 genera, 30 families) were recorded, including 110 herb and 18 shrub species. Shrub species richness was stable below 3400 m asl. and linearly decreased thereafter, while herb richness increased up to 3400 m asl. with no significant change at higher elevations. \u03b1-diversity of both layers peaked at 3400 m asl., showing a unimodal pattern. Shrub \u03b2-diversity similarity indices (Jaccard, Sorenson) peaked at 3400\u20133500 m asl., and the highest species turnover rate (Whittaker, Cody indices) for both shrubs and herbs occurred at 3300\u20133400 m asl. Random Forest analysis revealed that shrub \u03b1-diversity was positively correlated with soil available phosphorus (AP), while herb \u03b1-diversity was negatively regulated by soil pH. Our findings confirm 3400 m asl. as the optimal elevation for multi-species survival in this ecosystem and highlight soil AP and pH as key regulators of shrub and herb diversity, respectively. This study advances understanding of plant community distribution along elevational gradients and the plant\u2013soil interaction mechanisms shaping forest biodiversity in the Qinghai\u2013Tibet Plateau, a region highly sensitive to climate change.\n\nPresenting author details\n\nFull name: Yuping Jiang\n\nContact number:15619626653\n\nTwitter account:\n\nLinked In account:\n\nSession name/ number:\n\nCategory: (Oral presentation)",
@@ -3869,7 +3993,7 @@ export const ARTICLES = [
       }
     ],
     "affiliationsList": [],
-    "journalId": "journal-of-cardiac-science-and-cardiovascular-research",
+    "journalId": "cardiac-research",
     "journalTitle": "Journal of Cardiac Science & Cardiovascular Research",
     "publicationDate": "2026-06-20",
     "abstract": "Opioids are still considered mainstay for cardiac surgical patients. However, due to the need reduce opioid use and optimize recovery, there has been a significant push to implement multimodal techniques to reduce the opioid use in cardiac surgery. Many facets of multimodal analgesia have been incorporated into the goals of Enhanced Recovery Models/Clinical Pathways. Here we will review multiple components of multimodal analgesia for a successful ERACS model and reduce opioid use in the cardiac surgical patient population.\n\nObjectives:\n\nReview the current condition on the opioid use in cardiac surgical patient and briefly review components of ERACS (Enhanced Recovery after Cardiac Surgery) and its utility in cardiac surgery\n\nDiscuss pharmacological management and review current literature\n\nReview the application of regional techniques for cardiac and cardiac-related procedures",
@@ -3942,7 +4066,7 @@ export const ARTICLES = [
         "text": "Vanderbilt University Medical Center, United States"
       }
     ],
-    "journalId": "journal-of-cardiac-science-and-cardiovascular-research",
+    "journalId": "cardiac-research",
     "journalTitle": "Journal of Cardiac Science & Cardiovascular Research",
     "publicationDate": "2026-06-20",
     "abstract": "Background: Using a multimodal approach, we have recently shown that in pulmonary arterial hypertension (PAH), lactate is a key feature of altered cardiomyocyte metabolism in the failing right ventricle (RV) that is detectable in human plasma. Elevated lactate has been shown to promote histone lactylation, linking dysregulated metabolism with epigenetic changes. We hypothesized that increased lactate in failing RV cardiomyocytes leads to autocrine and paracrine epigenetic modifications.\n\nMethods: We conducted immunoblotting on frozen RV tissue from control (n=3) and PAH patients (n=9), and BMPR2-mutant mice (n=4) compared to controls (n=4). Immunofluorescence studies used L-lactyllysine, MCT1, and MCT4 antibodies on paraffin-embedded human RV tissue from controls (n=5), idiopathic PAH (IPAH, n=5), and heritable PAH (HPAH, n=5). Mass spectrometry was used to measure lactate in organs and plasma from BMPR2-mutant (n = 4) and control mice (n = 4).\n\nResults: In human PAH-RVs, we examined the autocrine effect of increased lactate on histone lysine lactylation (a novel protein posttranslational modification driven by lactate). In both human PAH-RVs and BMPR2-mutant RVs, there was a significant increase in histone lactylation (p<0.05), and lactyllysine immunostaining was notable in human PAH-RV cardiomyocytes (p<0.05). We examined the paracrine effects of lactate, by assessing the efflux of lactate via lactate-transporter proteins MCT1 and MCT4 in human PAH-RVs vs controls. Human PAH-RVs exhibited increased MCT-4 expression (p<0.05) and a trend towards an increase in MCT-1 expression, with significant cytoplasmic localization of MCT-1 and MCT-4 in PAH-RV cardiomyocytes (p<0.05). Additionally, lactate levels were significantly elevated in the RV, lung, and plasma of BMPR2-mutant mice (p<0.01), but not in the spleen, kidney, liver, gastrocnemius muscle, or LV.\n\nConclusion: Lactate promotes histone lactylation in an autocrine manner in human PAH-RVs. Elevated plasma lactate arises from specific PAH-related organs, potentially causing local and systemic adverse effects, with implications for RV dysfunction in PAH.",
@@ -3973,7 +4097,7 @@ export const ARTICLES = [
         "text": "\u00b9 Polyclinic Kardio Medika, Nish, Serbia"
       }
     ],
-    "journalId": "journal-of-cardiac-science-and-cardiovascular-research",
+    "journalId": "cardiac-research",
     "journalTitle": "Journal of Cardiac Science & Cardiovascular Research",
     "publicationDate": "2026-06-20",
     "abstract": "Arterial hypertension is a well-known strong risk factor that can lead to the development of coronary artery disease, heart attacks, heart failure, stroke, and other heart-related issues. Arterial hypertension has increased exponentially in the last few decades in adult men and women. Traditionally, arterial hypertension is classified as primary, when no specific cause has been identified and is usually associated with multiple genetic polymorphisms and various environmental factor interactions, and secondary when there are conditions with biological plausibility to cause hypertension. Traditional data in medical textbooks indicate that in 90-95% of cases, arterial hypertension is primary, while only a small percentage of cases have secondary hypertension. European guidelines for elevated blood pressure and hypertension from 2024 indicate a higher prevalence of secondary hypertension, ranging from 10-35% of cases. Secondary hypertension is still not fully understood and often remains undiagnosed. Identifying the underlying cause of secondary hypertension is crucial, as treating the root condition can significantly reduce the risk of heart disease, stroke, and improve overall quality of life. Obesity is a major global health problem, and the prevalence of obesity is constantly increasing, and leading to an increase in the prevalence of primary and secondary arterial hypertension, and also increasing the prevalence of heart failure with preserved ejection fraction (HFpEF). Some forms of secondary hypertension cause more severe cardiac damage than primary hypertension and are associated with a higher cardiovascular risk. Secondary hypertension is more often resistant hypertension, which means that it is difficult to achieve target blood pressure values. It is important to conduct appropriate examinations in a timely manner and begin treatment promptly.",
@@ -4004,7 +4128,7 @@ export const ARTICLES = [
         "text": "Faculty of Santa Marcelina, S\u00e3o Paulo, SP, Brazil"
       }
     ],
-    "journalId": "journal-of-cardiac-science-and-cardiovascular-research",
+    "journalId": "cardiac-research",
     "journalTitle": "Journal of Cardiac Science & Cardiovascular Research",
     "publicationDate": "2026-06-20",
     "abstract": "Marfan syndrome (MFS) is an autosomal dominant disease of the connective tissue caused by mutations in the fibrillin-1 gene. Fibrillin-1 is a pivotal component of elastic fibers. The alterations in fibrillin-1 are considered to be the primary causal factor for cardiovascular disease's related morbidity and mortality in MFS. However, the investigation of other components associated with fibrillin-1 in elastic fiber assembly has been less explored. This study aimed to investigate components of matrix extracellular that bind to fibrillin1 for the assembly of elastic fibers in the MFS syndrome animal model, mg\u0394lpn, which showed the classical phenotype of MFS, alterations in the eye, skeletal, and cardiovascular systems. In this study, the MFS group showed a significant increase in elastic fiber fragmentation. The MFS group showed a significant reduction in fibrillin-1, fibronectin, perlecan, integrin\u03b21 when compared to the WT group. The 3D ultrastructural analysis revealed a decreased amount of microfibrils in the MFS group. In addition, local elastic fiber fragmentation was associated with a significant increase in collagen deposition, as observed by second-harmonic generation and immunofluorescence (for collagen type I), besides, was observed the increased of the \u03b1-smooth muscle actin. These results suggest that, as a possible compensatory mechanism, the instability of elastic fibers may induce collagen fiber deposition. Furthermore, ultrasound flow analysis revealed a significant reduction in blood flow and alterations in the spectral curve in the thoracic aorta of the MFS group. Structural changes in elastic fibers in the aorta may result in hemodynamic alterations in the MFS group, which could potentially influence the cardiovascular phenotype in MFS.",
@@ -4042,7 +4166,7 @@ export const ARTICLES = [
         "text": "Division of Cardiology, Department of Medicine, University of North Carolina at Chapel Hill, Chapel Hill, North Carolina 27599-7075, USA"
       }
     ],
-    "journalId": "journal-of-cardiac-science-and-cardiovascular-research",
+    "journalId": "cardiac-research",
     "journalTitle": "Journal of Cardiac Science & Cardiovascular Research",
     "publicationDate": "2026-06-20",
     "abstract": "ST-segment elevation (STE) myocardial infarction (STEMI) results from the acute occlusion of a coronary artery and requires prompt restoration of coronary perfusion to salvage ischemic myocardium. Implementation of a Code STEMI protocol facilitates this process. Timely and accurate electrocardiogram (ECG) diagnosis is the first and most critical step in responding to a Code STEMI. Here, we report and discuss several clinical settings that mimicked STEMI but showed no evidence of coronary artery disease on cardiac catheterization, including: 1. Metastatic myocardial infiltration, with ECG showing localized STE and ST\u2013T changes resembling those of true STEMI, and on serial follow-up ECGs, demonstrating a slowly evolving ST-T pattern (\u201cslow motion\u201d) in response to immunochemotherapy. 2. Perimyocarditis, with ECG demonstrating migrating STE, although in a localized pattern. 3. Inflammatory infiltrative cardiomyopathies due to cardiac sarcoidosis and giant cell myocarditis, with ECG findings mimicking STEMI. We also describe cases of paradoxically localized STE in relation to the culprit coronary artery. In summary, not all localized STEs represent STEMI, and not all localized STEs align intuitively with the culprit vessel distribution. The significance of serial ECG monitoring in assessing the effects of immunochemotherapy for metastatic myocardial infiltration is also discussed.",
@@ -4080,7 +4204,7 @@ export const ARTICLES = [
         "text": "Department of Cardiovascular Medicine, Jincheng People's Hospital, Shanxi Province, China"
       }
     ],
-    "journalId": "journal-of-cardiac-science-and-cardiovascular-research",
+    "journalId": "cardiac-research",
     "journalTitle": "Journal of Cardiac Science & Cardiovascular Research",
     "publicationDate": "2026-06-20",
     "abstract": "Insulin resistance (IR) is a key metabolic risk factor, and it is closely associated with an increased susceptibility to cardiovascular, digestive, and immune system diseases. The triglyceride- glucose-body mass index (TyG-BMI), a composite biomarker integrating blood lipids, glucose, and body mass index(BMI), has emerged as a promising candidate for IR evaluation due to its simple detection and comprehensive coverage of metabolic pathways. This study searched Web of Science, PubMed, Embase, and the Cochrane Library for TyG-BMI-related studies in cardiovascular, metabolic, and tumor-associated disorders, systematically evaluating its pathological mechanisms and clinical value. Clinical studies link the TyG-BMI index to cardiovascular, metabolic, and malignant diseases, with its levels closely associated with disease occurrence and prognosis. Potential mechanisms involve chronic inflammation, oxidative stress, and vascular endothelial dysfunction. With advantages of simple operation and easy accessibility, the TyG-BMI index offers significant clinical value in disease early screening, assessment, and prognosis. Despite confirmed associations with multiple diseases, unified thresholds across populations and disease types remain undefined. Further research is needed to address this gap and support precision prevention and treatment strategy development.",
